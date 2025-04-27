@@ -1,0 +1,35 @@
+{
+  "name": "Java",
+  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+  "image": "mcr.microsoft.com/devcontainers/java:1-21-bullseye",
+  "features": {
+    // Java, SDKMAN!, Gradle pre-installed
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "none",
+      "installMaven": "false",
+      "installGradle": "true"
+    },
+    // curl, git, other common utils
+    "ghcr.io/devcontainers/features/common-utils:2": {},
+    // Node.js (via nvm), Yarn, pnpm, and node-gyp deps
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "18",
+      "nodeGypDependencies": true,
+      "pnpmVersion": "latest"
+    }
+  },
+  "remoteUser": "vscode",
+  "containerUser": "vscode",
+  "updateRemoteUserUID": true,
+  "postCreateCommand": [
+    "./.devcontainer/postCreateCommand.sh"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        // Kotlin language support
+        "mathiasfrohlich.kotlin"
+      ]
+    }
+  }
+}
