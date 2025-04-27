@@ -74,12 +74,11 @@ fun Application.main() {
                 call.sessions.clear<Profile>()
                 call.respondRedirect("/")
             }
-            applyRoutes(getServiceManager<IAddressService>())
             applyRoutes(getServiceManager<IProfileService>())
+            applyRoutes(getServiceManager<IIPSService>())
         }
     }
     initRpc {
-        registerService<IAddressService> { AddressService(it) }
         registerService<IProfileService> { ProfileService(it) }
         registerService<IRegisterProfileService> { RegisterProfileService() }
     }
