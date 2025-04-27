@@ -4,3 +4,8 @@
 [2025-04-27 12:22:42,623]-[main] INFO  Application - Application started in 0.788 seconds.
 [2025-04-27 12:22:42,751]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
 [2025-04-27 12:23:11,977]-[eventLoopGroupProxy-4-1] INFO  Application - [31m401 Unauthorized[m: [36mPOST[m - /rpc/routeAddressServiceManager0 in 97ms
+[2025-04-27 17:34:11,281]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-27 17:34:11,423]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-27 17:34:11,532]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-27 17:34:11,805]-[main] INFO  Application - Application started in 0.727 seconds.
+[2025-04-27 17:34:11,944]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080

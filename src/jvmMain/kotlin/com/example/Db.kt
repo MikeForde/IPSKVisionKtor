@@ -19,15 +19,8 @@ object Db {
     fun init(config: ApplicationConfig) {
         Database.connect(hikari(config))
         transaction {
-            // createMissingTablesAndColumns is safer in prod than force=true
-            org.jetbrains.exposed.sql.SchemaUtils.createMissingTablesAndColumns(
-                IPSModels,
-                Medications,
-                Allergies,
-                Conditions,
-                Observations,
-                Immunizations
-            )
+            create(UserDao)
+            create(AddressDao)
         }
     }
 
