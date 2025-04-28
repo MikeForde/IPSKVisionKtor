@@ -29,35 +29,35 @@ fun Application.main() {
     install(Compression)
     install(DefaultHeaders)
     install(CallLogging)
-    install(Sessions) {
-        cookie<Profile>("KTSESSION", storage = SessionStorageMemory()) {
-            cookie.path = "/"
-            cookie.extensions["SameSite"] = "strict"
-        }
-    }
+    // install(Sessions) {
+    //     cookie<Profile>("KTSESSION", storage = SessionStorageMemory()) {
+    //         cookie.path = "/"
+    //         cookie.extensions["SameSite"] = "strict"
+    //     }
+    // }
     Db.init(environment.config)
 
-    install(Authentication) {
-        form {
-            userParamName = "username"
-            passwordParamName = "password"
-            validate { credentials ->
-                dbQuery {
-                    UserDao.select {
-                        (UserDao.username eq credentials.name) and (UserDao.password eq DigestUtils.sha256Hex(
-                            credentials.password
-                        ))
-                    }.firstOrNull()?.let {
-                        UserIdPrincipal(credentials.name)
-                    }
-                }
-            }
-            skipWhen { call -> call.sessions.get<Profile>() != null }
-        }
-    }
+    // install(Authentication) {
+    //     form {
+    //         userParamName = "username"
+    //         passwordParamName = "password"
+    //         validate { credentials ->
+    //             dbQuery {
+    //                 UserDao.select {
+    //                     (UserDao.username eq credentials.name) and (UserDao.password eq DigestUtils.sha256Hex(
+    //                         credentials.password
+    //                     ))
+    //                 }.firstOrNull()?.let {
+    //                     UserIdPrincipal(credentials.name)
+    //                 }
+    //             }
+    //         }
+    //         skipWhen { call -> call.sessions.get<Profile>() != null }
+    //     }
+    // }
 
     routing {
-        applyRoutes(getServiceManager<IRegisterProfileService>())
+        // applyRoutes(getServiceManager<IRegisterProfileService>())
         post("/api/patientName") {
             val resp = PatientService(call).getPatientName()
             call.respond(resp)
@@ -71,34 +71,34 @@ fun Application.main() {
             call.respond(HttpStatusCode.NotFound, "IPS record not found")
         }
   }
-        authenticate {
-            post("login") {
-                val principal = call.principal<UserIdPrincipal>()
-                val result = if (principal != null) {
-                    dbQuery {
-                        UserDao.select { UserDao.username eq principal.name }.firstOrNull()?.let {
-                            val profile =
-                                Profile(it[UserDao.id], it[UserDao.name], it[UserDao.username].toString(), null, null)
-                            call.sessions.set(profile)
-                            HttpStatusCode.OK
-                        } ?: HttpStatusCode.Unauthorized
-                    }
-                } else {
-                    HttpStatusCode.Unauthorized
-                }
-                call.respond(result)
-            }
-            get("logout") {
-                call.sessions.clear<Profile>()
-                call.respondRedirect("/")
-            }
-            applyRoutes(getServiceManager<IAddressService>())
-            applyRoutes(getServiceManager<IProfileService>())
-        }
+        // authenticate {
+        //     post("login") {
+        //         val principal = call.principal<UserIdPrincipal>()
+        //         val result = if (principal != null) {
+        //             dbQuery {
+        //                 UserDao.select { UserDao.username eq principal.name }.firstOrNull()?.let {
+        //                     val profile =
+        //                         Profile(it[UserDao.id], it[UserDao.name], it[UserDao.username].toString(), null, null)
+        //                     call.sessions.set(profile)
+        //                     HttpStatusCode.OK
+        //                 } ?: HttpStatusCode.Unauthorized
+        //             }
+        //         } else {
+        //             HttpStatusCode.Unauthorized
+        //         }
+        //         call.respond(result)
+        //     }
+        //     get("logout") {
+        //         call.sessions.clear<Profile>()
+        //         call.respondRedirect("/")
+        //     }
+        //     applyRoutes(getServiceManager<IAddressService>())
+        //     applyRoutes(getServiceManager<IProfileService>())
+        // }
     }
     initRpc {
-        registerService<IAddressService> { AddressService(it) }
-        registerService<IProfileService> { ProfileService(it) }
-        registerService<IRegisterProfileService> { RegisterProfileService() }
+        // registerService<IAddressService> { AddressService(it) }
+        // registerService<IProfileService> { ProfileService(it) }
+        // registerService<IRegisterProfileService> { RegisterProfileService() }
     }
 }

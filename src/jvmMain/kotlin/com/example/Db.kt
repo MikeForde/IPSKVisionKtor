@@ -22,8 +22,8 @@ object Db {
             // create(UserDao)
             // create(AddressDao)
             create(
-                    UserDao,
-                    AddressDao,
+                    // UserDao,
+                    // AddressDao,
                     IPSModelDao,
                     MedicationDao,
                     AllergyDao,
