@@ -136,7 +136,7 @@ class AddressService(private val call: ApplicationCall) : IAddressService {
             favourite = rs.getBoolean(AddressDao.favourite.name),
             createdAt = rs.getTimestamp(AddressDao.createdAt.name)?.toInstant()
                 ?.atZone(ZoneId.systemDefault())?.toLocalDateTime(),
-            userId = rs.getInt(AddressDao.userId.name)
+            userId = rs.getInt(AddressDao.userId.name),
         )
 }
 

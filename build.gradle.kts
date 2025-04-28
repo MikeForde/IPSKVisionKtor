@@ -91,6 +91,7 @@ kotlin {
                 implementation("com.h2database:h2:$h2Version")
                 implementation("org.jetbrains.exposed:exposed:$exposedVersion")
                 implementation("org.postgresql:postgresql:$pgsqlVersion")
+                implementation("mysql:mysql-connector-java:8.0.33")
                 implementation("com.zaxxer:HikariCP:$hikariVersion")
                 implementation("commons-codec:commons-codec:$commonsCodecVersion")
                 implementation("com.axiomalaska:jdbc-named-parameters:$jdbcNamedParametersVersion")
