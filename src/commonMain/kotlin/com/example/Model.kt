@@ -1,10 +1,8 @@
-@file:UseContextualSerialization(LocalDateTime::class)
 
 package com.example
 
 import kotlinx.serialization.Serializable
-import kotlinx.serialization.UseContextualSerialization
-import io.kvision.types.LocalDateTime
+import kotlinx.datetime.LocalDateTime
 
 @Serializable
 data class Profile(
@@ -24,7 +22,7 @@ data class Address(
     val phone: String? = null,
     val postalAddress: String? = null,
     val favourite: Boolean? = false,
-    val createdAt: LocalDateTime? = null,
+    val createdAt: kotlinx.datetime.LocalDateTime? = null,
     val userId: Int? = null,
 )
 
@@ -32,17 +30,15 @@ data class Address(
 data class IPSModel(
     val id: Int? = null,                     // PK (null before insert)
     val packageUUID: String,                 // maps Sequelize’s STRING, non-null
-    val timeStamp: LocalDateTime,            // Sequelize DATE → LocalDateTime
+    val timeStamp: kotlinx.datetime.LocalDateTime,            // Sequelize DATE → LocalDateTime
     val patientName: String,
     val patientGiven: String,
-    val patientDob: LocalDateTime,
+    val patientDob: kotlinx.datetime.LocalDateTime,
     val patientGender: String? = null,       // allowNull: true
     val patientNation: String,
     val patientPractitioner: String,
     val patientOrganization: String? = null, // allowNull: true
     val patientIdentifier: String? = null,   // allowNull: true
-    val createdAt: LocalDateTime? = null,
-    val updatedAt: LocalDateTime? = null,
 
     // child collections (nullable until loaded)
     val medications: List<Medication>? = null,
@@ -56,14 +52,12 @@ data class IPSModel(
 data class Medication(
     val id: Int? = null,
     val name: String,
-    val date: LocalDateTime,
+    val date: kotlinx.datetime.LocalDateTime,
     val dosage: String,
     val system: String,
     val code: String,
     val status: String,
     val ipsModelId: Int? = null,           // FK back to IPSModel.id
-    val createdAt: LocalDateTime? = null,
-    val updatedAt: LocalDateTime? = null
 )
 
 @Serializable
@@ -71,31 +65,27 @@ data class Allergy(
     val id: Int? = null,
     val name: String,
     val criticality: String,
-    val date: LocalDateTime,
+    val date: kotlinx.datetime.LocalDateTime,
     val system: String,
     val code: String,
     val ipsModelId: Int? = null,
-    val createdAt: LocalDateTime? = null,
-    val updatedAt: LocalDateTime? = null
 )
 
 @Serializable
 data class Condition(
     val id: Int? = null,
     val name: String,
-    val date: LocalDateTime,
+    val date: kotlinx.datetime.LocalDateTime,
     val system: String,
     val code: String,
     val ipsModelId: Int? = null,
-    val createdAt: LocalDateTime? = null,
-    val updatedAt: LocalDateTime? = null
 )
 
 @Serializable
 data class Observation(
     val id: Int? = null,
     val name: String,
-    val date: LocalDateTime,
+    val date: kotlinx.datetime.LocalDateTime,
     val value: String,
     val system: String,
     val code: String,
@@ -103,8 +93,6 @@ data class Observation(
     val bodySite: String,
     val status: String,
     val ipsModelId: Int? = null,
-    val createdAt: LocalDateTime? = null,
-    val updatedAt: LocalDateTime? = null
 )
 
 @Serializable
@@ -112,10 +100,8 @@ data class Immunization(
     val id: Int? = null,
     val name: String,
     val system: String,
-    val date: LocalDateTime,
+    val date: kotlinx.datetime.LocalDateTime,
     val code: String,
     val status: String,
     val ipsModelId: Int? = null,
-    val createdAt: LocalDateTime? = null,
-    val updatedAt: LocalDateTime? = null
 )

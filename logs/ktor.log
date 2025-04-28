@@ -1759,3 +1759,873 @@ Please ensure that class is marked as '@Serializable' and that the serialization
 [2025-04-28 13:49:02,777]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
 [2025-04-28 13:49:03,073]-[main] INFO  Application - Application started in 0.899 seconds.
 [2025-04-28 13:49:03,219]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-28 13:52:27,965]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-28 13:52:28,122]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-28 13:52:28,261]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-28 13:52:28,518]-[main] INFO  Application - Application started in 0.739 seconds.
+[2025-04-28 13:52:28,659]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-28 13:56:09,443]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-28 13:56:09,613]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-28 13:56:09,775]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-28 13:58:24,041]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-28 13:58:24,219]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-28 13:58:24,379]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-28 13:58:24,678]-[main] INFO  Application - Application started in 0.883 seconds.
+[2025-04-28 13:58:24,828]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-28 13:58:32,028]-[eventLoopGroupProxy-4-1] ERROR Application - Unhandled: POST - /api/ipsFull
+kotlinx.serialization.SerializationException: Serializer for class 'LocalDateTime' is not found.
+Please ensure that class is marked as '@Serializable' and that the serialization compiler plugin is applied.
+
+	at kotlinx.serialization.internal.Platform_commonKt.serializerNotRegistered(Platform.common.kt:90)
+	at kotlinx.serialization.ContextualSerializer.serializer(ContextualSerializer.kt:51)
+	at kotlinx.serialization.ContextualSerializer.serialize(ContextualSerializer.kt:63)
+	at kotlinx.serialization.json.internal.StreamingJsonEncoder.encodeSerializableValue(StreamingJsonEncoder.kt:259)
+	at kotlinx.serialization.encoding.AbstractEncoder.encodeSerializableElement(AbstractEncoder.kt:80)
+	at com.example.IPSModel.write$Self$addressbook_fullstack_ktor(Model.kt:31)
+	at com.example.IPSModel$$serializer.serialize(Model.kt:31)
+	at com.example.IPSModel$$serializer.serialize(Model.kt:31)
+	at kotlinx.serialization.json.internal.StreamingJsonEncoder.encodeSerializableValue(StreamingJsonEncoder.kt:259)
+	at kotlinx.serialization.json.internal.JsonStreamsKt.encodeByWriter(JsonStreams.kt:99)
+	at kotlinx.serialization.json.Json.encodeToString(Json.kt:125)
+	at io.ktor.serialization.kotlinx.KotlinxSerializationConverter.serializeContent(KotlinxSerializationConverter.kt:93)
+	at io.ktor.serialization.kotlinx.KotlinxSerializationConverter.serialize(KotlinxSerializationConverter.kt:57)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1$2.invokeSuspend(ResponseConverter.kt:66)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1$2.invoke(ResponseConverter.kt)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1$2.invoke(ResponseConverter.kt)
+	at io.ktor.server.application.OnCallRespondContext.transformBody(KtorCallContexts.kt:102)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1.invokeSuspend(ResponseConverter.kt:39)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1.invoke(ResponseConverter.kt)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1.invoke(ResponseConverter.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhase$1.invokeSuspend(PluginBuilder.kt:245)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhase$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhase$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1$1.invokeSuspend(PluginBuilder.kt:228)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.util.debug.ContextUtilsKt.addToContextInDebugMode(ContextUtils.kt:34)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1.invokeSuspend(PluginBuilder.kt:224)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.util.pipeline.PipelineJvmKt.pipelineStartCoroutineUninterceptedOrReturn(PipelineJvm.kt:15)
+	at io.ktor.util.pipeline.SuspendFunctionGun.loop(SuspendFunctionGun.kt:131)
+	at io.ktor.util.pipeline.SuspendFunctionGun.proceed(SuspendFunctionGun.kt:89)
+	at io.ktor.util.pipeline.SuspendFunctionGun.execute$ktor_utils(SuspendFunctionGun.kt:109)
+	at io.ktor.util.pipeline.Pipeline.execute(Pipeline.kt:92)
+	at io.ktor.server.application.PipelineCall$DefaultImpls.respond(PipelineCall.kt:132)
+	at io.ktor.server.routing.RoutingPipelineCall.respond(RoutingPipelineCall.kt:23)
+	at io.ktor.server.routing.RoutingCall.respond(RoutingNode.kt:249)
+	at com.example.MainKt$main$3$2.invokeSuspend(Main.kt:111)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-04-28 13:58:32,045]-[eventLoopGroupProxy-4-1] INFO  Application - [31m500 Internal Server Error[m: [36mPOST[m - /api/ipsFull in 164ms
+[2025-04-28 13:59:45,888]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-28 13:59:46,046]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-28 13:59:46,180]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-28 13:59:46,437]-[main] INFO  Application - Application started in 0.741 seconds.
+[2025-04-28 13:59:46,576]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-28 13:59:50,472]-[eventLoopGroupProxy-4-1] ERROR Application - Unhandled: POST - /api/ipsFull
+kotlinx.serialization.SerializationException: Serializer for class 'LocalDateTime' is not found.
+Please ensure that class is marked as '@Serializable' and that the serialization compiler plugin is applied.
+
+	at kotlinx.serialization.internal.Platform_commonKt.serializerNotRegistered(Platform.common.kt:90)
+	at kotlinx.serialization.ContextualSerializer.serializer(ContextualSerializer.kt:51)
+	at kotlinx.serialization.ContextualSerializer.serialize(ContextualSerializer.kt:63)
+	at kotlinx.serialization.json.internal.StreamingJsonEncoder.encodeSerializableValue(StreamingJsonEncoder.kt:259)
+	at kotlinx.serialization.encoding.AbstractEncoder.encodeSerializableElement(AbstractEncoder.kt:80)
+	at com.example.IPSModel.write$Self$addressbook_fullstack_ktor(Model.kt:31)
+	at com.example.IPSModel$$serializer.serialize(Model.kt:31)
+	at com.example.IPSModel$$serializer.serialize(Model.kt:31)
+	at kotlinx.serialization.json.internal.StreamingJsonEncoder.encodeSerializableValue(StreamingJsonEncoder.kt:259)
+	at kotlinx.serialization.json.internal.JsonStreamsKt.encodeByWriter(JsonStreams.kt:99)
+	at kotlinx.serialization.json.Json.encodeToString(Json.kt:125)
+	at io.ktor.serialization.kotlinx.KotlinxSerializationConverter.serializeContent(KotlinxSerializationConverter.kt:93)
+	at io.ktor.serialization.kotlinx.KotlinxSerializationConverter.serialize(KotlinxSerializationConverter.kt:57)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1$2.invokeSuspend(ResponseConverter.kt:66)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1$2.invoke(ResponseConverter.kt)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1$2.invoke(ResponseConverter.kt)
+	at io.ktor.server.application.OnCallRespondContext.transformBody(KtorCallContexts.kt:102)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1.invokeSuspend(ResponseConverter.kt:39)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1.invoke(ResponseConverter.kt)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1.invoke(ResponseConverter.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhase$1.invokeSuspend(PluginBuilder.kt:245)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhase$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhase$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1$1.invokeSuspend(PluginBuilder.kt:228)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.util.debug.ContextUtilsKt.addToContextInDebugMode(ContextUtils.kt:34)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1.invokeSuspend(PluginBuilder.kt:224)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.util.pipeline.PipelineJvmKt.pipelineStartCoroutineUninterceptedOrReturn(PipelineJvm.kt:15)
+	at io.ktor.util.pipeline.SuspendFunctionGun.loop(SuspendFunctionGun.kt:131)
+	at io.ktor.util.pipeline.SuspendFunctionGun.proceed(SuspendFunctionGun.kt:89)
+	at io.ktor.util.pipeline.SuspendFunctionGun.execute$ktor_utils(SuspendFunctionGun.kt:109)
+	at io.ktor.util.pipeline.Pipeline.execute(Pipeline.kt:92)
+	at io.ktor.server.application.PipelineCall$DefaultImpls.respond(PipelineCall.kt:132)
+	at io.ktor.server.routing.RoutingPipelineCall.respond(RoutingPipelineCall.kt:23)
+	at io.ktor.server.routing.RoutingCall.respond(RoutingNode.kt:249)
+	at com.example.MainKt$main$3$2.invokeSuspend(Main.kt:113)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-04-28 13:59:50,490]-[eventLoopGroupProxy-4-1] INFO  Application - [31m500 Internal Server Error[m: [36mPOST[m - /api/ipsFull in 171ms
+[2025-04-28 14:10:10,989]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-28 14:10:11,122]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-28 14:10:11,266]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-28 14:10:11,523]-[main] INFO  Application - Application started in 0.742 seconds.
+[2025-04-28 14:10:11,648]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-28 14:10:17,562]-[eventLoopGroupProxy-4-1] INFO  Application - [31m404 Not Found[m: [36mPOST[m - /api/ipsFull in 46ms
+[2025-04-28 14:10:56,968]-[eventLoopGroupProxy-4-1] ERROR Application - Unhandled: POST - /api/ipsRecord
+kotlinx.serialization.SerializationException: Serializer for class 'LocalDateTime' is not found.
+Please ensure that class is marked as '@Serializable' and that the serialization compiler plugin is applied.
+
+	at kotlinx.serialization.internal.Platform_commonKt.serializerNotRegistered(Platform.common.kt:90)
+	at kotlinx.serialization.ContextualSerializer.serializer(ContextualSerializer.kt:51)
+	at kotlinx.serialization.ContextualSerializer.serialize(ContextualSerializer.kt:63)
+	at kotlinx.serialization.json.internal.StreamingJsonEncoder.encodeSerializableValue(StreamingJsonEncoder.kt:259)
+	at kotlinx.serialization.encoding.AbstractEncoder.encodeSerializableElement(AbstractEncoder.kt:80)
+	at com.example.IPSModel.write$Self$addressbook_fullstack_ktor(Model.kt:31)
+	at com.example.IPSModel$$serializer.serialize(Model.kt:31)
+	at com.example.IPSModel$$serializer.serialize(Model.kt:31)
+	at kotlinx.serialization.json.internal.StreamingJsonEncoder.encodeSerializableValue(StreamingJsonEncoder.kt:259)
+	at kotlinx.serialization.json.internal.JsonStreamsKt.encodeByWriter(JsonStreams.kt:99)
+	at kotlinx.serialization.json.Json.encodeToString(Json.kt:125)
+	at io.ktor.serialization.kotlinx.KotlinxSerializationConverter.serializeContent(KotlinxSerializationConverter.kt:93)
+	at io.ktor.serialization.kotlinx.KotlinxSerializationConverter.serialize(KotlinxSerializationConverter.kt:57)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1$2.invokeSuspend(ResponseConverter.kt:66)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1$2.invoke(ResponseConverter.kt)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1$2.invoke(ResponseConverter.kt)
+	at io.ktor.server.application.OnCallRespondContext.transformBody(KtorCallContexts.kt:102)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1.invokeSuspend(ResponseConverter.kt:39)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1.invoke(ResponseConverter.kt)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1.invoke(ResponseConverter.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhase$1.invokeSuspend(PluginBuilder.kt:245)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhase$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhase$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1$1.invokeSuspend(PluginBuilder.kt:228)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.util.debug.ContextUtilsKt.addToContextInDebugMode(ContextUtils.kt:34)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1.invokeSuspend(PluginBuilder.kt:224)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.util.pipeline.PipelineJvmKt.pipelineStartCoroutineUninterceptedOrReturn(PipelineJvm.kt:15)
+	at io.ktor.util.pipeline.SuspendFunctionGun.loop(SuspendFunctionGun.kt:131)
+	at io.ktor.util.pipeline.SuspendFunctionGun.proceed(SuspendFunctionGun.kt:89)
+	at io.ktor.util.pipeline.SuspendFunctionGun.execute$ktor_utils(SuspendFunctionGun.kt:109)
+	at io.ktor.util.pipeline.Pipeline.execute(Pipeline.kt:92)
+	at io.ktor.server.application.PipelineCall$DefaultImpls.respond(PipelineCall.kt:132)
+	at io.ktor.server.routing.RoutingPipelineCall.respond(RoutingPipelineCall.kt:23)
+	at io.ktor.server.routing.RoutingCall.respond(RoutingNode.kt:249)
+	at com.example.MainKt$main$3$2.invokeSuspend(Main.kt:106)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-04-28 14:10:56,972]-[eventLoopGroupProxy-4-1] INFO  Application - [31m500 Internal Server Error[m: [36mPOST[m - /api/ipsRecord in 139ms
+[2025-04-28 14:24:16,755]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-28 14:24:16,937]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-28 14:24:17,150]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-28 14:24:17,424]-[main] INFO  Application - Application started in 0.927 seconds.
+[2025-04-28 14:24:17,578]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-28 14:24:22,289]-[eventLoopGroupProxy-4-1] ERROR Application - Unhandled: POST - /api/ipsRecord
+kotlinx.serialization.SerializationException: Serializer for class 'LocalDateTime' is not found.
+Please ensure that class is marked as '@Serializable' and that the serialization compiler plugin is applied.
+
+	at kotlinx.serialization.internal.Platform_commonKt.serializerNotRegistered(Platform.common.kt:90)
+	at kotlinx.serialization.ContextualSerializer.serializer(ContextualSerializer.kt:51)
+	at kotlinx.serialization.ContextualSerializer.serialize(ContextualSerializer.kt:63)
+	at kotlinx.serialization.json.internal.StreamingJsonEncoder.encodeSerializableValue(StreamingJsonEncoder.kt:259)
+	at kotlinx.serialization.encoding.AbstractEncoder.encodeSerializableElement(AbstractEncoder.kt:80)
+	at com.example.IPSModel.write$Self$addressbook_fullstack_ktor(Model.kt:31)
+	at com.example.IPSModel$$serializer.serialize(Model.kt:31)
+	at com.example.IPSModel$$serializer.serialize(Model.kt:31)
+	at kotlinx.serialization.json.internal.StreamingJsonEncoder.encodeSerializableValue(StreamingJsonEncoder.kt:259)
+	at kotlinx.serialization.json.internal.JsonStreamsKt.encodeByWriter(JsonStreams.kt:99)
+	at kotlinx.serialization.json.Json.encodeToString(Json.kt:125)
+	at io.ktor.serialization.kotlinx.KotlinxSerializationConverter.serializeContent(KotlinxSerializationConverter.kt:93)
+	at io.ktor.serialization.kotlinx.KotlinxSerializationConverter.serialize(KotlinxSerializationConverter.kt:57)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1$2.invokeSuspend(ResponseConverter.kt:66)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1$2.invoke(ResponseConverter.kt)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1$2.invoke(ResponseConverter.kt)
+	at io.ktor.server.application.OnCallRespondContext.transformBody(KtorCallContexts.kt:102)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1.invokeSuspend(ResponseConverter.kt:39)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1.invoke(ResponseConverter.kt)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1.invoke(ResponseConverter.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhase$1.invokeSuspend(PluginBuilder.kt:245)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhase$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhase$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1$1.invokeSuspend(PluginBuilder.kt:228)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.util.debug.ContextUtilsKt.addToContextInDebugMode(ContextUtils.kt:34)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1.invokeSuspend(PluginBuilder.kt:224)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.util.pipeline.PipelineJvmKt.pipelineStartCoroutineUninterceptedOrReturn(PipelineJvm.kt:15)
+	at io.ktor.util.pipeline.SuspendFunctionGun.loop(SuspendFunctionGun.kt:131)
+	at io.ktor.util.pipeline.SuspendFunctionGun.proceed(SuspendFunctionGun.kt:89)
+	at io.ktor.util.pipeline.SuspendFunctionGun.execute$ktor_utils(SuspendFunctionGun.kt:109)
+	at io.ktor.util.pipeline.Pipeline.execute(Pipeline.kt:92)
+	at io.ktor.server.application.PipelineCall$DefaultImpls.respond(PipelineCall.kt:132)
+	at io.ktor.server.routing.RoutingPipelineCall.respond(RoutingPipelineCall.kt:23)
+	at io.ktor.server.routing.RoutingCall.respond(RoutingNode.kt:249)
+	at com.example.MainKt$main$3$2.invokeSuspend(Main.kt:106)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-04-28 14:24:22,309]-[eventLoopGroupProxy-4-1] INFO  Application - [31m500 Internal Server Error[m: [36mPOST[m - /api/ipsRecord in 185ms
+[2025-04-28 14:27:54,196]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-28 14:27:54,354]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-28 14:27:54,513]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-28 14:27:54,807]-[main] INFO  Application - Application started in 0.848 seconds.
+[2025-04-28 14:27:54,949]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-28 14:39:44,263]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-28 14:39:44,441]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-28 14:39:44,632]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-28 14:39:44,918]-[main] INFO  Application - Application started in 0.912 seconds.
+[2025-04-28 14:39:45,062]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-28 14:40:08,620]-[eventLoopGroupProxy-4-1] ERROR Application - Unhandled: POST - /api/ipsRecord
+java.time.format.DateTimeParseException: Text '2024-05-03T00:00:00.000Z' could not be parsed, unparsed text found at index 23
+	at java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2111)
+	at java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:2010)
+	at java.base/java.time.LocalDateTime.parse(LocalDateTime.java:494)
+	at java.base/java.time.LocalDateTime.parse(LocalDateTime.java:479)
+	at com.example.ServiceKt.toKvLocal(Service.kt:27)
+	at com.example.ServiceKt.access$toKvLocal(Service.kt:1)
+	at com.example.IpsService.getIpsRecord$lambda$11$toLocal(Service.kt:231)
+	at com.example.IpsService.getIpsRecord$lambda$11(Service.kt:254)
+	at com.example.Db$dbQuery$2.invokeSuspend$lambda$0(Db.kt:53)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.inTopLevelTransaction$run(ThreadLocalTransactionManager.kt:156)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.access$inTopLevelTransaction$run(ThreadLocalTransactionManager.kt:1)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt$inTopLevelTransaction$1.invoke(ThreadLocalTransactionManager.kt:197)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.keepAndRestoreTransactionRefAfterRun(ThreadLocalTransactionManager.kt:205)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.inTopLevelTransaction(ThreadLocalTransactionManager.kt:196)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt$transaction$1.invoke(ThreadLocalTransactionManager.kt:134)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.keepAndRestoreTransactionRefAfterRun(ThreadLocalTransactionManager.kt:205)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.transaction(ThreadLocalTransactionManager.kt:106)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.transaction(ThreadLocalTransactionManager.kt:104)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.transaction$default(ThreadLocalTransactionManager.kt:103)
+	at com.example.Db$dbQuery$2.invokeSuspend(Db.kt:53)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:124)
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:820)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+[2025-04-28 14:40:08,649]-[eventLoopGroupProxy-4-1] INFO  Application - [31m500 Internal Server Error[m: [36mPOST[m - /api/ipsRecord in 160ms
+[2025-04-28 14:42:30,463]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-28 14:42:30,621]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-28 14:42:30,812]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-28 14:42:31,252]-[main] INFO  Application - Application started in 1.025 seconds.
+[2025-04-28 14:42:31,401]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-28 14:42:39,493]-[eventLoopGroupProxy-4-1] ERROR Application - Unhandled: POST - /api/ipsRecord
+java.time.format.DateTimeParseException: Text '2024-05-03T00:00:00.000Z' could not be parsed, unparsed text found at index 23
+	at java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2111)
+	at java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:2010)
+	at java.base/java.time.LocalDateTime.parse(LocalDateTime.java:494)
+	at java.base/java.time.LocalDateTime.parse(LocalDateTime.java:479)
+	at com.example.ServiceKt.toKvLocal(Service.kt:27)
+	at com.example.ServiceKt.access$toKvLocal(Service.kt:1)
+	at com.example.IpsService.getIpsRecord$lambda$11(Service.kt:250)
+	at com.example.Db$dbQuery$2.invokeSuspend$lambda$0(Db.kt:53)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.inTopLevelTransaction$run(ThreadLocalTransactionManager.kt:156)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.access$inTopLevelTransaction$run(ThreadLocalTransactionManager.kt:1)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt$inTopLevelTransaction$1.invoke(ThreadLocalTransactionManager.kt:197)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.keepAndRestoreTransactionRefAfterRun(ThreadLocalTransactionManager.kt:205)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.inTopLevelTransaction(ThreadLocalTransactionManager.kt:196)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt$transaction$1.invoke(ThreadLocalTransactionManager.kt:134)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.keepAndRestoreTransactionRefAfterRun(ThreadLocalTransactionManager.kt:205)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.transaction(ThreadLocalTransactionManager.kt:106)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.transaction(ThreadLocalTransactionManager.kt:104)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.transaction$default(ThreadLocalTransactionManager.kt:103)
+	at com.example.Db$dbQuery$2.invokeSuspend(Db.kt:53)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:124)
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:820)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+[2025-04-28 14:42:39,520]-[eventLoopGroupProxy-4-1] INFO  Application - [31m500 Internal Server Error[m: [36mPOST[m - /api/ipsRecord in 151ms
+[2025-04-28 14:48:22,976]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-28 14:48:23,150]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-28 14:48:23,320]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-28 14:48:23,621]-[main] INFO  Application - Application started in 0.889 seconds.
+[2025-04-28 14:48:23,780]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-28 14:48:29,866]-[eventLoopGroupProxy-4-1] ERROR Application - Unhandled: POST - /api/ipsRecord
+kotlinx.serialization.SerializationException: Serializer for class 'LocalDateTime' is not found.
+Please ensure that class is marked as '@Serializable' and that the serialization compiler plugin is applied.
+
+	at kotlinx.serialization.internal.Platform_commonKt.serializerNotRegistered(Platform.common.kt:90)
+	at kotlinx.serialization.ContextualSerializer.serializer(ContextualSerializer.kt:51)
+	at kotlinx.serialization.ContextualSerializer.serialize(ContextualSerializer.kt:63)
+	at kotlinx.serialization.json.internal.StreamingJsonEncoder.encodeSerializableValue(StreamingJsonEncoder.kt:259)
+	at kotlinx.serialization.encoding.AbstractEncoder.encodeSerializableElement(AbstractEncoder.kt:80)
+	at com.example.IPSModel.write$Self$addressbook_fullstack_ktor(Model.kt:31)
+	at com.example.IPSModel$$serializer.serialize(Model.kt:31)
+	at com.example.IPSModel$$serializer.serialize(Model.kt:31)
+	at kotlinx.serialization.json.internal.StreamingJsonEncoder.encodeSerializableValue(StreamingJsonEncoder.kt:259)
+	at kotlinx.serialization.json.internal.JsonStreamsKt.encodeByWriter(JsonStreams.kt:99)
+	at kotlinx.serialization.json.Json.encodeToString(Json.kt:125)
+	at io.ktor.serialization.kotlinx.KotlinxSerializationConverter.serializeContent(KotlinxSerializationConverter.kt:93)
+	at io.ktor.serialization.kotlinx.KotlinxSerializationConverter.serialize(KotlinxSerializationConverter.kt:57)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1$2.invokeSuspend(ResponseConverter.kt:66)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1$2.invoke(ResponseConverter.kt)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1$2.invoke(ResponseConverter.kt)
+	at io.ktor.server.application.OnCallRespondContext.transformBody(KtorCallContexts.kt:102)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1.invokeSuspend(ResponseConverter.kt:39)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1.invoke(ResponseConverter.kt)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1.invoke(ResponseConverter.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhase$1.invokeSuspend(PluginBuilder.kt:245)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhase$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhase$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1$1.invokeSuspend(PluginBuilder.kt:228)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.util.debug.ContextUtilsKt.addToContextInDebugMode(ContextUtils.kt:34)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1.invokeSuspend(PluginBuilder.kt:224)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.util.pipeline.PipelineJvmKt.pipelineStartCoroutineUninterceptedOrReturn(PipelineJvm.kt:15)
+	at io.ktor.util.pipeline.SuspendFunctionGun.loop(SuspendFunctionGun.kt:131)
+	at io.ktor.util.pipeline.SuspendFunctionGun.proceed(SuspendFunctionGun.kt:89)
+	at io.ktor.util.pipeline.SuspendFunctionGun.execute$ktor_utils(SuspendFunctionGun.kt:109)
+	at io.ktor.util.pipeline.Pipeline.execute(Pipeline.kt:92)
+	at io.ktor.server.application.PipelineCall$DefaultImpls.respond(PipelineCall.kt:132)
+	at io.ktor.server.routing.RoutingPipelineCall.respond(RoutingPipelineCall.kt:23)
+	at io.ktor.server.routing.RoutingCall.respond(RoutingNode.kt:249)
+	at com.example.MainKt$main$3$2.invokeSuspend(Main.kt:106)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-04-28 14:48:29,884]-[eventLoopGroupProxy-4-1] INFO  Application - [31m500 Internal Server Error[m: [36mPOST[m - /api/ipsRecord in 184ms
+[2025-04-28 14:53:36,694]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-28 14:53:36,839]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-28 14:53:36,990]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-28 14:53:37,244]-[main] INFO  Application - Application started in 0.745 seconds.
+[2025-04-28 14:53:37,384]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-28 14:53:40,403]-[eventLoopGroupProxy-4-1] ERROR Application - Unhandled: POST - /api/ipsRecord
+kotlinx.serialization.SerializationException: Serializer for class 'LocalDateTime' is not found.
+Please ensure that class is marked as '@Serializable' and that the serialization compiler plugin is applied.
+
+	at kotlinx.serialization.internal.Platform_commonKt.serializerNotRegistered(Platform.common.kt:90)
+	at kotlinx.serialization.ContextualSerializer.serializer(ContextualSerializer.kt:51)
+	at kotlinx.serialization.ContextualSerializer.serialize(ContextualSerializer.kt:63)
+	at kotlinx.serialization.json.internal.StreamingJsonEncoder.encodeSerializableValue(StreamingJsonEncoder.kt:259)
+	at kotlinx.serialization.encoding.AbstractEncoder.encodeSerializableElement(AbstractEncoder.kt:80)
+	at com.example.IPSModel.write$Self$addressbook_fullstack_ktor(Model.kt:31)
+	at com.example.IPSModel$$serializer.serialize(Model.kt:31)
+	at com.example.IPSModel$$serializer.serialize(Model.kt:31)
+	at kotlinx.serialization.json.internal.StreamingJsonEncoder.encodeSerializableValue(StreamingJsonEncoder.kt:259)
+	at kotlinx.serialization.json.internal.JsonStreamsKt.encodeByWriter(JsonStreams.kt:99)
+	at kotlinx.serialization.json.Json.encodeToString(Json.kt:125)
+	at io.ktor.serialization.kotlinx.KotlinxSerializationConverter.serializeContent(KotlinxSerializationConverter.kt:93)
+	at io.ktor.serialization.kotlinx.KotlinxSerializationConverter.serialize(KotlinxSerializationConverter.kt:57)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1$2.invokeSuspend(ResponseConverter.kt:66)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1$2.invoke(ResponseConverter.kt)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1$2.invoke(ResponseConverter.kt)
+	at io.ktor.server.application.OnCallRespondContext.transformBody(KtorCallContexts.kt:102)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1.invokeSuspend(ResponseConverter.kt:39)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1.invoke(ResponseConverter.kt)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1.invoke(ResponseConverter.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhase$1.invokeSuspend(PluginBuilder.kt:245)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhase$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhase$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1$1.invokeSuspend(PluginBuilder.kt:228)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.util.debug.ContextUtilsKt.addToContextInDebugMode(ContextUtils.kt:34)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1.invokeSuspend(PluginBuilder.kt:224)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.util.pipeline.PipelineJvmKt.pipelineStartCoroutineUninterceptedOrReturn(PipelineJvm.kt:15)
+	at io.ktor.util.pipeline.SuspendFunctionGun.loop(SuspendFunctionGun.kt:131)
+	at io.ktor.util.pipeline.SuspendFunctionGun.proceed(SuspendFunctionGun.kt:89)
+	at io.ktor.util.pipeline.SuspendFunctionGun.execute$ktor_utils(SuspendFunctionGun.kt:109)
+	at io.ktor.util.pipeline.Pipeline.execute(Pipeline.kt:92)
+	at io.ktor.server.application.PipelineCall$DefaultImpls.respond(PipelineCall.kt:132)
+	at io.ktor.server.routing.RoutingPipelineCall.respond(RoutingPipelineCall.kt:23)
+	at io.ktor.server.routing.RoutingCall.respond(RoutingNode.kt:249)
+	at com.example.MainKt$main$3$2.invokeSuspend(Main.kt:106)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-04-28 14:53:40,421]-[eventLoopGroupProxy-4-1] INFO  Application - [31m500 Internal Server Error[m: [36mPOST[m - /api/ipsRecord in 166ms
+[2025-04-28 14:55:22,518]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-28 14:55:22,744]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-28 14:55:22,957]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-28 14:55:23,334]-[main] INFO  Application - Application started in 1.138 seconds.
+[2025-04-28 14:55:23,497]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-28 14:55:26,771]-[eventLoopGroupProxy-4-1] ERROR Application - Unhandled: POST - /api/ipsRecord
+kotlinx.serialization.SerializationException: Serializer for class 'LocalDateTime' is not found.
+Please ensure that class is marked as '@Serializable' and that the serialization compiler plugin is applied.
+
+	at kotlinx.serialization.internal.Platform_commonKt.serializerNotRegistered(Platform.common.kt:90)
+	at kotlinx.serialization.ContextualSerializer.serializer(ContextualSerializer.kt:51)
+	at kotlinx.serialization.ContextualSerializer.serialize(ContextualSerializer.kt:63)
+	at kotlinx.serialization.json.internal.StreamingJsonEncoder.encodeSerializableValue(StreamingJsonEncoder.kt:259)
+	at kotlinx.serialization.encoding.AbstractEncoder.encodeSerializableElement(AbstractEncoder.kt:80)
+	at com.example.IPSModel.write$Self$addressbook_fullstack_ktor(Model.kt:31)
+	at com.example.IPSModel$$serializer.serialize(Model.kt:31)
+	at com.example.IPSModel$$serializer.serialize(Model.kt:31)
+	at kotlinx.serialization.json.internal.StreamingJsonEncoder.encodeSerializableValue(StreamingJsonEncoder.kt:259)
+	at kotlinx.serialization.json.internal.JsonStreamsKt.encodeByWriter(JsonStreams.kt:99)
+	at kotlinx.serialization.json.Json.encodeToString(Json.kt:125)
+	at io.ktor.serialization.kotlinx.KotlinxSerializationConverter.serializeContent(KotlinxSerializationConverter.kt:93)
+	at io.ktor.serialization.kotlinx.KotlinxSerializationConverter.serialize(KotlinxSerializationConverter.kt:57)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1$2.invokeSuspend(ResponseConverter.kt:66)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1$2.invoke(ResponseConverter.kt)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1$2.invoke(ResponseConverter.kt)
+	at io.ktor.server.application.OnCallRespondContext.transformBody(KtorCallContexts.kt:102)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1.invokeSuspend(ResponseConverter.kt:39)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1.invoke(ResponseConverter.kt)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1.invoke(ResponseConverter.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhase$1.invokeSuspend(PluginBuilder.kt:245)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhase$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhase$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1$1.invokeSuspend(PluginBuilder.kt:228)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.util.debug.ContextUtilsKt.addToContextInDebugMode(ContextUtils.kt:34)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1.invokeSuspend(PluginBuilder.kt:224)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.util.pipeline.PipelineJvmKt.pipelineStartCoroutineUninterceptedOrReturn(PipelineJvm.kt:15)
+	at io.ktor.util.pipeline.SuspendFunctionGun.loop(SuspendFunctionGun.kt:131)
+	at io.ktor.util.pipeline.SuspendFunctionGun.proceed(SuspendFunctionGun.kt:89)
+	at io.ktor.util.pipeline.SuspendFunctionGun.execute$ktor_utils(SuspendFunctionGun.kt:109)
+	at io.ktor.util.pipeline.Pipeline.execute(Pipeline.kt:92)
+	at io.ktor.server.application.PipelineCall$DefaultImpls.respond(PipelineCall.kt:132)
+	at io.ktor.server.routing.RoutingPipelineCall.respond(RoutingPipelineCall.kt:23)
+	at io.ktor.server.routing.RoutingCall.respond(RoutingNode.kt:249)
+	at com.example.MainKt$main$3$2.invokeSuspend(Main.kt:106)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-04-28 14:55:26,793]-[eventLoopGroupProxy-4-1] INFO  Application - [31m500 Internal Server Error[m: [36mPOST[m - /api/ipsRecord in 236ms
+[2025-04-28 15:01:48,026]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-28 15:01:48,184]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-28 15:01:48,343]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-28 15:01:48,638]-[main] INFO  Application - Application started in 0.85 seconds.
+[2025-04-28 15:01:48,787]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-28 15:01:55,503]-[eventLoopGroupProxy-4-1] ERROR Application - Unhandled: POST - /api/ipsRecord
+kotlinx.serialization.SerializationException: Serializer for class 'LocalDateTime' is not found.
+Please ensure that class is marked as '@Serializable' and that the serialization compiler plugin is applied.
+
+	at kotlinx.serialization.internal.Platform_commonKt.serializerNotRegistered(Platform.common.kt:90)
+	at kotlinx.serialization.ContextualSerializer.serializer(ContextualSerializer.kt:51)
+	at kotlinx.serialization.ContextualSerializer.serialize(ContextualSerializer.kt:63)
+	at kotlinx.serialization.json.internal.StreamingJsonEncoder.encodeSerializableValue(StreamingJsonEncoder.kt:259)
+	at kotlinx.serialization.encoding.AbstractEncoder.encodeSerializableElement(AbstractEncoder.kt:80)
+	at com.example.IPSModel.write$Self$addressbook_fullstack_ktor(Model.kt:31)
+	at com.example.IPSModel$$serializer.serialize(Model.kt:31)
+	at com.example.IPSModel$$serializer.serialize(Model.kt:31)
+	at kotlinx.serialization.json.internal.StreamingJsonEncoder.encodeSerializableValue(StreamingJsonEncoder.kt:259)
+	at kotlinx.serialization.json.internal.JsonStreamsKt.encodeByWriter(JsonStreams.kt:99)
+	at kotlinx.serialization.json.Json.encodeToString(Json.kt:125)
+	at io.ktor.serialization.kotlinx.KotlinxSerializationConverter.serializeContent(KotlinxSerializationConverter.kt:93)
+	at io.ktor.serialization.kotlinx.KotlinxSerializationConverter.serialize(KotlinxSerializationConverter.kt:57)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1$2.invokeSuspend(ResponseConverter.kt:66)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1$2.invoke(ResponseConverter.kt)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1$2.invoke(ResponseConverter.kt)
+	at io.ktor.server.application.OnCallRespondContext.transformBody(KtorCallContexts.kt:102)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1.invokeSuspend(ResponseConverter.kt:39)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1.invoke(ResponseConverter.kt)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1.invoke(ResponseConverter.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhase$1.invokeSuspend(PluginBuilder.kt:245)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhase$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhase$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1$1.invokeSuspend(PluginBuilder.kt:228)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.util.debug.ContextUtilsKt.addToContextInDebugMode(ContextUtils.kt:34)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1.invokeSuspend(PluginBuilder.kt:224)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.util.pipeline.PipelineJvmKt.pipelineStartCoroutineUninterceptedOrReturn(PipelineJvm.kt:15)
+	at io.ktor.util.pipeline.SuspendFunctionGun.loop(SuspendFunctionGun.kt:131)
+	at io.ktor.util.pipeline.SuspendFunctionGun.proceed(SuspendFunctionGun.kt:89)
+	at io.ktor.util.pipeline.SuspendFunctionGun.execute$ktor_utils(SuspendFunctionGun.kt:109)
+	at io.ktor.util.pipeline.Pipeline.execute(Pipeline.kt:92)
+	at io.ktor.server.application.PipelineCall$DefaultImpls.respond(PipelineCall.kt:132)
+	at io.ktor.server.routing.RoutingPipelineCall.respond(RoutingPipelineCall.kt:23)
+	at io.ktor.server.routing.RoutingCall.respond(RoutingNode.kt:249)
+	at com.example.MainKt$main$3$2.invokeSuspend(Main.kt:106)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-04-28 15:01:55,524]-[eventLoopGroupProxy-4-1] INFO  Application - [31m500 Internal Server Error[m: [36mPOST[m - /api/ipsRecord in 183ms
+[2025-04-28 15:05:42,286]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-28 15:05:42,456]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-28 15:05:42,635]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-28 15:05:42,937]-[main] INFO  Application - Application started in 0.889 seconds.
+[2025-04-28 15:05:43,084]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-28 15:05:48,172]-[eventLoopGroupProxy-4-1] ERROR Application - Unhandled: POST - /api/ipsRecord
+kotlinx.serialization.SerializationException: Serializer for class 'LocalDateTime' is not found.
+Please ensure that class is marked as '@Serializable' and that the serialization compiler plugin is applied.
+
+	at kotlinx.serialization.internal.Platform_commonKt.serializerNotRegistered(Platform.common.kt:90)
+	at kotlinx.serialization.ContextualSerializer.serializer(ContextualSerializer.kt:51)
+	at kotlinx.serialization.ContextualSerializer.serialize(ContextualSerializer.kt:63)
+	at kotlinx.serialization.json.internal.StreamingJsonEncoder.encodeSerializableValue(StreamingJsonEncoder.kt:259)
+	at kotlinx.serialization.encoding.AbstractEncoder.encodeSerializableElement(AbstractEncoder.kt:80)
+	at com.example.IPSModel.write$Self$addressbook_fullstack_ktor(Model.kt:31)
+	at com.example.IPSModel$$serializer.serialize(Model.kt:31)
+	at com.example.IPSModel$$serializer.serialize(Model.kt:31)
+	at kotlinx.serialization.json.internal.StreamingJsonEncoder.encodeSerializableValue(StreamingJsonEncoder.kt:259)
+	at kotlinx.serialization.json.internal.JsonStreamsKt.encodeByWriter(JsonStreams.kt:99)
+	at kotlinx.serialization.json.Json.encodeToString(Json.kt:125)
+	at io.ktor.serialization.kotlinx.KotlinxSerializationConverter.serializeContent(KotlinxSerializationConverter.kt:93)
+	at io.ktor.serialization.kotlinx.KotlinxSerializationConverter.serialize(KotlinxSerializationConverter.kt:57)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1$2.invokeSuspend(ResponseConverter.kt:66)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1$2.invoke(ResponseConverter.kt)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1$2.invoke(ResponseConverter.kt)
+	at io.ktor.server.application.OnCallRespondContext.transformBody(KtorCallContexts.kt:102)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1.invokeSuspend(ResponseConverter.kt:39)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1.invoke(ResponseConverter.kt)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1.invoke(ResponseConverter.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhase$1.invokeSuspend(PluginBuilder.kt:245)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhase$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhase$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1$1.invokeSuspend(PluginBuilder.kt:228)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.util.debug.ContextUtilsKt.addToContextInDebugMode(ContextUtils.kt:34)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1.invokeSuspend(PluginBuilder.kt:224)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.util.pipeline.PipelineJvmKt.pipelineStartCoroutineUninterceptedOrReturn(PipelineJvm.kt:15)
+	at io.ktor.util.pipeline.SuspendFunctionGun.loop(SuspendFunctionGun.kt:131)
+	at io.ktor.util.pipeline.SuspendFunctionGun.proceed(SuspendFunctionGun.kt:89)
+	at io.ktor.util.pipeline.SuspendFunctionGun.execute$ktor_utils(SuspendFunctionGun.kt:109)
+	at io.ktor.util.pipeline.Pipeline.execute(Pipeline.kt:92)
+	at io.ktor.server.application.PipelineCall$DefaultImpls.respond(PipelineCall.kt:132)
+	at io.ktor.server.routing.RoutingPipelineCall.respond(RoutingPipelineCall.kt:23)
+	at io.ktor.server.routing.RoutingCall.respond(RoutingNode.kt:249)
+	at com.example.MainKt$main$3$2.invokeSuspend(Main.kt:106)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-04-28 15:05:48,190]-[eventLoopGroupProxy-4-1] INFO  Application - [31m500 Internal Server Error[m: [36mPOST[m - /api/ipsRecord in 176ms
+[2025-04-28 15:12:48,813]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-28 15:12:48,978]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-28 15:12:49,143]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-28 15:12:49,442]-[main] INFO  Application - Application started in 0.87 seconds.
+[2025-04-28 15:12:49,580]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-28 15:12:53,278]-[eventLoopGroupProxy-4-1] ERROR Application - Unhandled: POST - /api/ipsRecord
+kotlinx.serialization.SerializationException: Serializer for class 'LocalDateTime' is not found.
+Please ensure that class is marked as '@Serializable' and that the serialization compiler plugin is applied.
+
+	at kotlinx.serialization.internal.Platform_commonKt.serializerNotRegistered(Platform.common.kt:90)
+	at kotlinx.serialization.ContextualSerializer.serializer(ContextualSerializer.kt:51)
+	at kotlinx.serialization.ContextualSerializer.serialize(ContextualSerializer.kt:63)
+	at kotlinx.serialization.json.internal.StreamingJsonEncoder.encodeSerializableValue(StreamingJsonEncoder.kt:259)
+	at kotlinx.serialization.encoding.AbstractEncoder.encodeSerializableElement(AbstractEncoder.kt:80)
+	at com.example.IPSModel.write$Self$addressbook_fullstack_ktor(Model.kt:31)
+	at com.example.IPSModel$$serializer.serialize(Model.kt:31)
+	at com.example.IPSModel$$serializer.serialize(Model.kt:31)
+	at kotlinx.serialization.json.internal.StreamingJsonEncoder.encodeSerializableValue(StreamingJsonEncoder.kt:259)
+	at kotlinx.serialization.json.internal.JsonStreamsKt.encodeByWriter(JsonStreams.kt:99)
+	at kotlinx.serialization.json.Json.encodeToString(Json.kt:125)
+	at io.ktor.serialization.kotlinx.KotlinxSerializationConverter.serializeContent(KotlinxSerializationConverter.kt:93)
+	at io.ktor.serialization.kotlinx.KotlinxSerializationConverter.serialize(KotlinxSerializationConverter.kt:57)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1$2.invokeSuspend(ResponseConverter.kt:66)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1$2.invoke(ResponseConverter.kt)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1$2.invoke(ResponseConverter.kt)
+	at io.ktor.server.application.OnCallRespondContext.transformBody(KtorCallContexts.kt:102)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1.invokeSuspend(ResponseConverter.kt:39)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1.invoke(ResponseConverter.kt)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1.invoke(ResponseConverter.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhase$1.invokeSuspend(PluginBuilder.kt:245)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhase$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhase$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1$1.invokeSuspend(PluginBuilder.kt:228)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.util.debug.ContextUtilsKt.addToContextInDebugMode(ContextUtils.kt:34)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1.invokeSuspend(PluginBuilder.kt:224)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.util.pipeline.PipelineJvmKt.pipelineStartCoroutineUninterceptedOrReturn(PipelineJvm.kt:15)
+	at io.ktor.util.pipeline.SuspendFunctionGun.loop(SuspendFunctionGun.kt:131)
+	at io.ktor.util.pipeline.SuspendFunctionGun.proceed(SuspendFunctionGun.kt:89)
+	at io.ktor.util.pipeline.SuspendFunctionGun.execute$ktor_utils(SuspendFunctionGun.kt:109)
+	at io.ktor.util.pipeline.Pipeline.execute(Pipeline.kt:92)
+	at io.ktor.server.application.PipelineCall$DefaultImpls.respond(PipelineCall.kt:132)
+	at io.ktor.server.routing.RoutingPipelineCall.respond(RoutingPipelineCall.kt:23)
+	at io.ktor.server.routing.RoutingCall.respond(RoutingNode.kt:249)
+	at com.example.MainKt$main$3$2.invokeSuspend(Main.kt:106)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-04-28 15:12:53,297]-[eventLoopGroupProxy-4-1] INFO  Application - [31m500 Internal Server Error[m: [36mPOST[m - /api/ipsRecord in 187ms
+[2025-04-28 15:13:42,536]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-28 15:13:42,691]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-28 15:13:42,859]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-28 15:13:43,165]-[main] INFO  Application - Application started in 0.861 seconds.
+[2025-04-28 15:13:43,312]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-28 15:13:46,507]-[eventLoopGroupProxy-4-1] ERROR Application - Unhandled: POST - /api/ipsRecord
+kotlinx.serialization.SerializationException: Serializer for class 'LocalDateTime' is not found.
+Please ensure that class is marked as '@Serializable' and that the serialization compiler plugin is applied.
+
+	at kotlinx.serialization.internal.Platform_commonKt.serializerNotRegistered(Platform.common.kt:90)
+	at kotlinx.serialization.ContextualSerializer.serializer(ContextualSerializer.kt:51)
+	at kotlinx.serialization.ContextualSerializer.serialize(ContextualSerializer.kt:63)
+	at kotlinx.serialization.json.internal.StreamingJsonEncoder.encodeSerializableValue(StreamingJsonEncoder.kt:259)
+	at kotlinx.serialization.encoding.AbstractEncoder.encodeSerializableElement(AbstractEncoder.kt:80)
+	at com.example.IPSModel.write$Self$addressbook_fullstack_ktor(Model.kt:31)
+	at com.example.IPSModel$$serializer.serialize(Model.kt:31)
+	at com.example.IPSModel$$serializer.serialize(Model.kt:31)
+	at kotlinx.serialization.json.internal.StreamingJsonEncoder.encodeSerializableValue(StreamingJsonEncoder.kt:259)
+	at kotlinx.serialization.json.internal.JsonStreamsKt.encodeByWriter(JsonStreams.kt:99)
+	at kotlinx.serialization.json.Json.encodeToString(Json.kt:125)
+	at io.ktor.serialization.kotlinx.KotlinxSerializationConverter.serializeContent(KotlinxSerializationConverter.kt:93)
+	at io.ktor.serialization.kotlinx.KotlinxSerializationConverter.serialize(KotlinxSerializationConverter.kt:57)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1$2.invokeSuspend(ResponseConverter.kt:66)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1$2.invoke(ResponseConverter.kt)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1$2.invoke(ResponseConverter.kt)
+	at io.ktor.server.application.OnCallRespondContext.transformBody(KtorCallContexts.kt:102)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1.invokeSuspend(ResponseConverter.kt:39)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1.invoke(ResponseConverter.kt)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1.invoke(ResponseConverter.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhase$1.invokeSuspend(PluginBuilder.kt:245)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhase$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhase$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1$1.invokeSuspend(PluginBuilder.kt:228)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.util.debug.ContextUtilsKt.addToContextInDebugMode(ContextUtils.kt:34)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1.invokeSuspend(PluginBuilder.kt:224)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.util.pipeline.PipelineJvmKt.pipelineStartCoroutineUninterceptedOrReturn(PipelineJvm.kt:15)
+	at io.ktor.util.pipeline.SuspendFunctionGun.loop(SuspendFunctionGun.kt:131)
+	at io.ktor.util.pipeline.SuspendFunctionGun.proceed(SuspendFunctionGun.kt:89)
+	at io.ktor.util.pipeline.SuspendFunctionGun.execute$ktor_utils(SuspendFunctionGun.kt:109)
+	at io.ktor.util.pipeline.Pipeline.execute(Pipeline.kt:92)
+	at io.ktor.server.application.PipelineCall$DefaultImpls.respond(PipelineCall.kt:132)
+	at io.ktor.server.routing.RoutingPipelineCall.respond(RoutingPipelineCall.kt:23)
+	at io.ktor.server.routing.RoutingCall.respond(RoutingNode.kt:249)
+	at com.example.MainKt$main$3$2.invokeSuspend(Main.kt:106)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-04-28 15:13:46,527]-[eventLoopGroupProxy-4-1] INFO  Application - [31m500 Internal Server Error[m: [36mPOST[m - /api/ipsRecord in 192ms
+[2025-04-28 15:15:15,931]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-28 15:15:16,102]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-28 15:15:16,296]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-28 15:15:16,630]-[main] INFO  Application - Application started in 0.983 seconds.
+[2025-04-28 15:15:16,844]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-28 15:15:22,429]-[eventLoopGroupProxy-4-1] ERROR Application - Unhandled: POST - /api/ipsRecord
+kotlinx.serialization.SerializationException: Serializer for class 'LocalDateTime' is not found.
+Please ensure that class is marked as '@Serializable' and that the serialization compiler plugin is applied.
+
+	at kotlinx.serialization.internal.Platform_commonKt.serializerNotRegistered(Platform.common.kt:90)
+	at kotlinx.serialization.ContextualSerializer.serializer(ContextualSerializer.kt:51)
+	at kotlinx.serialization.ContextualSerializer.serialize(ContextualSerializer.kt:63)
+	at kotlinx.serialization.json.internal.StreamingJsonEncoder.encodeSerializableValue(StreamingJsonEncoder.kt:259)
+	at kotlinx.serialization.encoding.AbstractEncoder.encodeSerializableElement(AbstractEncoder.kt:80)
+	at com.example.IPSModel.write$Self$addressbook_fullstack_ktor(Model.kt:31)
+	at com.example.IPSModel$$serializer.serialize(Model.kt:31)
+	at com.example.IPSModel$$serializer.serialize(Model.kt:31)
+	at kotlinx.serialization.json.internal.StreamingJsonEncoder.encodeSerializableValue(StreamingJsonEncoder.kt:259)
+	at kotlinx.serialization.json.internal.JsonStreamsKt.encodeByWriter(JsonStreams.kt:99)
+	at kotlinx.serialization.json.Json.encodeToString(Json.kt:125)
+	at io.ktor.serialization.kotlinx.KotlinxSerializationConverter.serializeContent(KotlinxSerializationConverter.kt:93)
+	at io.ktor.serialization.kotlinx.KotlinxSerializationConverter.serialize(KotlinxSerializationConverter.kt:57)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1$2.invokeSuspend(ResponseConverter.kt:66)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1$2.invoke(ResponseConverter.kt)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1$2.invoke(ResponseConverter.kt)
+	at io.ktor.server.application.OnCallRespondContext.transformBody(KtorCallContexts.kt:102)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1.invokeSuspend(ResponseConverter.kt:39)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1.invoke(ResponseConverter.kt)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1.invoke(ResponseConverter.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhase$1.invokeSuspend(PluginBuilder.kt:245)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhase$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhase$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1$1.invokeSuspend(PluginBuilder.kt:228)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.util.debug.ContextUtilsKt.addToContextInDebugMode(ContextUtils.kt:34)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1.invokeSuspend(PluginBuilder.kt:224)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.util.pipeline.PipelineJvmKt.pipelineStartCoroutineUninterceptedOrReturn(PipelineJvm.kt:15)
+	at io.ktor.util.pipeline.SuspendFunctionGun.loop(SuspendFunctionGun.kt:131)
+	at io.ktor.util.pipeline.SuspendFunctionGun.proceed(SuspendFunctionGun.kt:89)
+	at io.ktor.util.pipeline.SuspendFunctionGun.execute$ktor_utils(SuspendFunctionGun.kt:109)
+	at io.ktor.util.pipeline.Pipeline.execute(Pipeline.kt:92)
+	at io.ktor.server.application.PipelineCall$DefaultImpls.respond(PipelineCall.kt:132)
+	at io.ktor.server.routing.RoutingPipelineCall.respond(RoutingPipelineCall.kt:23)
+	at io.ktor.server.routing.RoutingCall.respond(RoutingNode.kt:249)
+	at com.example.MainKt$main$3$2.invokeSuspend(Main.kt:106)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-04-28 15:15:22,448]-[eventLoopGroupProxy-4-1] INFO  Application - [31m500 Internal Server Error[m: [36mPOST[m - /api/ipsRecord in 193ms
+[2025-04-28 15:15:49,334]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-28 15:15:49,513]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-28 15:15:49,680]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-28 15:15:49,993]-[main] INFO  Application - Application started in 0.905 seconds.
+[2025-04-28 15:15:50,146]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-28 15:15:53,103]-[eventLoopGroupProxy-4-1] ERROR Application - Unhandled: POST - /api/ipsRecord
+kotlinx.serialization.SerializationException: Serializer for class 'LocalDateTime' is not found.
+Please ensure that class is marked as '@Serializable' and that the serialization compiler plugin is applied.
+
+	at kotlinx.serialization.internal.Platform_commonKt.serializerNotRegistered(Platform.common.kt:90)
+	at kotlinx.serialization.ContextualSerializer.serializer(ContextualSerializer.kt:51)
+	at kotlinx.serialization.ContextualSerializer.serialize(ContextualSerializer.kt:63)
+	at kotlinx.serialization.json.internal.StreamingJsonEncoder.encodeSerializableValue(StreamingJsonEncoder.kt:259)
+	at kotlinx.serialization.encoding.AbstractEncoder.encodeSerializableElement(AbstractEncoder.kt:80)
+	at com.example.IPSModel.write$Self$addressbook_fullstack_ktor(Model.kt:31)
+	at com.example.IPSModel$$serializer.serialize(Model.kt:31)
+	at com.example.IPSModel$$serializer.serialize(Model.kt:31)
+	at kotlinx.serialization.json.internal.StreamingJsonEncoder.encodeSerializableValue(StreamingJsonEncoder.kt:259)
+	at kotlinx.serialization.json.internal.JsonStreamsKt.encodeByWriter(JsonStreams.kt:99)
+	at kotlinx.serialization.json.Json.encodeToString(Json.kt:125)
+	at io.ktor.serialization.kotlinx.KotlinxSerializationConverter.serializeContent(KotlinxSerializationConverter.kt:93)
+	at io.ktor.serialization.kotlinx.KotlinxSerializationConverter.serialize(KotlinxSerializationConverter.kt:57)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1$2.invokeSuspend(ResponseConverter.kt:66)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1$2.invoke(ResponseConverter.kt)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1$2.invoke(ResponseConverter.kt)
+	at io.ktor.server.application.OnCallRespondContext.transformBody(KtorCallContexts.kt:102)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1.invokeSuspend(ResponseConverter.kt:39)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1.invoke(ResponseConverter.kt)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1.invoke(ResponseConverter.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhase$1.invokeSuspend(PluginBuilder.kt:245)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhase$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhase$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1$1.invokeSuspend(PluginBuilder.kt:228)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.util.debug.ContextUtilsKt.addToContextInDebugMode(ContextUtils.kt:34)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1.invokeSuspend(PluginBuilder.kt:224)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.util.pipeline.PipelineJvmKt.pipelineStartCoroutineUninterceptedOrReturn(PipelineJvm.kt:15)
+	at io.ktor.util.pipeline.SuspendFunctionGun.loop(SuspendFunctionGun.kt:131)
+	at io.ktor.util.pipeline.SuspendFunctionGun.proceed(SuspendFunctionGun.kt:89)
+	at io.ktor.util.pipeline.SuspendFunctionGun.execute$ktor_utils(SuspendFunctionGun.kt:109)
+	at io.ktor.util.pipeline.Pipeline.execute(Pipeline.kt:92)
+	at io.ktor.server.application.PipelineCall$DefaultImpls.respond(PipelineCall.kt:132)
+	at io.ktor.server.routing.RoutingPipelineCall.respond(RoutingPipelineCall.kt:23)
+	at io.ktor.server.routing.RoutingCall.respond(RoutingNode.kt:249)
+	at com.example.MainKt$main$3$2.invokeSuspend(Main.kt:106)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-04-28 15:15:53,123]-[eventLoopGroupProxy-4-1] INFO  Application - [31m500 Internal Server Error[m: [36mPOST[m - /api/ipsRecord in 182ms
+[2025-04-28 15:28:32,181]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-28 15:28:32,318]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-28 15:28:32,473]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-28 15:28:32,725]-[main] INFO  Application - Application started in 0.74 seconds.
+[2025-04-28 15:28:32,850]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-28 15:43:42,198]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-28 15:43:42,336]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-28 15:43:42,490]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-28 15:43:42,750]-[main] INFO  Application - Application started in 0.742 seconds.
+[2025-04-28 15:43:42,888]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-28 15:43:49,978]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/ipsRecord in 175ms
+[2025-04-28 15:58:54,177]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-28 15:58:54,335]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-28 15:58:54,511]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-28 15:58:54,793]-[main] INFO  Application - Application started in 0.852 seconds.
+[2025-04-28 15:58:54,945]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-28 15:59:00,523]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/ipsRecord in 203ms
+[2025-04-28 17:02:06,433]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/ipsRecord in 36ms

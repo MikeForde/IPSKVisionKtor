@@ -3,6 +3,7 @@ package com.example
 import org.jetbrains.exposed.sql.ReferenceOption
 import org.jetbrains.exposed.sql.Table
 
+
 object AddressDao : Table("address") {
     val id = integer("id").autoIncrement().primaryKey()
     val firstName = varchar("first_name", 255).nullable()
@@ -36,8 +37,6 @@ object IPSModelDao : Table("ipsAlt") {
     val patientPractitioner = varchar("patientPractitioner",255)
     val patientOrganization = varchar("patientOrganization",255).nullable()
     val patientIdentifier   = varchar("patientIdentifier",  255).nullable()
-    val createdAt     = datetime("createdAt")
-    val updatedAt     = datetime("updatedAt")
 }
 
 // Child tables, each with FK back to IPSModel
@@ -55,8 +54,6 @@ object MedicationDao : Table("Medications") {
         ReferenceOption.CASCADE,
         ReferenceOption.CASCADE
     )
-    val createdAt     = datetime("createdAt")
-    val updatedAt     = datetime("updatedAt")
 }
 
 object AllergyDao : Table("Allergies") {
@@ -72,8 +69,6 @@ object AllergyDao : Table("Allergies") {
         ReferenceOption.CASCADE,
         ReferenceOption.CASCADE
     )
-    val createdAt     = datetime("createdAt")
-    val updatedAt     = datetime("updatedAt")
 }
 
 object ConditionDao : Table("Conditions") {
@@ -88,8 +83,6 @@ object ConditionDao : Table("Conditions") {
         ReferenceOption.CASCADE,
         ReferenceOption.CASCADE
     )
-    val createdAt     = datetime("createdAt")
-    val updatedAt     = datetime("updatedAt")
 }
 
 object ObservationDao : Table("Observations") {
@@ -108,8 +101,6 @@ object ObservationDao : Table("Observations") {
         ReferenceOption.CASCADE,
         ReferenceOption.CASCADE
     )
-    val createdAt     = datetime("createdAt")
-    val updatedAt     = datetime("updatedAt")
 }
 
 object ImmunizationDao : Table("Immunizations") {
@@ -125,7 +116,5 @@ object ImmunizationDao : Table("Immunizations") {
         ReferenceOption.CASCADE,
         ReferenceOption.CASCADE
     )
-    val createdAt     = datetime("createdAt")
-    val updatedAt     = datetime("updatedAt")
 }
 

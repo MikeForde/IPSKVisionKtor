@@ -23,12 +23,6 @@ import io.ktor.server.request.receive
 import io.ktor.server.response.respond
 import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 import com.example.PatientService    // new service class
-import io.ktor.serialization.kotlinx.json.*
-import kotlinx.serialization.json.Json
-import kotlinx.serialization.modules.SerializersModule
-import kotlinx.serialization.modules.contextual
-import io.kvision.types.LocalDateTime
-//import io.kvision.types.LocalDateTimeSerializer
 
 fun Application.main() {
     registerRemoteTypes()
@@ -69,10 +63,14 @@ fun Application.main() {
             call.respond(resp)
         }
         // new “full IPS” endpoint
-        post("/api/ipsFull") {
-            val fullIps = IPSService(call).getFullIPS()
-            call.respond(fullIps)
+        post("/api/ipsRecord") {
+            val ips = IpsService(call).getIpsRecord()
+            if (ips != null) {
+            call.respond(ips)
+            } else {
+            call.respond(HttpStatusCode.NotFound, "IPS record not found")
         }
+  }
         authenticate {
             post("login") {
                 val principal = call.principal<UserIdPrincipal>()

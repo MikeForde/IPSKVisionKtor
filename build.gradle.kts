@@ -88,6 +88,7 @@ kotlin {
                 implementation("io.ktor:ktor-server-compression:$ktorVersion")
                 implementation("io.ktor:ktor-server-call-logging:$ktorVersion")
                 implementation("ch.qos.logback:logback-classic:$logbackVersion")
+                implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
                 implementation("com.h2database:h2:$h2Version")
                 implementation("org.jetbrains.exposed:exposed:$exposedVersion")
                 implementation("org.postgresql:postgresql:$pgsqlVersion")

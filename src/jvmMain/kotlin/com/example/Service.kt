@@ -21,6 +21,24 @@ import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 import org.joda.time.DateTime
 import java.sql.ResultSet
 import java.time.ZoneId
+import kotlinx.datetime.Instant
+import kotlinx.datetime.TimeZone
+import kotlinx.datetime.toLocalDateTime
+import kotlinx.datetime.LocalDateTime
+
+// private fun DateTime.toKvLocal(): KvLocalDateTime {
+//     // DateTime.toString() gives e.g. "2024-05-03T00:00:00.000Z"
+//     // drop the 'Z' so it becomes "2024-05-03T00:00:00.000"
+//     val initialDate = this.toString()
+//     println("initialDate: $initialDate")
+//     val isoLocal = initialDate
+//         .removeSuffix("Z")
+//         .replace(Regex("([+-]\\d{2}:\\d{2})\$"), "")
+//     println("isoLocal: $isoLocal")
+//     val returnval = KvLocalDateTime.parse(isoLocal)
+//     println("returnval: $returnval")
+//   return returnval
+// }
 
 suspend fun <RESP> ApplicationCall.withProfile(block: suspend (Profile) -> RESP): RESP {
     val profile = this.sessions.get<Profile>()
@@ -28,6 +46,10 @@ suspend fun <RESP> ApplicationCall.withProfile(block: suspend (Profile) -> RESP)
         block(profile)
     } ?: throw IllegalStateException("Profile not set!")
 }
+
+private fun DateTime.toKvLocal(): LocalDateTime =
+    Instant.fromEpochMilliseconds(this.millis)
+        .toLocalDateTime(TimeZone.currentSystemDefault())
 
 class AddressService(private val call: ApplicationCall) : IAddressService {
 
@@ -94,8 +116,7 @@ class AddressService(private val call: ApplicationCall) : IAddressService {
                         it[phone] = address.phone
                         it[postalAddress] = address.postalAddress
                         it[favourite] = address.favourite ?: false
-                        it[createdAt] = oldAddress.createdAt
-                            ?.let { DateTime(java.util.Date.from(it.atZone(ZoneId.systemDefault()).toInstant())) }
+                        it[createdAt] = null
                         it[userId] = profile.id!!
                     }
                 }
@@ -125,8 +146,7 @@ class AddressService(private val call: ApplicationCall) : IAddressService {
             phone = row[AddressDao.phone],
             postalAddress = row[AddressDao.postalAddress],
             favourite = row[AddressDao.favourite],
-            createdAt = row[AddressDao.createdAt]?.millis?.let { java.util.Date(it) }?.toInstant()
-                ?.atZone(ZoneId.systemDefault())?.toLocalDateTime(),
+            createdAt = null,
             userId = row[AddressDao.userId]
         )
 
@@ -139,8 +159,7 @@ class AddressService(private val call: ApplicationCall) : IAddressService {
             phone = rs.getString(AddressDao.phone.name),
             postalAddress = rs.getString(AddressDao.postalAddress.name),
             favourite = rs.getBoolean(AddressDao.favourite.name),
-            createdAt = rs.getTimestamp(AddressDao.createdAt.name)?.toInstant()
-                ?.atZone(ZoneId.systemDefault())?.toLocalDateTime(),
+            createdAt = null,
             userId = rs.getInt(AddressDao.userId.name),
         )
 }
@@ -179,6 +198,7 @@ data class PatientNameRequest(val id: String)
 data class PatientNameResponse(val patientName: String?)
 
 /** A tiny service to fetch patientName by IPSModel id */
+@kotlinx.serialization.Serializable
 class PatientService(private val call: ApplicationCall) {
 
     /** 
@@ -202,126 +222,113 @@ class PatientService(private val call: ApplicationCall) {
     }
 }
 
-class IPSService(private val call: ApplicationCall) {
 
-    suspend fun getFullIPS(): com.example.IPSModel {
-        // a) bind the incoming { "id": "<packageUUID>" }
-        val req = call.receive<PatientNameRequest>()
+// DTO for the incoming JSON
+@kotlinx.serialization.Serializable
+data class IpsRequest(val id: String)
 
-        // b) run a single dbQuery block to fetch parent + children
+// A tiny service just for IPS lookups
+class IpsService(private val call: ApplicationCall) {
+
+    suspend fun getIpsRecord(): IPSModel? {
+        // bind incoming JSON
+        val req = call.receive<IpsRequest>()
+
         return Db.dbQuery {
-            // — fetch the parent row or 404
+            // 1) find the main IPS row
             val row = IPSModelDao
               .select { IPSModelDao.packageUUID eq req.id }
-              .singleOrNull()
-              ?: throw NotFoundException("No IPS record for UUID=${req.id}")
+              .singleOrNull() ?: return@dbQuery null
 
-            // pull out the PK to use in child FKs
-            val ipsId = row[IPSModelDao.id]
+            val pk = row[IPSModelDao.id]
 
-            // — helper to convert Joda DateTime → java.time.LocalDateTime
-            fun DateTime.toLocal() =
-                this.toDate().toInstant()
-                  .atZone(ZoneId.systemDefault())
-                  .toLocalDateTime()
-            //   java.util.Date(this.millis)
-            //     .toInstant()
-            //     .atZone(ZoneId.systemDefault())
-            //     .toLocalDateTime()
-
-            // — load each child list
-            val meds = MedicationDao
-              .select { MedicationDao.ipsModelId eq ipsId }
-              .map { rr ->
-                com.example.Medication(
-                  id            = rr[MedicationDao.id],
-                  name          = rr[MedicationDao.name],
-                  date          = rr[MedicationDao.date].toLocal(),
-                  dosage        = rr[MedicationDao.dosage],
-                  system        = rr[MedicationDao.system],
-                  code          = rr[MedicationDao.code],
-                  status        = rr[MedicationDao.status],
-                  ipsModelId    = rr[MedicationDao.ipsModelId]
+            // 2) load each child collection
+            val medications = MedicationDao.select { MedicationDao.ipsModelId eq pk }
+              .map {
+                Medication(
+                  id            = it[MedicationDao.id],
+                  name          = it[MedicationDao.name],
+                  date          = it[MedicationDao.date].toKvLocal(),
+                  dosage        = it[MedicationDao.dosage],
+                  system        = it[MedicationDao.system],
+                  code          = it[MedicationDao.code],
+                  status        = it[MedicationDao.status],
+                  ipsModelId    = it[MedicationDao.ipsModelId]
                 )
               }
 
-            // repeat for each of the other child tables…
-            val alls = AllergyDao
-              .select { AllergyDao.ipsModelId eq ipsId }
-              .map { rr ->
-                com.example.Allergy(
-                  id            = rr[AllergyDao.id],
-                  name          = rr[AllergyDao.name],
-                  criticality   = rr[AllergyDao.criticality],
-                  date          = rr[AllergyDao.date].toLocal(),
-                  system        = rr[AllergyDao.system],
-                  code          = rr[AllergyDao.code],
-                  ipsModelId    = rr[AllergyDao.ipsModelId]
+            val allergies = AllergyDao.select { AllergyDao.ipsModelId eq pk }
+              .map {
+                Allergy(
+                  id            = it[AllergyDao.id],
+                  name          = it[AllergyDao.name],
+                  criticality   = it[AllergyDao.criticality],
+                  date          = it[AllergyDao.date].toKvLocal(),
+                  system        = it[AllergyDao.system],
+                  code          = it[AllergyDao.code],
+                  ipsModelId    = it[AllergyDao.ipsModelId]
                 )
               }
 
-            val conds = ConditionDao
-              .select { ConditionDao.ipsModelId eq ipsId }
-              .map { rr ->
-                com.example.Condition(
-                  id            = rr[ConditionDao.id],
-                  name          = rr[ConditionDao.name],
-                  date          = rr[ConditionDao.date].toLocal(),
-                  system        = rr[ConditionDao.system],
-                  code          = rr[ConditionDao.code],
-                  ipsModelId    = rr[ConditionDao.ipsModelId]
+            val conditions = ConditionDao.select { ConditionDao.ipsModelId eq pk }
+              .map {
+                Condition(
+                  id            = it[ConditionDao.id],
+                  name          = it[ConditionDao.name],
+                  date          = it[ConditionDao.date].toKvLocal(),
+                  system        = it[ConditionDao.system],
+                  code          = it[ConditionDao.code],
+                  ipsModelId    = it[ConditionDao.ipsModelId]
                 )
               }
 
-            val obs = ObservationDao
-              .select { ObservationDao.ipsModelId eq ipsId }
-              .map { rr ->
-                com.example.Observation(
-                  id            = rr[ObservationDao.id],
-                  name          = rr[ObservationDao.name],
-                  date          = rr[ObservationDao.date].toLocal(),
-                  value         = rr[ObservationDao.value],
-                  system        = rr[ObservationDao.system],
-                  code          = rr[ObservationDao.code],
-                  valueCode     = rr[ObservationDao.valueCode],
-                  bodySite      = rr[ObservationDao.bodySite],
-                  status        = rr[ObservationDao.status],
-                  ipsModelId    = rr[ObservationDao.ipsModelId]
+            val observations = ObservationDao.select { ObservationDao.ipsModelId eq pk }
+              .map {
+                Observation(
+                  id            = it[ObservationDao.id],
+                  name          = it[ObservationDao.name],
+                  date          = it[ObservationDao.date].toKvLocal(),
+                  value         = it[ObservationDao.value],
+                  system        = it[ObservationDao.system],
+                  code          = it[ObservationDao.code],
+                  valueCode     = it[ObservationDao.valueCode],
+                  bodySite      = it[ObservationDao.bodySite],
+                  status        = it[ObservationDao.status],
+                  ipsModelId    = it[ObservationDao.ipsModelId]
                 )
               }
 
-            val imms = ImmunizationDao
-              .select { ImmunizationDao.ipsModelId eq ipsId }
-              .map { rr ->
-                com.example.Immunization(
-                  id            = rr[ImmunizationDao.id],
-                  name          = rr[ImmunizationDao.name],
-                  system        = rr[ImmunizationDao.system],
-                  date          = rr[ImmunizationDao.date].toLocal(),
-                  code          = rr[ImmunizationDao.code],
-                  status        = rr[ImmunizationDao.status],
-                  ipsModelId    = rr[ImmunizationDao.ipsModelId]
+            val immunizations = ImmunizationDao.select { ImmunizationDao.ipsModelId eq pk }
+              .map {
+                Immunization(
+                  id            = it[ImmunizationDao.id],
+                  name          = it[ImmunizationDao.name],
+                  system        = it[ImmunizationDao.system],
+                  date          = it[ImmunizationDao.date].toKvLocal(),
+                  code          = it[ImmunizationDao.code],
+                  status        = it[ImmunizationDao.status],
+                  ipsModelId    = it[ImmunizationDao.ipsModelId]
                 )
               }
 
-            // — assemble and return the shared‐model
-            com.example.IPSModel(
-              id                  = ipsId,
+            // 3) assemble your shared‐Main IPSModel
+            IPSModel(
+              id                  = pk,
               packageUUID         = row[IPSModelDao.packageUUID],
-              timeStamp           = row[IPSModelDao.timeStamp].toLocal(),
+              timeStamp           = row[IPSModelDao.timeStamp].toKvLocal(),
               patientName         = row[IPSModelDao.patientName],
               patientGiven        = row[IPSModelDao.patientGiven],
-              patientDob          = row[IPSModelDao.patientDob].toLocal(),
+              patientDob          = row[IPSModelDao.patientDob].toKvLocal(),
               patientGender       = row[IPSModelDao.patientGender],
               patientNation       = row[IPSModelDao.patientNation],
               patientPractitioner = row[IPSModelDao.patientPractitioner],
               patientOrganization = row[IPSModelDao.patientOrganization],
               patientIdentifier   = row[IPSModelDao.patientIdentifier],
-              medications         = meds,
-              allergies           = alls,
-              conditions          = conds,
-              observations        = obs,
-              immunizations       = imms
+              medications         = medications,
+              allergies           = allergies,
+              conditions          = conditions,
+              observations        = observations,
+              immunizations       = immunizations
             )
         }
     }
