@@ -1,3 +1,4 @@
+
 package com.example
 
 import com.example.Db.dbQuery
@@ -18,6 +19,16 @@ import io.kvision.remote.registerRemoteTypes
 import org.apache.commons.codec.digest.DigestUtils
 import org.jetbrains.exposed.sql.and
 import org.jetbrains.exposed.sql.select
+import io.ktor.server.request.receive
+import io.ktor.server.response.respond
+import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
+import com.example.PatientService    // new service class
+import io.ktor.serialization.kotlinx.json.*
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.modules.SerializersModule
+import kotlinx.serialization.modules.contextual
+import io.kvision.types.LocalDateTime
+//import io.kvision.types.LocalDateTimeSerializer
 
 fun Application.main() {
     registerRemoteTypes()
@@ -53,6 +64,15 @@ fun Application.main() {
 
     routing {
         applyRoutes(getServiceManager<IRegisterProfileService>())
+        post("/api/patientName") {
+            val resp = PatientService(call).getPatientName()
+            call.respond(resp)
+        }
+        // new “full IPS” endpoint
+        post("/api/ipsFull") {
+            val fullIps = IPSService(call).getFullIPS()
+            call.respond(fullIps)
+        }
         authenticate {
             post("login") {
                 val principal = call.principal<UserIdPrincipal>()

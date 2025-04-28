@@ -96,6 +96,7 @@ kotlin {
                 implementation("commons-codec:commons-codec:$commonsCodecVersion")
                 implementation("com.axiomalaska:jdbc-named-parameters:$jdbcNamedParametersVersion")
                 implementation("com.github.andrewoma.kwery:core:$kweryVersion")
+                implementation(kotlin("stdlib"))
             }
         }
         val jvmTest by getting {

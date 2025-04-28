@@ -1,33 +1,45 @@
 package com.example
 
+
 import com.axiomalaska.jdbc.NamedParameterPreparedStatement
 import com.zaxxer.hikari.HikariConfig
 import com.zaxxer.hikari.HikariDataSource
 import io.ktor.server.config.ApplicationConfig
+import java.math.BigDecimal
+import java.sql.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.jetbrains.exposed.sql.Database
 import org.jetbrains.exposed.sql.SchemaUtils.create
 import org.jetbrains.exposed.sql.Transaction
 import org.jetbrains.exposed.sql.transactions.transaction
-import java.math.BigDecimal
-import java.sql.*
-
 
 object Db {
 
     fun init(config: ApplicationConfig) {
         Database.connect(hikari(config))
         transaction {
-            create(UserDao)
-            create(AddressDao)
+            // create(UserDao)
+            // create(AddressDao)
+            create(
+                    UserDao,
+                    AddressDao,
+                    IPSModelDao,
+                    MedicationDao,
+                    AllergyDao,
+                    ConditionDao,
+                    ObservationDao,
+                    ImmunizationDao
+            )
         }
     }
 
     private fun hikari(config: ApplicationConfig): HikariDataSource {
         val hikariConfig = HikariConfig()
-        hikariConfig.driverClassName = config.propertyOrNull("db.driver")?.getString() ?: "org.h2.Driver"
-        hikariConfig.jdbcUrl = config.propertyOrNull("db.jdbcUrl")?.getString() ?: "jdbc:h2:mem:test"
+        hikariConfig.driverClassName =
+                config.propertyOrNull("db.driver")?.getString() ?: "org.h2.Driver"
+        hikariConfig.jdbcUrl =
+                config.propertyOrNull("db.jdbcUrl")?.getString() ?: "jdbc:h2:mem:test"
         hikariConfig.username = config.propertyOrNull("db.username")?.getString()
         hikariConfig.password = config.propertyOrNull("db.password")?.getString()
         hikariConfig.maximumPoolSize = 3
@@ -37,18 +49,19 @@ object Db {
         return HikariDataSource(hikariConfig)
     }
 
-    suspend fun <T> dbQuery(block: Transaction.() -> T): T = withContext(Dispatchers.IO) {
-        transaction {
-            block()
-        }
-    }
+    suspend fun <T> dbQuery(block: Transaction.() -> T): T =
+            withContext(Dispatchers.IO) { transaction { block() } }
 
     fun <T : Any> Transaction.queryList(
-        query: String,
-        parameters: Map<String, Any?>,
-        transform: (ResultSet) -> T
+            query: String,
+            parameters: Map<String, Any?>,
+            transform: (ResultSet) -> T
     ): List<T> {
-        val statement = NamedParameterPreparedStatement.createNamedParameterPreparedStatement(connection, query)
+        val statement =
+                NamedParameterPreparedStatement.createNamedParameterPreparedStatement(
+                        connection,
+                        query
+                )
         statement.setParameters(parameters)
         val result = arrayListOf<T>()
         val resultSet = statement.executeQuery()
@@ -61,11 +74,15 @@ object Db {
     }
 
     fun <T : Any> Transaction.queryObject(
-        query: String,
-        parameters: Map<String, Any?>,
-        transform: (ResultSet) -> T
+            query: String,
+            parameters: Map<String, Any?>,
+            transform: (ResultSet) -> T
     ): T? {
-        val statement = NamedParameterPreparedStatement.createNamedParameterPreparedStatement(connection, query)
+        val statement =
+                NamedParameterPreparedStatement.createNamedParameterPreparedStatement(
+                        connection,
+                        query
+                )
         statement.setParameters(parameters)
         val resultSet = statement.executeQuery()
         resultSet.use {
@@ -98,4 +115,3 @@ object Db {
         }
     }
 }
-

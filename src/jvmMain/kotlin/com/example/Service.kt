@@ -1,3 +1,4 @@
+
 package com.example
 
 import com.example.Db.dbQuery
@@ -6,6 +7,9 @@ import com.github.andrewoma.kwery.core.builder.query
 import io.ktor.server.application.ApplicationCall
 import io.ktor.server.sessions.get
 import io.ktor.server.sessions.sessions
+import io.ktor.server.request.receive
+import io.ktor.server.response.respond
+import io.ktor.server.plugins.NotFoundException
 import org.apache.commons.codec.digest.DigestUtils
 import org.jetbrains.exposed.sql.ResultRow
 import org.jetbrains.exposed.sql.and
@@ -13,6 +17,7 @@ import org.jetbrains.exposed.sql.deleteWhere
 import org.jetbrains.exposed.sql.insert
 import org.jetbrains.exposed.sql.select
 import org.jetbrains.exposed.sql.update
+import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 import org.joda.time.DateTime
 import java.sql.ResultSet
 import java.time.ZoneId
@@ -163,4 +168,161 @@ class RegisterProfileService : IRegisterProfileService {
         return true
     }
 
+}
+
+/** Request DTO for our new endpoint */
+@kotlinx.serialization.Serializable
+data class PatientNameRequest(val id: String)
+
+/** Response DTO for our new endpoint */
+@kotlinx.serialization.Serializable
+data class PatientNameResponse(val patientName: String?)
+
+/** A tiny service to fetch patientName by IPSModel id */
+class PatientService(private val call: ApplicationCall) {
+
+    /** 
+     * Reads JSON { id: Int } from the body, queries ipsAlt,
+     * and returns the patientName (or null if not found). 
+     */
+    suspend fun getPatientName(): PatientNameResponse {
+        // 1) bind the incoming JSON to our request DTO
+        val req = call.receive<PatientNameRequest>()
+
+        // 2) do a simple dbQuery against the IPSModelDao
+        val name = dbQuery {
+            IPSModelDao
+              .select { IPSModelDao.packageUUID eq req.id }
+              .map { row -> row[IPSModelDao.patientName] }
+              .singleOrNull()
+        }
+
+        // 3) wrap it in our response DTO
+        return PatientNameResponse(name)
+    }
+}
+
+class IPSService(private val call: ApplicationCall) {
+
+    suspend fun getFullIPS(): com.example.IPSModel {
+        // a) bind the incoming { "id": "<packageUUID>" }
+        val req = call.receive<PatientNameRequest>()
+
+        // b) run a single dbQuery block to fetch parent + children
+        return Db.dbQuery {
+            // — fetch the parent row or 404
+            val row = IPSModelDao
+              .select { IPSModelDao.packageUUID eq req.id }
+              .singleOrNull()
+              ?: throw NotFoundException("No IPS record for UUID=${req.id}")
+
+            // pull out the PK to use in child FKs
+            val ipsId = row[IPSModelDao.id]
+
+            // — helper to convert Joda DateTime → java.time.LocalDateTime
+            fun DateTime.toLocal() =
+                this.toDate().toInstant()
+                  .atZone(ZoneId.systemDefault())
+                  .toLocalDateTime()
+            //   java.util.Date(this.millis)
+            //     .toInstant()
+            //     .atZone(ZoneId.systemDefault())
+            //     .toLocalDateTime()
+
+            // — load each child list
+            val meds = MedicationDao
+              .select { MedicationDao.ipsModelId eq ipsId }
+              .map { rr ->
+                com.example.Medication(
+                  id            = rr[MedicationDao.id],
+                  name          = rr[MedicationDao.name],
+                  date          = rr[MedicationDao.date].toLocal(),
+                  dosage        = rr[MedicationDao.dosage],
+                  system        = rr[MedicationDao.system],
+                  code          = rr[MedicationDao.code],
+                  status        = rr[MedicationDao.status],
+                  ipsModelId    = rr[MedicationDao.ipsModelId]
+                )
+              }
+
+            // repeat for each of the other child tables…
+            val alls = AllergyDao
+              .select { AllergyDao.ipsModelId eq ipsId }
+              .map { rr ->
+                com.example.Allergy(
+                  id            = rr[AllergyDao.id],
+                  name          = rr[AllergyDao.name],
+                  criticality   = rr[AllergyDao.criticality],
+                  date          = rr[AllergyDao.date].toLocal(),
+                  system        = rr[AllergyDao.system],
+                  code          = rr[AllergyDao.code],
+                  ipsModelId    = rr[AllergyDao.ipsModelId]
+                )
+              }
+
+            val conds = ConditionDao
+              .select { ConditionDao.ipsModelId eq ipsId }
+              .map { rr ->
+                com.example.Condition(
+                  id            = rr[ConditionDao.id],
+                  name          = rr[ConditionDao.name],
+                  date          = rr[ConditionDao.date].toLocal(),
+                  system        = rr[ConditionDao.system],
+                  code          = rr[ConditionDao.code],
+                  ipsModelId    = rr[ConditionDao.ipsModelId]
+                )
+              }
+
+            val obs = ObservationDao
+              .select { ObservationDao.ipsModelId eq ipsId }
+              .map { rr ->
+                com.example.Observation(
+                  id            = rr[ObservationDao.id],
+                  name          = rr[ObservationDao.name],
+                  date          = rr[ObservationDao.date].toLocal(),
+                  value         = rr[ObservationDao.value],
+                  system        = rr[ObservationDao.system],
+                  code          = rr[ObservationDao.code],
+                  valueCode     = rr[ObservationDao.valueCode],
+                  bodySite      = rr[ObservationDao.bodySite],
+                  status        = rr[ObservationDao.status],
+                  ipsModelId    = rr[ObservationDao.ipsModelId]
+                )
+              }
+
+            val imms = ImmunizationDao
+              .select { ImmunizationDao.ipsModelId eq ipsId }
+              .map { rr ->
+                com.example.Immunization(
+                  id            = rr[ImmunizationDao.id],
+                  name          = rr[ImmunizationDao.name],
+                  system        = rr[ImmunizationDao.system],
+                  date          = rr[ImmunizationDao.date].toLocal(),
+                  code          = rr[ImmunizationDao.code],
+                  status        = rr[ImmunizationDao.status],
+                  ipsModelId    = rr[ImmunizationDao.ipsModelId]
+                )
+              }
+
+            // — assemble and return the shared‐model
+            com.example.IPSModel(
+              id                  = ipsId,
+              packageUUID         = row[IPSModelDao.packageUUID],
+              timeStamp           = row[IPSModelDao.timeStamp].toLocal(),
+              patientName         = row[IPSModelDao.patientName],
+              patientGiven        = row[IPSModelDao.patientGiven],
+              patientDob          = row[IPSModelDao.patientDob].toLocal(),
+              patientGender       = row[IPSModelDao.patientGender],
+              patientNation       = row[IPSModelDao.patientNation],
+              patientPractitioner = row[IPSModelDao.patientPractitioner],
+              patientOrganization = row[IPSModelDao.patientOrganization],
+              patientIdentifier   = row[IPSModelDao.patientIdentifier],
+              medications         = meds,
+              allergies           = alls,
+              conditions          = conds,
+              observations        = obs,
+              immunizations       = imms
+            )
+        }
+    }
 }

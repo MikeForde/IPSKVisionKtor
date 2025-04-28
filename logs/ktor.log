@@ -1048,3 +1048,714 @@ Caused by: java.sql.SQLSyntaxErrorException: Incorrect table definition; there c
 [2025-04-28 08:08:13,048]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
 [2025-04-28 08:08:13,345]-[main] INFO  Application - Application started in 0.95 seconds.
 [2025-04-28 08:08:13,489]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-28 09:04:30,344]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-28 09:04:30,508]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-28 09:04:30,694]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-28 09:04:31,031]-[main] INFO  Application - Application started in 0.922 seconds.
+[2025-04-28 09:04:31,197]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-28 09:07:50,920]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-28 09:07:51,158]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-28 09:07:51,312]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-28 09:07:51,595]-[main] INFO  Application - Application started in 0.92 seconds.
+[2025-04-28 09:07:51,766]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-28 09:11:59,802]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-28 09:11:59,965]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-28 09:12:00,146]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-28 09:12:00,552]-[main] INFO  Application - Application started in 0.987 seconds.
+[2025-04-28 09:12:00,706]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-28 09:14:44,901]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-28 09:14:45,033]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-28 09:14:45,177]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-28 09:14:45,423]-[main] INFO  Application - Application started in 0.704 seconds.
+[2025-04-28 09:14:45,545]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-28 09:18:21,485]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-28 09:18:21,620]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-28 09:18:21,768]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-28 09:18:22,022]-[main] INFO  Application - Application started in 0.774 seconds.
+[2025-04-28 09:18:22,144]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-28 10:35:49,985]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-28 10:35:50,125]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-28 10:35:50,274]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-28 10:35:50,529]-[main] INFO  Application - Application started in 0.729 seconds.
+[2025-04-28 10:35:50,652]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-28 10:37:21,690]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-28 10:37:21,848]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-28 10:37:22,007]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-28 10:37:22,290]-[main] WARN  Exposed - Transaction attempt #0 failed: java.sql.SQLException: Duplicate foreign key constraint name 'fk_Medications_ips_model_id_id'. Statement(s): CREATE TABLE IF NOT EXISTS Medications (id INT AUTO_INCREMENT PRIMARY KEY, `name` VARCHAR(255) NOT NULL, `date` DATETIME(6) NOT NULL, dosage VARCHAR(255) NOT NULL, `system` VARCHAR(255) NOT NULL, code VARCHAR(255) NOT NULL, status VARCHAR(255) NOT NULL, ips_model_id INT NOT NULL, CONSTRAINT fk_Medications_ips_model_id_id FOREIGN KEY (ips_model_id) REFERENCES ipsAlt(id) ON DELETE CASCADE ON UPDATE CASCADE)
+org.jetbrains.exposed.exceptions.ExposedSQLException: java.sql.SQLException: Duplicate foreign key constraint name 'fk_Medications_ips_model_id_id'
+	at org.jetbrains.exposed.sql.statements.Statement.executeIn$exposed(Statement.kt:61)
+	at org.jetbrains.exposed.sql.Transaction.exec(Transaction.kt:184)
+	at org.jetbrains.exposed.sql.Transaction.exec(Transaction.kt:126)
+	at org.jetbrains.exposed.sql.Transaction.exec(Transaction.kt:102)
+	at org.jetbrains.exposed.sql.Transaction.exec(Transaction.kt:93)
+	at org.jetbrains.exposed.sql.SchemaUtils.execStatements(SchemaUtils.kt:158)
+	at org.jetbrains.exposed.sql.SchemaUtils.create(SchemaUtils.kt:164)
+	at org.jetbrains.exposed.sql.SchemaUtils.create$default(SchemaUtils.kt:162)
+	at com.example.Db.init$lambda$0(Db.kt:24)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.inTopLevelTransaction$run(ThreadLocalTransactionManager.kt:156)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.access$inTopLevelTransaction$run(ThreadLocalTransactionManager.kt:1)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt$inTopLevelTransaction$1.invoke(ThreadLocalTransactionManager.kt:197)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.keepAndRestoreTransactionRefAfterRun(ThreadLocalTransactionManager.kt:205)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.inTopLevelTransaction(ThreadLocalTransactionManager.kt:196)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt$transaction$1.invoke(ThreadLocalTransactionManager.kt:134)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.keepAndRestoreTransactionRefAfterRun(ThreadLocalTransactionManager.kt:205)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.transaction(ThreadLocalTransactionManager.kt:106)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.transaction(ThreadLocalTransactionManager.kt:104)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.transaction$default(ThreadLocalTransactionManager.kt:103)
+	at com.example.Db.init(Db.kt:21)
+	at com.example.MainKt.main(Main.kt:33)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at kotlin.reflect.jvm.internal.calls.CallerImpl$Method.callMethod(CallerImpl.kt:97)
+	at kotlin.reflect.jvm.internal.calls.CallerImpl$Method$Static.call(CallerImpl.kt:106)
+	at kotlin.reflect.jvm.internal.KCallableImpl.callDefaultMethod$kotlin_reflection(KCallableImpl.kt:207)
+	at kotlin.reflect.jvm.internal.KCallableImpl.callBy(KCallableImpl.kt:112)
+	at io.ktor.server.engine.internal.CallableUtilsKt.callFunctionWithInjection(CallableUtils.kt:127)
+	at io.ktor.server.engine.internal.CallableUtilsKt.executeModuleFunction(CallableUtils.kt:40)
+	at io.ktor.server.engine.EmbeddedServer.launchModuleByName$lambda$32(EmbeddedServerJvm.kt:422)
+	at io.ktor.server.engine.EmbeddedServer.avoidingDoubleStartupFor(EmbeddedServerJvm.kt:446)
+	at io.ktor.server.engine.EmbeddedServer.launchModuleByName(EmbeddedServerJvm.kt:421)
+	at io.ktor.server.engine.EmbeddedServer.dynamicModule$lambda$26(EmbeddedServerJvm.kt:381)
+	at io.ktor.server.engine.EmbeddedServer.instantiateAndConfigureApplication$lambda$25(EmbeddedServerJvm.kt:371)
+	at io.ktor.server.engine.EmbeddedServer.avoidingDoubleStartup(EmbeddedServerJvm.kt:428)
+	at io.ktor.server.engine.EmbeddedServer.instantiateAndConfigureApplication(EmbeddedServerJvm.kt:370)
+	at io.ktor.server.engine.EmbeddedServer.createApplication(EmbeddedServerJvm.kt:171)
+	at io.ktor.server.engine.EmbeddedServer.start(EmbeddedServerJvm.kt:301)
+	at io.ktor.server.netty.EngineMain.main(EngineMain.kt:25)
+Caused by: java.sql.SQLException: Duplicate foreign key constraint name 'fk_Medications_ips_model_id_id'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.jetbrains.exposed.sql.Transaction$exec$2.executeInternal(Transaction.kt:107)
+	at org.jetbrains.exposed.sql.statements.Statement.executeIn$exposed(Statement.kt:59)
+	... 38 common frames omitted
+[2025-04-28 10:37:22,300]-[main] WARN  Exposed - Transaction attempt #1 failed: java.sql.SQLException: Duplicate foreign key constraint name 'fk_Medications_ips_model_id_id'. Statement(s): CREATE TABLE IF NOT EXISTS Medications (id INT AUTO_INCREMENT PRIMARY KEY, `name` VARCHAR(255) NOT NULL, `date` DATETIME(6) NOT NULL, dosage VARCHAR(255) NOT NULL, `system` VARCHAR(255) NOT NULL, code VARCHAR(255) NOT NULL, status VARCHAR(255) NOT NULL, ips_model_id INT NOT NULL, CONSTRAINT fk_Medications_ips_model_id_id FOREIGN KEY (ips_model_id) REFERENCES ipsAlt(id) ON DELETE CASCADE ON UPDATE CASCADE)
+org.jetbrains.exposed.exceptions.ExposedSQLException: java.sql.SQLException: Duplicate foreign key constraint name 'fk_Medications_ips_model_id_id'
+	at org.jetbrains.exposed.sql.statements.Statement.executeIn$exposed(Statement.kt:61)
+	at org.jetbrains.exposed.sql.Transaction.exec(Transaction.kt:184)
+	at org.jetbrains.exposed.sql.Transaction.exec(Transaction.kt:126)
+	at org.jetbrains.exposed.sql.Transaction.exec(Transaction.kt:102)
+	at org.jetbrains.exposed.sql.Transaction.exec(Transaction.kt:93)
+	at org.jetbrains.exposed.sql.SchemaUtils.execStatements(SchemaUtils.kt:158)
+	at org.jetbrains.exposed.sql.SchemaUtils.create(SchemaUtils.kt:164)
+	at org.jetbrains.exposed.sql.SchemaUtils.create$default(SchemaUtils.kt:162)
+	at com.example.Db.init$lambda$0(Db.kt:24)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.inTopLevelTransaction$run(ThreadLocalTransactionManager.kt:156)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.access$inTopLevelTransaction$run(ThreadLocalTransactionManager.kt:1)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt$inTopLevelTransaction$1.invoke(ThreadLocalTransactionManager.kt:197)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.keepAndRestoreTransactionRefAfterRun(ThreadLocalTransactionManager.kt:205)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.inTopLevelTransaction(ThreadLocalTransactionManager.kt:196)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt$transaction$1.invoke(ThreadLocalTransactionManager.kt:134)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.keepAndRestoreTransactionRefAfterRun(ThreadLocalTransactionManager.kt:205)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.transaction(ThreadLocalTransactionManager.kt:106)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.transaction(ThreadLocalTransactionManager.kt:104)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.transaction$default(ThreadLocalTransactionManager.kt:103)
+	at com.example.Db.init(Db.kt:21)
+	at com.example.MainKt.main(Main.kt:33)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at kotlin.reflect.jvm.internal.calls.CallerImpl$Method.callMethod(CallerImpl.kt:97)
+	at kotlin.reflect.jvm.internal.calls.CallerImpl$Method$Static.call(CallerImpl.kt:106)
+	at kotlin.reflect.jvm.internal.KCallableImpl.callDefaultMethod$kotlin_reflection(KCallableImpl.kt:207)
+	at kotlin.reflect.jvm.internal.KCallableImpl.callBy(KCallableImpl.kt:112)
+	at io.ktor.server.engine.internal.CallableUtilsKt.callFunctionWithInjection(CallableUtils.kt:127)
+	at io.ktor.server.engine.internal.CallableUtilsKt.executeModuleFunction(CallableUtils.kt:40)
+	at io.ktor.server.engine.EmbeddedServer.launchModuleByName$lambda$32(EmbeddedServerJvm.kt:422)
+	at io.ktor.server.engine.EmbeddedServer.avoidingDoubleStartupFor(EmbeddedServerJvm.kt:446)
+	at io.ktor.server.engine.EmbeddedServer.launchModuleByName(EmbeddedServerJvm.kt:421)
+	at io.ktor.server.engine.EmbeddedServer.dynamicModule$lambda$26(EmbeddedServerJvm.kt:381)
+	at io.ktor.server.engine.EmbeddedServer.instantiateAndConfigureApplication$lambda$25(EmbeddedServerJvm.kt:371)
+	at io.ktor.server.engine.EmbeddedServer.avoidingDoubleStartup(EmbeddedServerJvm.kt:428)
+	at io.ktor.server.engine.EmbeddedServer.instantiateAndConfigureApplication(EmbeddedServerJvm.kt:370)
+	at io.ktor.server.engine.EmbeddedServer.createApplication(EmbeddedServerJvm.kt:171)
+	at io.ktor.server.engine.EmbeddedServer.start(EmbeddedServerJvm.kt:301)
+	at io.ktor.server.netty.EngineMain.main(EngineMain.kt:25)
+Caused by: java.sql.SQLException: Duplicate foreign key constraint name 'fk_Medications_ips_model_id_id'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.jetbrains.exposed.sql.Transaction$exec$2.executeInternal(Transaction.kt:107)
+	at org.jetbrains.exposed.sql.statements.Statement.executeIn$exposed(Statement.kt:59)
+	... 38 common frames omitted
+[2025-04-28 10:37:22,309]-[main] WARN  Exposed - Transaction attempt #2 failed: java.sql.SQLException: Duplicate foreign key constraint name 'fk_Medications_ips_model_id_id'. Statement(s): CREATE TABLE IF NOT EXISTS Medications (id INT AUTO_INCREMENT PRIMARY KEY, `name` VARCHAR(255) NOT NULL, `date` DATETIME(6) NOT NULL, dosage VARCHAR(255) NOT NULL, `system` VARCHAR(255) NOT NULL, code VARCHAR(255) NOT NULL, status VARCHAR(255) NOT NULL, ips_model_id INT NOT NULL, CONSTRAINT fk_Medications_ips_model_id_id FOREIGN KEY (ips_model_id) REFERENCES ipsAlt(id) ON DELETE CASCADE ON UPDATE CASCADE)
+org.jetbrains.exposed.exceptions.ExposedSQLException: java.sql.SQLException: Duplicate foreign key constraint name 'fk_Medications_ips_model_id_id'
+	at org.jetbrains.exposed.sql.statements.Statement.executeIn$exposed(Statement.kt:61)
+	at org.jetbrains.exposed.sql.Transaction.exec(Transaction.kt:184)
+	at org.jetbrains.exposed.sql.Transaction.exec(Transaction.kt:126)
+	at org.jetbrains.exposed.sql.Transaction.exec(Transaction.kt:102)
+	at org.jetbrains.exposed.sql.Transaction.exec(Transaction.kt:93)
+	at org.jetbrains.exposed.sql.SchemaUtils.execStatements(SchemaUtils.kt:158)
+	at org.jetbrains.exposed.sql.SchemaUtils.create(SchemaUtils.kt:164)
+	at org.jetbrains.exposed.sql.SchemaUtils.create$default(SchemaUtils.kt:162)
+	at com.example.Db.init$lambda$0(Db.kt:24)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.inTopLevelTransaction$run(ThreadLocalTransactionManager.kt:156)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.access$inTopLevelTransaction$run(ThreadLocalTransactionManager.kt:1)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt$inTopLevelTransaction$1.invoke(ThreadLocalTransactionManager.kt:197)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.keepAndRestoreTransactionRefAfterRun(ThreadLocalTransactionManager.kt:205)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.inTopLevelTransaction(ThreadLocalTransactionManager.kt:196)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt$transaction$1.invoke(ThreadLocalTransactionManager.kt:134)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.keepAndRestoreTransactionRefAfterRun(ThreadLocalTransactionManager.kt:205)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.transaction(ThreadLocalTransactionManager.kt:106)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.transaction(ThreadLocalTransactionManager.kt:104)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.transaction$default(ThreadLocalTransactionManager.kt:103)
+	at com.example.Db.init(Db.kt:21)
+	at com.example.MainKt.main(Main.kt:33)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at kotlin.reflect.jvm.internal.calls.CallerImpl$Method.callMethod(CallerImpl.kt:97)
+	at kotlin.reflect.jvm.internal.calls.CallerImpl$Method$Static.call(CallerImpl.kt:106)
+	at kotlin.reflect.jvm.internal.KCallableImpl.callDefaultMethod$kotlin_reflection(KCallableImpl.kt:207)
+	at kotlin.reflect.jvm.internal.KCallableImpl.callBy(KCallableImpl.kt:112)
+	at io.ktor.server.engine.internal.CallableUtilsKt.callFunctionWithInjection(CallableUtils.kt:127)
+	at io.ktor.server.engine.internal.CallableUtilsKt.executeModuleFunction(CallableUtils.kt:40)
+	at io.ktor.server.engine.EmbeddedServer.launchModuleByName$lambda$32(EmbeddedServerJvm.kt:422)
+	at io.ktor.server.engine.EmbeddedServer.avoidingDoubleStartupFor(EmbeddedServerJvm.kt:446)
+	at io.ktor.server.engine.EmbeddedServer.launchModuleByName(EmbeddedServerJvm.kt:421)
+	at io.ktor.server.engine.EmbeddedServer.dynamicModule$lambda$26(EmbeddedServerJvm.kt:381)
+	at io.ktor.server.engine.EmbeddedServer.instantiateAndConfigureApplication$lambda$25(EmbeddedServerJvm.kt:371)
+	at io.ktor.server.engine.EmbeddedServer.avoidingDoubleStartup(EmbeddedServerJvm.kt:428)
+	at io.ktor.server.engine.EmbeddedServer.instantiateAndConfigureApplication(EmbeddedServerJvm.kt:370)
+	at io.ktor.server.engine.EmbeddedServer.createApplication(EmbeddedServerJvm.kt:171)
+	at io.ktor.server.engine.EmbeddedServer.start(EmbeddedServerJvm.kt:301)
+	at io.ktor.server.netty.EngineMain.main(EngineMain.kt:25)
+Caused by: java.sql.SQLException: Duplicate foreign key constraint name 'fk_Medications_ips_model_id_id'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.jetbrains.exposed.sql.Transaction$exec$2.executeInternal(Transaction.kt:107)
+	at org.jetbrains.exposed.sql.statements.Statement.executeIn$exposed(Statement.kt:59)
+	... 38 common frames omitted
+[2025-04-28 10:38:51,763]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-28 10:38:51,898]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-28 10:38:52,041]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-28 10:38:52,366]-[main] INFO  Application - Application started in 0.791 seconds.
+[2025-04-28 10:38:52,486]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-28 10:42:22,290]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-28 10:42:22,462]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-28 10:42:22,626]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-28 10:42:22,988]-[main] INFO  Application - Application started in 0.946 seconds.
+[2025-04-28 10:42:23,139]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-28 10:47:23,281]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-28 10:47:23,449]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-28 10:47:23,612]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-28 10:47:23,894]-[main] INFO  Application - Application started in 0.851 seconds.
+[2025-04-28 10:47:24,021]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-28 10:48:05,290]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-28 10:48:05,424]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-28 10:48:05,565]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-28 10:48:05,893]-[main] INFO  Application - Application started in 0.789 seconds.
+[2025-04-28 10:48:06,016]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-28 10:58:59,070]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-28 10:58:59,239]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-28 10:58:59,403]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-28 10:58:59,758]-[main] INFO  Application - Application started in 0.9 seconds.
+[2025-04-28 10:58:59,911]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-28 11:22:29,829]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-28 11:22:29,974]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-28 11:22:30,121]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-28 11:22:30,370]-[main] INFO  Application - Application started in 0.737 seconds.
+[2025-04-28 11:22:30,504]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-28 11:24:15,813]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-28 11:24:15,979]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-28 11:24:16,163]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-28 11:24:16,476]-[main] INFO  Application - Application started in 0.897 seconds.
+[2025-04-28 11:24:16,620]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-28 11:31:57,151]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-28 11:31:57,326]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-28 11:31:57,498]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-28 11:31:57,798]-[main] INFO  Application - Application started in 0.96 seconds.
+[2025-04-28 11:31:57,951]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-28 11:33:47,473]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-28 11:33:47,632]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-28 11:33:47,796]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-28 11:33:48,076]-[main] INFO  Application - Application started in 0.843 seconds.
+[2025-04-28 11:33:48,220]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-28 11:42:00,912]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-28 11:42:01,075]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-28 11:42:01,242]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-28 11:42:01,537]-[main] INFO  Application - Application started in 0.872 seconds.
+[2025-04-28 11:42:01,679]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-28 11:42:35,846]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-28 11:42:36,023]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-28 11:42:36,183]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-28 11:42:36,462]-[main] INFO  Application - Application started in 0.854 seconds.
+[2025-04-28 11:42:36,604]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-28 11:44:40,568]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-28 11:44:40,730]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-28 11:44:40,887]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-28 11:44:41,171]-[main] INFO  Application - Application started in 0.853 seconds.
+[2025-04-28 11:44:41,320]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-28 11:46:01,482]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-28 11:46:01,644]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-28 11:46:01,803]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-28 11:46:02,123]-[main] INFO  Application - Application started in 0.877 seconds.
+[2025-04-28 11:46:02,263]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-28 11:47:42,154]-[eventLoopGroupProxy-4-1] INFO  Application - [31m400 Bad Request[m: [36mPOST[m - /api/patientName in 99ms
+[2025-04-28 11:51:51,002]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-28 11:51:51,175]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-28 11:51:51,339]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-28 11:51:51,631]-[main] INFO  Application - Application started in 0.877 seconds.
+[2025-04-28 11:51:51,775]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-28 11:51:56,591]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/patientName in 112ms
+[2025-04-28 12:02:24,671]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-28 12:02:24,838]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-28 12:02:25,008]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-28 12:02:25,303]-[main] INFO  Application - Application started in 0.877 seconds.
+[2025-04-28 12:02:25,447]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-28 12:03:20,920]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-28 12:03:21,077]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-28 12:03:21,232]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-28 12:03:21,539]-[main] INFO  Application - Application started in 0.859 seconds.
+[2025-04-28 12:03:21,678]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-28 12:05:09,110]-[DefaultDispatcher-worker-1] WARN  Exposed - Transaction attempt #0 failed: java.sql.SQLSyntaxErrorException: Unknown column 'Observations.value_code' in 'field list'. Statement(s): SELECT Observations.id, Observations.`name`, Observations.`date`, Observations.`value`, Observations.`system`, Observations.code, Observations.value_code, Observations.body_site, Observations.status, Observations.IPSModelId, Observations.createdAt, Observations.updatedAt FROM Observations WHERE Observations.IPSModelId = ?
+org.jetbrains.exposed.exceptions.ExposedSQLException: java.sql.SQLSyntaxErrorException: Unknown column 'Observations.value_code' in 'field list'
+	at org.jetbrains.exposed.sql.statements.Statement.executeIn$exposed(Statement.kt:61)
+	at org.jetbrains.exposed.sql.Transaction.exec(Transaction.kt:184)
+	at org.jetbrains.exposed.sql.Transaction.exec(Transaction.kt:126)
+	at org.jetbrains.exposed.sql.AbstractQuery.iterator(AbstractQuery.kt:67)
+	at com.example.IPSService.getFullIPS$lambda$11(Service.kt:364)
+	at com.example.Db$dbQuery$2.invokeSuspend$lambda$0(Db.kt:53)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.inTopLevelTransaction$run(ThreadLocalTransactionManager.kt:156)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.access$inTopLevelTransaction$run(ThreadLocalTransactionManager.kt:1)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt$inTopLevelTransaction$1.invoke(ThreadLocalTransactionManager.kt:197)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.keepAndRestoreTransactionRefAfterRun(ThreadLocalTransactionManager.kt:205)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.inTopLevelTransaction(ThreadLocalTransactionManager.kt:196)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt$transaction$1.invoke(ThreadLocalTransactionManager.kt:134)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.keepAndRestoreTransactionRefAfterRun(ThreadLocalTransactionManager.kt:205)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.transaction(ThreadLocalTransactionManager.kt:106)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.transaction(ThreadLocalTransactionManager.kt:104)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.transaction$default(ThreadLocalTransactionManager.kt:103)
+	at com.example.Db$dbQuery$2.invokeSuspend(Db.kt:53)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:124)
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:820)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'Observations.value_code' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:972)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeQuery(HikariProxyPreparedStatement.java)
+	at org.jetbrains.exposed.sql.Query.executeInternal(Query.kt:165)
+	at org.jetbrains.exposed.sql.Query.executeInternal(Query.kt:94)
+	at org.jetbrains.exposed.sql.statements.Statement.executeIn$exposed(Statement.kt:59)
+	... 24 common frames omitted
+[2025-04-28 12:05:09,134]-[DefaultDispatcher-worker-1] WARN  Exposed - Transaction attempt #1 failed: java.sql.SQLSyntaxErrorException: Unknown column 'Observations.value_code' in 'field list'. Statement(s): SELECT Observations.id, Observations.`name`, Observations.`date`, Observations.`value`, Observations.`system`, Observations.code, Observations.value_code, Observations.body_site, Observations.status, Observations.IPSModelId, Observations.createdAt, Observations.updatedAt FROM Observations WHERE Observations.IPSModelId = ?
+org.jetbrains.exposed.exceptions.ExposedSQLException: java.sql.SQLSyntaxErrorException: Unknown column 'Observations.value_code' in 'field list'
+	at org.jetbrains.exposed.sql.statements.Statement.executeIn$exposed(Statement.kt:61)
+	at org.jetbrains.exposed.sql.Transaction.exec(Transaction.kt:184)
+	at org.jetbrains.exposed.sql.Transaction.exec(Transaction.kt:126)
+	at org.jetbrains.exposed.sql.AbstractQuery.iterator(AbstractQuery.kt:67)
+	at com.example.IPSService.getFullIPS$lambda$11(Service.kt:364)
+	at com.example.Db$dbQuery$2.invokeSuspend$lambda$0(Db.kt:53)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.inTopLevelTransaction$run(ThreadLocalTransactionManager.kt:156)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.access$inTopLevelTransaction$run(ThreadLocalTransactionManager.kt:1)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt$inTopLevelTransaction$1.invoke(ThreadLocalTransactionManager.kt:197)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.keepAndRestoreTransactionRefAfterRun(ThreadLocalTransactionManager.kt:205)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.inTopLevelTransaction(ThreadLocalTransactionManager.kt:196)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt$transaction$1.invoke(ThreadLocalTransactionManager.kt:134)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.keepAndRestoreTransactionRefAfterRun(ThreadLocalTransactionManager.kt:205)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.transaction(ThreadLocalTransactionManager.kt:106)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.transaction(ThreadLocalTransactionManager.kt:104)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.transaction$default(ThreadLocalTransactionManager.kt:103)
+	at com.example.Db$dbQuery$2.invokeSuspend(Db.kt:53)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:124)
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:820)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'Observations.value_code' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:972)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeQuery(HikariProxyPreparedStatement.java)
+	at org.jetbrains.exposed.sql.Query.executeInternal(Query.kt:165)
+	at org.jetbrains.exposed.sql.Query.executeInternal(Query.kt:94)
+	at org.jetbrains.exposed.sql.statements.Statement.executeIn$exposed(Statement.kt:59)
+	... 24 common frames omitted
+[2025-04-28 12:05:09,145]-[DefaultDispatcher-worker-1] WARN  Exposed - Transaction attempt #2 failed: java.sql.SQLSyntaxErrorException: Unknown column 'Observations.value_code' in 'field list'. Statement(s): SELECT Observations.id, Observations.`name`, Observations.`date`, Observations.`value`, Observations.`system`, Observations.code, Observations.value_code, Observations.body_site, Observations.status, Observations.IPSModelId, Observations.createdAt, Observations.updatedAt FROM Observations WHERE Observations.IPSModelId = ?
+org.jetbrains.exposed.exceptions.ExposedSQLException: java.sql.SQLSyntaxErrorException: Unknown column 'Observations.value_code' in 'field list'
+	at org.jetbrains.exposed.sql.statements.Statement.executeIn$exposed(Statement.kt:61)
+	at org.jetbrains.exposed.sql.Transaction.exec(Transaction.kt:184)
+	at org.jetbrains.exposed.sql.Transaction.exec(Transaction.kt:126)
+	at org.jetbrains.exposed.sql.AbstractQuery.iterator(AbstractQuery.kt:67)
+	at com.example.IPSService.getFullIPS$lambda$11(Service.kt:364)
+	at com.example.Db$dbQuery$2.invokeSuspend$lambda$0(Db.kt:53)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.inTopLevelTransaction$run(ThreadLocalTransactionManager.kt:156)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.access$inTopLevelTransaction$run(ThreadLocalTransactionManager.kt:1)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt$inTopLevelTransaction$1.invoke(ThreadLocalTransactionManager.kt:197)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.keepAndRestoreTransactionRefAfterRun(ThreadLocalTransactionManager.kt:205)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.inTopLevelTransaction(ThreadLocalTransactionManager.kt:196)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt$transaction$1.invoke(ThreadLocalTransactionManager.kt:134)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.keepAndRestoreTransactionRefAfterRun(ThreadLocalTransactionManager.kt:205)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.transaction(ThreadLocalTransactionManager.kt:106)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.transaction(ThreadLocalTransactionManager.kt:104)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.transaction$default(ThreadLocalTransactionManager.kt:103)
+	at com.example.Db$dbQuery$2.invokeSuspend(Db.kt:53)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:124)
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:820)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'Observations.value_code' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:972)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeQuery(HikariProxyPreparedStatement.java)
+	at org.jetbrains.exposed.sql.Query.executeInternal(Query.kt:165)
+	at org.jetbrains.exposed.sql.Query.executeInternal(Query.kt:94)
+	at org.jetbrains.exposed.sql.statements.Statement.executeIn$exposed(Statement.kt:59)
+	... 24 common frames omitted
+[2025-04-28 12:05:09,157]-[eventLoopGroupProxy-4-1] ERROR Application - Unhandled: POST - /api/ipsFull
+org.jetbrains.exposed.exceptions.ExposedSQLException: java.sql.SQLSyntaxErrorException: Unknown column 'Observations.value_code' in 'field list'
+	at org.jetbrains.exposed.sql.statements.Statement.executeIn$exposed(Statement.kt:61)
+	at org.jetbrains.exposed.sql.Transaction.exec(Transaction.kt:184)
+	at org.jetbrains.exposed.sql.Transaction.exec(Transaction.kt:126)
+	at org.jetbrains.exposed.sql.AbstractQuery.iterator(AbstractQuery.kt:67)
+	at com.example.IPSService.getFullIPS$lambda$11(Service.kt:364)
+	at com.example.Db$dbQuery$2.invokeSuspend$lambda$0(Db.kt:53)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.inTopLevelTransaction$run(ThreadLocalTransactionManager.kt:156)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.access$inTopLevelTransaction$run(ThreadLocalTransactionManager.kt:1)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt$inTopLevelTransaction$1.invoke(ThreadLocalTransactionManager.kt:197)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.keepAndRestoreTransactionRefAfterRun(ThreadLocalTransactionManager.kt:205)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.inTopLevelTransaction(ThreadLocalTransactionManager.kt:196)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt$transaction$1.invoke(ThreadLocalTransactionManager.kt:134)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.keepAndRestoreTransactionRefAfterRun(ThreadLocalTransactionManager.kt:205)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.transaction(ThreadLocalTransactionManager.kt:106)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.transaction(ThreadLocalTransactionManager.kt:104)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.transaction$default(ThreadLocalTransactionManager.kt:103)
+	at com.example.Db$dbQuery$2.invokeSuspend(Db.kt:53)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:124)
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:820)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'Observations.value_code' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:972)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeQuery(HikariProxyPreparedStatement.java)
+	at org.jetbrains.exposed.sql.Query.executeInternal(Query.kt:165)
+	at org.jetbrains.exposed.sql.Query.executeInternal(Query.kt:94)
+	at org.jetbrains.exposed.sql.statements.Statement.executeIn$exposed(Statement.kt:59)
+	... 24 common frames omitted
+[2025-04-28 12:05:09,185]-[eventLoopGroupProxy-4-1] INFO  Application - [31m500 Internal Server Error[m: [36mPOST[m - /api/ipsFull in 232ms
+[2025-04-28 12:07:00,215]-[DefaultDispatcher-worker-1] WARN  Exposed - Transaction attempt #0 failed: java.sql.SQLSyntaxErrorException: Unknown column 'Observations.value_code' in 'field list'. Statement(s): SELECT Observations.id, Observations.`name`, Observations.`date`, Observations.`value`, Observations.`system`, Observations.code, Observations.value_code, Observations.body_site, Observations.status, Observations.IPSModelId, Observations.createdAt, Observations.updatedAt FROM Observations WHERE Observations.IPSModelId = ?
+org.jetbrains.exposed.exceptions.ExposedSQLException: java.sql.SQLSyntaxErrorException: Unknown column 'Observations.value_code' in 'field list'
+	at org.jetbrains.exposed.sql.statements.Statement.executeIn$exposed(Statement.kt:61)
+	at org.jetbrains.exposed.sql.Transaction.exec(Transaction.kt:184)
+	at org.jetbrains.exposed.sql.Transaction.exec(Transaction.kt:126)
+	at org.jetbrains.exposed.sql.AbstractQuery.iterator(AbstractQuery.kt:67)
+	at com.example.IPSService.getFullIPS$lambda$11(Service.kt:364)
+	at com.example.Db$dbQuery$2.invokeSuspend$lambda$0(Db.kt:53)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.inTopLevelTransaction$run(ThreadLocalTransactionManager.kt:156)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.access$inTopLevelTransaction$run(ThreadLocalTransactionManager.kt:1)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt$inTopLevelTransaction$1.invoke(ThreadLocalTransactionManager.kt:197)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.keepAndRestoreTransactionRefAfterRun(ThreadLocalTransactionManager.kt:205)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.inTopLevelTransaction(ThreadLocalTransactionManager.kt:196)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt$transaction$1.invoke(ThreadLocalTransactionManager.kt:134)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.keepAndRestoreTransactionRefAfterRun(ThreadLocalTransactionManager.kt:205)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.transaction(ThreadLocalTransactionManager.kt:106)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.transaction(ThreadLocalTransactionManager.kt:104)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.transaction$default(ThreadLocalTransactionManager.kt:103)
+	at com.example.Db$dbQuery$2.invokeSuspend(Db.kt:53)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:124)
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:820)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'Observations.value_code' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:972)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeQuery(HikariProxyPreparedStatement.java)
+	at org.jetbrains.exposed.sql.Query.executeInternal(Query.kt:165)
+	at org.jetbrains.exposed.sql.Query.executeInternal(Query.kt:94)
+	at org.jetbrains.exposed.sql.statements.Statement.executeIn$exposed(Statement.kt:59)
+	... 24 common frames omitted
+[2025-04-28 12:07:00,227]-[DefaultDispatcher-worker-1] WARN  Exposed - Transaction attempt #1 failed: java.sql.SQLSyntaxErrorException: Unknown column 'Observations.value_code' in 'field list'. Statement(s): SELECT Observations.id, Observations.`name`, Observations.`date`, Observations.`value`, Observations.`system`, Observations.code, Observations.value_code, Observations.body_site, Observations.status, Observations.IPSModelId, Observations.createdAt, Observations.updatedAt FROM Observations WHERE Observations.IPSModelId = ?
+org.jetbrains.exposed.exceptions.ExposedSQLException: java.sql.SQLSyntaxErrorException: Unknown column 'Observations.value_code' in 'field list'
+	at org.jetbrains.exposed.sql.statements.Statement.executeIn$exposed(Statement.kt:61)
+	at org.jetbrains.exposed.sql.Transaction.exec(Transaction.kt:184)
+	at org.jetbrains.exposed.sql.Transaction.exec(Transaction.kt:126)
+	at org.jetbrains.exposed.sql.AbstractQuery.iterator(AbstractQuery.kt:67)
+	at com.example.IPSService.getFullIPS$lambda$11(Service.kt:364)
+	at com.example.Db$dbQuery$2.invokeSuspend$lambda$0(Db.kt:53)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.inTopLevelTransaction$run(ThreadLocalTransactionManager.kt:156)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.access$inTopLevelTransaction$run(ThreadLocalTransactionManager.kt:1)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt$inTopLevelTransaction$1.invoke(ThreadLocalTransactionManager.kt:197)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.keepAndRestoreTransactionRefAfterRun(ThreadLocalTransactionManager.kt:205)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.inTopLevelTransaction(ThreadLocalTransactionManager.kt:196)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt$transaction$1.invoke(ThreadLocalTransactionManager.kt:134)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.keepAndRestoreTransactionRefAfterRun(ThreadLocalTransactionManager.kt:205)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.transaction(ThreadLocalTransactionManager.kt:106)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.transaction(ThreadLocalTransactionManager.kt:104)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.transaction$default(ThreadLocalTransactionManager.kt:103)
+	at com.example.Db$dbQuery$2.invokeSuspend(Db.kt:53)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:124)
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:820)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'Observations.value_code' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:972)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeQuery(HikariProxyPreparedStatement.java)
+	at org.jetbrains.exposed.sql.Query.executeInternal(Query.kt:165)
+	at org.jetbrains.exposed.sql.Query.executeInternal(Query.kt:94)
+	at org.jetbrains.exposed.sql.statements.Statement.executeIn$exposed(Statement.kt:59)
+	... 24 common frames omitted
+[2025-04-28 12:07:00,240]-[DefaultDispatcher-worker-1] WARN  Exposed - Transaction attempt #2 failed: java.sql.SQLSyntaxErrorException: Unknown column 'Observations.value_code' in 'field list'. Statement(s): SELECT Observations.id, Observations.`name`, Observations.`date`, Observations.`value`, Observations.`system`, Observations.code, Observations.value_code, Observations.body_site, Observations.status, Observations.IPSModelId, Observations.createdAt, Observations.updatedAt FROM Observations WHERE Observations.IPSModelId = ?
+org.jetbrains.exposed.exceptions.ExposedSQLException: java.sql.SQLSyntaxErrorException: Unknown column 'Observations.value_code' in 'field list'
+	at org.jetbrains.exposed.sql.statements.Statement.executeIn$exposed(Statement.kt:61)
+	at org.jetbrains.exposed.sql.Transaction.exec(Transaction.kt:184)
+	at org.jetbrains.exposed.sql.Transaction.exec(Transaction.kt:126)
+	at org.jetbrains.exposed.sql.AbstractQuery.iterator(AbstractQuery.kt:67)
+	at com.example.IPSService.getFullIPS$lambda$11(Service.kt:364)
+	at com.example.Db$dbQuery$2.invokeSuspend$lambda$0(Db.kt:53)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.inTopLevelTransaction$run(ThreadLocalTransactionManager.kt:156)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.access$inTopLevelTransaction$run(ThreadLocalTransactionManager.kt:1)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt$inTopLevelTransaction$1.invoke(ThreadLocalTransactionManager.kt:197)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.keepAndRestoreTransactionRefAfterRun(ThreadLocalTransactionManager.kt:205)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.inTopLevelTransaction(ThreadLocalTransactionManager.kt:196)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt$transaction$1.invoke(ThreadLocalTransactionManager.kt:134)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.keepAndRestoreTransactionRefAfterRun(ThreadLocalTransactionManager.kt:205)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.transaction(ThreadLocalTransactionManager.kt:106)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.transaction(ThreadLocalTransactionManager.kt:104)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.transaction$default(ThreadLocalTransactionManager.kt:103)
+	at com.example.Db$dbQuery$2.invokeSuspend(Db.kt:53)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:124)
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:820)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'Observations.value_code' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:972)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeQuery(HikariProxyPreparedStatement.java)
+	at org.jetbrains.exposed.sql.Query.executeInternal(Query.kt:165)
+	at org.jetbrains.exposed.sql.Query.executeInternal(Query.kt:94)
+	at org.jetbrains.exposed.sql.statements.Statement.executeIn$exposed(Statement.kt:59)
+	... 24 common frames omitted
+[2025-04-28 12:07:00,242]-[eventLoopGroupProxy-4-1] ERROR Application - Unhandled: POST - /api/ipsFull
+org.jetbrains.exposed.exceptions.ExposedSQLException: java.sql.SQLSyntaxErrorException: Unknown column 'Observations.value_code' in 'field list'
+	at org.jetbrains.exposed.sql.statements.Statement.executeIn$exposed(Statement.kt:61)
+	at org.jetbrains.exposed.sql.Transaction.exec(Transaction.kt:184)
+	at org.jetbrains.exposed.sql.Transaction.exec(Transaction.kt:126)
+	at org.jetbrains.exposed.sql.AbstractQuery.iterator(AbstractQuery.kt:67)
+	at com.example.IPSService.getFullIPS$lambda$11(Service.kt:364)
+	at com.example.Db$dbQuery$2.invokeSuspend$lambda$0(Db.kt:53)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.inTopLevelTransaction$run(ThreadLocalTransactionManager.kt:156)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.access$inTopLevelTransaction$run(ThreadLocalTransactionManager.kt:1)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt$inTopLevelTransaction$1.invoke(ThreadLocalTransactionManager.kt:197)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.keepAndRestoreTransactionRefAfterRun(ThreadLocalTransactionManager.kt:205)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.inTopLevelTransaction(ThreadLocalTransactionManager.kt:196)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt$transaction$1.invoke(ThreadLocalTransactionManager.kt:134)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.keepAndRestoreTransactionRefAfterRun(ThreadLocalTransactionManager.kt:205)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.transaction(ThreadLocalTransactionManager.kt:106)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.transaction(ThreadLocalTransactionManager.kt:104)
+	at org.jetbrains.exposed.sql.transactions.ThreadLocalTransactionManagerKt.transaction$default(ThreadLocalTransactionManager.kt:103)
+	at com.example.Db$dbQuery$2.invokeSuspend(Db.kt:53)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:124)
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:820)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'Observations.value_code' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:972)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeQuery(HikariProxyPreparedStatement.java)
+	at org.jetbrains.exposed.sql.Query.executeInternal(Query.kt:165)
+	at org.jetbrains.exposed.sql.Query.executeInternal(Query.kt:94)
+	at org.jetbrains.exposed.sql.statements.Statement.executeIn$exposed(Statement.kt:59)
+	... 24 common frames omitted
+[2025-04-28 12:07:00,243]-[eventLoopGroupProxy-4-1] INFO  Application - [31m500 Internal Server Error[m: [36mPOST[m - /api/ipsFull in 44ms
+[2025-04-28 12:07:17,783]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-28 12:07:17,947]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-28 12:07:18,112]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-28 12:07:18,398]-[main] INFO  Application - Application started in 0.866 seconds.
+[2025-04-28 12:07:18,542]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-28 12:07:22,308]-[eventLoopGroupProxy-4-1] ERROR Application - Unhandled: POST - /api/ipsFull
+kotlinx.serialization.SerializationException: Serializer for class 'LocalDateTime' is not found.
+Please ensure that class is marked as '@Serializable' and that the serialization compiler plugin is applied.
+
+	at kotlinx.serialization.internal.Platform_commonKt.serializerNotRegistered(Platform.common.kt:90)
+	at kotlinx.serialization.ContextualSerializer.serializer(ContextualSerializer.kt:51)
+	at kotlinx.serialization.ContextualSerializer.serialize(ContextualSerializer.kt:63)
+	at kotlinx.serialization.json.internal.StreamingJsonEncoder.encodeSerializableValue(StreamingJsonEncoder.kt:259)
+	at kotlinx.serialization.encoding.AbstractEncoder.encodeSerializableElement(AbstractEncoder.kt:80)
+	at com.example.IPSModel.write$Self$addressbook_fullstack_ktor(Model.kt:31)
+	at com.example.IPSModel$$serializer.serialize(Model.kt:31)
+	at com.example.IPSModel$$serializer.serialize(Model.kt:31)
+	at kotlinx.serialization.json.internal.StreamingJsonEncoder.encodeSerializableValue(StreamingJsonEncoder.kt:259)
+	at kotlinx.serialization.json.internal.JsonStreamsKt.encodeByWriter(JsonStreams.kt:99)
+	at kotlinx.serialization.json.Json.encodeToString(Json.kt:125)
+	at io.ktor.serialization.kotlinx.KotlinxSerializationConverter.serializeContent(KotlinxSerializationConverter.kt:93)
+	at io.ktor.serialization.kotlinx.KotlinxSerializationConverter.serialize(KotlinxSerializationConverter.kt:57)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1$2.invokeSuspend(ResponseConverter.kt:66)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1$2.invoke(ResponseConverter.kt)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1$2.invoke(ResponseConverter.kt)
+	at io.ktor.server.application.OnCallRespondContext.transformBody(KtorCallContexts.kt:102)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1.invokeSuspend(ResponseConverter.kt:39)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1.invoke(ResponseConverter.kt)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1.invoke(ResponseConverter.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhase$1.invokeSuspend(PluginBuilder.kt:245)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhase$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhase$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1$1.invokeSuspend(PluginBuilder.kt:228)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.util.debug.ContextUtilsKt.addToContextInDebugMode(ContextUtils.kt:34)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1.invokeSuspend(PluginBuilder.kt:224)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.util.pipeline.PipelineJvmKt.pipelineStartCoroutineUninterceptedOrReturn(PipelineJvm.kt:15)
+	at io.ktor.util.pipeline.SuspendFunctionGun.loop(SuspendFunctionGun.kt:131)
+	at io.ktor.util.pipeline.SuspendFunctionGun.proceed(SuspendFunctionGun.kt:89)
+	at io.ktor.util.pipeline.SuspendFunctionGun.execute$ktor_utils(SuspendFunctionGun.kt:109)
+	at io.ktor.util.pipeline.Pipeline.execute(Pipeline.kt:92)
+	at io.ktor.server.application.PipelineCall$DefaultImpls.respond(PipelineCall.kt:132)
+	at io.ktor.server.routing.RoutingPipelineCall.respond(RoutingPipelineCall.kt:23)
+	at io.ktor.server.routing.RoutingCall.respond(RoutingNode.kt:249)
+	at com.example.MainKt$main$3$2.invokeSuspend(Main.kt:101)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-04-28 12:07:22,336]-[eventLoopGroupProxy-4-1] INFO  Application - [31m500 Internal Server Error[m: [36mPOST[m - /api/ipsFull in 226ms
+[2025-04-28 13:46:35,801]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-28 13:46:35,973]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-28 13:46:36,136]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-28 13:46:36,419]-[main] INFO  Application - Application started in 0.872 seconds.
+[2025-04-28 13:46:36,560]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-28 13:46:57,721]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-28 13:46:57,876]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-28 13:46:58,033]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-28 13:46:58,331]-[main] INFO  Application - Application started in 0.839 seconds.
+[2025-04-28 13:46:58,477]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-28 13:47:02,647]-[eventLoopGroupProxy-4-1] ERROR Application - Unhandled: POST - /api/ipsFull
+kotlinx.serialization.SerializationException: Serializer for class 'LocalDateTime' is not found.
+Please ensure that class is marked as '@Serializable' and that the serialization compiler plugin is applied.
+
+	at kotlinx.serialization.internal.Platform_commonKt.serializerNotRegistered(Platform.common.kt:90)
+	at kotlinx.serialization.ContextualSerializer.serializer(ContextualSerializer.kt:51)
+	at kotlinx.serialization.ContextualSerializer.serialize(ContextualSerializer.kt:63)
+	at kotlinx.serialization.json.internal.StreamingJsonEncoder.encodeSerializableValue(StreamingJsonEncoder.kt:259)
+	at kotlinx.serialization.encoding.AbstractEncoder.encodeSerializableElement(AbstractEncoder.kt:80)
+	at com.example.IPSModel.write$Self$addressbook_fullstack_ktor(Model.kt:31)
+	at com.example.IPSModel$$serializer.serialize(Model.kt:31)
+	at com.example.IPSModel$$serializer.serialize(Model.kt:31)
+	at kotlinx.serialization.json.internal.StreamingJsonEncoder.encodeSerializableValue(StreamingJsonEncoder.kt:259)
+	at kotlinx.serialization.json.internal.JsonStreamsKt.encodeByWriter(JsonStreams.kt:99)
+	at kotlinx.serialization.json.Json.encodeToString(Json.kt:125)
+	at io.ktor.serialization.kotlinx.KotlinxSerializationConverter.serializeContent(KotlinxSerializationConverter.kt:93)
+	at io.ktor.serialization.kotlinx.KotlinxSerializationConverter.serialize(KotlinxSerializationConverter.kt:57)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1$2.invokeSuspend(ResponseConverter.kt:66)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1$2.invoke(ResponseConverter.kt)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1$2.invoke(ResponseConverter.kt)
+	at io.ktor.server.application.OnCallRespondContext.transformBody(KtorCallContexts.kt:102)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1.invokeSuspend(ResponseConverter.kt:39)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1.invoke(ResponseConverter.kt)
+	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1.invoke(ResponseConverter.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhase$1.invokeSuspend(PluginBuilder.kt:245)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhase$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhase$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1$1.invokeSuspend(PluginBuilder.kt:228)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.util.debug.ContextUtilsKt.addToContextInDebugMode(ContextUtils.kt:34)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1.invokeSuspend(PluginBuilder.kt:224)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1.invoke(PluginBuilder.kt)
+	at io.ktor.util.pipeline.PipelineJvmKt.pipelineStartCoroutineUninterceptedOrReturn(PipelineJvm.kt:15)
+	at io.ktor.util.pipeline.SuspendFunctionGun.loop(SuspendFunctionGun.kt:131)
+	at io.ktor.util.pipeline.SuspendFunctionGun.proceed(SuspendFunctionGun.kt:89)
+	at io.ktor.util.pipeline.SuspendFunctionGun.execute$ktor_utils(SuspendFunctionGun.kt:109)
+	at io.ktor.util.pipeline.Pipeline.execute(Pipeline.kt:92)
+	at io.ktor.server.application.PipelineCall$DefaultImpls.respond(PipelineCall.kt:132)
+	at io.ktor.server.routing.RoutingPipelineCall.respond(RoutingPipelineCall.kt:23)
+	at io.ktor.server.routing.RoutingCall.respond(RoutingNode.kt:249)
+	at com.example.MainKt$main$3$2.invokeSuspend(Main.kt:107)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-04-28 13:47:02,670]-[eventLoopGroupProxy-4-1] INFO  Application - [31m500 Internal Server Error[m: [36mPOST[m - /api/ipsFull in 223ms
+[2025-04-28 13:49:02,411]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-28 13:49:02,608]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-28 13:49:02,777]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-28 13:49:03,073]-[main] INFO  Application - Application started in 0.899 seconds.
+[2025-04-28 13:49:03,219]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
