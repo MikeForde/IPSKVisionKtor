@@ -2658,3 +2658,8 @@ Please ensure that class is marked as '@Serializable' and that the serialization
 [2025-04-28 17:39:23,138]-[main] INFO  Application - Application started in 0.801 seconds.
 [2025-04-28 17:39:23,283]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
 [2025-04-28 17:39:28,702]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/ipsRecord in 209ms
+[2025-04-28 18:06:19,299]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-28 18:06:19,413]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-28 18:06:19,557]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-28 18:06:19,788]-[main] INFO  Application - Application started in 0.723 seconds.
+[2025-04-28 18:06:19,911]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080

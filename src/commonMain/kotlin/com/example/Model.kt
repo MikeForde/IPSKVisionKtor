@@ -4,28 +4,6 @@ package com.example
 import kotlinx.serialization.Serializable
 import kotlinx.datetime.LocalDateTime
 
-// @Serializable
-// data class Profile(
-//     val id: Int? = null,
-//     val name: String? = null,
-//     val username: String? = null,
-//     val password: String? = null,
-//     val password2: String? = null
-// )
-
-// @Serializable
-// data class Address(
-//     val id: Int? = 0,
-//     val firstName: String? = null,
-//     val lastName: String? = null,
-//     val email: String? = null,
-//     val phone: String? = null,
-//     val postalAddress: String? = null,
-//     val favourite: Boolean? = false,
-//     val createdAt: kotlinx.datetime.LocalDateTime? = null,
-//     val userId: Int? = null,
-// )
-
 @Serializable
 data class IPSModel(
     val id: Int? = null,                     // PK (null before insert)

@@ -19,11 +19,7 @@ object Db {
     fun init(config: ApplicationConfig) {
         Database.connect(hikari(config))
         transaction {
-            // create(UserDao)
-            // create(AddressDao)
             create(
-                    // UserDao,
-                    // AddressDao,
                     IPSModelDao,
                     MedicationDao,
                     AllergyDao,
