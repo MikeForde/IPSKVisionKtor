@@ -16,19 +16,20 @@ import org.jetbrains.exposed.sql.and
 import org.jetbrains.exposed.sql.deleteWhere
 import org.jetbrains.exposed.sql.insert
 import org.jetbrains.exposed.sql.select
+import org.jetbrains.exposed.sql.selectAll
 import org.jetbrains.exposed.sql.update
 import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
-import org.joda.time.DateTime
+// import org.joda.time.DateTime
 import java.sql.ResultSet
-import java.time.ZoneId
-import kotlinx.datetime.Instant
-import kotlinx.datetime.TimeZone
-import kotlinx.datetime.toLocalDateTime
-import kotlinx.datetime.LocalDateTime
+// import java.time.ZoneId
+// import kotlinx.datetime.Instant
+// import kotlinx.datetime.TimeZone
+// import kotlinx.datetime.toLocalDateTime
+// import kotlinx.datetime.LocalDateTime
 
-private fun DateTime.toKvLocal(): LocalDateTime =
-    Instant.fromEpochMilliseconds(this.millis)
-        .toLocalDateTime(TimeZone.currentSystemDefault())
+// private fun DateTime.toKvLocal(): LocalDateTime =
+//     Instant.fromEpochMilliseconds(this.millis)
+//         .toLocalDateTime(TimeZone.currentSystemDefault())
 
 
 
@@ -91,7 +92,7 @@ class IpsService(private val call: ApplicationCall) {
                 Medication(
                   id            = it[MedicationDao.id],
                   name          = it[MedicationDao.name],
-                  date          = it[MedicationDao.date].toKvLocal(),
+                  // date          = it[MedicationDao.date].toKvLocal(),
                   dosage        = it[MedicationDao.dosage],
                   system        = it[MedicationDao.system],
                   code          = it[MedicationDao.code],
@@ -106,7 +107,7 @@ class IpsService(private val call: ApplicationCall) {
                   id            = it[AllergyDao.id],
                   name          = it[AllergyDao.name],
                   criticality   = it[AllergyDao.criticality],
-                  date          = it[AllergyDao.date].toKvLocal(),
+                  // date          = it[AllergyDao.date].toKvLocal(),
                   system        = it[AllergyDao.system],
                   code          = it[AllergyDao.code],
                   ipsModelId    = it[AllergyDao.ipsModelId]
@@ -118,7 +119,7 @@ class IpsService(private val call: ApplicationCall) {
                 Condition(
                   id            = it[ConditionDao.id],
                   name          = it[ConditionDao.name],
-                  date          = it[ConditionDao.date].toKvLocal(),
+                  // date          = it[ConditionDao.date].toKvLocal(),
                   system        = it[ConditionDao.system],
                   code          = it[ConditionDao.code],
                   ipsModelId    = it[ConditionDao.ipsModelId]
@@ -130,7 +131,7 @@ class IpsService(private val call: ApplicationCall) {
                 Observation(
                   id            = it[ObservationDao.id],
                   name          = it[ObservationDao.name],
-                  date          = it[ObservationDao.date].toKvLocal(),
+                  // date          = it[ObservationDao.date].toKvLocal(),
                   value         = it[ObservationDao.value],
                   system        = it[ObservationDao.system],
                   code          = it[ObservationDao.code],
@@ -147,7 +148,7 @@ class IpsService(private val call: ApplicationCall) {
                   id            = it[ImmunizationDao.id],
                   name          = it[ImmunizationDao.name],
                   system        = it[ImmunizationDao.system],
-                  date          = it[ImmunizationDao.date].toKvLocal(),
+                  // date          = it[ImmunizationDao.date].toKvLocal(),
                   code          = it[ImmunizationDao.code],
                   status        = it[ImmunizationDao.status],
                   ipsModelId    = it[ImmunizationDao.ipsModelId]
@@ -158,10 +159,10 @@ class IpsService(private val call: ApplicationCall) {
             IPSModel(
               id                  = pk,
               packageUUID         = row[IPSModelDao.packageUUID],
-              timeStamp           = row[IPSModelDao.timeStamp].toKvLocal(),
+              // timeStamp           = row[IPSModelDao.timeStamp].toKvLocal(),
               patientName         = row[IPSModelDao.patientName],
               patientGiven        = row[IPSModelDao.patientGiven],
-              patientDob          = row[IPSModelDao.patientDob].toKvLocal(),
+              // patientDob          = row[IPSModelDao.patientDob].toKvLocal(),
               patientGender       = row[IPSModelDao.patientGender],
               patientNation       = row[IPSModelDao.patientNation],
               patientPractitioner = row[IPSModelDao.patientPractitioner],
@@ -175,4 +176,112 @@ class IpsService(private val call: ApplicationCall) {
             )
         }
     }
+}
+
+/** RPC implementation for listing all IPS records */
+class IPSServiceRpc(private val call: ApplicationCall) : IIPSService {
+//      override suspend fun getIPSList(): List<IPSModel> = Db.dbQuery {
+//          IPSModelDao.selectAll().map { row ->
+//              IPSModel(
+//                  id                  = row[IPSModelDao.id],
+//                  packageUUID         = row[IPSModelDao.packageUUID],
+//                 //  timeStamp           = row[IPSModelDao.timeStamp].toKvLocal(),
+//                  patientName         = row[IPSModelDao.patientName],
+//                  patientGiven        = row[IPSModelDao.patientGiven],
+//                 //  patientDob          = row[IPSModelDao.patientDob].toKvLocal(),
+//                  patientGender       = row[IPSModelDao.patientGender],
+//                  patientNation       = row[IPSModelDao.patientNation],
+//                  patientPractitioner = row[IPSModelDao.patientPractitioner],
+//                  patientOrganization = row[IPSModelDao.patientOrganization],
+//                  patientIdentifier   = row[IPSModelDao.patientIdentifier],
+//                  medications         = null,
+//                  allergies           = null,
+//                  conditions          = null,
+//                  observations        = null,
+//                  immunizations       = null
+//              )
+//          }
+//      }
+// }
+
+     override suspend fun getIPSList(): List<IPSModel> = Db.dbQuery {
+         IPSModelDao.selectAll().map { row ->
+             val pk = row[IPSModelDao.id]
+
+             val meds = MedicationDao.select { MedicationDao.ipsModelId eq pk }.map { m ->
+                 Medication(
+                     id         = m[MedicationDao.id],
+                     name       = m[MedicationDao.name],
+                     dosage     = m[MedicationDao.dosage],
+                     system     = m[MedicationDao.system],
+                     code       = m[MedicationDao.code],
+                     status     = m[MedicationDao.status],
+                     ipsModelId = m[MedicationDao.ipsModelId]
+                 )
+             }
+
+             val allgs = AllergyDao.select { AllergyDao.ipsModelId eq pk }.map { a ->
+                 Allergy(
+                     id          = a[AllergyDao.id],
+                     name        = a[AllergyDao.name],
+                     criticality = a[AllergyDao.criticality],
+                     system      = a[AllergyDao.system],
+                     code        = a[AllergyDao.code],
+                     ipsModelId  = a[AllergyDao.ipsModelId]
+                 )
+             }
+
+             val conds = ConditionDao.select { ConditionDao.ipsModelId eq pk }.map { c ->
+                 Condition(
+                     id         = c[ConditionDao.id],
+                     name       = c[ConditionDao.name],
+                     system     = c[ConditionDao.system],
+                     code       = c[ConditionDao.code],
+                     ipsModelId = c[ConditionDao.ipsModelId]
+                 )
+             }
+
+             val obs = ObservationDao.select { ObservationDao.ipsModelId eq pk }.map { o ->
+                 Observation(
+                     id            = o[ObservationDao.id],
+                     name          = o[ObservationDao.name],
+                     value         = o[ObservationDao.value],
+                     system        = o[ObservationDao.system],
+                     code          = o[ObservationDao.code],
+                     valueCode     = o[ObservationDao.valueCode],
+                     bodySite      = o[ObservationDao.bodySite],
+                     status        = o[ObservationDao.status],
+                     ipsModelId    = o[ObservationDao.ipsModelId]
+                 )
+             }
+
+             val imms = ImmunizationDao.select { ImmunizationDao.ipsModelId eq pk }.map { i ->
+                 Immunization(
+                     id         = i[ImmunizationDao.id],
+                     name       = i[ImmunizationDao.name],
+                     system     = i[ImmunizationDao.system],
+                     code       = i[ImmunizationDao.code],
+                     status     = i[ImmunizationDao.status],
+                     ipsModelId = i[ImmunizationDao.ipsModelId]
+                 )
+             }
+
+             IPSModel(
+                 id                  = pk,
+                 packageUUID         = row[IPSModelDao.packageUUID],
+                 patientName         = row[IPSModelDao.patientName],
+                 patientGiven        = row[IPSModelDao.patientGiven],
+                 patientGender       = row[IPSModelDao.patientGender],
+                 patientNation       = row[IPSModelDao.patientNation],
+                 patientPractitioner = row[IPSModelDao.patientPractitioner],
+                 patientOrganization = row[IPSModelDao.patientOrganization],
+                 patientIdentifier   = row[IPSModelDao.patientIdentifier],
+                 medications         = meds,
+                 allergies           = allgs,
+                 conditions          = conds,
+                 observations        = obs,
+                 immunizations       = imms
+             )
+         }
+     }
 }

@@ -47,9 +47,9 @@ kotlin {
             mainClass.set(mainClassName)
         }
     }
-    js(IR) {
+    js {
         browser {
-            useEsModules()
+            //useCommonJs()
             commonWebpackConfig {
                 outputFileName = "main.bundle.js"
                 sourceMaps = false
@@ -70,6 +70,7 @@ kotlin {
             dependencies {
                 implementation("dev.kilua:kilua-rpc-ktor:$kiluaRpcVersion")
                 implementation("io.kvision:kvision-common-remote:$kvisionVersion")
+                implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
             }
         }
         val commonTest by getting {

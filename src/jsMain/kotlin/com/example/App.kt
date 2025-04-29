@@ -47,12 +47,13 @@ class App : Application() {
             splitPanel {
                 width = 100.perc
                 height = 100.vh
-                add(ListPanel)
-                add(EditPanel)
+                // add(ListPanel)
+                // add(EditPanel)
             }
         }
         AppScope.launch {
-            Model.getAddressList()
+            val allIps = Model.getIPSList()
+            console.log(allIps)
         }
     }
 }

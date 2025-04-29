@@ -8,6 +8,11 @@ enum class Sort {
     FN, LN, E, F
 }
 
+@RpcService
+interface IIPSService {
+    suspend fun getIPSList(): List<IPSModel>
+}
+
 // @RpcService
 // interface IAddressService {
 //     suspend fun getAddressList(search: String?, types: String, sort: Sort): List<Address>

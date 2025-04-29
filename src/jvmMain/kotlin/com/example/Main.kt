@@ -34,7 +34,7 @@ fun Application.main() {
 
 
     routing {
-        // applyRoutes(getServiceManager<IRegisterProfileService>())
+        applyRoutes(getServiceManager<IIPSService>())
         post("/api/patientName") {
             val resp = PatientService(call).getPatientName()
             call.respond(resp)
@@ -51,8 +51,6 @@ fun Application.main() {
        
     }
     initRpc {
-        // registerService<IAddressService> { AddressService(it) }
-        // registerService<IProfileService> { ProfileService(it) }
-        // registerService<IRegisterProfileService> { RegisterProfileService() }
+        registerService<IIPSService> { IPSServiceRpc(it) }
     }
 }

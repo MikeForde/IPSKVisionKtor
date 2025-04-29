@@ -1,17 +1,16 @@
-
 package com.example
 
 import kotlinx.serialization.Serializable
-import kotlinx.datetime.LocalDateTime
+// import kotlinx.datetime.LocalDateTime
 
 @Serializable
 data class IPSModel(
     val id: Int? = null,                     // PK (null before insert)
     val packageUUID: String,                 // maps Sequelize’s STRING, non-null
-    val timeStamp: kotlinx.datetime.LocalDateTime,            // Sequelize DATE → LocalDateTime
+    // val timeStamp: LocalDateTime,            // Sequelize DATE → LocalDateTime
     val patientName: String,
     val patientGiven: String,
-    val patientDob: kotlinx.datetime.LocalDateTime,
+    // val patientDob: LocalDateTime,
     val patientGender: String? = null,       // allowNull: true
     val patientNation: String,
     val patientPractitioner: String,
@@ -30,7 +29,7 @@ data class IPSModel(
 data class Medication(
     val id: Int? = null,
     val name: String,
-    val date: kotlinx.datetime.LocalDateTime,
+    // val date: LocalDateTime,
     val dosage: String,
     val system: String,
     val code: String,
@@ -43,7 +42,7 @@ data class Allergy(
     val id: Int? = null,
     val name: String,
     val criticality: String,
-    val date: kotlinx.datetime.LocalDateTime,
+    // val date: LocalDateTime,
     val system: String,
     val code: String,
     val ipsModelId: Int? = null,
@@ -53,7 +52,7 @@ data class Allergy(
 data class Condition(
     val id: Int? = null,
     val name: String,
-    val date: kotlinx.datetime.LocalDateTime,
+    // val date: LocalDateTime,
     val system: String,
     val code: String,
     val ipsModelId: Int? = null,
@@ -63,7 +62,7 @@ data class Condition(
 data class Observation(
     val id: Int? = null,
     val name: String,
-    val date: kotlinx.datetime.LocalDateTime,
+    // val date: LocalDateTime,
     val value: String,
     val system: String,
     val code: String,
@@ -78,7 +77,7 @@ data class Immunization(
     val id: Int? = null,
     val name: String,
     val system: String,
-    val date: kotlinx.datetime.LocalDateTime,
+    // val date: LocalDateTime,
     val code: String,
     val status: String,
     val ipsModelId: Int? = null,

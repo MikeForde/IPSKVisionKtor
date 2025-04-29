@@ -2663,3 +2663,63 @@ Please ensure that class is marked as '@Serializable' and that the serialization
 [2025-04-28 18:06:19,557]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
 [2025-04-28 18:06:19,788]-[main] INFO  Application - Application started in 0.723 seconds.
 [2025-04-28 18:06:19,911]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-29 14:54:15,294]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-29 14:54:15,411]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-29 14:54:15,553]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-29 14:54:15,784]-[main] INFO  Application - Application started in 0.665 seconds.
+[2025-04-29 14:54:15,900]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-29 14:54:24,455]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/ipsRecord in 181ms
+[2025-04-29 15:00:13,427]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-29 15:00:13,540]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-29 15:00:13,692]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-29 15:00:13,926]-[main] INFO  Application - Application started in 0.687 seconds.
+[2025-04-29 15:00:14,051]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-29 16:40:01,535]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-29 16:40:01,659]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-29 16:40:01,865]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-29 16:40:02,195]-[main] INFO  Application - Application started in 0.847 seconds.
+[2025-04-29 16:40:02,382]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-29 16:43:14,160]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-29 16:43:14,299]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-29 16:43:14,499]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-29 16:43:14,800]-[main] INFO  Application - Application started in 0.879 seconds.
+[2025-04-29 16:43:14,959]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-29 16:44:21,655]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-29 16:44:21,777]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-29 16:44:21,936]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-29 16:44:22,210]-[main] INFO  Application - Application started in 0.75 seconds.
+[2025-04-29 16:44:22,351]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-29 16:44:43,668]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-29 16:44:43,779]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-29 16:44:43,952]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-29 16:44:44,313]-[main] INFO  Application - Application started in 0.831 seconds.
+[2025-04-29 16:44:44,492]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-29 16:49:29,170]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-29 16:49:29,286]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-29 16:49:29,435]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-29 16:49:29,714]-[main] INFO  Application - Application started in 0.739 seconds.
+[2025-04-29 16:49:29,917]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-29 17:09:09,503]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-29 17:09:09,624]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-29 17:09:09,823]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-29 17:09:10,127]-[main] INFO  Application - Application started in 0.84 seconds.
+[2025-04-29 17:09:10,396]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-29 17:22:20,259]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-29 17:22:20,377]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-29 17:22:20,595]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-29 17:22:20,979]-[main] INFO  Application - Application started in 0.903 seconds.
+[2025-04-29 17:22:21,113]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-29 17:27:26,046]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-29 17:27:26,192]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-29 17:27:26,380]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-29 17:27:26,682]-[main] INFO  Application - Application started in 0.864 seconds.
+[2025-04-29 17:27:26,828]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-29 17:27:32,353]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/ipsRecord in 159ms
+[2025-04-29 17:28:16,140]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager0 in 131ms
+[2025-04-29 17:28:45,421]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager0 in 36ms
+[2025-04-29 17:35:42,198]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-29 17:35:42,329]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-29 17:35:42,532]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-29 17:35:42,885]-[main] INFO  Application - Application started in 0.92 seconds.
+[2025-04-29 17:35:43,022]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-29 17:35:50,363]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager0 in 396ms
