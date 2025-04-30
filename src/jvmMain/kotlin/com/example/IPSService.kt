@@ -92,7 +92,7 @@ class IpsService(private val call: ApplicationCall) {
                 Medication(
                   id            = it[MedicationDao.id],
                   name          = it[MedicationDao.name],
-                  // date          = it[MedicationDao.date].toKvLocal(),
+                  date          = it[MedicationDao.date].toString(),
                   dosage        = it[MedicationDao.dosage],
                   system        = it[MedicationDao.system],
                   code          = it[MedicationDao.code],
