@@ -1,6 +1,7 @@
 .*/
 !/.devcontainer
 build/
+logs/
 out/
 /refresh.sh
 *.imp
@@ -8,4 +9,5 @@ out/
 *.iws
 *.idea
 .DS_Store
-logs/
+
+.env
