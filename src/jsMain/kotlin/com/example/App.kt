@@ -45,15 +45,13 @@ class App : Application() {
             )
         root("kvapp") {
             splitPanel {
-                width = 100.perc
-                height = 100.vh
-                // add(ListPanel)
-                // add(EditPanel)
+                width = 100.perc; height = 100.vh
+                add(IpsListPanel)
+                add(IpsDetailPanel)
             }
         }
         AppScope.launch {
-            val allIps = Model.getIPSList()
-            console.log(allIps)
+            Model.getIPSList()
         }
     }
 }

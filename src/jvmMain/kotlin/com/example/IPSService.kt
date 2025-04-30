@@ -180,30 +180,6 @@ class IpsService(private val call: ApplicationCall) {
 
 /** RPC implementation for listing all IPS records */
 class IPSServiceRpc(private val call: ApplicationCall) : IIPSService {
-//      override suspend fun getIPSList(): List<IPSModel> = Db.dbQuery {
-//          IPSModelDao.selectAll().map { row ->
-//              IPSModel(
-//                  id                  = row[IPSModelDao.id],
-//                  packageUUID         = row[IPSModelDao.packageUUID],
-//                 //  timeStamp           = row[IPSModelDao.timeStamp].toKvLocal(),
-//                  patientName         = row[IPSModelDao.patientName],
-//                  patientGiven        = row[IPSModelDao.patientGiven],
-//                 //  patientDob          = row[IPSModelDao.patientDob].toKvLocal(),
-//                  patientGender       = row[IPSModelDao.patientGender],
-//                  patientNation       = row[IPSModelDao.patientNation],
-//                  patientPractitioner = row[IPSModelDao.patientPractitioner],
-//                  patientOrganization = row[IPSModelDao.patientOrganization],
-//                  patientIdentifier   = row[IPSModelDao.patientIdentifier],
-//                  medications         = null,
-//                  allergies           = null,
-//                  conditions          = null,
-//                  observations        = null,
-//                  immunizations       = null
-//              )
-//          }
-//      }
-// }
-
      override suspend fun getIPSList(): List<IPSModel> = Db.dbQuery {
          IPSModelDao.selectAll().map { row ->
              val pk = row[IPSModelDao.id]

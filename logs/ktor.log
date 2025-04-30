@@ -2862,3 +2862,20 @@ Caused by: java.lang.ClassNotFoundException: com.example.IPSServiceRpc
 [2025-04-30 12:36:39,605]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
 [2025-04-30 12:36:44,552]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/ipsRecord in 196ms
 [2025-04-30 12:36:50,980]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager0 in 271ms
+[2025-04-30 12:43:07,319]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-04-30 12:43:07,505]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-04-30 12:43:07,722]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-04-30 12:43:08,030]-[main] INFO  Application - Application started in 0.978 seconds.
+[2025-04-30 12:43:08,180]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-04-30 12:55:33,930]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager0 in 466ms
+[2025-04-30 13:05:40,276]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager0 in 260ms
+[2025-04-30 13:13:23,987]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager0 in 235ms
+[2025-04-30 13:15:33,753]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager0 in 229ms
+[2025-04-30 13:23:10,084]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager0 in 201ms
+[2025-04-30 13:24:03,188]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager0 in 148ms
+[2025-04-30 13:26:39,094]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager0 in 189ms
+[2025-04-30 13:28:15,236]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager0 in 185ms
+[2025-04-30 13:29:13,110]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager0 in 192ms
+[2025-04-30 13:32:19,645]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager0 in 213ms
+[2025-04-30 13:43:09,444]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager0 in 216ms
+[2025-04-30 13:49:30,411]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager0 in 224ms
