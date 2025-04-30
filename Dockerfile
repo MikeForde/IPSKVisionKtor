@@ -1,5 +1,5 @@
-# 1) pick a JDK 17 image
-FROM eclipse-temurin:17-jdk-jammy
+# 1) pick a JDK 21 image
+FROM eclipse-temurin:21-jdk-jammy
 
 # 2) tell Docker where the fat-jar will be
 ARG JAR_FILE=build/libs/addressbook-fullstack-ktor-1.0.0-SNAPSHOT.jar
