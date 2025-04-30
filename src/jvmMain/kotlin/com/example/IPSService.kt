@@ -107,7 +107,7 @@ class IpsService(private val call: ApplicationCall) {
                   id            = it[AllergyDao.id],
                   name          = it[AllergyDao.name],
                   criticality   = it[AllergyDao.criticality],
-                  // date          = it[AllergyDao.date].toKvLocal(),
+                  date          = it[AllergyDao.date].toString(),
                   system        = it[AllergyDao.system],
                   code          = it[AllergyDao.code],
                   ipsModelId    = it[AllergyDao.ipsModelId]
@@ -119,7 +119,7 @@ class IpsService(private val call: ApplicationCall) {
                 Condition(
                   id            = it[ConditionDao.id],
                   name          = it[ConditionDao.name],
-                  // date          = it[ConditionDao.date].toKvLocal(),
+                  date          = it[ConditionDao.date].toString(),
                   system        = it[ConditionDao.system],
                   code          = it[ConditionDao.code],
                   ipsModelId    = it[ConditionDao.ipsModelId]
@@ -131,7 +131,7 @@ class IpsService(private val call: ApplicationCall) {
                 Observation(
                   id            = it[ObservationDao.id],
                   name          = it[ObservationDao.name],
-                  // date          = it[ObservationDao.date].toKvLocal(),
+                  date          = it[ObservationDao.date].toString(),
                   value         = it[ObservationDao.value],
                   system        = it[ObservationDao.system],
                   code          = it[ObservationDao.code],
@@ -148,7 +148,7 @@ class IpsService(private val call: ApplicationCall) {
                   id            = it[ImmunizationDao.id],
                   name          = it[ImmunizationDao.name],
                   system        = it[ImmunizationDao.system],
-                  // date          = it[ImmunizationDao.date].toKvLocal(),
+                  date          = it[ImmunizationDao.date].toString(),
                   code          = it[ImmunizationDao.code],
                   status        = it[ImmunizationDao.status],
                   ipsModelId    = it[ImmunizationDao.ipsModelId]
@@ -159,10 +159,10 @@ class IpsService(private val call: ApplicationCall) {
             IPSModel(
               id                  = pk,
               packageUUID         = row[IPSModelDao.packageUUID],
-              // timeStamp           = row[IPSModelDao.timeStamp].toKvLocal(),
+              timeStamp           = row[IPSModelDao.timeStamp].toString(),
               patientName         = row[IPSModelDao.patientName],
               patientGiven        = row[IPSModelDao.patientGiven],
-              // patientDob          = row[IPSModelDao.patientDob].toKvLocal(),
+              patientDob          = row[IPSModelDao.patientDob].toString(),
               patientGender       = row[IPSModelDao.patientGender],
               patientNation       = row[IPSModelDao.patientNation],
               patientPractitioner = row[IPSModelDao.patientPractitioner],
@@ -212,6 +212,7 @@ class IPSServiceRpc(private val call: ApplicationCall) : IIPSService {
                  Medication(
                      id         = m[MedicationDao.id],
                      name       = m[MedicationDao.name],
+                     date       = m[MedicationDao.date].toString(),
                      dosage     = m[MedicationDao.dosage],
                      system     = m[MedicationDao.system],
                      code       = m[MedicationDao.code],
@@ -224,6 +225,7 @@ class IPSServiceRpc(private val call: ApplicationCall) : IIPSService {
                  Allergy(
                      id          = a[AllergyDao.id],
                      name        = a[AllergyDao.name],
+                     date        = a[AllergyDao.date].toString(),
                      criticality = a[AllergyDao.criticality],
                      system      = a[AllergyDao.system],
                      code        = a[AllergyDao.code],
@@ -235,6 +237,7 @@ class IPSServiceRpc(private val call: ApplicationCall) : IIPSService {
                  Condition(
                      id         = c[ConditionDao.id],
                      name       = c[ConditionDao.name],
+                     date       = c[ConditionDao.date].toString(),
                      system     = c[ConditionDao.system],
                      code       = c[ConditionDao.code],
                      ipsModelId = c[ConditionDao.ipsModelId]
@@ -245,6 +248,7 @@ class IPSServiceRpc(private val call: ApplicationCall) : IIPSService {
                  Observation(
                      id            = o[ObservationDao.id],
                      name          = o[ObservationDao.name],
+                     date          = o[ObservationDao.date].toString(),
                      value         = o[ObservationDao.value],
                      system        = o[ObservationDao.system],
                      code          = o[ObservationDao.code],
@@ -259,6 +263,7 @@ class IPSServiceRpc(private val call: ApplicationCall) : IIPSService {
                  Immunization(
                      id         = i[ImmunizationDao.id],
                      name       = i[ImmunizationDao.name],
+                     date       = i[ImmunizationDao.date].toString(),
                      system     = i[ImmunizationDao.system],
                      code       = i[ImmunizationDao.code],
                      status     = i[ImmunizationDao.status],
@@ -269,8 +274,10 @@ class IPSServiceRpc(private val call: ApplicationCall) : IIPSService {
              IPSModel(
                  id                  = pk,
                  packageUUID         = row[IPSModelDao.packageUUID],
+                 timeStamp           = row[IPSModelDao.timeStamp].toString(),
                  patientName         = row[IPSModelDao.patientName],
                  patientGiven        = row[IPSModelDao.patientGiven],
+                 patientDob          = row[IPSModelDao.patientDob].toString(),
                  patientGender       = row[IPSModelDao.patientGender],
                  patientNation       = row[IPSModelDao.patientNation],
                  patientPractitioner = row[IPSModelDao.patientPractitioner],

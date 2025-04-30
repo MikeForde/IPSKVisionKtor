@@ -47,7 +47,7 @@ kotlin {
             mainClass.set(mainClassName)
         }
     }
-    js {
+    js(IR) {
         browser {
             //useCommonJs()
             commonWebpackConfig {
@@ -71,6 +71,7 @@ kotlin {
                 implementation("dev.kilua:kilua-rpc-ktor:$kiluaRpcVersion")
                 implementation("io.kvision:kvision-common-remote:$kvisionVersion")
                 implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
+                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0")
             }
         }
         val commonTest by getting {
@@ -115,6 +116,8 @@ kotlin {
                 implementation("io.kvision:kvision-fontawesome:$kvisionVersion")
                 implementation("io.kvision:kvision-i18n:$kvisionVersion")
                 implementation("io.kvision:kvision-rest:$kvisionVersion")
+                implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
+                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0")
             }
         }
         val jsTest by getting {

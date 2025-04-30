@@ -1,16 +1,15 @@
 package com.example
 
 import kotlinx.serialization.Serializable
-// import kotlinx.datetime.LocalDateTime
 
 @Serializable
 data class IPSModel(
     val id: Int? = null,                     // PK (null before insert)
     val packageUUID: String,                 // maps Sequelize’s STRING, non-null
-    // val timeStamp: LocalDateTime,            // Sequelize DATE → LocalDateTime
+    val timeStamp: String,            
     val patientName: String,
     val patientGiven: String,
-    // val patientDob: LocalDateTime,
+    val patientDob: String,
     val patientGender: String? = null,       // allowNull: true
     val patientNation: String,
     val patientPractitioner: String,
@@ -27,58 +26,58 @@ data class IPSModel(
 
 @Serializable
 data class Medication(
-    val id: Int? = null,
-    val name: String,
-    // val date: LocalDateTime,
-    val dosage: String,
-    val system: String,
-    val code: String,
-    val status: String,
+    val id: Int,
+    val name: String? = null,
+    val date: String? = null,
+    val dosage: String? = null,
+    val system: String? = null,
+    val code: String? = null,
+    val status: String? = null,
     val ipsModelId: Int? = null,           // FK back to IPSModel.id
 )
 
 @Serializable
 data class Allergy(
-    val id: Int? = null,
-    val name: String,
-    val criticality: String,
-    // val date: LocalDateTime,
-    val system: String,
-    val code: String,
+    val id: Int,
+    val name: String? = null,
+    val criticality: String? = null,
+    val date: String? = null,
+    val system: String? = null,
+    val code: String? = null,
     val ipsModelId: Int? = null,
 )
 
 @Serializable
 data class Condition(
-    val id: Int? = null,
-    val name: String,
-    // val date: LocalDateTime,
-    val system: String,
-    val code: String,
+    val id: Int,
+    val name: String? = null,
+    val date: String? = null,
+    val system: String? = null,
+    val code: String? = null,
     val ipsModelId: Int? = null,
 )
 
 @Serializable
 data class Observation(
-    val id: Int? = null,
-    val name: String,
-    // val date: LocalDateTime,
-    val value: String,
-    val system: String,
-    val code: String,
-    val valueCode: String,
-    val bodySite: String,
-    val status: String,
+    val id: Int,
+    val name: String? = null,
+    val date: String? = null,
+    val value: String? = null,
+    val system: String? = null,
+    val code: String? = null,
+    val valueCode: String? = null,
+    val bodySite: String? = null,
+    val status: String? = null,
     val ipsModelId: Int? = null,
 )
 
 @Serializable
 data class Immunization(
-    val id: Int? = null,
-    val name: String,
-    val system: String,
-    // val date: LocalDateTime,
-    val code: String,
-    val status: String,
+    val id: Int,
+    val name: String? = null,
+    val system: String? = null,
+    val date: String? = null,
+    val code: String? = null,
+    val status: String? = null,
     val ipsModelId: Int? = null,
 )
