@@ -13,7 +13,7 @@
 /build/libs/**
 
 # 5) …except your fat-jar
-!build/libs/addressbook-fullstack-ktor-1.0.0-SNAPSHOT.jar
+!build/libs/ips-kvision-ktor-1.0.0-SNAPSHOT.jar
 out/
 /refresh.sh
 *.imp
