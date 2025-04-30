@@ -14,7 +14,6 @@
 
 # 5) …except your fat-jar
 !build/libs/addressbook-fullstack-ktor-1.0.0-SNAPSHOT.jar
-logs/
 out/
 /refresh.sh
 *.imp
