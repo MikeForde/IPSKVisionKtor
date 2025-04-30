@@ -5,4 +5,4 @@ pluginManagement {
         mavenLocal()
     }
 }
-rootProject.name = "addressbook-fullstack-ktor"
+rootProject.name = "ips-kvision-ktor"
