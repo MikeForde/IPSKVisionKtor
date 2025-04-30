@@ -1,6 +1,18 @@
 .*/
 !/.devcontainer
-build/
+# 1) ignore the entire build directory
+/build/**
+
+# 2) allow (un-ignore) the build/ directory itself
+!/build/
+
+# 3) allow the libs subdirectory
+!/build/libs/
+
+# 4) ignore everything under libs…
+/build/libs/**
+
+# 5) …except your fat-jar
 !build/libs/addressbook-fullstack-ktor-1.0.0-SNAPSHOT.jar
 logs/
 out/
