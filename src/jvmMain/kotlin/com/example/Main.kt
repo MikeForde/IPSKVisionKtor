@@ -45,7 +45,16 @@ fun Application.main() {
             if (ips != null) {
             call.respond(ips)
             } else {
-            call.respond(HttpStatusCode.NotFound, "IPS record not found")
+            call.respond(HttpStatusCode.NotFound, "No IPS records not found")
+        }
+        // Get by name
+        post("/api/ipsRecordByName") {
+            val ips = IpsService(call).getIpsRecordByName()
+            if (ips != null) {
+                call.respond(ips)
+            } else {
+                call.respond(HttpStatusCode.NotFound, "No IPS records not found")
+            }
         }
   }
        
