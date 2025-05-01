@@ -29,7 +29,7 @@ object IpsListPanel : SimplePanel() {
 
         // you probably want search/filter later — for now just the table
         table(types = setOf(TableType.STRIPED, TableType.HOVER)) {
-            addHeaderCell(HeaderCell("Package UUID"))
+            addHeaderCell(HeaderCell("PackageUUID"))
             addHeaderCell(HeaderCell("Patient Name"))
             addHeaderCell(HeaderCell("Date of Birth"))
             // bind to the new IPS list in your Model

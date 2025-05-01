@@ -37,7 +37,7 @@ object IpsDetailPanel : SimplePanel() {
                     addHeaderCell(HeaderCell("Field"))
                     addHeaderCell(HeaderCell("Value"))
                     row {
-                        cell("Package UUID")
+                        cell("PackageUUID")
                         cell(ips.packageUUID)
                     }
                     row {
