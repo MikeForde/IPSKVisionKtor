@@ -1,7 +1,7 @@
 package com.example
 
 import io.kvision.core.AlignItems
-import io.kvision.core.FontStyle
+//import io.kvision.core.FontStyle
 import io.kvision.core.onEvent
 import io.kvision.form.check.RadioGroup
 import io.kvision.form.check.radioGroup
@@ -21,13 +21,35 @@ import io.kvision.table.cell
 import io.kvision.table.row
 import io.kvision.table.table
 import io.kvision.utils.px
+import io.kvision.html.button
+import kotlinx.coroutines.launch
+import com.example.AppScope
 
 object IpsListPanel : SimplePanel() {
 
     init {
         padding = 5.px
 
-        // you probably want search/filter later — for now just the table
+        // search with text input
+        hPanel(alignItems = AlignItems.CENTER, spacing = 10) {
+             val searchInput = text(InputType.SEARCH) {
+                 placeholder = tr("Surname")
+             }
+             button(tr("Find")) {
+                 onEvent {
+                     click = {
+                         // clear any selection
+                         Model.selectedIps.value = null
+                         // run the surname search
+                         AppScope.launch {
+                             Model.findByLastName(searchInput.value ?: "")
+                         }
+                     }
+                 }
+             }
+         }
+
+        // results table
         table(types = setOf(TableType.STRIPED, TableType.HOVER)) {
             addHeaderCell(HeaderCell("PackageUUID"))
             addHeaderCell(HeaderCell("Patient Name"))

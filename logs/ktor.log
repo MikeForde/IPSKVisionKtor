@@ -81,3 +81,25 @@
 [2025-05-01 10:20:46,182]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
 [2025-05-01 10:20:58,782]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager0 in 426ms
 [2025-05-01 10:22:26,971]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager0 in 329ms
+[2025-05-01 11:56:15,315]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-05-01 11:56:15,457]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-01 11:56:15,634]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-05-01 11:56:15,950]-[main] INFO  Application - Application started in 0.881 seconds.
+[2025-05-01 11:56:16,102]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-05-01 11:56:26,742]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/ipsRecord in 216ms
+[2025-05-01 12:13:09,976]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-05-01 12:13:10,093]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-01 12:13:10,269]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-05-01 12:13:10,562]-[main] INFO  Application - Application started in 0.789 seconds.
+[2025-05-01 12:13:10,739]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-05-01 12:13:15,800]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager0 in 417ms
+[2025-05-01 12:13:20,330]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 26ms
+[2025-05-01 12:13:53,457]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-05-01 12:13:53,577]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-01 12:13:53,742]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-05-01 12:13:53,984]-[main] INFO  Application - Application started in 0.735 seconds.
+[2025-05-01 12:13:54,103]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-05-01 12:14:30,942]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 286ms
+[2025-05-01 12:27:04,601]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 31ms
+[2025-05-01 12:27:08,525]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 24ms
+[2025-05-01 12:35:35,356]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 53ms

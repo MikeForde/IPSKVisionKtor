@@ -26,4 +26,10 @@ object Model {
         selectedIps.value = null
     }
 
+    suspend fun findByLastName(surname: String) {
+        val list = ipsService.findByLastName(surname)
+        ipsRecords.syncWithList(list)
+        selectedIps.value = null
+    }
+
 }

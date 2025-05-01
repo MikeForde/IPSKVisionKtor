@@ -43,7 +43,7 @@ class App : Application() {
         useModule(kvappCss)
     }
 
-    override fun start() {
+    override fun start(state: Map<String, Any>) {
         // i18n + RPC setup
         I18n.manager = DefaultI18nManager(mapOf("en" to messagesEn, "pl" to messagesPl))
 
@@ -53,11 +53,15 @@ class App : Application() {
                  // First tab: your master/detail IPS list
                  addTab("IPS SKK", IPSHomePanel, icon = "fas fa-home")
                  // Second tab: the static About page
-                 addTab("About", AboutPanel, icon = "fas fa-info-circle")
+                 addTab("Info", InfoPanel, icon = "fas fa-info-circle")
              } 
-             // Load data immediately for the List tab
-             AppScope.launch { Model.getIPSList() }
+             // No need to Load data immediately for the List tab will be triggered by search
+             //AppScope.launch { Model.getIPSList() }
          }
+    }
+
+    override fun dispose(): Map<String, Any> {
+        return mapOf()
     }
 }
 
