@@ -15,7 +15,7 @@ data class IPSModel(
     val patientPractitioner: String,
     val patientOrganization: String? = null, 
     val patientIdentifier: String? = null,
-    // val patientIdentifier2: String? = null,  
+    val patientIdentifier2: String? = null,  
 
     // child collections (nullable until loaded)
     val medications: List<Medication>? = null,

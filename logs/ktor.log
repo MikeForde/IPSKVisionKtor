@@ -74,3 +74,10 @@
 [2025-05-01 09:49:19,844]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager0 in 206ms
 [2025-05-01 09:49:55,098]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager0 in 273ms
 [2025-05-01 09:50:34,749]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager0 in 192ms
+[2025-05-01 10:20:45,045]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-05-01 10:20:45,272]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-01 10:20:45,562]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-05-01 10:20:45,923]-[main] INFO  Application - Application started in 1.163 seconds.
+[2025-05-01 10:20:46,182]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-05-01 10:20:58,782]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager0 in 426ms
+[2025-05-01 10:22:26,971]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager0 in 329ms

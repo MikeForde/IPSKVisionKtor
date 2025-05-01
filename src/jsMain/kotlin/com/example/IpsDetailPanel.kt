@@ -76,6 +76,10 @@ object IpsDetailPanel : SimplePanel() {
                         cell("Identifier")
                         cell(ips.patientIdentifier ?: "")
                     }
+                    row {
+                        cell("Identifier2")
+                        cell(ips.patientIdentifier2 ?: "")
+                    }
                 }
 
                 // --- Medications ---
