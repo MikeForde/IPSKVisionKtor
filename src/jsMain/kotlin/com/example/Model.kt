@@ -7,6 +7,8 @@ import io.kvision.state.observableListOf
 import io.kvision.utils.syncWithList
 import kotlinx.coroutines.launch
 
+enum class Page { LIST, ABOUT }
+
 object Model {
     private val ipsService = getService<IIPSService>()
 
@@ -14,6 +16,8 @@ object Model {
     // new observable list for IPS
     val ipsRecords: ObservableList<IPSModel> = observableListOf()
     val selectedIps: ObservableValue<IPSModel?> = ObservableValue(null)
+
+    val currentPage = ObservableValue(Page.ABOUT)
 
     suspend fun getIPSList() {
         val list = ipsService.getIPSList()

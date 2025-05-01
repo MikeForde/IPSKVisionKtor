@@ -17,6 +17,7 @@ object IPSModelDao : Table("ipsAlt") {
     val patientPractitioner = varchar("patientPractitioner",255)
     val patientOrganization = varchar("patientOrganization",255).nullable()
     val patientIdentifier   = varchar("patientIdentifier",  255).nullable()
+    // val patientIdentifier2  = varchar("patientIdentifier2", 255).nullable()
 }
 
 // Child tables, each with FK back to IPSModel

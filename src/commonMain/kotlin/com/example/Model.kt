@@ -5,16 +5,17 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class IPSModel(
     val id: Int? = null,                     // PK (null before insert)
-    val packageUUID: String,                 // maps Sequelize’s STRING, non-null
+    val packageUUID: String,                 
     val timeStamp: String,            
     val patientName: String,
     val patientGiven: String,
     val patientDob: String,
-    val patientGender: String? = null,       // allowNull: true
+    val patientGender: String? = null,       
     val patientNation: String,
     val patientPractitioner: String,
-    val patientOrganization: String? = null, // allowNull: true
-    val patientIdentifier: String? = null,   // allowNull: true
+    val patientOrganization: String? = null, 
+    val patientIdentifier: String? = null,
+    // val patientIdentifier2: String? = null,  
 
     // child collections (nullable until loaded)
     val medications: List<Medication>? = null,
