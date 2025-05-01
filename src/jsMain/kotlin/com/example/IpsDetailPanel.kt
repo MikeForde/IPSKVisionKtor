@@ -7,10 +7,7 @@ import io.kvision.form.check.RadioGroup
 import io.kvision.form.check.radioGroup
 import io.kvision.form.text.TextInput
 import io.kvision.form.text.text
-import io.kvision.html.InputType
-import io.kvision.html.icon
-import io.kvision.html.link
-import io.kvision.html.h3
+import io.kvision.html.*
 import io.kvision.i18n.I18n.tr
 import io.kvision.modal.Confirm
 import io.kvision.panel.SimplePanel
@@ -32,7 +29,7 @@ object IpsDetailPanel : SimplePanel() {
             removeAll()
             if (ips != null) {
                 // --- Demographics ---
-                h3("Demographics")
+                h4("Demographics")
                 table(types = setOf(TableType.STRIPED, TableType.HOVER)) {
                     addHeaderCell(HeaderCell("Field"))
                     addHeaderCell(HeaderCell("Value"))
@@ -83,7 +80,7 @@ object IpsDetailPanel : SimplePanel() {
                 }
 
                 // --- Medications ---
-                h3("Medications")
+                h4("Medications")
                 table(types = setOf(TableType.STRIPED, TableType.HOVER)) {
                     addHeaderCell(HeaderCell("Name"))
                     addHeaderCell(HeaderCell("Date"))
@@ -100,7 +97,7 @@ object IpsDetailPanel : SimplePanel() {
                 }
 
                 // --- Allergies ---
-                h3("Allergies")
+                h4("Allergies")
                 table(types = setOf(TableType.STRIPED, TableType.HOVER)) {
                     addHeaderCell(HeaderCell("Name"))
                     addHeaderCell(HeaderCell("Date"))
@@ -115,7 +112,7 @@ object IpsDetailPanel : SimplePanel() {
                 }
 
                 // --- Conditions ---
-                h3("Conditions")
+                h4("Conditions")
                 table(types = setOf(TableType.STRIPED, TableType.HOVER)) {
                     addHeaderCell(HeaderCell("Name"))
                     addHeaderCell(HeaderCell("Date"))
@@ -128,7 +125,7 @@ object IpsDetailPanel : SimplePanel() {
                 }
 
                 // --- Observations ---
-                h3("Observations")
+                h4("Observations")
                 table(types = setOf(TableType.STRIPED, TableType.HOVER)) {
                     addHeaderCell(HeaderCell("Name"))
                     addHeaderCell(HeaderCell("Date"))
@@ -145,7 +142,7 @@ object IpsDetailPanel : SimplePanel() {
                 }
 
                 // --- Immunizations ---
-                h3("Immunizations")
+                h4("Immunizations")
                 table(types = setOf(TableType.STRIPED, TableType.HOVER)) {
                     addHeaderCell(HeaderCell("Name"))
                     addHeaderCell(HeaderCell("Date"))

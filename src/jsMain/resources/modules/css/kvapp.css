@@ -1,7 +1,12 @@
-/* Make the tabs row stick to the top of the viewport */
-.kv-panel-tab-panel .nav-tabs {
-    position: sticky;
-    top: 0;
-    z-index: 1020;       /* above normal content but below any fixed navbar */
-    background-color: #f8f9fa;  /* match Bootstrap’s light background */
+@media (max-width: 768px) {
+  html {
+    font-size: 90%;
   }
+}
+
+/* even more compact on phones */
+@media (max-width: 576px) {
+  html {
+    font-size: 85%;
+  }
+}
