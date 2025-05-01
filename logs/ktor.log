@@ -103,3 +103,21 @@
 [2025-05-01 12:27:04,601]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 31ms
 [2025-05-01 12:27:08,525]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 24ms
 [2025-05-01 12:35:35,356]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 53ms
+[2025-05-01 13:34:07,106]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-05-01 13:34:07,542]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-01 13:34:25,457]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-05-01 13:34:25,572]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-01 13:34:25,773]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-05-01 13:34:26,081]-[main] INFO  Application - Application started in 0.814 seconds.
+[2025-05-01 13:34:26,205]-[DefaultDispatcher-worker-2] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-05-01 13:52:50,963]-[main] INFO  Application - Autoreload is disabled because the development mode is off.
+[2025-05-01 13:52:51,076]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-01 13:52:51,247]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-05-01 13:52:51,498]-[main] INFO  Application - Application started in 0.715 seconds.
+[2025-05-01 13:52:51,654]-[DefaultDispatcher-worker-1] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-05-01 13:55:09,482]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-01 13:55:09,693]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-05-01 13:55:09,985]-[main] INFO  Application - Application started in 1.028 seconds.
+[2025-05-01 13:55:10,143]-[main] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-05-01 13:56:01,418]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 284ms
+[2025-05-01 14:12:47,812]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 127ms
