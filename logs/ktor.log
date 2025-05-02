@@ -298,3 +298,14 @@
 [2025-05-02 15:41:24,350]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
 [2025-05-02 15:41:24,630]-[main] INFO  Application - Application started in 0.85 seconds.
 [2025-05-02 15:41:24,759]-[main] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-05-02 15:59:36,176]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-02 15:59:50,733]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-02 15:59:50,917]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-05-02 15:59:51,170]-[main] INFO  Application - Application started in 0.82 seconds.
+[2025-05-02 15:59:51,292]-[main] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-05-02 16:32:11,548]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 225ms
+[2025-05-02 16:34:29,705]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 34ms
+[2025-05-02 16:36:42,462]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 45ms
+[2025-05-02 16:38:06,405]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 51ms
+[2025-05-02 16:39:14,020]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 32ms
+[2025-05-02 16:39:33,360]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 55ms

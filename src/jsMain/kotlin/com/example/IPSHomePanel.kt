@@ -9,22 +9,24 @@ import io.kvision.utils.vh
 import kotlinx.browser.window
 
 /**
- * Combines the list and detail panels into one split view, but on narrow screens (<768px) shows a
+ * Combines the list and detail panels into one split view, on  mobile shows a
  * horizontal split (top/bottom).
  */
 object IPSHomePanel : SimplePanel() {
   init {
     padding = 25.px
 
-    // a single function to (re)build our splitPanel
+    var lastWidth = window.innerWidth.toInt()
+
+    // (re)build splitPanel
     fun buildSplit() {
-      removeAll() // clear out any existing children
+      removeAll() // clear children
 
       val dir =
           if (window.innerWidth < 1000) {
-            Direction.HORIZONTAL // stacked: list on top, details below
+            Direction.HORIZONTAL
           } else {
-            Direction.VERTICAL // side-by-side
+            Direction.VERTICAL 
           }
 
       splitPanel(dir) {
@@ -39,6 +41,12 @@ object IPSHomePanel : SimplePanel() {
     buildSplit()
 
     // rebuild on every resize
-    window.addEventListener("resize", { buildSplit() })
+    window.addEventListener("resize", { 
+      val newWidth = window.innerWidth.toInt()
+      if (newWidth != lastWidth) {
+        lastWidth = newWidth
+        buildSplit()
+      }
+    })
   }
 }
