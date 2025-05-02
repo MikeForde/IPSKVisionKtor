@@ -67,7 +67,7 @@ class App : Application() {
     root("kvapp") {
       // 1) Fixed‐top Navbar
       navbar(
-          label = "IPS SKK 0_3",
+          label = "IPS S3K 0_3",
           type = NavbarType.FIXEDTOP,
           bgColor = BsBgColor.PRIMARY,
           nColor = NavbarColor.LIGHT,

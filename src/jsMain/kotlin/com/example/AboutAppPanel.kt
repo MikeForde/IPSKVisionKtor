@@ -20,7 +20,7 @@ object AboutAppPanel : SimplePanel() {
           h3("About This Web Application")
           p(
               """
-                        Built using the SKK Stack. SKK stands for SQL, Ktor, and KVision.
+                        Built using the S3K Stack. S3K stands for SQL, Kotlin, KVision, and Ktor.
                     """
                   .trimIndent())
         }
