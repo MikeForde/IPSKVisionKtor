@@ -41,7 +41,7 @@ object IpsDetailPanel : SimplePanel() {
           }
           row {
             cell("Date of Birth")
-            cell(ips.patientDob)
+            cell((ips.patientDob).split("T")[0])
           }
           row {
             cell("Gender")
@@ -79,7 +79,7 @@ object IpsDetailPanel : SimplePanel() {
           ips.medications?.forEach { m ->
             row {
               cell(m.name)
-              cell(m.date)
+              cell(m.date?.substringBefore(".")?.replace("T", " ") ?: "")
               cell(m.dosage)
               cell(m.status)
             }
@@ -95,7 +95,7 @@ object IpsDetailPanel : SimplePanel() {
           ips.allergies?.forEach { a ->
             row {
               cell(a.name)
-              cell(a.date)
+              cell(a.date?.substringBefore("T") ?: "")
               cell(a.criticality)
             }
           }
@@ -109,7 +109,7 @@ object IpsDetailPanel : SimplePanel() {
           ips.conditions?.forEach { c ->
             row {
               cell(c.name)
-              cell(c.date)
+              cell(c.date?.substringBefore("T") ?: "")
             }
           }
         }
@@ -124,7 +124,7 @@ object IpsDetailPanel : SimplePanel() {
           ips.observations?.forEach { o ->
             row {
               cell(o.name)
-              cell(o.date)
+              cell(o.date?.substringBefore(".")?.replace("T", " ") ?: "")
               cell(o.value)
               cell(o.status)
             }
@@ -140,7 +140,7 @@ object IpsDetailPanel : SimplePanel() {
           ips.immunizations?.forEach { i ->
             row {
               cell(i.name)
-              cell(i.date)
+              cell(i.date?.substringBefore(".")?.replace("T", " ") ?: "")
               cell(i.status)
             }
           }

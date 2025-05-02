@@ -29,6 +29,7 @@ import io.kvision.utils.perc
 import io.kvision.utils.px
 import io.kvision.utils.useModule
 import io.kvision.utils.vh
+import kotlinx.browser.document
 import kotlinx.browser.window
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.asCoroutineDispatcher
@@ -41,6 +42,11 @@ val AppScope = CoroutineScope(window.asCoroutineDispatcher())
 @JsModule("/kotlin/modules/i18n/messages-en.json") external val messagesEn: dynamic
 
 @JsModule("/kotlin/modules/i18n/messages-pl.json") external val messagesPl: dynamic
+
+private fun collapseNavbar() {
+  // Find the first element with class "navbar-collapse"
+  document.querySelector(".navbar-collapse")?.let { it.asDynamic().classList.remove("show") }
+}
 
 class App : Application() {
   init {
@@ -73,6 +79,7 @@ class App : Application() {
               click = {
                 content.removeAll()
                 content.add(IPSHomePanel)
+                collapseNavbar()
               }
             }
           }
@@ -81,6 +88,7 @@ class App : Application() {
               click = {
                 content.removeAll()
                 content.add(DataFormatPanel)
+                collapseNavbar()
               }
             }
           }
@@ -89,6 +97,7 @@ class App : Application() {
               click = {
                 content.removeAll()
                 content.add(InfoPanel)
+                collapseNavbar()
               }
             }
           }

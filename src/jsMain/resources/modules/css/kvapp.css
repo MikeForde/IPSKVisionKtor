@@ -1,12 +1,12 @@
 @media (max-width: 768px) {
   html {
-    font-size: 90%;
+    font-size: 85%;
   }
 }
 
 /* even more compact on phones */
 @media (max-width: 576px) {
   html {
-    font-size: 85%;
+    font-size: 75%;
   }
 }

@@ -50,7 +50,7 @@ object IpsListPanel : SimplePanel() {
           row {
             cell(ips.packageUUID)
             cell(ips.patientName)
-            cell(ips.patientDob) // now a String
+            cell((ips.patientDob).split("T")[0]) // now a String
             onEvent {
               click = {
                 // update the selected record
