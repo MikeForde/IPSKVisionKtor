@@ -31,6 +31,15 @@ object Model {
   suspend fun findByLastName(surname: String) {
     val list = ipsService.findByLastName(surname)
     ipsRecords.syncWithList(list)
-    selectedIps.value = null
+    // Make the selected item the first one in the list if not empty
+    if (list.isNotEmpty()) {
+      selectedIps.value = list[0]
+    } else {
+      selectedIps.value = null
+    }
+  }
+
+  suspend fun generateUnifiedBundle(id: Int?): String {
+    return ipsService.generateUnifiedBundle(id)
   }
 }

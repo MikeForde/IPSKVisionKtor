@@ -1,7 +1,7 @@
 package com.example
 
 import com.example.Db.dbQuery
-import com.example.serviceHelpers.toFullIpsModel
+import com.example.serviceHelpers.*
 import io.ktor.server.application.ApplicationCall
 import io.ktor.server.request.receive
 import io.ktor.server.sessions.get
@@ -78,4 +78,22 @@ class IPSServiceRpc(private val call: ApplicationCall) : IIPSService {
         IPSModelDao.select { IPSModelDao.patientName.lowerCase() like pattern }
             .map { toFullIpsModel(it) }
       }
+
+  override suspend fun generateUnifiedBundle(id: Int?): String {
+    if (id == null) {
+      return """{ "error": "No ID provided" }"""
+    }
+
+    val model =
+        Db.dbQuery {
+          IPSModelDao.select { IPSModelDao.id eq id }.singleOrNull()?.let { toFullIpsModel(it) }
+        }
+
+    return if (model != null) {
+      val json = generateIPSBundleUnified(model)
+      json.toString() // return JSON as a string
+    } else {
+      """{ "error": "Record not found" }"""
+    }
+  }
 }

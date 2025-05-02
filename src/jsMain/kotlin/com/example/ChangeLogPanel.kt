@@ -29,6 +29,16 @@ object ChangeLogPanel : SimplePanel() {
               li("Added navigation bar with links to different sections.")
               li("Implemented an About page with application information.")
             }
+            li(className = "list-unstyled")
+            h5("Version 0_3 - 2nd May 2025")
+            ul {
+              li { strong("DataFormat Panel and IPS Converters") }
+              li("Added API Page for viewing unified FHIR JSON bundle in a scrollable textarea.")
+              li(
+                  "Implemented /api/convertIPS POST endpoint - will parse IPS FHiR JSON in variety of formats.")
+              li(
+                  "Implemented /api/convertSchemaToUnified POST endpoint - outputs FHiR JSON in unified format.")
+            }
           }
         }
       }

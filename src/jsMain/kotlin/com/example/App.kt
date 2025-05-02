@@ -61,7 +61,7 @@ class App : Application() {
     root("kvapp") {
       // 1) Fixed‐top Navbar
       navbar(
-          label = "IPS SKK",
+          label = "IPS SKK 0_3",
           type = NavbarType.FIXEDTOP,
           bgColor = BsBgColor.PRIMARY,
           nColor = NavbarColor.LIGHT,
@@ -73,7 +73,14 @@ class App : Application() {
               click = {
                 content.removeAll()
                 content.add(IPSHomePanel)
-                Model.selectedIps.value = null
+              }
+            }
+          }
+          navLink("API", icon = "fas fa-file") {
+            onEvent {
+              click = {
+                content.removeAll()
+                content.add(DataFormatPanel)
               }
             }
           }

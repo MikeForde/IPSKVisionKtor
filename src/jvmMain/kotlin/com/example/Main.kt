@@ -1,5 +1,6 @@
 package com.example
 
+import com.example.serviceHelpers.*
 import dev.kilua.rpc.applyRoutes
 import dev.kilua.rpc.getServiceManager
 import dev.kilua.rpc.initRpc
@@ -10,11 +11,13 @@ import io.ktor.server.auth.*
 import io.ktor.server.plugins.calllogging.*
 import io.ktor.server.plugins.compression.*
 import io.ktor.server.plugins.defaultheaders.*
+import io.ktor.server.request.receive
 import io.ktor.server.response.*
 import io.ktor.server.response.respond
 import io.ktor.server.routing.*
 import io.ktor.server.sessions.*
 import io.kvision.remote.registerRemoteTypes
+import kotlinx.serialization.json.JsonObject
 import org.jetbrains.exposed.sql.and
 
 fun Application.main() {
@@ -48,6 +51,16 @@ fun Application.main() {
       } else {
         call.respond(HttpStatusCode.NotFound, "No IPS records not found")
       }
+    }
+    post("/api/convertIPS") {
+      val json = call.receive<JsonObject>()
+      val model = convertIPSBundleToSchema(json)
+      call.respond(model)
+    }
+    post("/api/convertSchemaToUnified") {
+      val model = call.receive<IPSModel>()
+      val json = generateIPSBundleUnified(model)
+      call.respond(json)
     }
   }
   initRpc { registerService<IIPSService> { IPSServiceRpc(it) } }
