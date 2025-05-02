@@ -5,138 +5,122 @@ import io.kvision.BootstrapModule
 import io.kvision.CoreModule
 import io.kvision.FontAwesomeModule
 import io.kvision.Hot
+import io.kvision.core.AlignItems
+import io.kvision.core.BsBgColor
+import io.kvision.core.onEvent
+import io.kvision.form.text.text
+import io.kvision.html.InputType
+import io.kvision.html.button
 import io.kvision.i18n.DefaultI18nManager
 import io.kvision.i18n.I18n
-import io.kvision.navbar.navbar
+import io.kvision.i18n.I18n.tr
+import io.kvision.navbar.NavbarColor
 import io.kvision.navbar.NavbarExpand
 import io.kvision.navbar.NavbarType
 import io.kvision.navbar.nav
 import io.kvision.navbar.navLink
-import io.kvision.panel.root
-import io.kvision.panel.tabPanel
-import io.kvision.panel.TabPanel
+import io.kvision.navbar.navbar
 import io.kvision.panel.SimplePanel
+import io.kvision.panel.hPanel
+import io.kvision.panel.root
 import io.kvision.remote.registerRemoteTypes
 import io.kvision.startApplication
-import io.kvision.routing.Routing
-import io.kvision.state.bind
 import io.kvision.utils.perc
+import io.kvision.utils.px
 import io.kvision.utils.useModule
 import io.kvision.utils.vh
-import io.kvision.utils.px
-import io.kvision.core.onEvent
 import kotlinx.browser.window
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.asCoroutineDispatcher
 import kotlinx.coroutines.launch
-import io.kvision.core.BsBgColor
-import io.kvision.navbar.NavbarColor
-import io.kvision.panel.hPanel
-import io.kvision.core.AlignItems
-import io.kvision.form.text.text
-import io.kvision.html.InputType
-import io.kvision.html.button
-import io.kvision.i18n.I18n.tr
-import kotlinx.coroutines.launch
-
 
 val AppScope = CoroutineScope(window.asCoroutineDispatcher())
 
-@JsModule("/kotlin/modules/css/kvapp.css")
-external val kvappCss: dynamic
+@JsModule("/kotlin/modules/css/kvapp.css") external val kvappCss: dynamic
 
-@JsModule("/kotlin/modules/i18n/messages-en.json")
-external val messagesEn: dynamic
+@JsModule("/kotlin/modules/i18n/messages-en.json") external val messagesEn: dynamic
 
-@JsModule("/kotlin/modules/i18n/messages-pl.json")
-external val messagesPl: dynamic
+@JsModule("/kotlin/modules/i18n/messages-pl.json") external val messagesPl: dynamic
 
 class App : Application() {
-    init {
-        useModule(kvappCss)
-    }
+  init {
+    useModule(kvappCss)
+  }
 
-    override fun start(state: Map<String, Any>) {
-        // i18n + RPC setup
-        I18n.manager = DefaultI18nManager(mapOf("en" to messagesEn, "pl" to messagesPl))
+  override fun start(state: Map<String, Any>) {
+    // i18n + RPC setup
+    I18n.manager = DefaultI18nManager(mapOf("en" to messagesEn, "pl" to messagesPl))
 
-        val content = SimplePanel().apply {
-                width = 100.perc
-                height = 100.vh
-                marginTop = 76.px     // push below the fixed navbar
-            }
-
-        root("kvapp") {
-            // 1) Fixed‐top Navbar
-            navbar(
-                label = "IPS SKK", 
-                type = NavbarType.FIXEDTOP,
-                bgColor = BsBgColor.PRIMARY,
-                nColor = NavbarColor.LIGHT,
-                expand = NavbarExpand.SM,
-                ) {
-                nav {
-                    navLink("Home", icon = "fas fa-home") {
-                        onEvent {
-                            click = {
-                                content.removeAll()
-                                content.add(IPSHomePanel)
-                                Model.selectedIps.value = null
-                            }
-                        }
-                    }
-                    navLink("About", icon = "fas fa-info-circle") {
-                        onEvent {
-                            click = {
-                                content.removeAll()
-                                content.add(InfoPanel)
-                            }
-                        }
-                    }
-                    
-                }
-                nav(rightAlign = true) {
-                    // search input + button
-                    hPanel(alignItems = AlignItems.CENTER, spacing = 10) {
-                        val searchInput = text(InputType.SEARCH) {
-                            placeholder = tr("Surname")
-                        }
-                        button(tr("Find")) {
-                            onEvent {
-                                click = {
-                                    Model.selectedIps.value = null
-                                    AppScope.launch {
-                                        Model.findByLastName(searchInput.value ?: "")
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    }
-                
-            }
-
-            // 2) Content slot, below the navbar
-            add(content)
-
-            // 3) Start on Home
-            content.add(IPSHomePanel)
+    val content =
+        SimplePanel().apply {
+          width = 100.perc
+          height = 100.vh
+          marginTop = 76.px // push below the fixed navbar
         }
 
-    }
+    root("kvapp") {
+      // 1) Fixed‐top Navbar
+      navbar(
+          label = "IPS SKK",
+          type = NavbarType.FIXEDTOP,
+          bgColor = BsBgColor.PRIMARY,
+          nColor = NavbarColor.LIGHT,
+          expand = NavbarExpand.SM,
+      ) {
+        nav {
+          navLink("Home", icon = "fas fa-home") {
+            onEvent {
+              click = {
+                content.removeAll()
+                content.add(IPSHomePanel)
+                Model.selectedIps.value = null
+              }
+            }
+          }
+          navLink("About", icon = "fas fa-info-circle") {
+            onEvent {
+              click = {
+                content.removeAll()
+                content.add(InfoPanel)
+              }
+            }
+          }
+        }
+        nav(rightAlign = true) {
+          // search input + button
+          hPanel(alignItems = AlignItems.CENTER, spacing = 10) {
+            val searchInput = text(InputType.SEARCH) { placeholder = tr("Surname") }
+            button(tr("Find")) {
+              onEvent {
+                click = {
+                  Model.selectedIps.value = null
+                  AppScope.launch { Model.findByLastName(searchInput.value ?: "") }
+                }
+              }
+            }
+          }
+        }
+      }
 
-    override fun dispose(): Map<String, Any> {
-        return mapOf()
+      // 2) Content slot, below the navbar
+      add(content)
+
+      // 3) Start on Home
+      content.add(IPSHomePanel)
     }
+  }
+
+  override fun dispose(): Map<String, Any> {
+    return mapOf()
+  }
 }
 
 fun main() {
-    registerRemoteTypes()
-    startApplication(
-        ::App,
-        js("import.meta.webpackHot").unsafeCast<Hot?>(),
-        BootstrapModule,
-        FontAwesomeModule,
-        CoreModule
-    )
+  registerRemoteTypes()
+  startApplication(
+      ::App,
+      js("import.meta.webpackHot").unsafeCast<Hot?>(),
+      BootstrapModule,
+      FontAwesomeModule,
+      CoreModule)
 }

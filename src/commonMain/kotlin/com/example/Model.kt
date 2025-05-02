@@ -4,25 +4,25 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class IPSModel(
-    val id: Int? = null,                     // PK (null before insert)
-    val packageUUID: String,                 
-    val timeStamp: String,            
+    val id: Int? = null, // PK (null before insert)
+    val packageUUID: String,
+    val timeStamp: String,
     val patientName: String,
     val patientGiven: String,
     val patientDob: String,
-    val patientGender: String? = null,       
+    val patientGender: String? = null,
     val patientNation: String,
     val patientPractitioner: String,
-    val patientOrganization: String? = null, 
+    val patientOrganization: String? = null,
     val patientIdentifier: String? = null,
-    val patientIdentifier2: String? = null,  
+    val patientIdentifier2: String? = null,
 
     // child collections (nullable until loaded)
     val medications: List<Medication>? = null,
-    val allergies:   List<Allergy>?    = null,
-    val conditions:  List<Condition>?  = null,
-    val observations:List<Observation>? = null,
-    val immunizations:List<Immunization>?= null
+    val allergies: List<Allergy>? = null,
+    val conditions: List<Condition>? = null,
+    val observations: List<Observation>? = null,
+    val immunizations: List<Immunization>? = null
 )
 
 @Serializable
@@ -34,7 +34,7 @@ data class Medication(
     val system: String? = null,
     val code: String? = null,
     val status: String? = null,
-    val ipsModelId: Int? = null,           // FK back to IPSModel.id
+    val ipsModelId: Int? = null, // FK back to IPSModel.id
 )
 
 @Serializable
