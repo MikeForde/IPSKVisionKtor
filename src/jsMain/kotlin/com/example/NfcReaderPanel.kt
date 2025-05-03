@@ -25,6 +25,16 @@ fun fnPrettyJson(raw: String): String {
   }
 }
 
+fun arrayBufferToByteArray(buffer: dynamic): ByteArray {
+    val uint8Array = js("new Uint8Array(buffer)")
+    val byteArray = ByteArray(uint8Array.length as Int)
+    for (i in 0 until byteArray.size) {
+        byteArray[i] = uint8Array[i] as Byte
+    }
+    return byteArray
+}
+
+
 object NfcReaderPanel : SimplePanel() {
   private val scope = MainScope()
   private val cardInfoArea = TextArea(rows = 3).apply { this.readonly = true }
@@ -119,24 +129,44 @@ object NfcReaderPanel : SimplePanel() {
     }
   }
 
-  private fun processBinaryRecord(record: NDEFRecord): String {
-    return try {
-      val buffer =
-          if (js("record.data instanceof ArrayBuffer") as Boolean) {
-            record.data
-          } else {
-            record.data.buffer
-          }
-
-      val decoder = js("new TextDecoder('utf-8')") // fallback to UTF-8 decoding
-      val text = decoder.decode(buffer)
-
-      return fnPrettyJson(text)
-    } catch (e: Throwable) {
-      Toast.danger("Error decoding binary: ${e.message}")
-      "Error decoding binary: ${e.message}"
+  private suspend fun processBinaryRecord(record: NDEFRecord): String {
+    val buffer = if (js("record.data instanceof ArrayBuffer") as Boolean) {
+        record.data
+    } else {
+        record.data.buffer
     }
-  }
+
+    val mimeType = record.mediaType ?: "application/octet-stream"
+
+    return try {
+        val decodedText = when (mimeType) {
+            "application/x.ips.v1-0" -> {
+                val decoder = js("new TextDecoder('utf-8')")
+                decoder.decode(buffer)
+            }
+
+            "application/x.ips.aes256.v1-0" -> {
+                // Convert buffer to ByteArray
+                val byteArray = arrayBufferToByteArray(buffer)
+                val decryptedBytes = Model.decryptBinary(byteArray)
+                val decoder = js("new TextDecoder('utf-8')")
+                val uint8Array = js("new Uint8Array(decryptedBytes)")
+                decoder.decode(uint8Array)
+            }
+
+            else -> {
+                Toast.warning("Unknown MIME type: $mimeType — showing as UTF-8 text.")
+                val decoder = js("new TextDecoder('utf-8')")
+                decoder.decode(buffer)
+            }
+        }
+
+        fnPrettyJson(decodedText)
+    } catch (e: Throwable) {
+        Toast.danger("Error processing binary: ${e.message}")
+        "Error decoding binary: ${e.message}"
+    }
+}
 
   private suspend fun importPayload() {
     if (rawPayload.isBlank()) return

@@ -20,4 +20,12 @@ interface IIPSService {
   suspend fun generateUnifiedBundle(id: Int?): String
 
   suspend fun convertBundleToSchema(bundleJson: String): String
+
+  // Encrypt and decrypt services
+  suspend fun encryptText(data: String, useBase64: Boolean): EncryptedPayloadDTO
+  suspend fun decryptText(encryptedData: String, iv: String, mac: String, useBase64: Boolean): String
+  suspend fun encryptBinary(data: String): BinaryEncryptResponse
+  suspend fun decryptBinary(data: String): BinaryDecryptResponse
+
+  
 }

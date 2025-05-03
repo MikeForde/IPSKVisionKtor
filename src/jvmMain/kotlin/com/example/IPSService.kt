@@ -1,6 +1,7 @@
 package com.example
 
 import com.example.Db.dbQuery
+import com.example.encryption.CryptoHelper
 import com.example.serviceHelpers.*
 import io.ktor.server.application.ApplicationCall
 import io.ktor.server.request.receive
@@ -14,6 +15,11 @@ import org.jetbrains.exposed.sql.and
 import org.jetbrains.exposed.sql.lowerCase
 import org.jetbrains.exposed.sql.select
 import org.jetbrains.exposed.sql.selectAll
+import com.example.toInternal
+import java.util.Base64
+
+
+
 
 // Simple test for API POST request
 @kotlinx.serialization.Serializable data class PatientNameRequest(val id: String)
@@ -70,6 +76,37 @@ class IpsService(private val call: ApplicationCall) {
   }
 }
 
+// @kotlinx.serialization.Serializable
+// data class EncryptRequest(val data: String, val useBase64: Boolean = false)
+
+// @kotlinx.serialization.Serializable
+// data class EncryptedPayloadDTO(
+//     val encryptedData: String,
+//     val iv: String,
+//     val mac: String,
+//     val key: String
+// )
+
+// @kotlinx.serialization.Serializable
+// data class DecryptRequest(
+//     val encryptedData: String,
+//     val iv: String,
+//     val mac: String,
+//     val useBase64: Boolean = false
+// )
+
+// @kotlinx.serialization.Serializable
+// data class BinaryEncryptRequest(val data: String) // base64-encoded input
+// @kotlinx.serialization.Serializable
+// data class BinaryEncryptResponse(val data: String) // base64-encoded result
+
+// @kotlinx.serialization.Serializable
+// data class BinaryDecryptRequest(val data: String) // base64-encoded input
+// @kotlinx.serialization.Serializable
+// data class BinaryDecryptResponse(val data: String) // base64-encoded output
+
+
+
 /** RPC implementation for listing all IPS records */
 class IPSServiceRpc(private val call: ApplicationCall) : IIPSService {
   override suspend fun getIPSList(): List<IPSModel> =
@@ -108,4 +145,28 @@ class IPSServiceRpc(private val call: ApplicationCall) : IIPSService {
     // 3) re-serialize the IPSModel back to JSON text
     return Json.encodeToString(model)
   }
+
+  override suspend fun encryptText(data: String, useBase64: Boolean): EncryptedPayloadDTO {
+    val payload = CryptoHelper.encrypt(data, useBase64)
+    return EncryptedPayloadDTO(payload.encryptedData, payload.iv, payload.mac, payload.key)
+}
+
+override suspend fun decryptText(encryptedData: String, iv: String, mac: String, useBase64: Boolean): String {
+    val payloadDTO = EncryptedPayloadDTO(encryptedData, iv, mac, key = "")
+    val decrypted = CryptoHelper.decrypt(payloadDTO.toInternal(), useBase64)
+    return decrypted.toString(Charsets.UTF_8)
+}
+
+override suspend fun encryptBinary(data: String): BinaryEncryptResponse {
+    val raw = Base64.getDecoder().decode(data)
+    val encrypted = CryptoHelper.encryptBinary(raw)
+    return BinaryEncryptResponse(Base64.getEncoder().encodeToString(encrypted))
+}
+
+override suspend fun decryptBinary(data: String): BinaryDecryptResponse {
+    val raw = Base64.getDecoder().decode(data)
+    val decrypted = CryptoHelper.decryptBinary(raw)
+    return BinaryDecryptResponse(Base64.getEncoder().encodeToString(decrypted))
+}
+
 }
