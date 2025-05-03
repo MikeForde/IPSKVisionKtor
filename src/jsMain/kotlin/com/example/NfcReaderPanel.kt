@@ -15,6 +15,16 @@ import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonElement
 
+fun fnPrettyJson(raw: String): String {
+  return try {
+    val json = Json { prettyPrint = true }
+    val element: JsonElement = json.decodeFromString(raw)
+    json.encodeToString(element)
+  } catch (_: Exception) {
+    raw
+  }
+}
+
 object NfcReaderPanel : SimplePanel() {
   private val scope = MainScope()
   private val cardInfoArea = TextArea(rows = 3).apply { this.readonly = true }
@@ -109,34 +119,22 @@ object NfcReaderPanel : SimplePanel() {
     }
   }
 
-  private suspend fun processBinaryRecord(record: NDEFRecord): String {
-    val buffer =
-        if (js("record.data instanceof ArrayBuffer") as Boolean) {
-          record.data
-        } else {
-          record.data.buffer
-        }
+  private fun processBinaryRecord(record: NDEFRecord): String {
+    return try {
+      val buffer =
+          if (js("record.data instanceof ArrayBuffer") as Boolean) {
+            record.data
+          } else {
+            record.data.buffer
+          }
 
-    console.log("Buffer: $buffer")
+      val decoder = js("new TextDecoder('utf-8')") // fallback to UTF-8 decoding
+      val text = decoder.decode(buffer)
 
-    try {
-      val response =
-          window
-              .fetch(
-                  "/test",
-                  js(
-                      "({method: 'POST',headers: { 'Content-Type': 'application/octet-stream' },body: buffer})"))
-              .await()
-
-      val text = response.text().await()
-      return try {
-        Json.encodeToString(Json.parseToJsonElement(text))
-      } catch (_: Throwable) {
-        text
-      }
+      return fnPrettyJson(text)
     } catch (e: Throwable) {
-      Toast.danger("Error processing binary record: ${e.message}")
-      return "Error decoding binary: ${e.message}"
+      Toast.danger("Error decoding binary: ${e.message}")
+      "Error decoding binary: ${e.message}"
     }
   }
 
@@ -184,14 +182,7 @@ object NfcReaderPanel : SimplePanel() {
 
     try {
       val rawJson = Model.convertBundleToSchema(trimmed)
-      val prettyJson =
-          try {
-            val json = Json { prettyPrint = true }
-            val element = json.decodeFromString<JsonElement>(rawJson)
-            json.encodeToString(element)
-          } catch (e: Exception) {
-            rawJson
-          }
+      val prettyJson = fnPrettyJson(rawJson)
       payloadArea.value = prettyJson
       Toast.success("Conversion successful")
     } catch (e: Throwable) {
