@@ -5,12 +5,14 @@ import io.kvision.BootstrapModule
 import io.kvision.CoreModule
 import io.kvision.FontAwesomeModule
 import io.kvision.Hot
+import io.kvision.ToastifyModule
 import io.kvision.core.AlignItems
 import io.kvision.core.BsBgColor
 import io.kvision.core.onEvent
 import io.kvision.form.text.text
 import io.kvision.html.InputType
 import io.kvision.html.button
+import io.kvision.html.div
 import io.kvision.i18n.DefaultI18nManager
 import io.kvision.i18n.I18n
 import io.kvision.i18n.I18n.tr
@@ -65,15 +67,17 @@ class App : Application() {
         }
 
     root("kvapp") {
+      // Icon?
       // 1) Fixed‐top Navbar
       navbar(
-          label = "IPS S3K 0_3",
+          label = "IPS SK3",
           type = NavbarType.FIXEDTOP,
           bgColor = BsBgColor.PRIMARY,
           nColor = NavbarColor.LIGHT,
           expand = NavbarExpand.SM,
       ) {
         nav {
+          navLink("0_3", className = "app_version")
           navLink("Home", icon = "fas fa-home") {
             onEvent {
               click = {
@@ -88,6 +92,15 @@ class App : Application() {
               click = {
                 content.removeAll()
                 content.add(DataFormatPanel)
+                collapseNavbar()
+              }
+            }
+          }
+          navLink("NFC", icon = "fas fa-tag") {
+            onEvent {
+              click = {
+                content.removeAll()
+                content.add(NfcReaderPanel)
                 collapseNavbar()
               }
             }
@@ -138,5 +151,7 @@ fun main() {
       js("import.meta.webpackHot").unsafeCast<Hot?>(),
       BootstrapModule,
       FontAwesomeModule,
-      CoreModule)
+      CoreModule,
+      ToastifyModule,
+  )
 }

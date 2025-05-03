@@ -9,4 +9,8 @@
   html {
     font-size: 75%;
   }
+
+  .app_version {
+    display: none;
+  }
 }

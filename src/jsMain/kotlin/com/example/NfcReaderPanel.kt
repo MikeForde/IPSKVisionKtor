@@ -1,0 +1,184 @@
+package com.example
+
+import io.kvision.form.text.TextArea
+import io.kvision.html.Button
+import io.kvision.panel.SimplePanel
+import io.kvision.toast.Toast
+import io.kvision.utils.px
+import kotlinx.browser.window
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.await
+import kotlinx.coroutines.launch
+import kotlinx.serialization.json.Json
+
+object NfcReaderPanel : SimplePanel() {
+  private val scope = MainScope()
+  private val cardInfoArea = TextArea(rows = 3).apply { this.readonly = true }
+  private val payloadArea = TextArea(rows = 15).apply { this.readonly = true }
+
+  private var rawPayload: String = ""
+
+  init {
+    padding = 25.px
+    add(Button("Read from NFC").apply { onClick { scope.launch { readFromNfc() } } })
+    add(Button("Import").apply { onClick { scope.launch { importPayload() } } })
+
+    add(Button("Convert to NoSQL Only").apply { onClick { scope.launch { convertOnly() } } })
+
+    add(cardInfoArea)
+    add(payloadArea)
+  }
+
+  private suspend fun readFromNfc() {
+    if (js("typeof NDEFReader === 'undefined'") as Boolean) {
+      Toast.warning("Web NFC is not supported")
+      return
+    }
+
+    val reader = NDEFReader()
+    reader.onreading = { event ->
+      val record = event.message.records.getOrNull(0)
+      val info =
+          "UID: ${event.serialNumber}\nRecords: ${event.message.records.size}" +
+              (record?.mediaType?.let { "\nMIME: $it" } ?: "")
+      cardInfoArea.value = info
+
+      val extracted =
+          when {
+            record?.recordType == "text" -> {
+              val decoder = js("new TextDecoder(record.encoding || 'utf-8')")
+              decoder.decode(record.data)
+            }
+            record?.recordType == "url" -> {
+              val decoder = js("new TextDecoder()")
+              "URL: " + decoder.decode(record.data)
+            }
+            record?.recordType == "mime" -> {
+              var result = ""
+              scope.launch {
+                result = processBinaryRecord(record)
+                payloadArea.value = result
+                rawPayload = result
+                Toast.success("NFC tag read successfully!")
+              }
+              ""
+            }
+            else -> {
+              val bytes = js("Array.from(new Uint8Array(record.data))")
+              (bytes as Array<dynamic>).joinToString(" ") { byte ->
+                (byte as Int).toString(16).padStart(2, '0')
+              }
+            }
+          }
+
+      payloadArea.value = extracted
+      rawPayload = extracted
+      Toast.success("NFC tag read successfully!")
+    }
+
+    reader.onreadingerror = { Toast.danger("Cannot read data from the NFC tag") }
+
+    reader.scan().await()
+  }
+
+  private suspend fun processBinaryRecord(record: NDEFRecord): String {
+    val buffer =
+        if (js("record.data instanceof ArrayBuffer") as Boolean) {
+          record.data
+        } else {
+          record.data.buffer
+        }
+
+    console.log("Buffer: $buffer")
+
+    try {
+      val response =
+          window
+              .fetch(
+                  "/test",
+                  js(
+                      "({method: 'POST',headers: { 'Content-Type': 'application/octet-stream' },body: buffer})"))
+              .await()
+
+      val text = response.text().await()
+      return try {
+        Json.encodeToString(Json.parseToJsonElement(text))
+      } catch (_: Throwable) {
+        text
+      }
+    } catch (e: Throwable) {
+      Toast.danger("Error processing binary record: ${e.message}")
+      return "Error decoding binary: ${e.message}"
+    }
+  }
+
+  private suspend fun importPayload() {
+    if (rawPayload.isBlank()) return
+
+    val (endpoint, payloadToSend, contentType) =
+        when {
+          rawPayload.trim().startsWith("{") &&
+              "resourceType" in rawPayload &&
+              "Bundle" in rawPayload ->
+              Triple("/ipsbundle", Json.parseToJsonElement(rawPayload), "application/json")
+          rawPayload.startsWith("MSH") -> Triple("/ipsfromhl72x", rawPayload, "text/plain")
+          rawPayload.startsWith("H9") -> Triple("/ipsfrombeer", rawPayload, "text/plain")
+          else -> {
+            Toast.danger("Unrecognized IPS format")
+            return
+          }
+        }
+
+    try {
+      val headers = js("({ 'Content-Type': contentType })")
+      headers["Content-Type"] = contentType
+
+      val body =
+          if (contentType == "application/json") JSON.stringify(payloadToSend) else payloadToSend
+
+      val response =
+          window.fetch(endpoint, js("({ method: 'POST', headers: headers, body: body })")).await()
+
+      Toast.success("Import successful")
+    } catch (e: Throwable) {
+      Toast.danger("Import failed: ${e.message}")
+    }
+  }
+
+  private suspend fun convertOnly() {
+    if (rawPayload.isBlank()) return
+
+    val (endpoint, payloadToSend, contentType) =
+        when {
+          rawPayload.trim().startsWith("{") &&
+              "resourceType" in rawPayload &&
+              "Bundle" in rawPayload ->
+              Triple("/convertips2mongo", Json.parseToJsonElement(rawPayload), "application/json")
+          rawPayload.startsWith("MSH") -> Triple("/converthl72xtomongo", rawPayload, "text/plain")
+          rawPayload.startsWith("H9") -> Triple("/convertbeer2mongo", rawPayload, "text/plain")
+          else -> {
+            Toast.danger("Unrecognized IPS format")
+            return
+          }
+        }
+
+    try {
+      val headers = js("({})")
+      headers["Content-Type"] = contentType
+
+      val requestInit = js("({})")
+      requestInit.method = "POST"
+      requestInit.headers = headers
+      requestInit.body =
+          if (contentType == "application/json") JSON.stringify(payloadToSend) else payloadToSend
+
+      val response = window.fetch(endpoint, requestInit).await()
+
+      val text = response.text().await()
+      payloadArea.value = text
+      Toast.success("Conversion successful")
+    } catch (e: Throwable) {
+      Toast.danger("Conversion failed: ${e.message}")
+    }
+  }
+}

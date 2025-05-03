@@ -110,6 +110,7 @@ kotlin {
         implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
         implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0")
         implementation("io.kvision:kvision-routing-navigo:$kvisionVersion")
+        implementation("io.kvision:kvision-toastify:$kvisionVersion")
       }
     }
     val jsTest by getting {
