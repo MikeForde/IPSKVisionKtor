@@ -2,6 +2,7 @@ package com.example
 
 import io.kvision.form.text.TextArea
 import io.kvision.html.Button
+import io.kvision.html.ButtonSize
 import io.kvision.panel.SimplePanel
 import io.kvision.toast.Toast
 import io.kvision.utils.px
@@ -9,9 +10,9 @@ import kotlinx.browser.window
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.await
 import kotlinx.coroutines.launch
-import kotlinx.serialization.json.Json
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonElement
 
 object NfcReaderPanel : SimplePanel() {
@@ -22,11 +23,23 @@ object NfcReaderPanel : SimplePanel() {
   private var rawPayload: String = ""
 
   init {
-    padding = 25.px
-    add(Button("Read from NFC").apply { onClick { scope.launch { readFromNfc() } } })
-    add(Button("Import").apply { onClick { scope.launch { importPayload() } } })
+    padding = 30.px
+    add(
+        Button("Read from NFC").apply {
+          size = ButtonSize.SMALL
+          onClick { scope.launch { readFromNfc() } }
+        })
+    add(
+        Button("Import").apply {
+          size = ButtonSize.SMALL
+          onClick { scope.launch { importPayload() } }
+        })
 
-    add(Button("Convert to Schema").apply { onClick { scope.launch { convertOnly() } } })
+    add(
+        Button("Convert to Schema").apply {
+          size = ButtonSize.SMALL
+          onClick { scope.launch { convertOnly() } }
+        })
 
     add(cardInfoArea)
     add(payloadArea)
@@ -39,61 +52,60 @@ object NfcReaderPanel : SimplePanel() {
     }
 
     try {
-        val reader = NDEFReader()
+      val reader = NDEFReader()
 
-        reader.onreading = { event ->
-            val record = event.message.records.getOrNull(0)
+      reader.onreading = { event ->
+        val record = event.message.records.getOrNull(0)
 
-            if (record == null) {
-                Toast.danger("No records found on the NFC tag.")
-            } else
-            {
-            val info =
-                "UID: ${event.serialNumber}\nRecords: ${event.message.records.size}" +
-                    (record?.mediaType?.let { "\nMIME: $it" } ?: "")
-            cardInfoArea.value = info
+        if (record == null) {
+          Toast.danger("No records found on the NFC tag.")
+        } else {
+          val info =
+              "UID: ${event.serialNumber}\nRecords: ${event.message.records.size}" +
+                  (record?.mediaType?.let { "\nMIME: $it" } ?: "")
+          cardInfoArea.value = info
 
-            val extracted =
-                when {
-                    record?.recordType == "text" -> {
-                        val decoder = js("new TextDecoder(record.encoding || 'utf-8')")
-                        decoder.decode(record.data)
-                    }
-                    record?.recordType == "url" -> {
-                        val decoder = js("new TextDecoder()")
-                        "URL: " + decoder.decode(record.data)
-                    }
-                    record?.recordType == "mime" -> {
-                        var result = ""
-                        scope.launch {
-                            result = processBinaryRecord(record)
-                            payloadArea.value = result
-                            rawPayload = result
-                        }
-                        ""
-                    }
-                    else -> {
-                        val bytes = js("Array.from(new Uint8Array(record.data))")
-                        (bytes as Array<dynamic>).joinToString(" ") { byte ->
-                            (byte as Int).toString(16).padStart(2, '0')
-                        }
-                    }
+          val extracted =
+              when {
+                record?.recordType == "text" -> {
+                  val decoder = js("new TextDecoder(record.encoding || 'utf-8')")
+                  decoder.decode(record.data)
                 }
+                record?.recordType == "url" -> {
+                  val decoder = js("new TextDecoder()")
+                  "URL: " + decoder.decode(record.data)
+                }
+                record?.recordType == "mime" -> {
+                  var result = ""
+                  scope.launch {
+                    result = processBinaryRecord(record)
+                    payloadArea.value = result
+                    rawPayload = result
+                  }
+                  ""
+                }
+                else -> {
+                  val bytes = js("Array.from(new Uint8Array(record.data))")
+                  (bytes as Array<dynamic>).joinToString(" ") { byte ->
+                    (byte as Int).toString(16).padStart(2, '0')
+                  }
+                }
+              }
 
-            payloadArea.value = extracted
-            rawPayload = extracted
-            Toast.success("NFC tag read successfully!")
+          payloadArea.value = extracted
+          rawPayload = extracted
+          Toast.success("NFC tag read successfully!")
         }
-        }
+      }
 
-        reader.onreadingerror = {
-            Toast.danger("Cannot read data from the NFC tag (onreadingerror triggered)")
-        }
+      reader.onreadingerror = {
+        Toast.danger("Cannot read data from the NFC tag (onreadingerror triggered)")
+      }
 
-        // Important: wrap scan in try-catch
-        reader.scan().await()
+      // Important: wrap scan in try-catch
+      reader.scan().await()
     } catch (e: Throwable) {
-        Toast.danger("Failed to start NFC scan: ${e.message}")
+      Toast.danger("Failed to start NFC scan: ${e.message}")
     }
   }
 
@@ -163,27 +175,27 @@ object NfcReaderPanel : SimplePanel() {
 
   private suspend fun convertOnly() {
     val trimmed = rawPayload.trim()
-    if (!trimmed.startsWith("{") || 
-        !trimmed.contains("resourceType") || 
+    if (!trimmed.startsWith("{") ||
+        !trimmed.contains("resourceType") ||
         !trimmed.contains("Bundle")) {
-        Toast.danger("Only JSON FHIR Bundles can be converted via this method.")
-        return
+      Toast.danger("Only JSON FHIR Bundles can be converted via this method.")
+      return
     }
 
     try {
-        val rawJson = Model.convertBundleToSchema(trimmed)
-                val prettyJson =
-                    try {
-                      val json = Json { prettyPrint = true }
-                      val element = json.decodeFromString<JsonElement>(rawJson)
-                      json.encodeToString(element)
-                    } catch (e: Exception) {
-                      rawJson
-                    }
-                payloadArea.value = prettyJson
-        Toast.success("Conversion successful")
+      val rawJson = Model.convertBundleToSchema(trimmed)
+      val prettyJson =
+          try {
+            val json = Json { prettyPrint = true }
+            val element = json.decodeFromString<JsonElement>(rawJson)
+            json.encodeToString(element)
+          } catch (e: Exception) {
+            rawJson
+          }
+      payloadArea.value = prettyJson
+      Toast.success("Conversion successful")
     } catch (e: Throwable) {
-        Toast.danger("Conversion failed: ${e.message}")
+      Toast.danger("Conversion failed: ${e.message}")
     }
   }
 }
