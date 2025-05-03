@@ -18,4 +18,6 @@ interface IIPSService {
   suspend fun findByLastName(surname: String): List<IPSModel>
 
   suspend fun generateUnifiedBundle(id: Int?): String
+
+  suspend fun convertBundleToSchema(bundleJson: String): String
 }

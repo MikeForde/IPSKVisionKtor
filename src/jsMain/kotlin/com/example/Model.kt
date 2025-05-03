@@ -42,4 +42,8 @@ object Model {
   suspend fun generateUnifiedBundle(id: Int?): String {
     return ipsService.generateUnifiedBundle(id)
   }
+
+  suspend fun convertBundleToSchema(bundleJson: String): String {
+    return ipsService.convertBundleToSchema(bundleJson)
+  }
 }

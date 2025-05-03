@@ -11,6 +11,10 @@ import org.jetbrains.exposed.sql.and
 import org.jetbrains.exposed.sql.lowerCase
 import org.jetbrains.exposed.sql.select
 import org.jetbrains.exposed.sql.selectAll
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.jsonObject
+
 
 // Simple test for API POST request
 @kotlinx.serialization.Serializable data class PatientNameRequest(val id: String)
@@ -95,5 +99,14 @@ class IPSServiceRpc(private val call: ApplicationCall) : IIPSService {
     } else {
       """{ "error": "Record not found" }"""
     }
+  }
+
+  override suspend fun convertBundleToSchema(bundleJson: String): String {
+    // 1) parse the incoming raw JSON
+    val jsonObj = Json.parseToJsonElement(bundleJson).jsonObject
+    // 2) convert to IPSModel
+    val model = convertIPSBundleToSchema(jsonObj)
+    // 3) re-serialize the IPSModel back to JSON text
+    return Json.encodeToString(model)
   }
 }
