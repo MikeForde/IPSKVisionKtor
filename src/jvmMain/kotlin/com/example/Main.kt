@@ -1,6 +1,7 @@
 package com.example
 
 import com.example.serviceHelpers.*
+import com.example.encryption.CryptoHelper
 import dev.kilua.rpc.applyRoutes
 import dev.kilua.rpc.getServiceManager
 import dev.kilua.rpc.initRpc
@@ -12,6 +13,7 @@ import io.ktor.server.plugins.calllogging.*
 import io.ktor.server.plugins.compression.*
 import io.ktor.server.plugins.defaultheaders.*
 import io.ktor.server.request.receive
+import io.ktor.server.request.receiveStream
 import io.ktor.server.response.*
 import io.ktor.server.response.respond
 import io.ktor.server.routing.*
@@ -61,6 +63,29 @@ fun Application.main() {
       val model = call.receive<IPSModel>()
       val json = generateIPSBundleUnified(model)
       call.respond(json)
+    }
+    post("/api/encryptText") {
+      val input = call.receive<String>()
+      val payload = CryptoHelper.encrypt(input, useBase64 = true)
+      call.respond(payload)
+    }
+    post("/api/decryptText") {
+      val payload = call.receive<CryptoHelper.EncryptedPayload>()
+      val decryptedBytes = CryptoHelper.decrypt(payload, useBase64 = true)
+      val text = decryptedBytes.toString(Charsets.UTF_8)
+      call.respondText(text)
+    }
+    post("/api/encryptBinary") {
+        val inputBytes = call.receiveStream().readBytes()
+        val encrypted = CryptoHelper.encryptBinary(inputBytes)
+        call.respondBytes(encrypted, ContentType.Application.OctetStream)
+    }
+    post("/api/decryptBinary") {
+        // output message to terminal
+        println("Decrypting binary data")
+        val inputBytes = call.receiveStream().readBytes()
+        val decrypted = CryptoHelper.decryptBinary(inputBytes)
+        call.respondBytes(decrypted, ContentType.Application.OctetStream)
     }
   }
   initRpc { registerService<IIPSService> { IPSServiceRpc(it) } }

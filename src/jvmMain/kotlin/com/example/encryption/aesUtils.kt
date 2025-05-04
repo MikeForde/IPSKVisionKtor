@@ -5,6 +5,7 @@ import java.util.Base64
 import javax.crypto.Cipher
 import javax.crypto.spec.GCMParameterSpec
 import javax.crypto.spec.SecretKeySpec
+import kotlinx.serialization.Serializable
 
 object CryptoHelper {
     private const val AES_ALGORITHM = "AES"
@@ -17,6 +18,7 @@ object CryptoHelper {
     private val keySpec = SecretKeySpec(keyBytes, AES_ALGORITHM)
     private val random = SecureRandom()
 
+    @Serializable
     data class EncryptedPayload(val encryptedData: String, val iv: String, val mac: String, val key: String)
 
 
