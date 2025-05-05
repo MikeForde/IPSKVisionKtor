@@ -254,3 +254,25 @@ java.lang.IllegalStateException: Service IIPSService not found
 [2025-05-05 13:39:51,464]-[main] INFO  Application - Application started in 1.007 seconds.
 [2025-05-05 13:39:51,613]-[main] INFO  Application - Responding at http://0.0.0.0:8080
 [2025-05-05 13:40:40,019]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 312ms
+[2025-05-05 13:58:16,272]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-05 13:58:16,464]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-05-05 13:58:16,814]-[main] INFO  Application - Application started in 1.065 seconds.
+[2025-05-05 13:58:16,970]-[main] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-05-05 13:59:18,329]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-05 13:59:18,497]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-05-05 13:59:18,800]-[main] INFO  Application - Application started in 0.984 seconds.
+[2025-05-05 13:59:18,964]-[main] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-05-05 13:59:43,911]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-05 13:59:44,064]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-05-05 13:59:44,343]-[main] INFO  Application - Application started in 0.928 seconds.
+[2025-05-05 13:59:44,493]-[main] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-05-05 14:00:43,482]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 335ms
+[2025-05-05 14:00:56,631]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 18ms
+[2025-05-05 14:01:01,866]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mOPTIONS[m - /api/decryptBinary in 2ms
+[2025-05-05 14:01:01,912]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 37ms
+[2025-05-05 14:02:05,196]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-05 14:02:05,392]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-05-05 14:02:05,794]-[main] INFO  Application - Application started in 1.264 seconds.
+[2025-05-05 14:02:05,982]-[main] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-05-05 14:02:19,996]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 377ms
+[2025-05-05 14:02:27,698]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 27ms

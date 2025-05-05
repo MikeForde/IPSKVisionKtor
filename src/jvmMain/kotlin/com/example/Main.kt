@@ -29,20 +29,22 @@ import kotlinx.serialization.json.JsonObject
 import org.jetbrains.exposed.sql.and
 
 fun Application.main() {
-  // install(ContentNegotiation) {
-  //   json()
-  //   cbor()
-  //   }
+
+  val frontHost = System.getenv("FRONTEND_HOST")
+    ?: error("FRONTEND_HOST must be set (just host[:port], no scheme)")
+
+  val frontScheme = System.getenv("FRONTEND_SCHEME")
+    ?: error("FRONTEND_SCHEME must be set (http or https)")
+
   registerRemoteTypes()
   install(Compression)
   install(DefaultHeaders)
   install(CallLogging)
   install(CORS) {
     allowHost(
-        host = "localhost:3000",
-        schemes = listOf("http"),
+        host = "$frontHost",
+        schemes = listOf("$frontScheme"),
     )
-    allowHost("", schemes = listOf("https"))
     allowMethod(HttpMethod.Options) // Allows preflight requests
     allowMethod(HttpMethod.Post) // Allows POST requests
     allowHeader(HttpHeaders.ContentType) // Allows 'Content-Type' header
