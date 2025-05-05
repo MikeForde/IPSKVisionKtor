@@ -42,6 +42,7 @@ fun Application.main() {
         host = "localhost:3000",
         schemes = listOf("http"),
     )
+    allowHost("", schemes = listOf("https"))
     allowMethod(HttpMethod.Options) // Allows preflight requests
     allowMethod(HttpMethod.Post) // Allows POST requests
     allowHeader(HttpHeaders.ContentType) // Allows 'Content-Type' header
