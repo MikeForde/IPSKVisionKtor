@@ -6,7 +6,7 @@ import kotlin.js.Promise
 import org.w3c.dom.events.Event
 
 external class NDEFReader {
-  fun scan(): Promise<Unit>
+  fun scan(options: dynamic = definedExternally): Promise<Unit>
 
   fun write(message: dynamic): Promise<Unit>
 

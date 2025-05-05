@@ -35,19 +35,22 @@ fun arrayBufferToByteArray(buffer: dynamic): ByteArray {
 }
 
 object NfcReaderPanel : SimplePanel() {
+  private var nfcReader: NDEFReader? = null
+  private var scanAbortController: dynamic = null
   private val scope = MainScope()
   private val cardInfoArea = TextArea(rows = 3).apply { this.readonly = true }
   private val payloadArea = TextArea(rows = 15).apply { this.readonly = true }
+  private val readButton =
+      Button("Read from NFC").apply {
+        size = ButtonSize.SMALL
+        onClick { scope.launch { readFromNfc() } }
+      }
 
   private var rawPayload: String = ""
 
   init {
     padding = 30.px
-    add(
-        Button("Read from NFC").apply {
-          size = ButtonSize.SMALL
-          onClick { scope.launch { readFromNfc() } }
-        })
+    add(readButton)
     add(
         Button("Import").apply {
           size = ButtonSize.SMALL
@@ -59,11 +62,11 @@ object NfcReaderPanel : SimplePanel() {
           size = ButtonSize.SMALL
           onClick { scope.launch { convertOnly() } }
         })
-    add(
-        Button("Debug").apply {
-          size = ButtonSize.SMALL
-          onClick { scope.launch { debugTest() } }
-        })
+    // add(
+    //     Button("Debug").apply {
+    //       size = ButtonSize.SMALL
+    //       onClick { scope.launch { debugTest() } }
+    //     })
 
     add(cardInfoArea)
     add(payloadArea)
@@ -75,8 +78,17 @@ object NfcReaderPanel : SimplePanel() {
       return
     }
 
+    readButton.text = "Waiting..."
+    readButton.disabled = true
+
+    scanAbortController?.abort()
+
     try {
-      val reader = NDEFReader()
+      val reader = nfcReader ?: NDEFReader().also { nfcReader = it }
+
+      // Clear previous handlers to avoid duplicates
+      reader.onreading = null
+      reader.onreadingerror = null
 
       reader.onreading = { event ->
         val record = event.message.records.getOrNull(0)
@@ -120,16 +132,32 @@ object NfcReaderPanel : SimplePanel() {
           rawPayload = extracted
           Toast.success("NFC tag read successfully!")
         }
+
+        readButton.text = "Read from NFC"
+        readButton.disabled = false
+        scanAbortController?.abort()
       }
 
       reader.onreadingerror = {
         Toast.danger("Cannot read data from the NFC tag (onreadingerror triggered)")
+
+        reader.onreading = null
+        reader.onreadingerror = null
+
+        readButton.text = "Read from NFC"
+        readButton.disabled = false
+        scanAbortController?.abort()
       }
 
       // Important: wrap scan in try-catch
-      reader.scan().await()
+      val controller = js("new AbortController()")
+      scanAbortController = controller
+      val options = js("({ signal: controller.signal })")
+      reader.scan(options).await()
     } catch (e: Throwable) {
       Toast.danger("Failed to start NFC scan: ${e.message}")
+      readButton.text = "Read from NFC"
+      readButton.disabled = false
     }
   }
 
@@ -231,23 +259,23 @@ object NfcReaderPanel : SimplePanel() {
     }
   }
 
-  private suspend fun debugTest() {
-    try {
-      // Example UTF-8 test string
-      val testString = "Hello from NFC test"
-      val byteArray = testString.encodeToByteArray()
+  // private suspend fun debugTest() {
+  //   try {
+  //     // Example UTF-8 test string
+  //     val testString = "Hello from NFC test"
+  //     val byteArray = testString.encodeToByteArray()
 
-      // Send to backend and receive echo
-      val responseBytes = Model.testBinary(byteArray)
+  //     // Send to backend and receive echo
+  //     val responseBytes = Model.testBinary(byteArray)
 
-      // Decode response back to string for display
-      val decoder = js("new TextDecoder('utf-8')")
-      val text = decoder.decode(js("new Uint8Array(responseBytes)"))
+  //     // Decode response back to string for display
+  //     val decoder = js("new TextDecoder('utf-8')")
+  //     val text = decoder.decode(js("new Uint8Array(responseBytes)"))
 
-      payloadArea.value = text
-      Toast.success("CBOR round-trip success!")
-    } catch (e: Throwable) {
-      Toast.danger("Debug test failed: ${e.message}")
-    }
-  }
+  //     payloadArea.value = text
+  //     Toast.success("CBOR round-trip success!")
+  //   } catch (e: Throwable) {
+  //     Toast.danger("Debug test failed: ${e.message}")
+  //   }
+  // }
 }

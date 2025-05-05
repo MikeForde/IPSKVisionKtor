@@ -42,7 +42,9 @@ import kotlinx.coroutines.launch
 
 val AppScope = CoroutineScope(window.asCoroutineDispatcher())
 
-val cborClient = HttpClient { install(ContentNegotiation) { cbor() } }
+// val cborClient = HttpClient { install(ContentNegotiation) { cbor() } }
+
+val restClient = HttpClient { expectSuccess = true }
 
 // ServiceManager.register(IIPSService::class, client)
 

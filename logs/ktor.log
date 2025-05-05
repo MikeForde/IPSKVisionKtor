@@ -114,3 +114,110 @@ java.lang.IllegalStateException: Service IIPSService not found
 [2025-05-05 09:06:27,144]-[main] INFO  Application - Application started in 76.364 seconds.
 [2025-05-05 09:06:33,037]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
 [2025-05-05 09:06:33,215]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-05-05 10:25:12,476]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-05 10:25:12,688]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-05-05 10:25:13,034]-[main] INFO  Application - Application started in 1.058 seconds.
+[2025-05-05 10:25:13,187]-[main] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-05-05 10:25:29,458]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 281ms
+[2025-05-05 10:41:36,359]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-05 10:41:36,537]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-05-05 10:41:36,799]-[main] INFO  Application - Application started in 0.829 seconds.
+[2025-05-05 10:41:47,068]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mOPTIONS[m - /api/TestCBor in 6ms
+[2025-05-05 10:41:47,124]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/TestCBor in 48ms
+[2025-05-05 10:42:04,392]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/TestCBor in 1ms
+[2025-05-05 10:42:09,587]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mOPTIONS[m - /api/decryptBinary in 2ms
+[2025-05-05 10:42:09,653]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 55ms
+[2025-05-05 10:42:12,358]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager3 in 18ms
+[2025-05-05 10:53:15,481]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 56ms
+[2025-05-05 10:53:15,686]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 36ms
+[2025-05-05 10:53:25,295]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 15ms
+[2025-05-05 10:53:25,419]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 14ms
+[2025-05-05 10:53:41,180]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 28ms
+[2025-05-05 10:53:44,636]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 29ms
+[2025-05-05 10:54:00,191]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 3ms
+[2025-05-05 10:54:03,981]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager3 in 2ms
+[2025-05-05 10:55:03,090]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager3 in 9ms
+[2025-05-05 10:57:37,042]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 25ms
+[2025-05-05 10:57:37,121]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 2ms
+[2025-05-05 10:57:42,668]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 5ms
+[2025-05-05 10:57:42,668]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 8ms
+[2025-05-05 10:57:42,776]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 2ms
+[2025-05-05 10:57:49,792]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 3ms
+[2025-05-05 10:57:49,793]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 1ms
+[2025-05-05 10:57:49,797]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 2ms
+[2025-05-05 10:57:49,800]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 1ms
+[2025-05-05 10:57:57,027]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager3 in 4ms
+[2025-05-05 10:58:01,918]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 6ms
+[2025-05-05 10:58:01,918]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 5ms
+[2025-05-05 10:58:01,919]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 5ms
+[2025-05-05 10:58:02,004]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 2ms
+[2025-05-05 10:58:02,004]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 2ms
+[2025-05-05 11:02:07,364]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 20ms
+[2025-05-05 11:02:07,366]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 18ms
+[2025-05-05 11:02:07,364]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 18ms
+[2025-05-05 11:02:07,364]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 5ms
+[2025-05-05 11:02:07,367]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 23ms
+[2025-05-05 11:02:07,372]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 1ms
+[2025-05-05 11:02:31,238]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 4ms
+[2025-05-05 11:02:40,484]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 4ms
+[2025-05-05 11:02:47,229]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 4ms
+[2025-05-05 11:15:59,719]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 8ms
+[2025-05-05 11:19:41,571]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 19ms
+[2025-05-05 11:19:52,193]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 5ms
+[2025-05-05 11:19:52,311]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 2ms
+[2025-05-05 11:19:59,350]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager3 in 9ms
+[2025-05-05 11:20:00,998]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager3 in 2ms
+[2025-05-05 11:20:05,570]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager3 in 2ms
+[2025-05-05 11:20:12,565]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 5ms
+[2025-05-05 11:20:12,565]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 5ms
+[2025-05-05 11:20:12,667]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 2ms
+[2025-05-05 11:26:48,305]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 27ms
+[2025-05-05 11:29:40,058]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 25ms
+[2025-05-05 11:29:51,429]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 3ms
+[2025-05-05 11:29:55,788]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 2ms
+[2025-05-05 11:29:59,524]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 5ms
+[2025-05-05 11:30:03,379]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 5ms
+[2025-05-05 11:31:50,083]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 19ms
+[2025-05-05 11:31:57,917]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 5ms
+[2025-05-05 11:32:10,421]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 4ms
+[2025-05-05 11:35:14,065]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 13ms
+[2025-05-05 11:37:22,362]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 11ms
+[2025-05-05 11:37:32,898]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager3 in 10ms
+[2025-05-05 11:39:55,783]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 33ms
+[2025-05-05 11:39:58,673]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 5ms
+[2025-05-05 11:40:00,184]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 5ms
+[2025-05-05 11:40:04,578]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 4ms
+[2025-05-05 11:40:07,276]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager3 in 10ms
+[2025-05-05 11:54:48,699]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 7ms
+[2025-05-05 11:54:54,580]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 4ms
+[2025-05-05 11:54:56,821]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 1ms
+[2025-05-05 11:55:01,102]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 2ms
+[2025-05-05 11:55:05,617]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 5ms
+[2025-05-05 11:55:20,081]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 4ms
+[2025-05-05 11:55:23,531]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 4ms
+[2025-05-05 11:55:36,269]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 3ms
+[2025-05-05 11:55:43,579]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 4ms
+[2025-05-05 11:55:50,771]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 4ms
+[2025-05-05 11:55:55,500]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager3 in 9ms
+[2025-05-05 11:55:59,760]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 3ms
+[2025-05-05 11:56:12,506]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 5ms
+[2025-05-05 11:59:07,810]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 8ms
+[2025-05-05 11:59:14,350]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager3 in 5ms
+[2025-05-05 11:59:14,615]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager3 in 2ms
+[2025-05-05 11:59:18,458]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager3 in 2ms
+[2025-05-05 11:59:23,768]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 4ms
+[2025-05-05 11:59:39,184]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 4ms
+[2025-05-05 12:02:35,971]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 20ms
+[2025-05-05 12:02:41,215]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 3ms
+[2025-05-05 12:02:47,140]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 8ms
+[2025-05-05 12:04:17,941]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 42ms
+[2025-05-05 12:04:23,359]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 4ms
+[2025-05-05 12:04:28,222]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 6ms
+[2025-05-05 12:04:33,197]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 4ms
+[2025-05-05 12:04:57,543]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 2ms
+[2025-05-05 12:08:04,635]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 9ms
+[2025-05-05 12:08:16,841]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 5ms
+[2025-05-05 12:08:30,887]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 3ms
+[2025-05-05 12:13:02,810]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 10ms
+[2025-05-05 12:15:31,618]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager3 in 11ms
+[2025-05-05 12:15:43,467]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 6ms

@@ -29,36 +29,10 @@ import kotlinx.serialization.json.JsonObject
 import org.jetbrains.exposed.sql.and
 
 fun Application.main() {
-  install(ContentNegotiation) { 
-    json()
-    cbor() 
-    }
-  // embeddedServer(Netty, port = 8081) {
-  //       install(ContentNegotiation) { cbor() }
-  //       install(CORS) {
-  //         anyHost()
-  //         allowMethod(HttpMethod.Options)
-  //         allowMethod(HttpMethod.Post)
-  //         allowHeader(HttpHeaders.ContentType)
-  //         allowNonSimpleContentTypes = true
-  //       }
-  //       routing {
-  //         post("/api/TestCBor") {
-  //           // output message to terminal
-  //           println("Decrypting binary data using Cbor")
-  //           val inputBytes = call.receive<ByteArray>()
-  //           call.respond(inputBytes)
-  //         }
-  //         post("/api/decryptBinaryCbor") {
-  //           // output message to terminal
-  //           println("Decrypting binary data using Cbor")
-  //           val inputBytes = call.receive<ByteArray>()
-  //           val outputBytes = CryptoHelper.decryptBinary(inputBytes)
-  //           call.respond(outputBytes)
-  //         }
-  //       }
-  //     }
-  //     .start(wait = true)
+  // install(ContentNegotiation) {
+  //   json()
+  //   cbor()
+  //   }
   registerRemoteTypes()
   install(Compression)
   install(DefaultHeaders)

@@ -65,19 +65,37 @@ object Model {
         useBase64 = useBase64)
   }
 
+  // suspend fun decryptBinaryViaHttp(encrypted: ByteArray): ByteArray {
+  //   val response: HttpResponse =
+  //       cborClient.post("http://localhost:8081/api/decryptBinaryCbor") {
+  //         contentType(ContentType.Application.Cbor)
+  //         setBody(encrypted)
+  //       }
+  //   return response.body()
+  // }
+
   suspend fun decryptBinaryViaHttp(encrypted: ByteArray): ByteArray {
     val response: HttpResponse =
-        cborClient.post("http://localhost:8081/api/decryptBinaryCbor") {
-          contentType(ContentType.Application.Cbor)
+        restClient.post("http://localhost:8080/api/decryptBinary") {
+          contentType(ContentType.Application.OctetStream)
           setBody(encrypted)
         }
     return response.body()
   }
 
+  // suspend fun testBinary(data: ByteArray): ByteArray {
+  //   val response: HttpResponse =
+  //       cborClient.post("http://localhost:8081/api/TestCBor") {
+  //         contentType(ContentType.Application.Cbor)
+  //         setBody(data)
+  //       }
+  //   return response.body()
+  // }
+
   suspend fun testBinary(data: ByteArray): ByteArray {
     val response: HttpResponse =
-        cborClient.post("http://localhost:8081/api/TestCBor") {
-          contentType(ContentType.Application.Cbor)
+        restClient.post("http://localhost:8080/api/TestCBor") {
+          contentType(ContentType.Application.OctetStream)
           setBody(data)
         }
     return response.body()
