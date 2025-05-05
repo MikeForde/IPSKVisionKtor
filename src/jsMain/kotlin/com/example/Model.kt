@@ -11,10 +11,20 @@ import io.kvision.state.ObservableList
 import io.kvision.state.ObservableValue
 import io.kvision.state.observableListOf
 import io.kvision.utils.syncWithList
+import kotlinx.browser.window
 
 enum class Page {
   LIST,
   ABOUT
+}
+
+val BASE_URL: String by lazy {
+  val host = window.location.hostname
+  if (host == "localhost" || host == "127.0.0.1") {
+    "http://localhost:8080"
+  } else {
+    "" // relative path for OpenShift or any deployed env
+  }
 }
 
 object Model {
@@ -76,7 +86,7 @@ object Model {
 
   suspend fun decryptBinaryViaHttp(encrypted: ByteArray): ByteArray {
     val response: HttpResponse =
-        restClient.post("http://localhost:8080/api/decryptBinary") {
+        restClient.post("$BASE_URL/api/decryptBinary") {
           contentType(ContentType.Application.OctetStream)
           setBody(encrypted)
         }
@@ -94,7 +104,7 @@ object Model {
 
   suspend fun testBinary(data: ByteArray): ByteArray {
     val response: HttpResponse =
-        restClient.post("http://localhost:8080/api/TestCBor") {
+        restClient.post("$BASE_URL/api/TestCBor") {
           contentType(ContentType.Application.OctetStream)
           setBody(data)
         }
