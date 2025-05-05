@@ -91,6 +91,9 @@ kotlin {
         implementation("com.axiomalaska:jdbc-named-parameters:$jdbcNamedParametersVersion")
         implementation("com.github.andrewoma.kwery:core:$kweryVersion")
         implementation(kotlin("stdlib"))
+        implementation("io.ktor:ktor-server-cors:$ktorVersion")
+        implementation("io.ktor:ktor-server-content-negotiation:$ktorVersion")
+        implementation("io.ktor:ktor-serialization-kotlinx-cbor:$ktorVersion")
       }
     }
     val jvmTest by getting {
@@ -111,6 +114,8 @@ kotlin {
         implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0")
         implementation("io.kvision:kvision-routing-navigo:$kvisionVersion")
         implementation("io.kvision:kvision-toastify:$kvisionVersion")
+        implementation("io.ktor:ktor-client-content-negotiation:$ktorVersion")
+        implementation("io.ktor:ktor-serialization-kotlinx-cbor:$ktorVersion")
       }
     }
     val jsTest by getting {

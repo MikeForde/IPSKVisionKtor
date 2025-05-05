@@ -2,8 +2,7 @@ package com.example
 
 import kotlinx.serialization.Serializable
 
-@Serializable
-data class EncryptRequest(val data: String, val useBase64: Boolean = false)
+@Serializable data class EncryptRequest(val data: String, val useBase64: Boolean = false)
 
 @Serializable
 data class EncryptedPayloadDTO(
@@ -23,10 +22,9 @@ data class DecryptRequest(
 
 @Serializable
 data class BinaryEncryptRequest(val data: String) // base64-encoded input
-@Serializable
-data class BinaryEncryptResponse(val data: String)
 
-@Serializable
-data class BinaryDecryptRequest(val data: String)
-@Serializable
-data class BinaryDecryptResponse(val data: String)
+@Serializable data class BinaryEncryptResponse(val data: String)
+
+@Serializable data class BinaryDecryptRequest(val data: String)
+
+@Serializable data class BinaryDecryptResponse(val data: String)

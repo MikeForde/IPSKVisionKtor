@@ -26,14 +26,13 @@ fun fnPrettyJson(raw: String): String {
 }
 
 fun arrayBufferToByteArray(buffer: dynamic): ByteArray {
-    val uint8Array = js("new Uint8Array(buffer)")
-    val byteArray = ByteArray(uint8Array.length as Int)
-    for (i in 0 until byteArray.size) {
-        byteArray[i] = uint8Array[i] as Byte
-    }
-    return byteArray
+  val uint8Array = js("new Uint8Array(buffer)")
+  val byteArray = ByteArray(uint8Array.length as Int)
+  for (i in 0 until byteArray.size) {
+    byteArray[i] = uint8Array[i] as Byte
+  }
+  return byteArray
 }
-
 
 object NfcReaderPanel : SimplePanel() {
   private val scope = MainScope()
@@ -59,6 +58,11 @@ object NfcReaderPanel : SimplePanel() {
         Button("Convert to Schema").apply {
           size = ButtonSize.SMALL
           onClick { scope.launch { convertOnly() } }
+        })
+    add(
+        Button("Debug").apply {
+          size = ButtonSize.SMALL
+          onClick { scope.launch { debugTest() } }
         })
 
     add(cardInfoArea)
@@ -130,43 +134,50 @@ object NfcReaderPanel : SimplePanel() {
   }
 
   private suspend fun processBinaryRecord(record: NDEFRecord): String {
-    val buffer = if (js("record.data instanceof ArrayBuffer") as Boolean) {
-        record.data
-    } else {
-        record.data.buffer
-    }
+    val buffer: dynamic =
+        if (js("record.data instanceof ArrayBuffer") as Boolean) {
+          record.data
+        } else {
+          record.data.buffer
+        }
 
     val mimeType = record.mediaType ?: "application/octet-stream"
 
     return try {
-        val decodedText = when (mimeType) {
+      // Convert ArrayBuffer to ByteArray
+      val uint8Array = js("new Uint8Array(buffer)")
+      val byteArray = ByteArray(uint8Array.length as Int)
+      for (i in byteArray.indices) {
+        byteArray[i] = uint8Array[i] as Byte
+      }
+
+      val decodedText =
+          when (mimeType) {
             "application/x.ips.v1-0" -> {
-                val decoder = js("new TextDecoder('utf-8')")
-                decoder.decode(buffer)
+              val decoder = js("new TextDecoder('utf-8')")
+              decoder.decode(buffer)
             }
 
             "application/x.ips.aes256.v1-0" -> {
-                // Convert buffer to ByteArray
-                val byteArray = arrayBufferToByteArray(buffer)
-                val decryptedBytes = Model.decryptBinary(byteArray)
-                val decoder = js("new TextDecoder('utf-8')")
-                val uint8Array = js("new Uint8Array(decryptedBytes)")
-                decoder.decode(uint8Array)
+              val decryptedBytes = Model.decryptBinaryViaHttp(byteArray)
+              val uint8Decrypted = js("new Uint8Array(decryptedBytes)")
+              val decoder = js("new TextDecoder('utf-8')")
+              decoder.decode(decryptedBytes)
             }
 
             else -> {
-                Toast.warning("Unknown MIME type: $mimeType — showing as UTF-8 text.")
-                val decoder = js("new TextDecoder('utf-8')")
-                decoder.decode(buffer)
+              Toast.warning("Unknown MIME type: $mimeType — showing as UTF-8 text.")
+              val decoder = js("new TextDecoder('utf-8')")
+              decoder.decode(buffer)
             }
-        }
+          }
 
-        fnPrettyJson(decodedText)
+      fnPrettyJson(decodedText)
     } catch (e: Throwable) {
-        Toast.danger("Error processing binary: ${e.message}")
-        "Error decoding binary: ${e.message}"
+      Toast.danger("Error processing binary: ${e.message}")
+      "Error decoding binary: ${e.message}"
     }
-}
+  }
 
   private suspend fun importPayload() {
     if (rawPayload.isBlank()) return
@@ -217,6 +228,26 @@ object NfcReaderPanel : SimplePanel() {
       Toast.success("Conversion successful")
     } catch (e: Throwable) {
       Toast.danger("Conversion failed: ${e.message}")
+    }
+  }
+
+  private suspend fun debugTest() {
+    try {
+      // Example UTF-8 test string
+      val testString = "Hello from NFC test"
+      val byteArray = testString.encodeToByteArray()
+
+      // Send to backend and receive echo
+      val responseBytes = Model.testBinary(byteArray)
+
+      // Decode response back to string for display
+      val decoder = js("new TextDecoder('utf-8')")
+      val text = decoder.decode(js("new Uint8Array(responseBytes)"))
+
+      payloadArea.value = text
+      Toast.success("CBOR round-trip success!")
+    } catch (e: Throwable) {
+      Toast.danger("Debug test failed: ${e.message}")
     }
   }
 }

@@ -1,66 +1,10 @@
-[2025-05-04 10:00:44,486]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-[2025-05-04 10:01:01,513]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-[2025-05-04 10:01:01,650]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-[2025-05-04 10:01:01,915]-[main] INFO  Application - Application started in 0.798 seconds.
-[2025-05-04 10:01:02,033]-[main] INFO  Application - Responding at http://0.0.0.0:8080
-[2025-05-04 10:11:53,500]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-[2025-05-04 10:11:53,644]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-[2025-05-04 10:20:32,554]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-[2025-05-04 10:20:32,715]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-[2025-05-04 10:20:48,181]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-[2025-05-04 10:20:48,341]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-[2025-05-04 10:20:48,633]-[main] INFO  Application - Application started in 0.925 seconds.
-[2025-05-04 10:20:48,777]-[main] INFO  Application - Responding at http://0.0.0.0:8080
-[2025-05-04 10:23:17,399]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-[2025-05-04 10:23:17,544]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-[2025-05-04 10:23:17,803]-[main] INFO  Application - Application started in 0.783 seconds.
-[2025-05-04 10:23:17,923]-[main] INFO  Application - Responding at http://0.0.0.0:8080
-[2025-05-04 10:28:45,615]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-[2025-05-04 10:28:45,796]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-[2025-05-04 10:28:46,087]-[main] INFO  Application - Application started in 0.951 seconds.
-[2025-05-04 10:28:46,239]-[main] INFO  Application - Responding at http://0.0.0.0:8080
-[2025-05-04 10:35:05,147]-[eventLoopGroupProxy-4-1] INFO  Application - [31m404 Not Found[m: [36mPOST[m - /api/encryptText in 85ms
-[2025-05-04 10:35:23,847]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/convertSchemaToUnified in 91ms
-[2025-05-04 10:39:14,751]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-[2025-05-04 10:39:14,992]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-[2025-05-04 10:39:15,302]-[main] INFO  Application - Application started in 1.028 seconds.
-[2025-05-04 10:39:15,463]-[main] INFO  Application - Responding at http://0.0.0.0:8080
-[2025-05-04 10:39:26,625]-[eventLoopGroupProxy-4-1] ERROR Application - Unhandled: POST - /api/encryptText
-kotlinx.serialization.SerializationException: Serializer for class 'EncryptedPayload' is not found.
-Please ensure that class is marked as '@Serializable' and that the serialization compiler plugin is applied.
-
-	at kotlinx.serialization.internal.Platform_commonKt.serializerNotRegistered(Platform.common.kt:90)
-	at kotlinx.serialization.SerializersKt__SerializersKt.serializer(Serializers.kt:299)
-	at kotlinx.serialization.SerializersKt.serializer(Unknown Source)
-	at io.ktor.serialization.kotlinx.SerializerLookupKt.guessSerializer(SerializerLookup.kt:54)
-	at io.ktor.serialization.kotlinx.KotlinxSerializationConverter.serialize(KotlinxSerializationConverter.kt:55)
-	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1$2.invokeSuspend(ResponseConverter.kt:66)
-	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1$2.invoke(ResponseConverter.kt)
-	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1$2.invoke(ResponseConverter.kt)
-	at io.ktor.server.application.OnCallRespondContext.transformBody(KtorCallContexts.kt:102)
-	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1.invokeSuspend(ResponseConverter.kt:39)
-	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1.invoke(ResponseConverter.kt)
-	at io.ktor.server.plugins.contentnegotiation.ResponseConverterKt$convertResponseBody$1.invoke(ResponseConverter.kt)
-	at io.ktor.server.application.PluginBuilder$onDefaultPhase$1.invokeSuspend(PluginBuilder.kt:245)
-	at io.ktor.server.application.PluginBuilder$onDefaultPhase$1.invoke(PluginBuilder.kt)
-	at io.ktor.server.application.PluginBuilder$onDefaultPhase$1.invoke(PluginBuilder.kt)
-	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1$1.invokeSuspend(PluginBuilder.kt:228)
-	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1$1.invoke(PluginBuilder.kt)
-	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1$1.invoke(PluginBuilder.kt)
-	at io.ktor.util.debug.ContextUtilsKt.addToContextInDebugMode(ContextUtils.kt:34)
-	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1.invokeSuspend(PluginBuilder.kt:224)
-	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1.invoke(PluginBuilder.kt)
-	at io.ktor.server.application.PluginBuilder$onDefaultPhaseWithMessage$1$1.invoke(PluginBuilder.kt)
-	at io.ktor.util.pipeline.DebugPipelineContext.proceedLoop(DebugPipelineContext.kt:79)
-	at io.ktor.util.pipeline.DebugPipelineContext.proceed(DebugPipelineContext.kt:57)
-	at io.ktor.util.pipeline.DebugPipelineContext.execute$ktor_utils(DebugPipelineContext.kt:63)
-	at io.ktor.util.pipeline.Pipeline.execute(Pipeline.kt:92)
-	at io.ktor.server.application.PipelineCall$DefaultImpls.respond(PipelineCall.kt:132)
-	at io.ktor.server.routing.RoutingPipelineCall.respond(RoutingPipelineCall.kt:23)
-	at io.ktor.server.routing.RoutingCall.respond(RoutingNode.kt:249)
-	at com.example.MainKt$main$1$6.invokeSuspend(Main.kt:95)
-	at com.example.MainKt$main$1$6.invoke(Main.kt)
-	at com.example.MainKt$main$1$6.invoke(Main.kt)
+[2025-05-05 08:25:17,238]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mOPTIONS[m - /api/decryptBinaryCbor in 5ms
+[2025-05-05 08:25:17,271]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinaryCbor in 8ms
+[2025-05-05 08:25:30,281]-[eventLoopGroupProxy-4-2] ERROR Application - Unhandled: POST - /rpc/routeIPSServiceManager3
+java.lang.IllegalStateException: Service IIPSService not found
+	at dev.kilua.rpc.RpcServiceManager$createRequestHandler$1.invokeSuspend(RpcServiceManager.kt:66)
+	at dev.kilua.rpc.RpcServiceManager$createRequestHandler$1.invoke(RpcServiceManager.kt)
+	at dev.kilua.rpc.RpcServiceManager$createRequestHandler$1.invoke(RpcServiceManager.kt)
 	at io.ktor.server.routing.RoutingNode$buildPipeline$1$1.invokeSuspend(RoutingNode.kt:127)
 	at io.ktor.server.routing.RoutingNode$buildPipeline$1$1.invoke(RoutingNode.kt)
 	at io.ktor.server.routing.RoutingNode$buildPipeline$1$1.invoke(RoutingNode.kt)
@@ -127,39 +71,46 @@ Please ensure that class is marked as '@Serializable' and that the serialization
 	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
 	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
-[2025-05-04 10:39:26,715]-[eventLoopGroupProxy-4-1] INFO  Application - [31m500 Internal Server Error[m: [36mPOST[m - /api/encryptText in 226ms
-[2025-05-04 10:44:13,737]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-[2025-05-04 10:44:13,895]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-[2025-05-04 10:44:14,149]-[main] INFO  Application - Application started in 0.818 seconds.
-[2025-05-04 10:44:14,274]-[main] INFO  Application - Responding at http://0.0.0.0:8080
-[2025-05-04 10:44:25,418]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-[2025-05-04 10:44:25,577]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-[2025-05-04 10:44:25,860]-[main] INFO  Application - Application started in 0.933 seconds.
-[2025-05-04 10:44:26,009]-[main] INFO  Application - Responding at http://0.0.0.0:8080
-[2025-05-04 10:44:30,488]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/encryptText in 123ms
-[2025-05-04 10:48:42,984]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/encryptText in 10ms
-[2025-05-04 10:54:34,903]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-[2025-05-04 10:54:35,083]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-[2025-05-04 10:54:35,381]-[main] INFO  Application - Application started in 0.976 seconds.
-[2025-05-04 10:54:35,553]-[main] INFO  Application - Responding at http://0.0.0.0:8080
-[2025-05-04 10:54:38,787]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptText in 114ms
-[2025-05-04 11:05:54,365]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-[2025-05-04 11:05:54,523]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-[2025-05-04 11:05:54,822]-[main] INFO  Application - Application started in 0.892 seconds.
-[2025-05-04 11:05:54,968]-[main] INFO  Application - Responding at http://0.0.0.0:8080
-[2025-05-04 11:05:58,843]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/encryptBinary in 92ms
-[2025-05-04 11:07:48,623]-[eventLoopGroupProxy-4-1] INFO  Application - [31m404 Not Found[m: [36mPOST[m - /api/decryptBinary in 12ms
-[2025-05-04 11:08:05,865]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-[2025-05-04 11:08:06,013]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-[2025-05-04 11:08:06,259]-[main] INFO  Application - Application started in 0.797 seconds.
-[2025-05-04 11:08:06,376]-[main] INFO  Application - Responding at http://0.0.0.0:8080
-[2025-05-04 11:08:09,580]-[eventLoopGroupProxy-4-1] INFO  Application - [31m404 Not Found[m: [36mPOST[m - /api/decryptBinary in 49ms
-[2025-05-04 11:09:58,011]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-[2025-05-04 11:09:58,174]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-[2025-05-04 11:09:58,498]-[main] INFO  Application - Application started in 0.99 seconds.
-[2025-05-04 11:09:58,636]-[main] INFO  Application - Responding at http://0.0.0.0:8080
-[2025-05-04 11:10:01,674]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 93ms
-[2025-05-04 13:37:07,714]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-[2025-05-04 13:37:07,892]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-[2025-05-04 13:37:08,215]-[main] INFO  Application - Application started in 1.0 seconds.
-[2025-05-04 13:37:08,358]-[main] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-05-05 08:25:30,294]-[eventLoopGroupProxy-4-2] INFO  Application - [31m500 Internal Server Error[m: [36mPOST[m - /rpc/routeIPSServiceManager3 in 50ms
+[2025-05-05 08:28:57,189]-[main] INFO  io.ktor.server.Application - Autoreload is disabled because the development mode is off.
+[2025-05-05 08:28:57,224]-[main] INFO  io.ktor.server.Application - Application started in 0.036 seconds.
+[2025-05-05 08:28:57,386]-[main] INFO  io.ktor.server.Application - Responding at http://0.0.0.0:8080
+[2025-05-05 08:33:24,466]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-05 08:33:24,917]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-05-05 08:33:25,496]-[main] INFO  Application - Application started in 268.704 seconds.
+[2025-05-05 08:33:30,867]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-05 08:33:31,048]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-05-05 08:38:24,856]-[main] INFO  io.ktor.server.Application - Autoreload is disabled because the development mode is off.
+[2025-05-05 08:38:24,900]-[main] INFO  io.ktor.server.Application - Application started in 0.045 seconds.
+[2025-05-05 08:38:25,072]-[main] INFO  io.ktor.server.Application - Responding at http://0.0.0.0:8080
+[2025-05-05 08:40:11,345]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-05 08:40:11,636]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-05-05 08:40:12,013]-[main] INFO  Application - Application started in 107.591 seconds.
+[2025-05-05 08:40:57,460]-[main] INFO  io.ktor.server.Application - Autoreload is disabled because the development mode is off.
+[2025-05-05 08:40:57,522]-[main] INFO  io.ktor.server.Application - Application started in 0.063 seconds.
+[2025-05-05 08:40:57,686]-[main] INFO  io.ktor.server.Application - Responding at http://0.0.0.0:8080
+[2025-05-05 08:42:06,324]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-05 08:42:06,514]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-05-05 08:42:06,783]-[main] INFO  Application - Application started in 69.735 seconds.
+[2025-05-05 08:42:33,352]-[main] INFO  io.ktor.server.Application - Autoreload is disabled because the development mode is off.
+[2025-05-05 08:42:33,412]-[main] INFO  io.ktor.server.Application - Application started in 0.061 seconds.
+[2025-05-05 08:42:33,561]-[main] INFO  io.ktor.server.Application - Responding at http://0.0.0.0:8080
+[2025-05-05 08:48:48,985]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-05 08:48:49,141]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-05-05 08:48:49,397]-[main] INFO  Application - Application started in 376.493 seconds.
+[2025-05-05 08:50:34,082]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-05 08:50:34,250]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-05-05 08:57:11,697]-[main] INFO  io.ktor.server.Application - Autoreload is disabled because the development mode is off.
+[2025-05-05 08:57:11,765]-[main] INFO  io.ktor.server.Application - Application started in 0.07 seconds.
+[2025-05-05 08:57:11,922]-[main] INFO  io.ktor.server.Application - Responding at http://0.0.0.0:8081
+[2025-05-05 09:05:07,551]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-05 09:05:07,729]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-05-05 09:05:07,977]-[main] INFO  Application - Application started in 476.699 seconds.
+[2025-05-05 09:05:11,183]-[main] INFO  io.ktor.server.Application - Autoreload is disabled because the development mode is off.
+[2025-05-05 09:05:11,245]-[main] INFO  io.ktor.server.Application - Application started in 0.063 seconds.
+[2025-05-05 09:05:11,404]-[main] INFO  io.ktor.server.Application - Responding at http://0.0.0.0:8081
+[2025-05-05 09:06:26,681]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-05 09:06:26,871]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-05-05 09:06:27,144]-[main] INFO  Application - Application started in 76.364 seconds.
+[2025-05-05 09:06:33,037]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-05 09:06:33,215]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.

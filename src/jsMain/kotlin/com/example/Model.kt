@@ -1,34 +1,20 @@
 package com.example
 
 import dev.kilua.rpc.getService
+import io.ktor.client.*
+import io.ktor.client.call.*
+import io.ktor.client.plugins.contentnegotiation.*
+import io.ktor.client.request.*
+import io.ktor.client.statement.*
+import io.ktor.http.*
 import io.kvision.state.ObservableList
 import io.kvision.state.ObservableValue
 import io.kvision.state.observableListOf
 import io.kvision.utils.syncWithList
-import kotlinx.browser.window
 
 enum class Page {
   LIST,
   ABOUT
-}
-
-fun ByteArray.encodeBase64(): String {
-    return window.btoa(this.joinToString("") { it.toInt().toChar().toString() })
-}
-
-fun ByteArray.toBase64(): String {
-    val binary = this.joinToString("") { it.toInt().toChar().toString() }
-    return js("btoa(binary)") as String
-}
-
-fun ByteArray.base64EncodeSafe(): String {
-    val binary = this.joinToString("") { it.toInt().toChar().toString() }
-    return js("btoa(binary)") as String
-}
-
-fun String.decodeBase64(): ByteArray {
-    val decoded = window.atob(this)
-    return decoded.encodeToByteArray()
 }
 
 object Model {
@@ -69,26 +55,31 @@ object Model {
 
   suspend fun encryptText(data: String, useBase64: Boolean = false): EncryptedPayloadDTO {
     return ipsService.encryptText(data, useBase64)
-}
+  }
 
-suspend fun decryptText(payload: EncryptedPayloadDTO, useBase64: Boolean = false): String {
+  suspend fun decryptText(payload: EncryptedPayloadDTO, useBase64: Boolean = false): String {
     return ipsService.decryptText(
         encryptedData = payload.encryptedData,
         iv = payload.iv,
         mac = payload.mac,
-        useBase64 = useBase64
-    )
-}
+        useBase64 = useBase64)
+  }
 
-suspend fun encryptBinary(data: ByteArray): ByteArray {
-    val encoded = data.encodeBase64()
-    val response = ipsService.encryptBinary(encoded)
-    return response.data.decodeBase64()
-}
+  suspend fun decryptBinaryViaHttp(encrypted: ByteArray): ByteArray {
+    val response: HttpResponse =
+        cborClient.post("http://localhost:8081/api/decryptBinaryCbor") {
+          contentType(ContentType.Application.Cbor)
+          setBody(encrypted)
+        }
+    return response.body()
+  }
 
-suspend fun decryptBinary(encrypted: ByteArray): ByteArray {
-    val encoded = encrypted.toBase64()
-    val response = ipsService.decryptBinary(encoded)
-    return response.data.decodeBase64()
-}
+  suspend fun testBinary(data: ByteArray): ByteArray {
+    val response: HttpResponse =
+        cborClient.post("http://localhost:8081/api/TestCBor") {
+          contentType(ContentType.Application.Cbor)
+          setBody(data)
+        }
+    return response.body()
+  }
 }

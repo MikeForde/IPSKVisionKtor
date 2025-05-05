@@ -1,16 +1,22 @@
 package com.example
 
-import com.example.serviceHelpers.*
 import com.example.encryption.CryptoHelper
+import com.example.serviceHelpers.*
 import dev.kilua.rpc.applyRoutes
 import dev.kilua.rpc.getServiceManager
 import dev.kilua.rpc.initRpc
 import dev.kilua.rpc.registerService
 import io.ktor.http.*
+import io.ktor.serialization.kotlinx.cbor.*
+import io.ktor.serialization.kotlinx.json.*
 import io.ktor.server.application.*
 import io.ktor.server.auth.*
+import io.ktor.server.engine.*
+import io.ktor.server.netty.*
 import io.ktor.server.plugins.calllogging.*
 import io.ktor.server.plugins.compression.*
+import io.ktor.server.plugins.contentnegotiation.*
+import io.ktor.server.plugins.cors.routing.*
 import io.ktor.server.plugins.defaultheaders.*
 import io.ktor.server.request.receive
 import io.ktor.server.request.receiveStream
@@ -23,10 +29,48 @@ import kotlinx.serialization.json.JsonObject
 import org.jetbrains.exposed.sql.and
 
 fun Application.main() {
+  install(ContentNegotiation) { 
+    json()
+    cbor() 
+    }
+  // embeddedServer(Netty, port = 8081) {
+  //       install(ContentNegotiation) { cbor() }
+  //       install(CORS) {
+  //         anyHost()
+  //         allowMethod(HttpMethod.Options)
+  //         allowMethod(HttpMethod.Post)
+  //         allowHeader(HttpHeaders.ContentType)
+  //         allowNonSimpleContentTypes = true
+  //       }
+  //       routing {
+  //         post("/api/TestCBor") {
+  //           // output message to terminal
+  //           println("Decrypting binary data using Cbor")
+  //           val inputBytes = call.receive<ByteArray>()
+  //           call.respond(inputBytes)
+  //         }
+  //         post("/api/decryptBinaryCbor") {
+  //           // output message to terminal
+  //           println("Decrypting binary data using Cbor")
+  //           val inputBytes = call.receive<ByteArray>()
+  //           val outputBytes = CryptoHelper.decryptBinary(inputBytes)
+  //           call.respond(outputBytes)
+  //         }
+  //       }
+  //     }
+  //     .start(wait = true)
   registerRemoteTypes()
   install(Compression)
   install(DefaultHeaders)
   install(CallLogging)
+  install(CORS) {
+    anyHost() // Allows requests from any host; use with caution in production
+    allowMethod(HttpMethod.Options) // Allows preflight requests
+    allowMethod(HttpMethod.Post) // Allows POST requests
+    allowHeader(HttpHeaders.ContentType) // Allows 'Content-Type' header
+    allowNonSimpleContentTypes =
+        true // Allows non-simple content types like 'application/octet-stream'
+  }
 
   Db.init(environment.config)
 
@@ -76,16 +120,29 @@ fun Application.main() {
       call.respondText(text)
     }
     post("/api/encryptBinary") {
-        val inputBytes = call.receiveStream().readBytes()
-        val encrypted = CryptoHelper.encryptBinary(inputBytes)
-        call.respondBytes(encrypted, ContentType.Application.OctetStream)
+      val inputBytes = call.receiveStream().readBytes()
+      val encrypted = CryptoHelper.encryptBinary(inputBytes)
+      call.respondBytes(encrypted, ContentType.Application.OctetStream)
     }
     post("/api/decryptBinary") {
-        // output message to terminal
-        println("Decrypting binary data")
-        val inputBytes = call.receiveStream().readBytes()
-        val decrypted = CryptoHelper.decryptBinary(inputBytes)
-        call.respondBytes(decrypted, ContentType.Application.OctetStream)
+      // output message to terminal
+      println("Decrypting binary data")
+      val inputBytes = call.receiveStream().readBytes()
+      val decrypted = CryptoHelper.decryptBinary(inputBytes)
+      call.respondBytes(decrypted, ContentType.Application.OctetStream)
+    }
+    post("/api/decryptBinaryCbor") {
+      // output message to terminal
+      println("Decrypting binary data using Cbor")
+      val inputBytes = call.receive<ByteArray>()
+      val outputBytes = CryptoHelper.decryptBinary(inputBytes)
+      call.respond(outputBytes)
+    }
+    post("/api/TestCBor") {
+      // output message to terminal
+      println("Decrypting binary data using Cbor")
+      val inputBytes = call.receive<ByteArray>()
+      call.respond(inputBytes)
     }
   }
   initRpc { registerService<IIPSService> { IPSServiceRpc(it) } }

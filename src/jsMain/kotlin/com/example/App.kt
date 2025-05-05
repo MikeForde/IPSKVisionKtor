@@ -1,5 +1,8 @@
 package com.example
 
+import io.ktor.client.*
+import io.ktor.client.plugins.contentnegotiation.*
+import io.ktor.serialization.kotlinx.cbor.*
 import io.kvision.Application
 import io.kvision.BootstrapModule
 import io.kvision.CoreModule
@@ -38,6 +41,10 @@ import kotlinx.coroutines.asCoroutineDispatcher
 import kotlinx.coroutines.launch
 
 val AppScope = CoroutineScope(window.asCoroutineDispatcher())
+
+val cborClient = HttpClient { install(ContentNegotiation) { cbor() } }
+
+// ServiceManager.register(IIPSService::class, client)
 
 @JsModule("/kotlin/modules/css/kvapp.css") external val kvappCss: dynamic
 
