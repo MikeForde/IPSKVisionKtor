@@ -242,3 +242,10 @@ java.lang.IllegalStateException: Service IIPSService not found
 [2025-05-05 12:33:36,063]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 72ms
 [2025-05-05 12:33:42,400]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 29ms
 [2025-05-05 12:33:45,376]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager3 in 8ms
+[2025-05-05 12:48:50,591]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-05 12:48:50,835]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-05-05 12:48:51,159]-[main] INFO  Application - Application started in 1.062 seconds.
+[2025-05-05 12:48:51,323]-[main] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-05-05 13:08:17,024]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 260ms
+[2025-05-05 13:21:07,986]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mOPTIONS[m - /api/decryptBinary in 1ms
+[2025-05-05 13:21:08,021]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptBinary in 28ms

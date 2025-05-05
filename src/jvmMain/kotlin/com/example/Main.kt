@@ -38,7 +38,10 @@ fun Application.main() {
   install(DefaultHeaders)
   install(CallLogging)
   install(CORS) {
-    anyHost() // Allows requests from any host; use with caution in production
+    allowHost(
+        host = "localhost:3000",
+        schemes = listOf("http"),
+    )
     allowMethod(HttpMethod.Options) // Allows preflight requests
     allowMethod(HttpMethod.Post) // Allows POST requests
     allowHeader(HttpHeaders.ContentType) // Allows 'Content-Type' header
