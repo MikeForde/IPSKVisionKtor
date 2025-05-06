@@ -39,6 +39,16 @@ object ChangeLogPanel : SimplePanel() {
               li(
                   "Implemented /api/convertSchemaToUnified POST endpoint - outputs FHiR JSON in unified format.")
             }
+            li(className = "list-unstyled")
+            h5("Version 0_4 - 6th May 2025")
+            ul {
+              li { strong("NFC Reader Panel") }
+              li("Added NFC Page for reading NFC cards in both plain text and agreed MIME formats.")
+              li(
+                  "Supports all x.ips binary NDEF formats.")
+              li(
+                  "Allows simple viewing, conversion to internal schema format (display only) and full import to IPS database.")
+            }
           }
         }
       }

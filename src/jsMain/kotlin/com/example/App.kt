@@ -86,7 +86,7 @@ class App : Application() {
           expand = NavbarExpand.SM,
       ) {
         nav {
-          navLink("0_3", className = "app_version")
+          navLink("0_4", className = "app_version")
           navLink("Home", icon = "fas fa-home") {
             onEvent {
               click = {

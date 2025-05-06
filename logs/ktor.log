@@ -2639,3 +2639,7 @@ Caused by: java.sql.SQLException: Field 'createdAt' doesn't have a default value
 [2025-05-06 10:36:15,114]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 28ms
 [2025-05-06 10:36:32,762]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 16ms
 [2025-05-06 10:36:36,332]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 25ms
+[2025-05-06 10:57:12,984]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-06 10:57:13,175]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-05-06 10:57:13,499]-[main] INFO  Application - Application started in 0.986 seconds.
+[2025-05-06 10:57:13,643]-[main] INFO  Application - Responding at http://0.0.0.0:8080
