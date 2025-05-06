@@ -75,15 +75,6 @@ object Model {
         useBase64 = useBase64)
   }
 
-  // suspend fun decryptBinaryViaHttp(encrypted: ByteArray): ByteArray {
-  //   val response: HttpResponse =
-  //       cborClient.post("http://localhost:8081/api/decryptBinaryCbor") {
-  //         contentType(ContentType.Application.Cbor)
-  //         setBody(encrypted)
-  //       }
-  //   return response.body()
-  // }
-
   suspend fun decryptBinaryViaHttp(encrypted: ByteArray): ByteArray {
     val response: HttpResponse =
         restClient.post("$BASE_URL/api/decryptBinary") {
@@ -93,14 +84,33 @@ object Model {
     return response.body()
   }
 
-  // suspend fun testBinary(data: ByteArray): ByteArray {
-  //   val response: HttpResponse =
-  //       cborClient.post("http://localhost:8081/api/TestCBor") {
-  //         contentType(ContentType.Application.Cbor)
-  //         setBody(data)
-  //       }
-  //   return response.body()
-  // }
+  suspend fun decodeGzip(data: ByteArray): String {
+    val response: HttpResponse =
+        restClient.post("$BASE_URL/api/gzipDecode") {
+          contentType(ContentType.Application.OctetStream)
+          setBody(data)
+        }
+    return response.body()
+  }
+
+  // Combined function to encrypt and compress
+  suspend fun encryptAndCompress(data: String): ByteArray {
+    val response: HttpResponse =
+        restClient.post("$BASE_URL/api/gzipEncrypt") {
+          contentType(ContentType.Application.OctetStream)
+          setBody(data)
+        }
+    return response.body()
+  }
+  // Combined function to decrypt and decompress
+  suspend fun decryptAndDecompress(encrypted: ByteArray): String {
+    val response: HttpResponse =
+        restClient.post("$BASE_URL/api/gzipDecrypt") {
+          contentType(ContentType.Application.OctetStream)
+          setBody(encrypted)
+        }
+    return response.body()
+  }
 
   suspend fun testBinary(data: ByteArray): ByteArray {
     val response: HttpResponse =

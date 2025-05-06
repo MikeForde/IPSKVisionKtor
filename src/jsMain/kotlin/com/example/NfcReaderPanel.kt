@@ -188,10 +188,21 @@ object NfcReaderPanel : SimplePanel() {
 
             "application/x.ips.aes256.v1-0" -> {
               val decryptedBytes = Model.decryptBinaryViaHttp(byteArray)
-              val uint8Decrypted = js("new Uint8Array(decryptedBytes)")
+              //val uint8Decrypted = js("new Uint8Array(decryptedBytes)")
               val decoder = js("new TextDecoder('utf-8')")
               decoder.decode(decryptedBytes)
             }
+            // decodeGzip will return a UTF-8 string
+            "application/x.ips.gzip.v1-0" -> {
+              // Model.decodeGzip takes ByteArray and returns the decompressed String
+              Model.decodeGzip(byteArray)
+            }
+
+            // decryptAndDecompress
+            "application/x.ips.gzip.aes256.v1-0" -> {
+              Model.decryptAndDecompress(byteArray)
+            }
+
 
             else -> {
               Toast.warning("Unknown MIME type: $mimeType — showing as UTF-8 text.")
