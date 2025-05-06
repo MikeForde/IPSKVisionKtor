@@ -21,6 +21,8 @@ interface IIPSService {
 
   suspend fun convertBundleToSchema(bundleJson: String): String
 
+  suspend fun addBundleToDatabase(bundleJson: String): String
+
   // Encrypt and decrypt services
   suspend fun encryptText(data: String, useBase64: Boolean): EncryptedPayloadDTO
 
@@ -31,9 +33,9 @@ interface IIPSService {
       useBase64: Boolean
   ): String
 
-  suspend fun encryptBinary(data: String): BinaryEncryptResponse
+  // suspend fun encryptBinary(data: String): BinaryEncryptResponse
 
-  suspend fun decryptBinary(data: String): BinaryDecryptResponse
+  // suspend fun decryptBinary(data: String): BinaryDecryptResponse
 
-  suspend fun decryptBinaryCbor(encrypted: ByteArray): ByteArray
+  // suspend fun decryptBinaryCbor(encrypted: ByteArray): ByteArray
 }

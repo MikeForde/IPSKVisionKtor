@@ -49,7 +49,8 @@ fun Application.apiRoutes() {
       else call.respond(HttpStatusCode.NotFound, "No IPS records not found")
     }
 
-    // IPS record creation fron IPS Bundle - first convert (using convertIPSBundleToSchema) then add (using addIPSRecord)
+    // IPS record creation fron IPS Bundle - first convert (using convertIPSBundleToSchema) then add
+    // (using addIPSRecord)
     post("/api/ipsRecordFromBundle") {
       val json = call.receive<JsonObject>()
       val model = convertIPSBundleToSchema(json)

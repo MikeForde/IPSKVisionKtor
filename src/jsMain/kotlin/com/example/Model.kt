@@ -63,6 +63,10 @@ object Model {
     return ipsService.convertBundleToSchema(bundleJson)
   }
 
+  suspend fun addBundleToDatabase(bundleJson: String): String {
+    return ipsService.addBundleToDatabase(bundleJson)
+  }
+
   suspend fun encryptText(data: String, useBase64: Boolean = false): EncryptedPayloadDTO {
     return ipsService.encryptText(data, useBase64)
   }
@@ -102,6 +106,7 @@ object Model {
         }
     return response.body()
   }
+
   // Combined function to decrypt and decompress
   suspend fun decryptAndDecompress(encrypted: ByteArray): String {
     val response: HttpResponse =

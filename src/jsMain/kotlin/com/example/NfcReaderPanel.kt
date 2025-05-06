@@ -6,7 +6,6 @@ import io.kvision.html.ButtonSize
 import io.kvision.panel.SimplePanel
 import io.kvision.toast.Toast
 import io.kvision.utils.px
-import kotlinx.browser.window
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.await
 import kotlinx.coroutines.launch
@@ -188,7 +187,7 @@ object NfcReaderPanel : SimplePanel() {
 
             "application/x.ips.aes256.v1-0" -> {
               val decryptedBytes = Model.decryptBinaryViaHttp(byteArray)
-              //val uint8Decrypted = js("new Uint8Array(decryptedBytes)")
+              // val uint8Decrypted = js("new Uint8Array(decryptedBytes)")
               val decoder = js("new TextDecoder('utf-8')")
               decoder.decode(decryptedBytes)
             }
@@ -202,7 +201,6 @@ object NfcReaderPanel : SimplePanel() {
             "application/x.ips.gzip.aes256.v1-0" -> {
               Model.decryptAndDecompress(byteArray)
             }
-
 
             else -> {
               Toast.warning("Unknown MIME type: $mimeType — showing as UTF-8 text.")
@@ -219,35 +217,21 @@ object NfcReaderPanel : SimplePanel() {
   }
 
   private suspend fun importPayload() {
-    if (rawPayload.isBlank()) return
-
-    val (endpoint, payloadToSend, contentType) =
-        when {
-          rawPayload.trim().startsWith("{") &&
-              "resourceType" in rawPayload &&
-              "Bundle" in rawPayload ->
-              Triple("/ipsbundle", Json.parseToJsonElement(rawPayload), "application/json")
-          rawPayload.startsWith("MSH") -> Triple("/ipsfromhl72x", rawPayload, "text/plain")
-          rawPayload.startsWith("H9") -> Triple("/ipsfrombeer", rawPayload, "text/plain")
-          else -> {
-            Toast.danger("Unrecognized IPS format")
-            return
-          }
-        }
+    val trimmed = rawPayload.trim()
+    if (!trimmed.startsWith("{") ||
+        !trimmed.contains("resourceType") ||
+        !trimmed.contains("Bundle")) {
+      Toast.danger("Only JSON FHIR Bundles can be currently imported via this method.")
+      return
+    }
 
     try {
-      val headers = js("({ 'Content-Type': contentType })")
-      headers["Content-Type"] = contentType
-
-      val body =
-          if (contentType == "application/json") JSON.stringify(payloadToSend) else payloadToSend
-
-      val response =
-          window.fetch(endpoint, js("({ method: 'POST', headers: headers, body: body })")).await()
-
-      Toast.success("Import successful")
+      val rawJson = Model.addBundleToDatabase(trimmed)
+      val prettyJson = fnPrettyJson(rawJson)
+      payloadArea.value = prettyJson
+      Toast.success("Conversion successful")
     } catch (e: Throwable) {
-      Toast.danger("Import failed: ${e.message}")
+      Toast.danger("Conversion failed: ${e.message}")
     }
   }
 
@@ -256,7 +240,7 @@ object NfcReaderPanel : SimplePanel() {
     if (!trimmed.startsWith("{") ||
         !trimmed.contains("resourceType") ||
         !trimmed.contains("Bundle")) {
-      Toast.danger("Only JSON FHIR Bundles can be converted via this method.")
+      Toast.danger("Only JSON FHIR Bundles can be currently converted via this method.")
       return
     }
 

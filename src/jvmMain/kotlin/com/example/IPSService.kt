@@ -6,7 +6,6 @@ import com.example.serviceHelpers.*
 import io.ktor.server.application.ApplicationCall
 import io.ktor.server.request.receive
 import io.ktor.server.sessions.get
-import java.util.Base64
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.jsonObject
@@ -132,12 +131,20 @@ class IPSServiceRpc(private val call: ApplicationCall) : IIPSService {
   }
 
   override suspend fun convertBundleToSchema(bundleJson: String): String {
-    // 1) parse the incoming raw JSON
     val jsonObj = Json.parseToJsonElement(bundleJson).jsonObject
-    // 2) convert to IPSModel
     val model = convertIPSBundleToSchema(jsonObj)
-    // 3) re-serialize the IPSModel back to JSON text
     return Json.encodeToString(model)
+  }
+
+  // Rpc service to convert Bundle to model then add to the database
+  override suspend fun addBundleToDatabase(bundleJson: String): String {
+    val jsonObj = Json.parseToJsonElement(bundleJson).jsonObject
+    val model = convertIPSBundleToSchema(jsonObj)
+    // 3) add to the database - can't simply do IPSModelDao.insert(model) because the dates in the
+    // model are strings and
+    // MySQL expects DateTime - but we have a addIPSRecord method that does the conversion
+    val addedModel = addIPSRecord(model)
+    return addedModel.id.toString()
   }
 
   override suspend fun encryptText(data: String, useBase64: Boolean): EncryptedPayloadDTO {
@@ -156,19 +163,25 @@ class IPSServiceRpc(private val call: ApplicationCall) : IIPSService {
     return decrypted.toString(Charsets.UTF_8)
   }
 
-  override suspend fun encryptBinary(data: String): BinaryEncryptResponse {
-    val raw = Base64.getDecoder().decode(data)
-    val encrypted = CryptoHelper.encryptBinary(raw)
-    return BinaryEncryptResponse(Base64.getEncoder().encodeToString(encrypted))
-  }
+  // Left to remember that binary encrypt/decrypt doesn't work as Rpc service with Kilua
+  // Problem is Rpc Kilua doesn't support ByteArray and the workaround - to use base64 - doesn't
+  // work on the frontend
+  // As the encode/decode64 frontend libraries don't support non-Latin characters
 
-  override suspend fun decryptBinary(data: String): BinaryDecryptResponse {
-    val raw = Base64.getDecoder().decode(data)
-    val decrypted = CryptoHelper.decryptBinary(raw)
-    return BinaryDecryptResponse(Base64.getEncoder().encodeToString(decrypted))
-  }
+  //
+  // override suspend fun encryptBinary(data: String): BinaryEncryptResponse {
+  //   val raw = Base64.getDecoder().decode(data)
+  //   val encrypted = CryptoHelper.encryptBinary(raw)
+  //   return BinaryEncryptResponse(Base64.getEncoder().encodeToString(encrypted))
+  // }
 
-  override suspend fun decryptBinaryCbor(encrypted: ByteArray): ByteArray {
-    return CryptoHelper.decryptBinary(encrypted)
-  }
+  // override suspend fun decryptBinary(data: String): BinaryDecryptResponse {
+  //   val raw = Base64.getDecoder().decode(data)
+  //   val decrypted = CryptoHelper.decryptBinary(raw)
+  //   return BinaryDecryptResponse(Base64.getEncoder().encodeToString(decrypted))
+  // }
+
+  // override suspend fun decryptBinaryCbor(encrypted: ByteArray): ByteArray {
+  //   return CryptoHelper.decryptBinary(encrypted)
+  // }
 }
