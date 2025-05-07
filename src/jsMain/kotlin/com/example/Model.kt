@@ -71,6 +71,11 @@ object Model {
     return ipsService.encryptText(data, useBase64)
   }
 
+  suspend fun encryptTextGzip(data: String, useBase64: Boolean = true): EncryptedPayloadDTO {
+    console.log("Encrypting data in Model")
+    return ipsService.encryptTextGzip(data, useBase64)
+  }
+
   suspend fun decryptText(payload: EncryptedPayloadDTO, useBase64: Boolean = false): String {
     return ipsService.decryptText(
         encryptedData = payload.encryptedData,
@@ -98,7 +103,7 @@ object Model {
   }
 
   // Combined function to encrypt and compress
-  suspend fun encryptAndCompress(data: String): ByteArray {
+  suspend fun encryptAndCompress(data: String?): ByteArray {
     val response: HttpResponse =
         restClient.post("$BASE_URL/api/gzipEncrypt") {
           contentType(ContentType.Application.OctetStream)

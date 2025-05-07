@@ -1,6 +1,7 @@
 package com.example
 
 import com.example.Db.dbQuery
+import com.example.compression.*
 import com.example.encryption.CryptoHelper
 import com.example.serviceHelpers.*
 import io.ktor.server.application.ApplicationCall
@@ -49,7 +50,9 @@ class PatientService(private val call: ApplicationCall) {
 
 @kotlinx.serialization.Serializable data class IpsNameRequest(val name: String)
 
-// REST methods for IPS lookups
+// ************* REST methods ****************
+// Don't have to do this here, as can just add to ApiRoutes but shown for illustration
+// However, these are NOT Rpc methods.
 class IpsService(private val call: ApplicationCall) {
 
   suspend fun getIpsRecord(): IPSModel? {
@@ -71,35 +74,8 @@ class IpsService(private val call: ApplicationCall) {
   }
 }
 
-// @kotlinx.serialization.Serializable
-// data class EncryptRequest(val data: String, val useBase64: Boolean = false)
-
-// @kotlinx.serialization.Serializable
-// data class EncryptedPayloadDTO(
-//     val encryptedData: String,
-//     val iv: String,
-//     val mac: String,
-//     val key: String
-// )
-
-// @kotlinx.serialization.Serializable
-// data class DecryptRequest(
-//     val encryptedData: String,
-//     val iv: String,
-//     val mac: String,
-//     val useBase64: Boolean = false
-// )
-
-// @kotlinx.serialization.Serializable
-// data class BinaryEncryptRequest(val data: String) // base64-encoded input
-// @kotlinx.serialization.Serializable
-// data class BinaryEncryptResponse(val data: String) // base64-encoded result
-
-// @kotlinx.serialization.Serializable
-// data class BinaryDecryptRequest(val data: String) // base64-encoded input
-// @kotlinx.serialization.Serializable
-// data class BinaryDecryptResponse(val data: String) // base64-encoded output
-
+// ************** RPC SERVICE ****************
+// Need to be 'registered' by being included in the commmonMain Service.kt file
 /** RPC implementation for listing all IPS records */
 class IPSServiceRpc(private val call: ApplicationCall) : IIPSService {
   override suspend fun getIPSList(): List<IPSModel> =
@@ -149,6 +125,13 @@ class IPSServiceRpc(private val call: ApplicationCall) : IIPSService {
 
   override suspend fun encryptText(data: String, useBase64: Boolean): EncryptedPayloadDTO {
     val payload = CryptoHelper.encrypt(data, useBase64)
+    return EncryptedPayloadDTO(payload.encryptedData, payload.iv, payload.mac, payload.key)
+  }
+
+  // gzip (using gzipEncode(data: Any): ByteArray) then encrypt
+  override suspend fun encryptTextGzip(data: String, useBase64: Boolean): EncryptedPayloadDTO {
+    val compressed = gzipEncode(data)
+    val payload = CryptoHelper.encrypt(compressed, useBase64)
     return EncryptedPayloadDTO(payload.encryptedData, payload.iv, payload.mac, payload.key)
   }
 

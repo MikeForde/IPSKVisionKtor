@@ -26,13 +26,20 @@ object CryptoHelper {
       val key: String
   )
 
-  fun encrypt(data: String, useBase64: Boolean = false): EncryptedPayload {
+  fun encrypt(data: Any, useBase64: Boolean = false): EncryptedPayload {
+    // Convert data to string
+    val plainBytes =
+        when (data) {
+          is String -> data.toByteArray(Charsets.UTF_8)
+          is ByteArray -> data
+          else -> throw IllegalArgumentException("Unsupported data type")
+        }
     val iv = ByteArray(IV_LENGTH).also { random.nextBytes(it) }
     val cipher = Cipher.getInstance(AES_MODE)
     val gcmSpec = GCMParameterSpec(GCM_TAG_LENGTH * 8, iv)
     cipher.init(Cipher.ENCRYPT_MODE, keySpec, gcmSpec)
 
-    val plainBytes = data.toByteArray(Charsets.UTF_8)
+    // val plainBytes = dataString.toByteArray(Charsets.UTF_8)
     val encryptedBytes = cipher.doFinal(plainBytes)
     val mac = encryptedBytes.takeLast(GCM_TAG_LENGTH).toByteArray()
     val ciphertext = encryptedBytes.dropLast(GCM_TAG_LENGTH).toByteArray()

@@ -44,8 +44,7 @@ object ChangeLogPanel : SimplePanel() {
             ul {
               li { strong("NFC Reader Panel") }
               li("Added NFC Page for reading NFC cards in both plain text and agreed MIME formats.")
-              li(
-                  "Supports all x.ips binary NDEF formats.")
+              li("Supports all x.ips binary NDEF formats.")
               li(
                   "Allows simple viewing, conversion to internal schema format (display only) and full import to IPS database.")
             }

@@ -120,6 +120,7 @@ fun Application.apiRoutes() {
     }
 
     // Combined compression and encryption
+    // Binary version
     post("/api/gzipEncrypt") {
       val input = call.receive<String>()
       val compressed = gzipEncode(input)
@@ -130,6 +131,19 @@ fun Application.apiRoutes() {
       val encrypted = call.receive<ByteArray>()
       val decrypted = CryptoHelper.decryptBinary(encrypted)
       val decompressed = gzipDecode(decrypted)
+      call.respondText(decompressed)
+    }
+    // Text version
+    post("/api/gzipEncryptText") {
+      val input = call.receive<String>()
+      val compressed = gzipEncode(input)
+      val encrypted = CryptoHelper.encrypt(compressed, useBase64 = true)
+      call.respond(encrypted)
+    }
+    post("/api/decryptUnzipText") {
+      val encrypted = call.receive<CryptoHelper.EncryptedPayload>()
+      val decryptedBytes = CryptoHelper.decrypt(encrypted, useBase64 = true)
+      val decompressed = gzipDecode(decryptedBytes)
       call.respondText(decompressed)
     }
   }

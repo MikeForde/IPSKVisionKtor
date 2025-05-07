@@ -26,6 +26,8 @@ interface IIPSService {
   // Encrypt and decrypt services
   suspend fun encryptText(data: String, useBase64: Boolean): EncryptedPayloadDTO
 
+  suspend fun encryptTextGzip(data: String, useBase64: Boolean): EncryptedPayloadDTO
+
   suspend fun decryptText(
       encryptedData: String,
       iv: String,
