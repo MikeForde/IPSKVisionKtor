@@ -361,3 +361,7 @@ Caused by: java.net.SocketException: Network is unreachable
 [2025-05-07 17:29:06,103]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 13ms
 [2025-05-07 17:32:09,143]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 175ms
 [2025-05-07 17:32:09,403]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 13ms
+[2025-05-07 17:49:58,756]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-07 17:49:58,923]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-05-07 17:49:59,225]-[main] INFO  Application - Application started in 0.872 seconds.
+[2025-05-07 17:49:59,345]-[main] INFO  Application - Responding at http://0.0.0.0:8080

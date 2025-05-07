@@ -48,6 +48,24 @@ object ChangeLogPanel : SimplePanel() {
               li(
                   "Allows simple viewing, conversion to internal schema format (display only) and full import to IPS database.")
             }
+            li(className = "list-unstyled") {
+              h5("Version 0_5 - 7th May 2025")
+              ul {
+                li { strong("Data Format Panel Enhancements") }
+                li("Patient selector dropdown bound to Model.ipsRecords and Model.selectedIps.")
+                li(
+                    "Mode selection, compression & encryption checkboxes integrated with dynamic reload on toggle.")
+                li(
+                    "‘Gzip + Encrypt’ option implemented via encryptTextGzip RPC, with optional key visibility.")
+                li(
+                    "Download button now builds timestamped filenames with proper extension, MIME type, and _ce_ik suffix.")
+                li(
+                    "Write-to-NFC button uses Web NFC API for plain-text or binary (compressed+encrypted) payloads.")
+                li("Header now displays live response-size count.")
+                li(
+                    "Textarea sizing switched to CSS-driven responsive layout instead of fixed height.")
+              }
+            }
           }
         }
       }
