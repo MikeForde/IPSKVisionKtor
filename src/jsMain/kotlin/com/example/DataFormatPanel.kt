@@ -25,7 +25,7 @@ import org.w3c.files.BlobPropertyBag
 
 object DataFormatPanel : SimplePanel() {
   private val scope = MainScope()
-  private val textArea = textArea(rows = 10) { height = 300.px }
+  private val textArea = textArea()
   private val header = h3("API GET - IPS Data: 0")
 
   private fun sanitize(input: String): String =
@@ -142,7 +142,7 @@ object DataFormatPanel : SimplePanel() {
                   add(modeSelect)
                   add(compressionCheck)
                 }
-                div(className = "text-area mt-3") { add(textArea) }
+                div(className = "text-area") { add(textArea) }
                 div(className = "button-container mt-3") {
                   add(downloadButton)
                   add(nfcButton)

@@ -1,3 +1,15 @@
+.text-area {
+  width: 100%;
+  height: calc(100vh - 420px); 
+}
+
+textarea {
+  width: 100%;
+  height: calc(100vh - 420px); 
+  font-size: 1.2rem;
+}
+
+
 @media (max-width: 768px) {
   html {
     font-size: 85%;
@@ -6,6 +18,15 @@
 
 /* even more compact on phones */
 @media (max-width: 576px) {
+  .text-area {
+    width: 100%;
+    height: calc(100vh - 350px); 
+  }
+
+  textarea {
+    height: calc(100vh - 350px); 
+  }
+
   html {
     font-size: 75%;
   }
