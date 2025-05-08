@@ -4,7 +4,6 @@ import io.kvision.panel.Direction
 import io.kvision.panel.SimplePanel
 import io.kvision.panel.splitPanel
 import io.kvision.utils.perc
-import io.kvision.utils.px
 import io.kvision.utils.vh
 import kotlinx.browser.window
 
@@ -14,7 +13,6 @@ import kotlinx.browser.window
  */
 object IPSHomePanel : SimplePanel() {
   init {
-    padding = 25.px
 
     var lastWidth = window.innerWidth.toInt()
 

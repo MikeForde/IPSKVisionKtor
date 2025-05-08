@@ -72,7 +72,7 @@ class App : Application() {
         SimplePanel().apply {
           width = 100.perc
           height = 100.vh
-          marginTop = 76.px // push below the fixed navbar
+          margin = 5.px
         }
 
     root("kvapp") {
@@ -80,7 +80,7 @@ class App : Application() {
       // 1) Fixed‐top Navbar
       navbar(
           label = "IPS SK3",
-          type = NavbarType.FIXEDTOP,
+          type = NavbarType.STICKYTOP,
           bgColor = BsBgColor.PRIMARY,
           nColor = NavbarColor.LIGHT,
           expand = NavbarExpand.SM,

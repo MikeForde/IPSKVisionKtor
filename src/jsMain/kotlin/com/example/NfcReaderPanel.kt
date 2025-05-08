@@ -4,7 +4,6 @@ import io.kvision.form.text.TextArea
 import io.kvision.html.Button
 import io.kvision.panel.SimplePanel
 import io.kvision.toast.Toast
-import io.kvision.utils.px
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.await
 import kotlinx.coroutines.launch
@@ -48,7 +47,6 @@ object NfcReaderPanel : SimplePanel() {
   private var rawPayload: String = ""
 
   init {
-    padding = 30.px
     add(readButton)
     add(Button("Import").apply { onClick { scope.launch { importPayload() } } })
 

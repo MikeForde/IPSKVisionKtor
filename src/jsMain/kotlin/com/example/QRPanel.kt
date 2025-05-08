@@ -8,7 +8,6 @@ import io.kvision.panel.SimplePanel
 import io.kvision.panel.VPanel
 import io.kvision.state.bind
 import io.kvision.toast.Toast
-import io.kvision.utils.px
 import kotlin.js.Date
 import kotlinx.browser.document
 import kotlinx.browser.window
@@ -70,11 +69,10 @@ object QRPanel : SimplePanel() {
       }
 
   init {
-    padding = 5.px
 
     add(
         VPanel(spacing = 5) {
-          div(className = "container mt-5") {
+          div(className = "container") {
             div(className = "row") {
               div(className = "col") {
                 add(header)

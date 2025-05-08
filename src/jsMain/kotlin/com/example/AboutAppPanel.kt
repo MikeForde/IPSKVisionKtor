@@ -11,10 +11,9 @@ import kotlinx.browser.window
 object AboutAppPanel : SimplePanel() {
 
   init {
-    padding = 10.px
-
+    padding = 5.px
     // About IPS
-    div(className = "container mt-5") {
+    div(className = "container") {
       div(className = "row") {
         div(className = "col") {
           h3("About This Web Application")

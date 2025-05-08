@@ -16,13 +16,11 @@ import io.kvision.table.TableType
 import io.kvision.table.cell
 import io.kvision.table.row
 import io.kvision.table.table
-import io.kvision.utils.px
 import kotlinx.coroutines.launch
 
 object IpsListPanel : SimplePanel() {
 
   init {
-    padding = 5.px
 
     // search with text input
     hPanel(alignItems = AlignItems.CENTER, spacing = 10) {

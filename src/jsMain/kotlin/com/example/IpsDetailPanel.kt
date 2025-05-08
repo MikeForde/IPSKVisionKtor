@@ -8,12 +8,10 @@ import io.kvision.table.TableType
 import io.kvision.table.cell
 import io.kvision.table.row
 import io.kvision.table.table
-import io.kvision.utils.px
 
 object IpsDetailPanel : SimplePanel() {
 
   init {
-    padding = 5.px
 
     bind(Model.selectedIps) { ips ->
       removeAll()

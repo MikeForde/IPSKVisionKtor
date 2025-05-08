@@ -1,6 +1,6 @@
 .data-text-area {
   width: 100%;
-  height: calc(100vh - 422px); 
+  height: calc(100vh - 418px); 
 }
 
 .aesgzip-switch{
@@ -35,7 +35,7 @@
 @media (max-width: 576px) {
   .data-text-area {
     width: 100%;
-    height: calc(100vh - 350px); 
+    height: calc(100vh - 300px); 
   }
 
   .qr-text-area {

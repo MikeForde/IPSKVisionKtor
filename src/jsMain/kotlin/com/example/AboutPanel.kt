@@ -3,11 +3,13 @@ package com.example
 import io.kvision.html.*
 import io.kvision.html.link
 import io.kvision.panel.SimplePanel
+import io.kvision.utils.px
 
 object AboutPanel : SimplePanel() {
   init {
+    padding = 5.px
     // Outer container with top margin
-    div(className = "container mt-5") {
+    div(className = "container") {
       // First row: header + paragraphs
       div(className = "row") {
         div(className = "col") {
