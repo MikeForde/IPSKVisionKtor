@@ -114,6 +114,25 @@ class IPSServiceRpc(private val call: ApplicationCall) : IIPSService {
     }
   }
 
+  // gemerate HL7 2_3 - which is a plain text response
+  override suspend fun generateHL7(id: Int?): String {
+    if (id == null) {
+      return """{ "error": "No ID provided" }"""
+    }
+
+    val model =
+        Db.dbQuery {
+          IPSModelDao.select { IPSModelDao.id eq id }.singleOrNull()?.let { toFullIpsModel(it) }
+        }
+
+    return if (model != null) {
+      val hl7text = generateIpsModelToHl72_3(model)
+      hl7text // return text
+    } else {
+      """{ "error": "Record not found" }"""
+    }
+  }
+
   override suspend fun convertBundleToSchema(bundleJson: String): String {
     val jsonObj = Json.parseToJsonElement(bundleJson).jsonObject
     val model = convertIPSBundleToSchema(jsonObj)

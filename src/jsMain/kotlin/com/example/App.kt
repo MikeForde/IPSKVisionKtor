@@ -84,70 +84,72 @@ class App : Application() {
           bgColor = BsBgColor.PRIMARY,
           nColor = NavbarColor.LIGHT,
           expand = NavbarExpand.SM,
-      ) {
-        nav {
-          navLink("0_6", className = "app_version")
-          navLink("Home", icon = "fas fa-home") {
+          link = "#") {
             onEvent {
-              click = {
-                content.removeAll()
-                content.add(IPSHomePanel)
-                collapseNavbar()
+              click = { ev ->
+                val tgt = ev.target?.unsafeCast<dynamic>()
+                if (tgt?.classList?.contains("navbar-brand") == true) {
+                  content.removeAll()
+                  content.add(IPSHomePanel)
+                  collapseNavbar()
+                }
               }
             }
-          }
-          navLink("API", icon = "fas fa-file") {
-            onEvent {
-              click = {
-                content.removeAll()
-                content.add(DataFormatPanel)
-                collapseNavbar()
+            nav {
+              navLink("0_6", className = "app_version")
+
+              navLink("API", icon = "fas fa-file") {
+                onEvent {
+                  click = {
+                    content.removeAll()
+                    content.add(DataFormatPanel)
+                    collapseNavbar()
+                  }
+                }
+              }
+              navLink("QR", icon = "fas fa-qrcode") {
+                onEvent {
+                  click = {
+                    content.removeAll()
+                    content.add(QRPanel)
+                    collapseNavbar()
+                  }
+                }
+              }
+              navLink("NFC", icon = "fas fa-tag") {
+                onEvent {
+                  click = {
+                    content.removeAll()
+                    content.add(NfcReaderPanel)
+                    collapseNavbar()
+                  }
+                }
+              }
+              navLink("About", icon = "fas fa-info-circle") {
+                onEvent {
+                  click = {
+                    content.removeAll()
+                    content.add(InfoPanel)
+                    collapseNavbar()
+                  }
+                }
               }
             }
-          }
-          navLink("QR", icon = "fas fa-qrcode") {
-            onEvent {
-              click = {
-                content.removeAll()
-                content.add(QRPanel)
-                collapseNavbar()
-              }
-            }
-          }
-          navLink("NFC", icon = "fas fa-tag") {
-            onEvent {
-              click = {
-                content.removeAll()
-                content.add(NfcReaderPanel)
-                collapseNavbar()
-              }
-            }
-          }
-          navLink("About", icon = "fas fa-info-circle") {
-            onEvent {
-              click = {
-                content.removeAll()
-                content.add(InfoPanel)
-                collapseNavbar()
-              }
-            }
-          }
-        }
-        nav(rightAlign = true) {
-          // search input + button
-          hPanel(alignItems = AlignItems.CENTER, spacing = 10) {
-            val searchInput = text(InputType.SEARCH) { placeholder = tr("Surname") }
-            button(tr("Find")) {
-              onEvent {
-                click = {
-                  Model.selectedIps.value = null
-                  AppScope.launch { Model.findByLastName(searchInput.value ?: "") }
+            nav(rightAlign = true) {
+              // search input + button
+              hPanel(alignItems = AlignItems.CENTER, spacing = 10) {
+                val searchInput = text(InputType.SEARCH) { placeholder = tr("Surname") }
+                button(tr("Find")) {
+                  onEvent {
+                    click = {
+                      Model.selectedIps.value = null
+                      AppScope.launch { Model.findByLastName(searchInput.value ?: "") }
+                    }
+                  }
                 }
               }
             }
           }
-        }
-      }
 
       // 2) Content slot, below the navbar
       add(content)

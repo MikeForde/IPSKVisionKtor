@@ -75,16 +75,36 @@ fun Application.apiRoutes() {
       call.respond(addedModel)
     }
 
-    // Conversion endpoints
+    post("/api/ipsRecordFromHL72_x") {
+      val raw = call.receive<String>()
+      val ips = parseHL72_xToIpsModel(raw)
+      val addedModel = addIPSRecord(ips)
+      call.respond(addedModel)
+    }
+
+    // Conversion endpoints - TO schema
     post("/api/convertIPS") {
       val json = call.receive<JsonObject>()
       val model = convertIPSBundleToSchema(json)
       call.respond(model)
     }
+
+    post("/api/parseHL7") {
+      val raw = call.receive<String>()
+      val ips = parseHL72_xToIpsModel(raw)
+      call.respond(ips)
+    }
+
+    // Conversion endpoints - FROM schema
     post("/api/convertSchemaToUnified") {
       val model = call.receive<IPSModel>()
       val json = generateIPSBundleUnified(model)
       call.respond(json)
+    }
+    post("/api/convertSchemaToHL72_3") {
+      val model = call.receive<IPSModel>()
+      val hl7 = generateIpsModelToHl72_3(model)
+      call.respondText(hl7)
     }
 
     // Encryption endpoints

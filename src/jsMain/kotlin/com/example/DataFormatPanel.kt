@@ -25,7 +25,7 @@ import org.w3c.files.BlobPropertyBag
 
 object DataFormatPanel : SimplePanel() {
   private val scope = MainScope()
-  private val textArea = textArea()
+  private val textArea = textArea().apply { input.addCssClass("data-text-area") }
   private val header = h3("API GET - IPS Data: 0")
 
   private fun sanitize(input: String): String =
@@ -40,14 +40,18 @@ object DataFormatPanel : SimplePanel() {
       SelectInput(
               options =
                   listOf(
-                      "ipsunified" to "IPS Unified JSON Bundle"
+                      "ipsunified" to "IPS Unified JSON Bundle",
+                      "ipshl72_3" to "IPS HL7 v2.3",
                       // TODO: add more format options when generators are available
-                      ),
+                  ),
               value = "ipsunified")
           .apply { disabled = true }
 
   private val compressionCheck = CheckBox(label = "Gzip + Encrypt (AES256 base64)")
-  private val binarySwitch = switch(label = "Write to NFC using binary (AES256+gzip)")
+  private val binarySwitch =
+      switch(label = "Write to NFC using binary (AES256+gzip)").apply {
+        addCssClass("aesgzip-switch")
+      }
 
   private val downloadButton =
       button("Download Data") {
@@ -142,7 +146,7 @@ object DataFormatPanel : SimplePanel() {
                   add(modeSelect)
                   add(compressionCheck)
                 }
-                div(className = "text-area") { add(textArea) }
+                div(className = "data-text-area") { add(textArea) }
                 div(className = "button-container mt-3") {
                   add(downloadButton)
                   add(nfcButton)
@@ -187,6 +191,12 @@ object DataFormatPanel : SimplePanel() {
         }
       }
     }
+    modeSelect.onEvent {
+      change = {
+        // only refresh if there’s a current patient
+        Model.selectedIps.value?.id?.let { fetchData(it) }
+      }
+    }
     compressionCheck.onEvent {
       change = {
         // only refresh if there’s a current patient
@@ -201,34 +211,41 @@ object DataFormatPanel : SimplePanel() {
       return
     }
     scope.launch {
-      var rawJson = Model.generateUnifiedBundle(selectedId)
-      if (compressionCheck.value) {
-        val encrypted = Model.encryptTextGzip(rawJson)
-        /*  encrypted is a bespoke dataclass:
-
-        data class EncryptedPayloadDTO(
-            val encryptedData: String,
-            val iv: String,
-            val mac: String,
-            val key: String
-        )
-        */
-
-        // convert to JSON
-        val json = kotlinx.serialization.json.Json { prettyPrint = true }
-        rawJson = json.encodeToString(EncryptedPayloadDTO.serializer(), encrypted)
-      }
-      val pretty =
-          try {
-            val json = kotlinx.serialization.json.Json { prettyPrint = true }
-            val elem = json.decodeFromString<kotlinx.serialization.json.JsonElement>(rawJson)
-            json.encodeToString(elem)
-          } catch (e: Exception) {
-            rawJson
+      // 1) Pick JSON vs HL7
+      val mode = modeSelect.value
+      var rawText =
+          if (mode == "ipshl72_3") {
+            // call your new HL7 generator
+            Model.generateHL7(selectedId)
+          } else {
+            // existing JSON bundle logic
+            Model.generateUnifiedBundle(selectedId)
           }
-      // Fallback to just showing the JSON
+
+      // 2) Apply gzip+encrypt if requested
+      if (compressionCheck.value) {
+        val encrypted = Model.encryptTextGzip(rawText)
+        val json = kotlinx.serialization.json.Json { prettyPrint = true }
+        rawText = json.encodeToString(EncryptedPayloadDTO.serializer(), encrypted)
+      }
+
+      // 3) Pretty‐print JSON, or leave HL7 alone
+      val pretty =
+          if (mode == "ipshl72_3") {
+            rawText // HL7 messages are already text-friendly
+          } else {
+            try {
+              val parser = kotlinx.serialization.json.Json { prettyPrint = true }
+              val elem = parser.decodeFromString<kotlinx.serialization.json.JsonElement>(rawText)
+              parser.encodeToString(elem)
+            } catch (_: Exception) {
+              rawText
+            }
+          }
+
+      // 4) Update UI
       textArea.value = pretty
-      header.content = "API GET - IPS Data: ${textArea.value?.length}"
+      header.content = "API GET - IPS Data: ${rawText.length}"
     }
   }
 }

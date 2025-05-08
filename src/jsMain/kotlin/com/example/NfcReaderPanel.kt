@@ -2,7 +2,6 @@ package com.example
 
 import io.kvision.form.text.TextArea
 import io.kvision.html.Button
-import io.kvision.html.ButtonSize
 import io.kvision.panel.SimplePanel
 import io.kvision.toast.Toast
 import io.kvision.utils.px
@@ -37,30 +36,23 @@ object NfcReaderPanel : SimplePanel() {
   private var nfcReader: NDEFReader? = null
   private var scanAbortController: dynamic = null
   private val scope = MainScope()
-  private val cardInfoArea = TextArea(rows = 3).apply { this.readonly = true }
+  private val cardInfoArea =
+      TextArea(rows = 3).apply {
+        this.readonly = true
+        input.addCssClass("card-info-area")
+      }
   private val payloadArea = TextArea(rows = 15).apply { this.readonly = true }
   private val readButton =
-      Button("Read from NFC").apply {
-        size = ButtonSize.SMALL
-        onClick { scope.launch { readFromNfc() } }
-      }
+      Button("Read from NFC").apply { onClick { scope.launch { readFromNfc() } } }
 
   private var rawPayload: String = ""
 
   init {
     padding = 30.px
     add(readButton)
-    add(
-        Button("Import").apply {
-          size = ButtonSize.SMALL
-          onClick { scope.launch { importPayload() } }
-        })
+    add(Button("Import").apply { onClick { scope.launch { importPayload() } } })
 
-    add(
-        Button("Convert to Schema").apply {
-          size = ButtonSize.SMALL
-          onClick { scope.launch { convertOnly() } }
-        })
+    add(Button("Convert to Schema").apply { onClick { scope.launch { convertOnly() } } })
     // add(
     //     Button("Debug").apply {
     //       size = ButtonSize.SMALL

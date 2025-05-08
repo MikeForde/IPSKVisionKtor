@@ -59,6 +59,10 @@ object Model {
     return ipsService.generateUnifiedBundle(id)
   }
 
+  suspend fun generateHL7(id: Int?): String {
+    return ipsService.generateHL7(id)
+  }
+
   suspend fun convertBundleToSchema(bundleJson: String): String {
     return ipsService.convertBundleToSchema(bundleJson)
   }

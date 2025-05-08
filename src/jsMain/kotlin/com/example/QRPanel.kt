@@ -29,7 +29,12 @@ object QRPanel : SimplePanel() {
   private val compressionCheck = CheckBox(label = "Gzip + Encrypt (AES256 base64)")
   private val modeSelect =
       SelectInput(
-          options = listOf("ipsurl" to "IPS URL", "ipsunified" to "IPS Unified JSON Bundle"),
+          options =
+              listOf(
+                  "ipsurl" to "IPS URL",
+                  "ipsunified" to "IPS Unified JSON Bundle",
+                  "ipshl72_3" to "IPS HL7 v2.3",
+              ),
           value = "ipsurl")
   private val patientSelect =
       SelectInput(options = listOf(), value = null).apply { disabled = true }
@@ -142,28 +147,41 @@ object QRPanel : SimplePanel() {
                 "$baseUrl/api/ipsRecord?id=${selected.packageUUID}"
               }
             }
+            "ipshl72_3" -> {
+              // HL7 payload
+              var rawHL7 = Model.generateHL7(selectedId!!)
+              if (compressionCheck.value) {
+                val encrypted = Model.encryptTextGzip(rawHL7)
+                val json = kotlinx.serialization.json.Json { prettyPrint = false }
+                json.encodeToString(EncryptedPayloadDTO.serializer(), encrypted)
+              } else {
+                rawHL7
+              }
+            }
             else -> {
+              // existing JSON logic
               var rawJson = Model.generateUnifiedBundle(selectedId)
               if (compressionCheck.value) {
                 val encrypted = Model.encryptTextGzip(rawJson)
-                val json = kotlinx.serialization.json.Json { prettyPrint = true }
+                val json = kotlinx.serialization.json.Json { prettyPrint = false }
                 rawJson = json.encodeToString(EncryptedPayloadDTO.serializer(), encrypted)
               }
-              val byteSize = rawJson.encodeToByteArray().size
-              if (byteSize > 3000) {
-                Toast.danger("QR code too large: $byteSize bytes (max 3000)")
-                qrImage.src = ""
-                header.content = "QR Code - IPS Data: $byteSize (TOO LARGE)"
-                return@launch
-              } else {
-                rawJson
-              }
+              rawJson
             }
           } ?: return@launch
 
+      // enforce QR size limit
+      val byteSize = qrPayload.encodeToByteArray().size
+      if (mode != "ipsurl" && byteSize > 3000) {
+        Toast.danger("QR code too large: $byteSize bytes (max 3000)")
+        qrImage.src = ""
+        header.content = "QR Code - IPS Data: $byteSize (TOO LARGE)"
+        return@launch
+      }
+
       val qrPng = Model.generateQrCode(qrPayload)
       qrImage.src = qrPng
-      header.content = "QR Code - IPS Data: ${qrPayload.encodeToByteArray().size}"
+      header.content = "QR Code - IPS Data: $byteSize"
     }
   }
 }

@@ -1,13 +1,17 @@
-.text-area {
+.data-text-area {
   width: 100%;
-  height: calc(100vh - 420px); 
+  height: calc(100vh - 422px); 
 }
 
-textarea {
+.aesgzip-switch{
+  padding-top: 0.7rem;
+}
+
+/* textarea {
   width: 100%;
   height: calc(100vh - 420px); 
   font-size: 1.2rem;
-}
+} */
 
 .img-thumbnail {
   height: calc(100vh - 420px); 
@@ -22,14 +26,14 @@ textarea {
 
 /* even more compact on phones */
 @media (max-width: 576px) {
-  .text-area {
+  .data-text-area {
     width: 100%;
     height: calc(100vh - 350px); 
   }
 
-  textarea {
+  /* textarea {
     height: calc(100vh - 350px); 
-  }
+  } */
 
   html {
     font-size: 75%;
@@ -37,5 +41,10 @@ textarea {
 
   .app_version {
     display: none;
+  }
+
+  .btn {
+    scale: 0.8;
+    padding: 0.53rem;
   }
 }
