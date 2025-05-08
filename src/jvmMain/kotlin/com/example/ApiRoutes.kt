@@ -38,14 +38,12 @@ fun Application.apiRoutes() {
       call.respond(resp)
     }
 
-    // We'll add a GET endpoint that returns a IPS record
-    // The url will be /api/ipsRecord?id=1234
+    // GET endpoint that returns a IPS record - enables QR url to be used
+    // The url will be $base_url/api/ipsRecord?id=1234
     // The id will actually be the packageUUID
-    // we can use the getIpsRecord method in the IPSService
 
     get("/api/ipsRecord") {
       val id = call.request.queryParameters["id"]
-      // we'll use getIpsRecordByPackageUUId(id: String) in IPSService
       val ips =
           if (id != null) {
             IpsService(call).getIpsRecordByPackageUUId(id)

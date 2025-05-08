@@ -22,23 +22,6 @@ import org.w3c.files.BlobPropertyBag
 
 @JsName("atob") external fun atob(encoded: String): String
 
-// external class Uint8Array(length: Int) {
-//   constructor(array: Array<Byte>)
-
-//   val buffer: dynamic
-
-//   operator fun set(index: Int, value: Byte)
-
-//   val length: Int
-// }
-
-// @JsName("Uint8Array")
-// external class Uint8Array(length: Int) {
-//     constructor(array: Array<Short>)
-//     constructor(array: ByteArray)
-//     val buffer: dynamic
-// }
-
 object QRPanel : SimplePanel() {
   private val scope = MainScope()
   private val header = h3("QR Code - IPS Data: 0")
@@ -55,23 +38,8 @@ object QRPanel : SimplePanel() {
         disabled = true
         onClick {
           val base64 = qrImage.src?.removePrefix("data:image/png;base64,") ?: return@onClick
-          // val binary = atob(base64)
-          // val u8arr = Uint8Array(binary.length)
-          // for (i in binary.indices) u8arr[i] = binary[i].code.toByte()
-          // val binary = window.atob(base64)
-          // val byteArray = binary.encodeToByteArray()
-          // val u8arr = Uint8Array(byteArray.size)
-          // for (i in byteArray.indices) {
-          //     u8arr[i] = byteArray[i].toInt()
-          // }
-          // val binary = atob(base64)
-          // val byteArray = binary.encodeToByteArray()
-          // val u8arr = Uint8Array(byteArray)
           val binaryStr = atob(base64)
-
           val byteArray = ByteArray(binaryStr.length) { i -> binaryStr[i].code.toByte() }
-
-          // Uint8Array accepts ByteArray directly
           val u8arr = Uint8Array(byteArray.toTypedArray())
 
           val now = Date()
@@ -168,7 +136,11 @@ object QRPanel : SimplePanel() {
           when (mode) {
             "ipsurl" -> {
               val baseUrl = window.location.origin
-              "$baseUrl/api/ipsRecord?id=${selected.packageUUID}"
+              if (baseUrl.contains("localhost")) {
+                "localhost:8080/api/ipsRecord?id=${selected.packageUUID}"
+              } else {
+                "$baseUrl/api/ipsRecord?id=${selected.packageUUID}"
+              }
             }
             else -> {
               var rawJson = Model.generateUnifiedBundle(selectedId)

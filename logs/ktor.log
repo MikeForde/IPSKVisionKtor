@@ -113,3 +113,13 @@
 [2025-05-08 09:16:39,905]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
 [2025-05-08 09:16:40,322]-[main] INFO  Application - Application started in 1.259 seconds.
 [2025-05-08 09:16:40,497]-[main] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-05-08 09:23:04,812]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-08 09:23:04,952]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-05-08 09:23:05,249]-[main] INFO  Application - Application started in 0.961 seconds.
+[2025-05-08 09:23:05,401]-[main] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-05-08 09:25:14,099]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 556ms
+[2025-05-08 09:25:14,267]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager8 in 93ms
+[2025-05-08 09:30:14,213]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 266ms
+[2025-05-08 09:30:14,378]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager8 in 10ms
+[2025-05-08 09:30:45,721]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mGET[m - /api/ipsRecord in 22ms
+[2025-05-08 09:30:45,856]-[eventLoopGroupProxy-4-1] INFO  Application - [31m404 Not Found[m: [36mGET[m - /favicon.ico in 18ms
