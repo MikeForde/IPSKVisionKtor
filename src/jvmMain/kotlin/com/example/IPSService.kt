@@ -96,6 +96,8 @@ class IPSServiceRpc(private val call: ApplicationCall) : IIPSService {
             .map { toFullIpsModel(it) }
       }
 
+  // Conversions from Schema to other formats
+  // Generate unified FhiR JSON bundle
   override suspend fun generateUnifiedBundle(id: Int?): String {
     if (id == null) {
       return """{ "error": "No ID provided" }"""
@@ -114,7 +116,7 @@ class IPSServiceRpc(private val call: ApplicationCall) : IIPSService {
     }
   }
 
-  // gemerate HL7 2_3 - which is a plain text response
+  // gemerate HL7 2_3
   override suspend fun generateHL7(id: Int?): String {
     if (id == null) {
       return """{ "error": "No ID provided" }"""
@@ -133,21 +135,27 @@ class IPSServiceRpc(private val call: ApplicationCall) : IIPSService {
     }
   }
 
+  // Conversions From other formats to Schema
+  // Any of kwown project IPS FHiR formats (unified, legacy or expanded) to schema
   override suspend fun convertBundleToSchema(bundleJson: String): String {
     val jsonObj = Json.parseToJsonElement(bundleJson).jsonObject
     val model = convertIPSBundleToSchema(jsonObj)
     return Json.encodeToString(model)
   }
 
-  // Rpc service to convert Bundle to model then add to the database
+  // Extend the above to convert Bundle to model then add to the database
   override suspend fun addBundleToDatabase(bundleJson: String): String {
     val jsonObj = Json.parseToJsonElement(bundleJson).jsonObject
     val model = convertIPSBundleToSchema(jsonObj)
-    // 3) add to the database - can't simply do IPSModelDao.insert(model) because the dates in the
-    // model are strings and
-    // MySQL expects DateTime - but we have a addIPSRecord method that does the conversion
     val addedModel = addIPSRecord(model)
     return addedModel.id.toString()
+  }
+
+  // HL7 2_x to schema (designed to work with 2.3 but would also work with 'legacy' 2.8 - at least as was produced by IPS MERN)
+  // Uses parseHL72_xToIpsModel
+  override suspend fun convertHL7ToSchema(bundleHL7: String): String {
+    val model = parseHL72_xToIpsModel(bundleHL7)
+    return Json.encodeToString(model)
   }
 
   override suspend fun encryptText(data: String, useBase64: Boolean): EncryptedPayloadDTO {

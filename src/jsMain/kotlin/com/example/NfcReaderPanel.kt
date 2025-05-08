@@ -225,24 +225,34 @@ object NfcReaderPanel : SimplePanel() {
     }
   }
 
-  private suspend fun convertOnly() {
-    val trimmed = rawPayload.trim()
-    if (!trimmed.startsWith("{") ||
-        !trimmed.contains("resourceType") ||
-        !trimmed.contains("Bundle")) {
-      Toast.danger("Only JSON FHIR Bundles can be currently converted via this method.")
-      return
-    }
+  // We can now convert both JSON bundle and HL7 2.3
 
-    try {
-      val rawJson = Model.convertBundleToSchema(trimmed)
-      val prettyJson = fnPrettyJson(rawJson)
-      payloadArea.value = prettyJson
-      Toast.success("Conversion successful")
-    } catch (e: Throwable) {
-      Toast.danger("Conversion failed: ${e.message}")
-    }
+  private suspend fun convertOnly() {
+  val trimmed = rawPayload.trim()
+  val isJsonBundle = trimmed.startsWith("{") &&
+                     trimmed.contains("resourceType") &&
+                     trimmed.contains("Bundle")
+  val isHl7Message = trimmed.startsWith("MSH|")
+
+  if (!isJsonBundle && !isHl7Message) {
+    Toast.danger("Only JSON FHIR Bundles or HL7 v2.3 messages can be converted via this method.")
+    return
   }
+
+  try {
+    val rawJson = if (isJsonBundle) {
+      Model.convertBundleToSchema(trimmed)
+    } else {
+      Model.convertHL7ToSchema(trimmed)
+    }
+    val prettyJson = fnPrettyJson(rawJson)
+    payloadArea.value = prettyJson
+    Toast.success("Conversion successful")
+  } catch (e: Throwable) {
+    Toast.danger("Conversion failed: ${e.message}")
+  }
+}
+
 
   // private suspend fun debugTest() {
   //   try {

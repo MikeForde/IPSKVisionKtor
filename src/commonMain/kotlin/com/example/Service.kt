@@ -25,6 +25,8 @@ interface IIPSService {
 
   suspend fun addBundleToDatabase(bundleJson: String): String
 
+  suspend fun convertHL7ToSchema(bundleHL7: String): String
+
   // Encrypt and decrypt services
   suspend fun encryptText(data: String, useBase64: Boolean): EncryptedPayloadDTO
 

@@ -71,6 +71,10 @@ object Model {
     return ipsService.addBundleToDatabase(bundleJson)
   }
 
+  suspend fun convertHL7ToSchema(bundleHL7: String): String {
+    return ipsService.convertHL7ToSchema(bundleHL7)
+  }
+
   suspend fun encryptText(data: String, useBase64: Boolean = false): EncryptedPayloadDTO {
     return ipsService.encryptText(data, useBase64)
   }
