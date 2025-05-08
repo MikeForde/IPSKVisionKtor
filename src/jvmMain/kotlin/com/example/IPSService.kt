@@ -151,7 +151,8 @@ class IPSServiceRpc(private val call: ApplicationCall) : IIPSService {
     return addedModel.id.toString()
   }
 
-  // HL7 2_x to schema (designed to work with 2.3 but would also work with 'legacy' 2.8 - at least as was produced by IPS MERN)
+  // HL7 2_x to schema (designed to work with 2.3 but would also work with 'legacy' 2.8 - at least
+  // as was produced by IPS MERN)
   // Uses parseHL72_xToIpsModel
   override suspend fun convertHL7ToSchema(bundleHL7: String): String {
     val model = parseHL72_xToIpsModel(bundleHL7)

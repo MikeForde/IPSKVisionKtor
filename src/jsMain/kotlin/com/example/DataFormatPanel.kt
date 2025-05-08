@@ -109,16 +109,16 @@ object DataFormatPanel : SimplePanel() {
                 // 3) Write either plain text or binary, per the switch
                 if (binarySwitch.value) {
                   // 1) Get gzip-encrypted bytes via your RPC
-                  //val rawJson = Model.generateUnifiedBundle(patientSelect.value?.toInt())
+                  // val rawJson = Model.generateUnifiedBundle(patientSelect.value?.toInt())
                   val selectedId = patientSelect.value?.toInt()
                   var rawText =
-                    if (modeSelect.value == "ipshl72_3") {
-                      // call your new HL7 generator
-                      Model.generateHL7(selectedId)
-                    } else {
-                      // existing JSON bundle logic
-                      Model.generateUnifiedBundle(selectedId)
-                    }
+                      if (modeSelect.value == "ipshl72_3") {
+                        // call your new HL7 generator
+                        Model.generateHL7(selectedId)
+                      } else {
+                        // existing JSON bundle logic
+                        Model.generateUnifiedBundle(selectedId)
+                      }
                   val compressed: ByteArray = Model.encryptAndCompress(rawText)
                   // 2) Build a dynamic NDEF message with a MIME record
                   val msg = js("{}")
