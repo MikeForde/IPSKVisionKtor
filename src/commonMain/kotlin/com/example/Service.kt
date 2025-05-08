@@ -35,6 +35,8 @@ interface IIPSService {
       useBase64: Boolean
   ): String
 
+  suspend fun generateQrCode(text: String): String
+
   // suspend fun encryptBinary(data: String): BinaryEncryptResponse
 
   // suspend fun decryptBinary(data: String): BinaryDecryptResponse

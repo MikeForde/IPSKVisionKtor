@@ -72,6 +72,14 @@ class IpsService(private val call: ApplicationCall) {
           ?.let { toFullIpsModel(it) }
     }
   }
+
+  suspend fun getIpsRecordByPackageUUId(id: String): IPSModel? {
+    return Db.dbQuery {
+      IPSModelDao.select { IPSModelDao.packageUUID eq id }
+          .singleOrNull()
+          ?.let { toFullIpsModel(it) }
+    }
+  }
 }
 
 // ************** RPC SERVICE ****************
@@ -144,6 +152,10 @@ class IPSServiceRpc(private val call: ApplicationCall) : IIPSService {
     val payloadDTO = EncryptedPayloadDTO(encryptedData, iv, mac, key = "")
     val decrypted = CryptoHelper.decrypt(payloadDTO.toInternal(), useBase64)
     return decrypted.toString(Charsets.UTF_8)
+  }
+
+  override suspend fun generateQrCode(text: String): String {
+    return generateQrCodeBase64(text) // safe!
   }
 
   // Left to remember that binary encrypt/decrypt doesn't work as Rpc service with Kilua

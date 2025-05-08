@@ -9,6 +9,10 @@ textarea {
   font-size: 1.2rem;
 }
 
+.img-thumbnail {
+  height: calc(100vh - 420px); 
+}
+
 
 @media (max-width: 768px) {
   html {

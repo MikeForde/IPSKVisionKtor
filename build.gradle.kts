@@ -94,6 +94,8 @@ kotlin {
         implementation("io.ktor:ktor-server-cors:$ktorVersion")
         implementation("io.ktor:ktor-server-content-negotiation:$ktorVersion")
         implementation("io.ktor:ktor-serialization-kotlinx-cbor:$ktorVersion")
+        implementation("com.google.zxing:core:3.5.2")
+        implementation("com.google.zxing:javase:3.5.2")
       }
     }
     val jvmTest by getting {

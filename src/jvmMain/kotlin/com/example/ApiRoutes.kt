@@ -23,6 +23,7 @@ import io.ktor.server.response.*
 import io.ktor.server.response.respond
 import io.ktor.server.routing.*
 import io.ktor.server.sessions.*
+import io.ktor.server.sessions.get
 import kotlinx.serialization.json.JsonObject
 import org.jetbrains.exposed.sql.and
 
@@ -35,6 +36,24 @@ fun Application.apiRoutes() {
     post("/api/patientName") {
       val resp = PatientService(call).getPatientName()
       call.respond(resp)
+    }
+
+    // We'll add a GET endpoint that returns a IPS record
+    // The url will be /api/ipsRecord?id=1234
+    // The id will actually be the packageUUID
+    // we can use the getIpsRecord method in the IPSService
+
+    get("/api/ipsRecord") {
+      val id = call.request.queryParameters["id"]
+      // we'll use getIpsRecordByPackageUUId(id: String) in IPSService
+      val ips =
+          if (id != null) {
+            IpsService(call).getIpsRecordByPackageUUId(id)
+          } else {
+            null
+          }
+      if (ips != null) call.respond(ips)
+      else call.respond(HttpStatusCode.NotFound, "No IPS records not found")
     }
 
     // IPS record endpoints

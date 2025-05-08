@@ -40,7 +40,7 @@ object DataFormatPanel : SimplePanel() {
       SelectInput(
               options =
                   listOf(
-                      "IPS Unified JSON Bundle" to "ipsunified"
+                      "ipsunified" to "IPS Unified JSON Bundle"
                       // TODO: add more format options when generators are available
                       ),
               value = "ipsunified")

@@ -1,367 +1,115 @@
-[2025-05-07 08:29:43,047]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-[2025-05-07 08:29:43,247]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-[2025-05-07 08:29:43,529]-[main] INFO  Application - Application started in 0.895 seconds.
-[2025-05-07 08:29:43,656]-[main] INFO  Application - Responding at http://0.0.0.0:8080
-[2025-05-07 09:18:49,071]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 280ms
-[2025-05-07 09:25:06,446]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 102ms
-[2025-05-07 09:33:45,187]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 107ms
-[2025-05-07 10:17:07,576]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 99ms
-[2025-05-07 10:17:07,751]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 43ms
-[2025-05-07 10:18:10,363]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 77ms
-[2025-05-07 10:18:10,529]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 14ms
-[2025-05-07 10:20:06,229]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 27ms
-[2025-05-07 10:20:09,254]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 28ms
-[2025-05-07 10:27:24,214]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 68ms
-[2025-05-07 10:27:24,348]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 18ms
-[2025-05-07 10:31:40,108]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 68ms
-[2025-05-07 10:31:40,256]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 25ms
-[2025-05-07 10:33:11,618]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 78ms
-[2025-05-07 10:33:11,780]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 15ms
-[2025-05-07 10:35:41,182]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 99ms
-[2025-05-07 10:35:44,106]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 16ms
-[2025-05-07 10:36:16,549]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 49ms
-[2025-05-07 10:36:16,669]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 13ms
-[2025-05-07 10:40:04,175]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 65ms
-[2025-05-07 10:40:05,670]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 19ms
-[2025-05-07 10:52:49,339]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 63ms
-[2025-05-07 10:52:50,339]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 14ms
-[2025-05-07 10:52:55,325]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 18ms
-[2025-05-07 10:53:00,278]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 15ms
-[2025-05-07 10:53:10,211]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 17ms
-[2025-05-07 10:53:19,268]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 12ms
-[2025-05-07 11:56:31,875]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 130ms
-[2025-05-07 11:56:31,986]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 15ms
-[2025-05-07 11:57:23,562]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 22ms
-[2025-05-07 11:57:30,057]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 15ms
-[2025-05-07 11:59:21,123]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 84ms
-[2025-05-07 11:59:21,908]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 16ms
-[2025-05-07 11:59:36,749]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 35ms
-[2025-05-07 11:59:36,857]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 11ms
-[2025-05-07 11:59:46,857]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 24ms
-[2025-05-07 11:59:49,100]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 14ms
-[2025-05-07 12:10:52,009]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 63ms
-[2025-05-07 12:10:52,991]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 14ms
-[2025-05-07 12:11:18,717]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 32ms
-[2025-05-07 12:11:18,819]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 11ms
-[2025-05-07 12:11:28,907]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 28ms
-[2025-05-07 12:11:29,030]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 11ms
-[2025-05-07 12:11:39,125]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 11ms
-[2025-05-07 12:11:39,266]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 10ms
-[2025-05-07 12:16:19,439]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 88ms
-[2025-05-07 12:16:19,575]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 15ms
-[2025-05-07 12:26:10,409]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 62ms
-[2025-05-07 12:26:10,527]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 14ms
-[2025-05-07 12:26:20,778]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 11ms
-[2025-05-07 12:26:20,898]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 13ms
-[2025-05-07 12:26:29,171]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 51ms
-[2025-05-07 12:26:29,278]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 13ms
-[2025-05-07 12:26:31,869]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 17ms
-[2025-05-07 12:30:24,187]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 59ms
-[2025-05-07 12:30:29,362]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 13ms
-[2025-05-07 12:30:47,049]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 15ms
-[2025-05-07 12:31:05,966]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 47ms
-[2025-05-07 12:31:08,733]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 16ms
-[2025-05-07 12:43:07,526]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-[2025-05-07 12:43:07,703]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-[2025-05-07 12:43:07,954]-[main] INFO  Application - Application started in 0.954 seconds.
-[2025-05-07 12:43:08,082]-[main] INFO  Application - Responding at http://0.0.0.0:8080
-[2025-05-07 12:44:18,607]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-[2025-05-07 12:44:18,767]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-[2025-05-07 12:44:19,055]-[main] INFO  Application - Application started in 0.943 seconds.
-[2025-05-07 12:44:19,235]-[main] INFO  Application - Responding at http://0.0.0.0:8080
-[2025-05-07 12:46:16,367]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/encryptText in 200ms
-[2025-05-07 12:46:33,903]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptText in 22ms
-[2025-05-07 12:47:22,602]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/gzipEncryptText in 61ms
-[2025-05-07 12:48:39,310]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-[2025-05-07 12:48:39,497]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-[2025-05-07 12:48:39,806]-[main] INFO  Application - Application started in 1.046 seconds.
-[2025-05-07 12:48:39,994]-[main] INFO  Application - Responding at http://0.0.0.0:8080
-[2025-05-07 12:49:18,627]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/decryptUnzipText in 174ms
-[2025-05-07 13:17:35,183]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 335ms
-[2025-05-07 13:17:35,355]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 36ms
-[2025-05-07 13:17:46,089]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 17ms
-[2025-05-07 13:17:46,190]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 2ms
-[2025-05-07 13:18:47,340]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 59ms
-[2025-05-07 13:18:47,477]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 45ms
-[2025-05-07 13:18:50,615]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 35ms
-[2025-05-07 13:18:50,720]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 16ms
-[2025-05-07 13:18:50,858]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 4ms
-[2025-05-07 13:19:00,160]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 78ms
-[2025-05-07 13:19:00,267]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 14ms
-[2025-05-07 13:19:03,569]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 32ms
-[2025-05-07 13:19:03,675]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 14ms
-[2025-05-07 13:19:03,771]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 3ms
-[2025-05-07 13:20:50,152]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 148ms
-[2025-05-07 13:20:50,322]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 21ms
-[2025-05-07 13:20:53,827]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 46ms
-[2025-05-07 13:20:53,939]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 15ms
-[2025-05-07 13:20:54,029]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 2ms
-[2025-05-07 13:21:13,461]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 77ms
-[2025-05-07 13:21:13,587]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 15ms
-[2025-05-07 13:21:13,709]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 1ms
-[2025-05-07 13:21:14,481]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 22ms
-[2025-05-07 13:21:14,581]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 13ms
-[2025-05-07 13:21:14,731]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 1ms
-[2025-05-07 13:21:17,112]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 18ms
-[2025-05-07 13:21:17,232]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 2ms
-[2025-05-07 13:21:18,465]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 28ms
-[2025-05-07 13:21:18,571]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 12ms
-[2025-05-07 13:21:18,658]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 2ms
-[2025-05-07 13:21:27,190]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 22ms
-[2025-05-07 13:21:27,296]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 12ms
-[2025-05-07 13:25:59,084]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 94ms
-[2025-05-07 13:25:59,247]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 31ms
-[2025-05-07 13:26:09,517]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 88ms
-[2025-05-07 13:26:09,680]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 29ms
-[2025-05-07 13:26:09,787]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 1ms
-[2025-05-07 13:33:30,579]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 67ms
-[2025-05-07 13:33:30,716]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 15ms
-[2025-05-07 13:33:48,713]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 48ms
-[2025-05-07 13:33:48,913]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 89ms
-[2025-05-07 13:33:49,060]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 2ms
-[2025-05-07 13:35:40,421]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 68ms
-[2025-05-07 13:35:40,601]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 23ms
-[2025-05-07 13:35:43,327]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 24ms
-[2025-05-07 13:35:43,441]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 12ms
-[2025-05-07 13:35:43,525]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 1ms
-[2025-05-07 13:37:42,987]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 112ms
-[2025-05-07 13:37:43,278]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 41ms
-[2025-05-07 13:37:46,374]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 52ms
-[2025-05-07 13:37:46,632]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 35ms
-[2025-05-07 13:37:46,880]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 3ms
-[2025-05-07 13:47:40,228]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 268ms
-[2025-05-07 13:47:40,227]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 312ms
-[2025-05-07 13:47:46,444]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 72ms
-[2025-05-07 13:47:46,583]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 14ms
-[2025-05-07 13:47:49,342]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 24ms
-[2025-05-07 13:47:49,458]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 12ms
-[2025-05-07 13:47:49,546]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 3ms
-[2025-05-07 13:51:25,717]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 73ms
-[2025-05-07 13:51:25,906]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 37ms
-[2025-05-07 13:51:28,771]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 24ms
-[2025-05-07 13:51:28,880]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 12ms
-[2025-05-07 13:51:29,004]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 2ms
-[2025-05-07 13:55:12,777]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 98ms
-[2025-05-07 13:55:14,743]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 14ms
-[2025-05-07 13:55:17,611]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 22ms
-[2025-05-07 13:55:17,747]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 13ms
-[2025-05-07 13:55:17,845]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 1ms
-[2025-05-07 13:59:24,821]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-[2025-05-07 13:59:25,006]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-[2025-05-07 13:59:25,338]-[main] INFO  Application - Application started in 0.98 seconds.
-[2025-05-07 13:59:25,501]-[main] INFO  Application - Responding at http://0.0.0.0:8080
-[2025-05-07 13:59:41,526]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 400ms
-[2025-05-07 13:59:41,598]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 38ms
-[2025-05-07 13:59:41,751]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 38ms
-[2025-05-07 13:59:49,166]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 32ms
-[2025-05-07 13:59:49,281]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 17ms
-[2025-05-07 13:59:49,367]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 4ms
-[2025-05-07 14:00:24,609]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-[2025-05-07 14:00:24,828]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-[2025-05-07 14:00:25,182]-[main] INFO  Application - Application started in 1.082 seconds.
-[2025-05-07 14:00:25,333]-[main] INFO  Application - Responding at http://0.0.0.0:8080
-[2025-05-07 14:04:22,253]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 631ms
-[2025-05-07 14:04:22,254]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 71ms
-[2025-05-07 14:04:24,915]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 37ms
-[2025-05-07 14:04:25,033]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 22ms
-[2025-05-07 14:04:25,205]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 50ms
-[2025-05-07 14:09:02,038]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 138ms
-[2025-05-07 14:09:02,338]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 59ms
-[2025-05-07 14:09:02,636]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 66ms
-[2025-05-07 14:09:02,936]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 53ms
-[2025-05-07 14:09:05,244]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 101ms
-[2025-05-07 14:09:05,505]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 41ms
-[2025-05-07 14:09:05,740]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 7ms
-[2025-05-07 14:09:12,763]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 55ms
-[2025-05-07 14:09:13,015]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 33ms
-[2025-05-07 14:09:13,209]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 11ms
-[2025-05-07 14:20:40,358]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 103ms
-[2025-05-07 14:20:40,511]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 20ms
-[2025-05-07 14:20:42,748]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 27ms
-[2025-05-07 14:20:42,853]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 15ms
-[2025-05-07 14:20:42,945]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 5ms
-[2025-05-07 14:26:18,074]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 97ms
-[2025-05-07 14:26:18,222]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 28ms
-[2025-05-07 14:26:20,796]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 41ms
-[2025-05-07 14:26:20,900]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 14ms
-[2025-05-07 14:26:21,022]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 4ms
-[2025-05-07 14:26:26,905]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 30ms
-[2025-05-07 14:26:27,008]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 13ms
-[2025-05-07 14:26:27,139]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 3ms
-[2025-05-07 14:29:32,695]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 111ms
-[2025-05-07 14:29:32,846]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 15ms
-[2025-05-07 14:29:35,318]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 27ms
-[2025-05-07 14:29:35,439]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 16ms
-[2025-05-07 14:29:35,541]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 4ms
-[2025-05-07 14:31:06,055]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 111ms
-[2025-05-07 14:31:06,198]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 22ms
-[2025-05-07 14:31:11,492]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 20ms
-[2025-05-07 14:31:11,597]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 3ms
-[2025-05-07 14:31:16,490]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 16ms
-[2025-05-07 14:31:39,943]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 65ms
-[2025-05-07 14:31:40,100]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 12ms
-[2025-05-07 14:31:47,758]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 17ms
-[2025-05-07 14:31:47,866]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 4ms
-[2025-05-07 14:34:45,018]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 94ms
-[2025-05-07 14:34:45,252]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 50ms
-[2025-05-07 14:34:47,029]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 71ms
-[2025-05-07 14:34:47,171]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 3ms
-[2025-05-07 14:34:48,360]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 14ms
-[2025-05-07 14:34:49,171]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 19ms
-[2025-05-07 14:34:49,294]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 3ms
-[2025-05-07 14:34:50,028]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 13ms
-[2025-05-07 14:34:50,723]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 14ms
-[2025-05-07 14:34:50,826]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 2ms
-[2025-05-07 14:34:51,475]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 39ms
-[2025-05-07 14:41:13,040]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 259ms
-[2025-05-07 14:41:13,223]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 12ms
-[2025-05-07 14:41:25,092]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 25ms
-[2025-05-07 14:41:25,235]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 24ms
-[2025-05-07 14:41:43,926]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 44ms
-[2025-05-07 14:41:44,087]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 13ms
-[2025-05-07 14:50:15,929]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 60ms
-[2025-05-07 14:50:16,059]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 18ms
-[2025-05-07 14:57:00,796]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 82ms
-[2025-05-07 14:57:00,947]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 16ms
-[2025-05-07 14:57:14,270]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mOPTIONS[m - /api/gzipEncrypt in 3ms
-[2025-05-07 14:57:14,345]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/gzipEncrypt in 58ms
-[2025-05-07 15:00:09,814]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 78ms
-[2025-05-07 15:00:12,003]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 31ms
-[2025-05-07 15:00:18,278]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/gzipEncrypt in 12ms
-[2025-05-07 15:00:30,601]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mOPTIONS[m - /api/gzipDecrypt in 3ms
-[2025-05-07 15:00:30,671]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/gzipDecrypt in 55ms
-[2025-05-07 15:02:29,652]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 63ms
-[2025-05-07 15:02:29,800]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 14ms
-[2025-05-07 15:02:32,711]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 17ms
-[2025-05-07 15:02:32,861]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 4ms
-[2025-05-07 15:02:42,256]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/gzipEncrypt in 5ms
-[2025-05-07 15:11:01,412]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 85ms
-[2025-05-07 15:11:24,918]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 43ms
-[2025-05-07 15:11:28,917]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 11ms
-[2025-05-07 15:11:29,071]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 3ms
-[2025-05-07 15:11:32,813]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 17ms
-[2025-05-07 15:11:32,929]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/gzipEncrypt in 2ms
-[2025-05-07 15:11:41,100]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/gzipDecrypt in 5ms
-[2025-05-07 15:15:03,040]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 76ms
-[2025-05-07 15:20:39,938]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 252ms
-[2025-05-07 15:20:40,142]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 14ms
-[2025-05-07 15:20:49,082]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 24ms
-[2025-05-07 15:20:49,194]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 3ms
-[2025-05-07 15:20:54,166]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 22ms
-[2025-05-07 15:21:22,011]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 39ms
-[2025-05-07 15:21:37,057]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 21ms
-[2025-05-07 15:21:37,187]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 14ms
-[2025-05-07 15:21:39,323]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 14ms
-[2025-05-07 15:21:56,784]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 11ms
-[2025-05-07 15:22:01,627]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 17ms
-[2025-05-07 15:36:59,519]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 365ms
-[2025-05-07 15:36:59,730]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 16ms
-[2025-05-07 15:37:13,117]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 33ms
-[2025-05-07 15:37:13,207]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 3ms
-[2025-05-07 15:37:45,444]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 42ms
-[2025-05-07 15:48:12,893]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 212ms
-[2025-05-07 15:48:13,046]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 11ms
-[2025-05-07 15:48:18,732]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 11ms
-[2025-05-07 15:54:01,465]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 236ms
-[2025-05-07 15:54:01,695]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 13ms
-[2025-05-07 15:54:24,227]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 144ms
-[2025-05-07 15:54:24,370]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 14ms
-[2025-05-07 16:18:47,467]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-[2025-05-07 16:18:48,546]-[main] ERROR com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Exception during pool initialization.
-com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
-	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:175)
-	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
-	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825)
-	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:446)
-	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239)
-	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188)
-	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:136)
-	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369)
-	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:198)
-	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:467)
-	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:541)
-	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
-	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:81)
-	at com.example.Db.hikari(Db.kt:36)
-	at com.example.Db.init(Db.kt:19)
-	at com.example.MainKt.main(Main.kt:43)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at kotlin.reflect.jvm.internal.calls.CallerImpl$Method.callMethod(CallerImpl.kt:97)
-	at kotlin.reflect.jvm.internal.calls.CallerImpl$Method$Static.call(CallerImpl.kt:106)
-	at kotlin.reflect.jvm.internal.KCallableImpl.callDefaultMethod$kotlin_reflection(KCallableImpl.kt:207)
-	at kotlin.reflect.jvm.internal.KCallableImpl.callBy(KCallableImpl.kt:112)
-	at io.ktor.server.engine.internal.CallableUtilsKt.callFunctionWithInjection(CallableUtils.kt:127)
-	at io.ktor.server.engine.internal.CallableUtilsKt.executeModuleFunction(CallableUtils.kt:40)
-	at io.ktor.server.engine.EmbeddedServer.launchModuleByName$lambda$32(EmbeddedServerJvm.kt:422)
-	at io.ktor.server.engine.EmbeddedServer.avoidingDoubleStartupFor(EmbeddedServerJvm.kt:446)
-	at io.ktor.server.engine.EmbeddedServer.launchModuleByName(EmbeddedServerJvm.kt:421)
-	at io.ktor.server.engine.EmbeddedServer.dynamicModule$lambda$26(EmbeddedServerJvm.kt:381)
-	at io.ktor.server.engine.EmbeddedServer.instantiateAndConfigureApplication$lambda$25(EmbeddedServerJvm.kt:371)
-	at io.ktor.server.engine.EmbeddedServer.avoidingDoubleStartup(EmbeddedServerJvm.kt:428)
-	at io.ktor.server.engine.EmbeddedServer.instantiateAndConfigureApplication(EmbeddedServerJvm.kt:370)
-	at io.ktor.server.engine.EmbeddedServer.createApplication(EmbeddedServerJvm.kt:171)
-	at io.ktor.server.engine.EmbeddedServer.start(EmbeddedServerJvm.kt:301)
-	at io.ktor.server.netty.EngineMain.main(EngineMain.kt:25)
-Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:62)
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:150)
-	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:166)
-	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89)
-	at com.mysql.cj.NativeSession.connect(NativeSession.java:121)
-	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:945)
-	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:815)
-	... 31 common frames omitted
-Caused by: java.net.SocketException: Network is unreachable
-	at java.base/sun.nio.ch.Net.connect0(Native Method)
-	at java.base/sun.nio.ch.Net.connect(Net.java:589)
-	at java.base/sun.nio.ch.Net.connect(Net.java:578)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:583)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
-	at java.base/java.net.Socket.connect(Socket.java:751)
-	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:153)
-	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63)
-	... 34 common frames omitted
-[2025-05-07 16:19:30,603]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-[2025-05-07 16:19:30,772]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-[2025-05-07 16:19:31,041]-[main] INFO  Application - Application started in 0.847 seconds.
-[2025-05-07 16:19:31,169]-[main] INFO  Application - Responding at http://0.0.0.0:8080
-[2025-05-07 16:20:59,021]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 896ms
-[2025-05-07 16:20:59,161]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 36ms
-[2025-05-07 16:21:11,169]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 161ms
-[2025-05-07 16:21:11,373]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 11ms
-[2025-05-07 16:24:11,650]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 267ms
-[2025-05-07 16:24:11,911]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 14ms
-[2025-05-07 16:29:17,349]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 195ms
-[2025-05-07 16:29:17,478]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 12ms
-[2025-05-07 16:30:45,688]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 215ms
-[2025-05-07 16:30:45,861]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 20ms
-[2025-05-07 16:33:30,702]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 210ms
-[2025-05-07 16:33:30,888]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 13ms
-[2025-05-07 16:42:33,050]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 178ms
-[2025-05-07 16:42:33,275]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 11ms
-[2025-05-07 16:42:36,897]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 11ms
-[2025-05-07 16:45:22,704]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 224ms
-[2025-05-07 16:45:22,903]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 12ms
-[2025-05-07 17:00:02,125]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 227ms
-[2025-05-07 17:00:02,305]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 12ms
-[2025-05-07 17:02:00,806]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 213ms
-[2025-05-07 17:02:00,978]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 13ms
-[2025-05-07 17:02:35,593]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 70ms
-[2025-05-07 17:02:35,743]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 11ms
-[2025-05-07 17:29:05,899]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 252ms
-[2025-05-07 17:29:06,103]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 13ms
-[2025-05-07 17:32:09,143]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 175ms
-[2025-05-07 17:32:09,403]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 13ms
-[2025-05-07 17:49:58,756]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-[2025-05-07 17:49:58,923]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-[2025-05-07 17:49:59,225]-[main] INFO  Application - Application started in 0.872 seconds.
-[2025-05-07 17:49:59,345]-[main] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-05-08 07:24:55,374]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-08 07:24:55,558]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-05-08 07:24:55,842]-[main] INFO  Application - Application started in 0.858 seconds.
+[2025-05-08 07:24:55,973]-[main] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-05-08 07:30:07,303]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-08 07:30:07,491]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-05-08 07:30:07,806]-[main] INFO  Application - Application started in 1.049 seconds.
+[2025-05-08 07:30:07,961]-[main] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-05-08 07:44:29,954]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 540ms
+[2025-05-08 07:44:30,020]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 43ms
+[2025-05-08 07:44:33,751]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 19ms
+[2025-05-08 07:44:33,890]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 43ms
+[2025-05-08 07:44:34,109]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager8 in 138ms
+[2025-05-08 07:52:52,903]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 82ms
+[2025-05-08 07:52:53,032]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 20ms
+[2025-05-08 07:52:56,072]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 20ms
+[2025-05-08 07:52:56,204]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 5ms
+[2025-05-08 07:52:56,341]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager8 in 20ms
+[2025-05-08 07:56:31,334]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 49ms
+[2025-05-08 07:56:31,511]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 15ms
+[2025-05-08 07:56:35,023]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 25ms
+[2025-05-08 07:56:38,864]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 15ms
+[2025-05-08 07:56:38,999]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 5ms
+[2025-05-08 07:56:39,136]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager8 in 16ms
+[2025-05-08 07:57:44,936]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 46ms
+[2025-05-08 07:57:45,069]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 16ms
+[2025-05-08 07:57:47,241]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 14ms
+[2025-05-08 07:57:47,361]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 3ms
+[2025-05-08 07:57:47,446]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager8 in 13ms
+[2025-05-08 07:57:53,705]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 15ms
+[2025-05-08 07:57:57,980]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 14ms
+[2025-05-08 07:58:07,831]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 18ms
+[2025-05-08 07:58:07,958]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 4ms
+[2025-05-08 07:58:08,097]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager8 in 12ms
+[2025-05-08 08:00:31,181]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 226ms
+[2025-05-08 08:00:31,343]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 13ms
+[2025-05-08 08:00:32,313]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 12ms
+[2025-05-08 08:00:32,437]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 3ms
+[2025-05-08 08:00:32,578]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager8 in 13ms
+[2025-05-08 08:03:06,686]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 63ms
+[2025-05-08 08:03:06,825]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 15ms
+[2025-05-08 08:03:29,689]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 15ms
+[2025-05-08 08:03:53,227]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 47ms
+[2025-05-08 08:03:53,321]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 4ms
+[2025-05-08 08:03:53,416]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager8 in 11ms
+[2025-05-08 08:06:37,405]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 78ms
+[2025-05-08 08:06:37,582]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 18ms
+[2025-05-08 08:06:39,218]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 17ms
+[2025-05-08 08:06:39,344]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 3ms
+[2025-05-08 08:06:39,463]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager8 in 16ms
+[2025-05-08 08:23:12,265]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-08 08:23:12,438]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-05-08 08:23:12,796]-[main] INFO  Application - Application started in 1.052 seconds.
+[2025-05-08 08:23:12,970]-[main] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-05-08 08:25:29,771]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mGET[m - /api/ipsRecord in 306ms
+[2025-05-08 08:41:36,586]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-08 08:41:36,762]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-05-08 08:41:37,087]-[main] INFO  Application - Application started in 1.106 seconds.
+[2025-05-08 08:41:37,241]-[main] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-05-08 08:44:50,338]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 330ms
+[2025-05-08 08:44:50,467]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager8 in 84ms
+[2025-05-08 08:45:00,921]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager8 in 12ms
+[2025-05-08 08:45:02,555]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager8 in 9ms
+[2025-05-08 08:45:03,153]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager8 in 8ms
+[2025-05-08 08:45:03,666]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager8 in 7ms
+[2025-05-08 08:45:05,169]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager8 in 7ms
+[2025-05-08 08:45:05,741]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager8 in 6ms
+[2025-05-08 08:46:30,921]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 420ms
+[2025-05-08 08:46:31,119]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 43ms
+[2025-05-08 08:46:34,780]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager8 in 8ms
+[2025-05-08 08:46:40,292]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 17ms
+[2025-05-08 08:46:41,885]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 13ms
+[2025-05-08 08:46:42,057]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 44ms
+[2025-05-08 08:46:42,149]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager8 in 14ms
+[2025-05-08 08:46:46,034]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager8 in 7ms
+[2025-05-08 08:46:48,580]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 20ms
+[2025-05-08 08:46:48,687]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 4ms
+[2025-05-08 08:46:48,790]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager8 in 13ms
+[2025-05-08 08:46:52,549]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager8 in 7ms
+[2025-05-08 08:46:54,936]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager8 in 7ms
+[2025-05-08 08:46:55,400]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager8 in 5ms
+[2025-05-08 08:46:55,745]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager8 in 5ms
+[2025-05-08 08:47:53,999]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 263ms
+[2025-05-08 08:47:54,145]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager8 in 7ms
+[2025-05-08 09:00:29,412]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 215ms
+[2025-05-08 09:00:29,556]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager8 in 6ms
+[2025-05-08 09:04:41,482]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 213ms
+[2025-05-08 09:04:41,665]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager8 in 8ms
+[2025-05-08 09:12:35,245]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 254ms
+[2025-05-08 09:12:35,421]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager8 in 8ms
+[2025-05-08 09:13:00,402]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager8 in 23ms
+[2025-05-08 09:13:03,062]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 27ms
+[2025-05-08 09:13:03,234]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 25ms
+[2025-05-08 09:13:03,324]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager8 in 12ms
+[2025-05-08 09:13:37,420]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 45ms
+[2025-05-08 09:13:39,313]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 12ms
+[2025-05-08 09:13:39,410]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 4ms
+[2025-05-08 09:13:41,806]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 15ms
+[2025-05-08 09:13:42,532]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 19ms
+[2025-05-08 09:13:42,613]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 3ms
+[2025-05-08 09:13:45,010]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 12ms
+[2025-05-08 09:13:45,616]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 12ms
+[2025-05-08 09:13:45,711]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 3ms
+[2025-05-08 09:13:50,147]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 13ms
+[2025-05-08 09:13:50,853]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 13ms
+[2025-05-08 09:13:50,937]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 3ms
+[2025-05-08 09:13:51,074]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager8 in 13ms
+[2025-05-08 09:13:52,017]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 11ms
+[2025-05-08 09:13:52,736]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 12ms
+[2025-05-08 09:13:52,819]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager6 in 2ms
+[2025-05-08 09:13:52,920]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager8 in 12ms
+[2025-05-08 09:16:39,598]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-08 09:16:39,905]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-05-08 09:16:40,322]-[main] INFO  Application - Application started in 1.259 seconds.
+[2025-05-08 09:16:40,497]-[main] INFO  Application - Responding at http://0.0.0.0:8080

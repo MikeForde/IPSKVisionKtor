@@ -66,6 +66,22 @@ object ChangeLogPanel : SimplePanel() {
                     "Textarea sizing switched to CSS-driven responsive layout instead of fixed height.")
               }
             }
+            li(className = "list-unstyled") {
+              h5("Version 0_6 - 8th May 2025")
+              ul {
+                li { strong("New QR Code Panel") }
+                li("Added `QRPanel` for generating scannable QR codes from IPS data.")
+                li(
+                    "Supports both raw bundle content and encoded `ipsurl` links to backend API endpoints.")
+                li(
+                    "Compression + encryption toggle (gzip + AES256 base64) integrated with backend RPC.")
+                li(
+                    "Payload size limit enforced (max 3000 bytes); oversized payloads trigger toast warning.")
+                li("QR code is displayed as a PNG image with built-in download button.")
+                li(
+                    "Downloaded QR filenames include timestamp, patient info, UUID suffix, and mode.")
+              }
+            }
           }
         }
       }

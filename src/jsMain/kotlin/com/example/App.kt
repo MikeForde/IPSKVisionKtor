@@ -86,7 +86,7 @@ class App : Application() {
           expand = NavbarExpand.SM,
       ) {
         nav {
-          navLink("0_5", className = "app_version")
+          navLink("0_6", className = "app_version")
           navLink("Home", icon = "fas fa-home") {
             onEvent {
               click = {
@@ -101,6 +101,15 @@ class App : Application() {
               click = {
                 content.removeAll()
                 content.add(DataFormatPanel)
+                collapseNavbar()
+              }
+            }
+          }
+          navLink("QR", icon = "fas fa-qrcode") {
+            onEvent {
+              click = {
+                content.removeAll()
+                content.add(QRPanel)
                 collapseNavbar()
               }
             }

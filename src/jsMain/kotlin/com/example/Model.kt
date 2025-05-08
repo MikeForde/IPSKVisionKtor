@@ -130,4 +130,8 @@ object Model {
         }
     return response.body()
   }
+
+  suspend fun generateQrCode(text: String): String {
+    return ipsService.generateQrCode(text)
+  }
 }
