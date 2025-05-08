@@ -7,14 +7,21 @@
   padding-top: 0.7rem;
 }
 
-/* textarea {
+.qr-text-area {
   width: 100%;
-  height: calc(100vh - 420px); 
-  font-size: 1.2rem;
-} */
+  height: calc(100vh - 350px);
+  display: flex;
+  justify-content: center;
+} 
 
 .img-thumbnail {
-  height: calc(100vh - 420px); 
+  /* make sure it can’t overflow either axis */
+  max-width: 100%;
+  max-height: 100%;
+  /* maintain a 1:1 aspect ratio */
+  aspect-ratio: 1 / 1;
+  /* if you ever need to contain an image that’s not square, use this */
+  object-fit: contain;
 }
 
 
@@ -31,9 +38,12 @@
     height: calc(100vh - 350px); 
   }
 
-  /* textarea {
-    height: calc(100vh - 350px); 
-  } */
+  .qr-text-area {
+    width: 100%;
+    height: calc(100vh - 260px);
+    display: flex;
+    justify-content: center;
+  } 
 
   html {
     font-size: 75%;

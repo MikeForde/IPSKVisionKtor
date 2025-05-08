@@ -83,7 +83,7 @@ object QRPanel : SimplePanel() {
                   add(modeSelect)
                   add(compressionCheck)
                 }
-                div(className = "text-area") { add(qrImage) }
+                div(className = "qr-text-area") { add(qrImage) }
                 add(downloadButton)
               }
             }
