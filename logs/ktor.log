@@ -2403,3 +2403,438 @@ java.time.format.DateTimeParseException: Text '1970-11-02T00:00:00.000Z' could n
 [2025-05-09 09:22:35,755]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager4 in 11ms
 [2025-05-09 09:23:01,996]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager4 in 13ms
 [2025-05-09 09:23:10,196]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 12ms
+[2025-05-09 10:03:58,029]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-09 10:03:58,217]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-05-09 10:03:58,540]-[main] INFO  Application - Application started in 1.087 seconds.
+[2025-05-09 10:03:58,691]-[main] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-05-09 10:06:06,064]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-09 10:06:06,224]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-05-09 10:06:06,526]-[main] INFO  Application - Application started in 0.943 seconds.
+[2025-05-09 10:06:06,697]-[main] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-05-09 10:06:48,420]-[eventLoopGroupProxy-4-1] INFO  Application - [31m404 Not Found[m: [36mPOST[m - /api/parseBeer in 121ms
+[2025-05-09 10:06:58,706]-[eventLoopGroupProxy-4-1] ERROR Application - Unhandled: POST - /api/parseBEER
+java.lang.IndexOutOfBoundsException: No group 2
+	at java.base/java.util.regex.Matcher.checkGroup(Matcher.java:1847)
+	at java.base/java.util.regex.Matcher.group(Matcher.java:688)
+	at kotlin.text.MatcherMatchResult$groupValues$1.get(Regex.kt:386)
+	at kotlin.text.MatcherMatchResult$groupValues$1.get(Regex.kt:384)
+	at com.example.serviceHelpers.ConvertBEERToSchemaKt.parseBeer(ConvertBEERToSchema.kt:62)
+	at com.example.ApiRoutesKt$apiRoutes$1$9.invokeSuspend(ApiRoutes.kt:100)
+	at com.example.ApiRoutesKt$apiRoutes$1$9.invoke(ApiRoutes.kt)
+	at com.example.ApiRoutesKt$apiRoutes$1$9.invoke(ApiRoutes.kt)
+	at io.ktor.server.routing.RoutingNode$buildPipeline$1$1.invokeSuspend(RoutingNode.kt:127)
+	at io.ktor.server.routing.RoutingNode$buildPipeline$1$1.invoke(RoutingNode.kt)
+	at io.ktor.server.routing.RoutingNode$buildPipeline$1$1.invoke(RoutingNode.kt)
+	at io.ktor.util.pipeline.DebugPipelineContext.proceedLoop(DebugPipelineContext.kt:79)
+	at io.ktor.util.pipeline.DebugPipelineContext.proceed(DebugPipelineContext.kt:57)
+	at io.ktor.util.pipeline.DebugPipelineContext.execute$ktor_utils(DebugPipelineContext.kt:63)
+	at io.ktor.util.pipeline.Pipeline.execute(Pipeline.kt:92)
+	at io.ktor.server.routing.RoutingRoot$executeResult$$inlined$execute$1.invokeSuspend(Pipeline.kt:510)
+	at io.ktor.server.routing.RoutingRoot$executeResult$$inlined$execute$1.invoke(Pipeline.kt)
+	at io.ktor.server.routing.RoutingRoot$executeResult$$inlined$execute$1.invoke(Pipeline.kt)
+	at io.ktor.util.debug.ContextUtilsKt.initContextInDebugMode(ContextUtils.kt:19)
+	at io.ktor.server.routing.RoutingRoot.executeResult(RoutingRoot.kt:208)
+	at io.ktor.server.routing.RoutingRoot.interceptor(RoutingRoot.kt:71)
+	at io.ktor.server.routing.RoutingRoot$Plugin$install$1.invokeSuspend(RoutingRoot.kt:154)
+	at io.ktor.server.routing.RoutingRoot$Plugin$install$1.invoke(RoutingRoot.kt)
+	at io.ktor.server.routing.RoutingRoot$Plugin$install$1.invoke(RoutingRoot.kt)
+	at io.ktor.util.pipeline.DebugPipelineContext.proceedLoop(DebugPipelineContext.kt:79)
+	at io.ktor.util.pipeline.DebugPipelineContext.proceed(DebugPipelineContext.kt:57)
+	at io.ktor.server.engine.BaseApplicationEngineKt$installDefaultTransformationChecker$1.invokeSuspend(BaseApplicationEngine.kt:119)
+	at io.ktor.server.engine.BaseApplicationEngineKt$installDefaultTransformationChecker$1.invoke(BaseApplicationEngine.kt)
+	at io.ktor.server.engine.BaseApplicationEngineKt$installDefaultTransformationChecker$1.invoke(BaseApplicationEngine.kt)
+	at io.ktor.util.pipeline.DebugPipelineContext.proceedLoop(DebugPipelineContext.kt:79)
+	at io.ktor.util.pipeline.DebugPipelineContext.proceed(DebugPipelineContext.kt:57)
+	at io.ktor.util.pipeline.DebugPipelineContext.execute$ktor_utils(DebugPipelineContext.kt:63)
+	at io.ktor.util.pipeline.Pipeline.execute(Pipeline.kt:92)
+	at io.ktor.server.engine.DefaultEnginePipelineKt$defaultEnginePipeline$1$invokeSuspend$$inlined$execute$1.invokeSuspend(Pipeline.kt:510)
+	at io.ktor.server.engine.DefaultEnginePipelineKt$defaultEnginePipeline$1$invokeSuspend$$inlined$execute$1.invoke(Pipeline.kt)
+	at io.ktor.server.engine.DefaultEnginePipelineKt$defaultEnginePipeline$1$invokeSuspend$$inlined$execute$1.invoke(Pipeline.kt)
+	at io.ktor.util.debug.ContextUtilsKt.initContextInDebugMode(ContextUtils.kt:19)
+	at io.ktor.server.engine.DefaultEnginePipelineKt$defaultEnginePipeline$1.invokeSuspend(DefaultEnginePipeline.kt:129)
+	at io.ktor.server.engine.DefaultEnginePipelineKt$defaultEnginePipeline$1.invoke(DefaultEnginePipeline.kt)
+	at io.ktor.server.engine.DefaultEnginePipelineKt$defaultEnginePipeline$1.invoke(DefaultEnginePipeline.kt)
+	at io.ktor.util.pipeline.DebugPipelineContext.proceedLoop(DebugPipelineContext.kt:79)
+	at io.ktor.util.pipeline.DebugPipelineContext.proceed(DebugPipelineContext.kt:57)
+	at io.ktor.server.engine.BaseApplicationResponse$Companion$setupFallbackResponse$1.invokeSuspend(BaseApplicationResponse.kt:349)
+	at io.ktor.server.engine.BaseApplicationResponse$Companion$setupFallbackResponse$1.invoke(BaseApplicationResponse.kt)
+	at io.ktor.server.engine.BaseApplicationResponse$Companion$setupFallbackResponse$1.invoke(BaseApplicationResponse.kt)
+	at io.ktor.util.pipeline.DebugPipelineContext.proceedLoop(DebugPipelineContext.kt:79)
+	at io.ktor.util.pipeline.DebugPipelineContext.proceed(DebugPipelineContext.kt:57)
+	at io.ktor.util.pipeline.DebugPipelineContext.execute$ktor_utils(DebugPipelineContext.kt:63)
+	at io.ktor.util.pipeline.Pipeline.execute(Pipeline.kt:92)
+	at io.ktor.server.netty.NettyApplicationCallHandler$handleRequest$1$invokeSuspend$$inlined$execute$1.invokeSuspend(Pipeline.kt:510)
+	at io.ktor.server.netty.NettyApplicationCallHandler$handleRequest$1$invokeSuspend$$inlined$execute$1.invoke(Pipeline.kt)
+	at io.ktor.server.netty.NettyApplicationCallHandler$handleRequest$1$invokeSuspend$$inlined$execute$1.invoke(Pipeline.kt)
+	at io.ktor.util.debug.ContextUtilsKt.initContextInDebugMode(ContextUtils.kt:19)
+	at io.ktor.server.netty.NettyApplicationCallHandler$handleRequest$1.invokeSuspend(NettyApplicationCallHandler.kt:140)
+	at io.ktor.server.netty.NettyApplicationCallHandler$handleRequest$1.invoke(NettyApplicationCallHandler.kt)
+	at io.ktor.server.netty.NettyApplicationCallHandler$handleRequest$1.invoke(NettyApplicationCallHandler.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startCoroutineUndispatched(Undispatched.kt:20)
+	at kotlinx.coroutines.CoroutineStart.invoke(CoroutineStart.kt:360)
+	at kotlinx.coroutines.AbstractCoroutine.start(AbstractCoroutine.kt:134)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.launch(Builders.common.kt:53)
+	at kotlinx.coroutines.BuildersKt.launch(Unknown Source)
+	at io.ktor.server.netty.NettyApplicationCallHandler.handleRequest(NettyApplicationCallHandler.kt:41)
+	at io.ktor.server.netty.NettyApplicationCallHandler.channelRead(NettyApplicationCallHandler.kt:33)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.access$600(AbstractChannelHandlerContext.java:61)
+	at io.netty.channel.AbstractChannelHandlerContext$7.run(AbstractChannelHandlerContext.java:425)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-05-09 10:06:58,712]-[eventLoopGroupProxy-4-1] INFO  Application - [31m500 Internal Server Error[m: [36mPOST[m - /api/parseBEER in 62ms
+[2025-05-09 10:08:28,303]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-09 10:08:28,463]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-05-09 10:08:28,797]-[main] INFO  Application - Application started in 0.998 seconds.
+[2025-05-09 10:08:28,962]-[main] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-05-09 10:08:35,980]-[eventLoopGroupProxy-4-1] ERROR Application - Unhandled: POST - /api/parseBEER
+java.lang.IndexOutOfBoundsException: No group 2
+	at java.base/java.util.regex.Matcher.checkGroup(Matcher.java:1847)
+	at java.base/java.util.regex.Matcher.group(Matcher.java:688)
+	at kotlin.text.MatcherMatchResult$groupValues$1.get(Regex.kt:386)
+	at kotlin.text.MatcherMatchResult$groupValues$1.get(Regex.kt:384)
+	at com.example.serviceHelpers.ConvertBEERToSchemaKt.parseBeer(ConvertBEERToSchema.kt:64)
+	at com.example.ApiRoutesKt$apiRoutes$1$9.invokeSuspend(ApiRoutes.kt:100)
+	at com.example.ApiRoutesKt$apiRoutes$1$9.invoke(ApiRoutes.kt)
+	at com.example.ApiRoutesKt$apiRoutes$1$9.invoke(ApiRoutes.kt)
+	at io.ktor.server.routing.RoutingNode$buildPipeline$1$1.invokeSuspend(RoutingNode.kt:127)
+	at io.ktor.server.routing.RoutingNode$buildPipeline$1$1.invoke(RoutingNode.kt)
+	at io.ktor.server.routing.RoutingNode$buildPipeline$1$1.invoke(RoutingNode.kt)
+	at io.ktor.util.pipeline.DebugPipelineContext.proceedLoop(DebugPipelineContext.kt:79)
+	at io.ktor.util.pipeline.DebugPipelineContext.proceed(DebugPipelineContext.kt:57)
+	at io.ktor.util.pipeline.DebugPipelineContext.execute$ktor_utils(DebugPipelineContext.kt:63)
+	at io.ktor.util.pipeline.Pipeline.execute(Pipeline.kt:92)
+	at io.ktor.server.routing.RoutingRoot$executeResult$$inlined$execute$1.invokeSuspend(Pipeline.kt:510)
+	at io.ktor.server.routing.RoutingRoot$executeResult$$inlined$execute$1.invoke(Pipeline.kt)
+	at io.ktor.server.routing.RoutingRoot$executeResult$$inlined$execute$1.invoke(Pipeline.kt)
+	at io.ktor.util.debug.ContextUtilsKt.initContextInDebugMode(ContextUtils.kt:19)
+	at io.ktor.server.routing.RoutingRoot.executeResult(RoutingRoot.kt:208)
+	at io.ktor.server.routing.RoutingRoot.interceptor(RoutingRoot.kt:71)
+	at io.ktor.server.routing.RoutingRoot$Plugin$install$1.invokeSuspend(RoutingRoot.kt:154)
+	at io.ktor.server.routing.RoutingRoot$Plugin$install$1.invoke(RoutingRoot.kt)
+	at io.ktor.server.routing.RoutingRoot$Plugin$install$1.invoke(RoutingRoot.kt)
+	at io.ktor.util.pipeline.DebugPipelineContext.proceedLoop(DebugPipelineContext.kt:79)
+	at io.ktor.util.pipeline.DebugPipelineContext.proceed(DebugPipelineContext.kt:57)
+	at io.ktor.server.engine.BaseApplicationEngineKt$installDefaultTransformationChecker$1.invokeSuspend(BaseApplicationEngine.kt:119)
+	at io.ktor.server.engine.BaseApplicationEngineKt$installDefaultTransformationChecker$1.invoke(BaseApplicationEngine.kt)
+	at io.ktor.server.engine.BaseApplicationEngineKt$installDefaultTransformationChecker$1.invoke(BaseApplicationEngine.kt)
+	at io.ktor.util.pipeline.DebugPipelineContext.proceedLoop(DebugPipelineContext.kt:79)
+	at io.ktor.util.pipeline.DebugPipelineContext.proceed(DebugPipelineContext.kt:57)
+	at io.ktor.util.pipeline.DebugPipelineContext.execute$ktor_utils(DebugPipelineContext.kt:63)
+	at io.ktor.util.pipeline.Pipeline.execute(Pipeline.kt:92)
+	at io.ktor.server.engine.DefaultEnginePipelineKt$defaultEnginePipeline$1$invokeSuspend$$inlined$execute$1.invokeSuspend(Pipeline.kt:510)
+	at io.ktor.server.engine.DefaultEnginePipelineKt$defaultEnginePipeline$1$invokeSuspend$$inlined$execute$1.invoke(Pipeline.kt)
+	at io.ktor.server.engine.DefaultEnginePipelineKt$defaultEnginePipeline$1$invokeSuspend$$inlined$execute$1.invoke(Pipeline.kt)
+	at io.ktor.util.debug.ContextUtilsKt.initContextInDebugMode(ContextUtils.kt:19)
+	at io.ktor.server.engine.DefaultEnginePipelineKt$defaultEnginePipeline$1.invokeSuspend(DefaultEnginePipeline.kt:129)
+	at io.ktor.server.engine.DefaultEnginePipelineKt$defaultEnginePipeline$1.invoke(DefaultEnginePipeline.kt)
+	at io.ktor.server.engine.DefaultEnginePipelineKt$defaultEnginePipeline$1.invoke(DefaultEnginePipeline.kt)
+	at io.ktor.util.pipeline.DebugPipelineContext.proceedLoop(DebugPipelineContext.kt:79)
+	at io.ktor.util.pipeline.DebugPipelineContext.proceed(DebugPipelineContext.kt:57)
+	at io.ktor.server.engine.BaseApplicationResponse$Companion$setupFallbackResponse$1.invokeSuspend(BaseApplicationResponse.kt:349)
+	at io.ktor.server.engine.BaseApplicationResponse$Companion$setupFallbackResponse$1.invoke(BaseApplicationResponse.kt)
+	at io.ktor.server.engine.BaseApplicationResponse$Companion$setupFallbackResponse$1.invoke(BaseApplicationResponse.kt)
+	at io.ktor.util.pipeline.DebugPipelineContext.proceedLoop(DebugPipelineContext.kt:79)
+	at io.ktor.util.pipeline.DebugPipelineContext.proceed(DebugPipelineContext.kt:57)
+	at io.ktor.util.pipeline.DebugPipelineContext.execute$ktor_utils(DebugPipelineContext.kt:63)
+	at io.ktor.util.pipeline.Pipeline.execute(Pipeline.kt:92)
+	at io.ktor.server.netty.NettyApplicationCallHandler$handleRequest$1$invokeSuspend$$inlined$execute$1.invokeSuspend(Pipeline.kt:510)
+	at io.ktor.server.netty.NettyApplicationCallHandler$handleRequest$1$invokeSuspend$$inlined$execute$1.invoke(Pipeline.kt)
+	at io.ktor.server.netty.NettyApplicationCallHandler$handleRequest$1$invokeSuspend$$inlined$execute$1.invoke(Pipeline.kt)
+	at io.ktor.util.debug.ContextUtilsKt.initContextInDebugMode(ContextUtils.kt:19)
+	at io.ktor.server.netty.NettyApplicationCallHandler$handleRequest$1.invokeSuspend(NettyApplicationCallHandler.kt:140)
+	at io.ktor.server.netty.NettyApplicationCallHandler$handleRequest$1.invoke(NettyApplicationCallHandler.kt)
+	at io.ktor.server.netty.NettyApplicationCallHandler$handleRequest$1.invoke(NettyApplicationCallHandler.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startCoroutineUndispatched(Undispatched.kt:20)
+	at kotlinx.coroutines.CoroutineStart.invoke(CoroutineStart.kt:360)
+	at kotlinx.coroutines.AbstractCoroutine.start(AbstractCoroutine.kt:134)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.launch(Builders.common.kt:53)
+	at kotlinx.coroutines.BuildersKt.launch(Unknown Source)
+	at io.ktor.server.netty.NettyApplicationCallHandler.handleRequest(NettyApplicationCallHandler.kt:41)
+	at io.ktor.server.netty.NettyApplicationCallHandler.channelRead(NettyApplicationCallHandler.kt:33)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.access$600(AbstractChannelHandlerContext.java:61)
+	at io.netty.channel.AbstractChannelHandlerContext$7.run(AbstractChannelHandlerContext.java:425)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-05-09 10:08:36,169]-[eventLoopGroupProxy-4-1] INFO  Application - [31m500 Internal Server Error[m: [36mPOST[m - /api/parseBEER in 228ms
+[2025-05-09 10:11:12,700]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-09 10:11:12,869]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-05-09 10:11:13,190]-[main] INFO  Application - Application started in 0.997 seconds.
+[2025-05-09 10:11:13,362]-[main] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-05-09 10:11:17,305]-[eventLoopGroupProxy-4-1] ERROR Application - Unhandled: POST - /api/parseBEER
+java.time.format.DateTimeParseException: Text '2024-05-01T00:00:00Z, 2024-05-01T00:00:00Z' could not be parsed, unparsed text found at index 20
+	at java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2111)
+	at java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:2010)
+	at java.base/java.time.Instant.parse(Instant.java:398)
+	at com.example.serviceHelpers.ConvertBEERToSchemaKt.parseBeer$parseDateYmd(ConvertBEERToSchema.kt:30)
+	at com.example.serviceHelpers.ConvertBEERToSchemaKt.parseBeer(ConvertBEERToSchema.kt:65)
+	at com.example.ApiRoutesKt$apiRoutes$1$9.invokeSuspend(ApiRoutes.kt:100)
+	at com.example.ApiRoutesKt$apiRoutes$1$9.invoke(ApiRoutes.kt)
+	at com.example.ApiRoutesKt$apiRoutes$1$9.invoke(ApiRoutes.kt)
+	at io.ktor.server.routing.RoutingNode$buildPipeline$1$1.invokeSuspend(RoutingNode.kt:127)
+	at io.ktor.server.routing.RoutingNode$buildPipeline$1$1.invoke(RoutingNode.kt)
+	at io.ktor.server.routing.RoutingNode$buildPipeline$1$1.invoke(RoutingNode.kt)
+	at io.ktor.util.pipeline.DebugPipelineContext.proceedLoop(DebugPipelineContext.kt:79)
+	at io.ktor.util.pipeline.DebugPipelineContext.proceed(DebugPipelineContext.kt:57)
+	at io.ktor.util.pipeline.DebugPipelineContext.execute$ktor_utils(DebugPipelineContext.kt:63)
+	at io.ktor.util.pipeline.Pipeline.execute(Pipeline.kt:92)
+	at io.ktor.server.routing.RoutingRoot$executeResult$$inlined$execute$1.invokeSuspend(Pipeline.kt:510)
+	at io.ktor.server.routing.RoutingRoot$executeResult$$inlined$execute$1.invoke(Pipeline.kt)
+	at io.ktor.server.routing.RoutingRoot$executeResult$$inlined$execute$1.invoke(Pipeline.kt)
+	at io.ktor.util.debug.ContextUtilsKt.initContextInDebugMode(ContextUtils.kt:19)
+	at io.ktor.server.routing.RoutingRoot.executeResult(RoutingRoot.kt:208)
+	at io.ktor.server.routing.RoutingRoot.interceptor(RoutingRoot.kt:71)
+	at io.ktor.server.routing.RoutingRoot$Plugin$install$1.invokeSuspend(RoutingRoot.kt:154)
+	at io.ktor.server.routing.RoutingRoot$Plugin$install$1.invoke(RoutingRoot.kt)
+	at io.ktor.server.routing.RoutingRoot$Plugin$install$1.invoke(RoutingRoot.kt)
+	at io.ktor.util.pipeline.DebugPipelineContext.proceedLoop(DebugPipelineContext.kt:79)
+	at io.ktor.util.pipeline.DebugPipelineContext.proceed(DebugPipelineContext.kt:57)
+	at io.ktor.server.engine.BaseApplicationEngineKt$installDefaultTransformationChecker$1.invokeSuspend(BaseApplicationEngine.kt:119)
+	at io.ktor.server.engine.BaseApplicationEngineKt$installDefaultTransformationChecker$1.invoke(BaseApplicationEngine.kt)
+	at io.ktor.server.engine.BaseApplicationEngineKt$installDefaultTransformationChecker$1.invoke(BaseApplicationEngine.kt)
+	at io.ktor.util.pipeline.DebugPipelineContext.proceedLoop(DebugPipelineContext.kt:79)
+	at io.ktor.util.pipeline.DebugPipelineContext.proceed(DebugPipelineContext.kt:57)
+	at io.ktor.util.pipeline.DebugPipelineContext.execute$ktor_utils(DebugPipelineContext.kt:63)
+	at io.ktor.util.pipeline.Pipeline.execute(Pipeline.kt:92)
+	at io.ktor.server.engine.DefaultEnginePipelineKt$defaultEnginePipeline$1$invokeSuspend$$inlined$execute$1.invokeSuspend(Pipeline.kt:510)
+	at io.ktor.server.engine.DefaultEnginePipelineKt$defaultEnginePipeline$1$invokeSuspend$$inlined$execute$1.invoke(Pipeline.kt)
+	at io.ktor.server.engine.DefaultEnginePipelineKt$defaultEnginePipeline$1$invokeSuspend$$inlined$execute$1.invoke(Pipeline.kt)
+	at io.ktor.util.debug.ContextUtilsKt.initContextInDebugMode(ContextUtils.kt:19)
+	at io.ktor.server.engine.DefaultEnginePipelineKt$defaultEnginePipeline$1.invokeSuspend(DefaultEnginePipeline.kt:129)
+	at io.ktor.server.engine.DefaultEnginePipelineKt$defaultEnginePipeline$1.invoke(DefaultEnginePipeline.kt)
+	at io.ktor.server.engine.DefaultEnginePipelineKt$defaultEnginePipeline$1.invoke(DefaultEnginePipeline.kt)
+	at io.ktor.util.pipeline.DebugPipelineContext.proceedLoop(DebugPipelineContext.kt:79)
+	at io.ktor.util.pipeline.DebugPipelineContext.proceed(DebugPipelineContext.kt:57)
+	at io.ktor.server.engine.BaseApplicationResponse$Companion$setupFallbackResponse$1.invokeSuspend(BaseApplicationResponse.kt:349)
+	at io.ktor.server.engine.BaseApplicationResponse$Companion$setupFallbackResponse$1.invoke(BaseApplicationResponse.kt)
+	at io.ktor.server.engine.BaseApplicationResponse$Companion$setupFallbackResponse$1.invoke(BaseApplicationResponse.kt)
+	at io.ktor.util.pipeline.DebugPipelineContext.proceedLoop(DebugPipelineContext.kt:79)
+	at io.ktor.util.pipeline.DebugPipelineContext.proceed(DebugPipelineContext.kt:57)
+	at io.ktor.util.pipeline.DebugPipelineContext.execute$ktor_utils(DebugPipelineContext.kt:63)
+	at io.ktor.util.pipeline.Pipeline.execute(Pipeline.kt:92)
+	at io.ktor.server.netty.NettyApplicationCallHandler$handleRequest$1$invokeSuspend$$inlined$execute$1.invokeSuspend(Pipeline.kt:510)
+	at io.ktor.server.netty.NettyApplicationCallHandler$handleRequest$1$invokeSuspend$$inlined$execute$1.invoke(Pipeline.kt)
+	at io.ktor.server.netty.NettyApplicationCallHandler$handleRequest$1$invokeSuspend$$inlined$execute$1.invoke(Pipeline.kt)
+	at io.ktor.util.debug.ContextUtilsKt.initContextInDebugMode(ContextUtils.kt:19)
+	at io.ktor.server.netty.NettyApplicationCallHandler$handleRequest$1.invokeSuspend(NettyApplicationCallHandler.kt:140)
+	at io.ktor.server.netty.NettyApplicationCallHandler$handleRequest$1.invoke(NettyApplicationCallHandler.kt)
+	at io.ktor.server.netty.NettyApplicationCallHandler$handleRequest$1.invoke(NettyApplicationCallHandler.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startCoroutineUndispatched(Undispatched.kt:20)
+	at kotlinx.coroutines.CoroutineStart.invoke(CoroutineStart.kt:360)
+	at kotlinx.coroutines.AbstractCoroutine.start(AbstractCoroutine.kt:134)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.launch(Builders.common.kt:53)
+	at kotlinx.coroutines.BuildersKt.launch(Unknown Source)
+	at io.ktor.server.netty.NettyApplicationCallHandler.handleRequest(NettyApplicationCallHandler.kt:41)
+	at io.ktor.server.netty.NettyApplicationCallHandler.channelRead(NettyApplicationCallHandler.kt:33)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.access$600(AbstractChannelHandlerContext.java:61)
+	at io.netty.channel.AbstractChannelHandlerContext$7.run(AbstractChannelHandlerContext.java:425)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-05-09 10:11:17,578]-[eventLoopGroupProxy-4-1] INFO  Application - [31m500 Internal Server Error[m: [36mPOST[m - /api/parseBEER in 311ms
+[2025-05-09 10:18:11,611]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-09 10:18:11,795]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-05-09 10:18:12,169]-[main] INFO  Application - Application started in 1.06 seconds.
+[2025-05-09 10:18:12,332]-[main] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-05-09 10:18:15,396]-[eventLoopGroupProxy-4-1] ERROR Application - Unhandled: POST - /api/parseBEER
+java.time.format.DateTimeParseException: Text '2024-05-01T00:00:00Z, 2024-05-01T00:00:00Z' could not be parsed, unparsed text found at index 20
+	at java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2111)
+	at java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:2010)
+	at java.base/java.time.Instant.parse(Instant.java:398)
+	at com.example.serviceHelpers.ConvertBEERToSchemaKt.parseBeer$parseDateYmd(ConvertBEERToSchema.kt:30)
+	at com.example.serviceHelpers.ConvertBEERToSchemaKt.parseBeer(ConvertBEERToSchema.kt:65)
+	at com.example.ApiRoutesKt$apiRoutes$1$9.invokeSuspend(ApiRoutes.kt:100)
+	at com.example.ApiRoutesKt$apiRoutes$1$9.invoke(ApiRoutes.kt)
+	at com.example.ApiRoutesKt$apiRoutes$1$9.invoke(ApiRoutes.kt)
+	at io.ktor.server.routing.RoutingNode$buildPipeline$1$1.invokeSuspend(RoutingNode.kt:127)
+	at io.ktor.server.routing.RoutingNode$buildPipeline$1$1.invoke(RoutingNode.kt)
+	at io.ktor.server.routing.RoutingNode$buildPipeline$1$1.invoke(RoutingNode.kt)
+	at io.ktor.util.pipeline.DebugPipelineContext.proceedLoop(DebugPipelineContext.kt:79)
+	at io.ktor.util.pipeline.DebugPipelineContext.proceed(DebugPipelineContext.kt:57)
+	at io.ktor.util.pipeline.DebugPipelineContext.execute$ktor_utils(DebugPipelineContext.kt:63)
+	at io.ktor.util.pipeline.Pipeline.execute(Pipeline.kt:92)
+	at io.ktor.server.routing.RoutingRoot$executeResult$$inlined$execute$1.invokeSuspend(Pipeline.kt:510)
+	at io.ktor.server.routing.RoutingRoot$executeResult$$inlined$execute$1.invoke(Pipeline.kt)
+	at io.ktor.server.routing.RoutingRoot$executeResult$$inlined$execute$1.invoke(Pipeline.kt)
+	at io.ktor.util.debug.ContextUtilsKt.initContextInDebugMode(ContextUtils.kt:19)
+	at io.ktor.server.routing.RoutingRoot.executeResult(RoutingRoot.kt:208)
+	at io.ktor.server.routing.RoutingRoot.interceptor(RoutingRoot.kt:71)
+	at io.ktor.server.routing.RoutingRoot$Plugin$install$1.invokeSuspend(RoutingRoot.kt:154)
+	at io.ktor.server.routing.RoutingRoot$Plugin$install$1.invoke(RoutingRoot.kt)
+	at io.ktor.server.routing.RoutingRoot$Plugin$install$1.invoke(RoutingRoot.kt)
+	at io.ktor.util.pipeline.DebugPipelineContext.proceedLoop(DebugPipelineContext.kt:79)
+	at io.ktor.util.pipeline.DebugPipelineContext.proceed(DebugPipelineContext.kt:57)
+	at io.ktor.server.engine.BaseApplicationEngineKt$installDefaultTransformationChecker$1.invokeSuspend(BaseApplicationEngine.kt:119)
+	at io.ktor.server.engine.BaseApplicationEngineKt$installDefaultTransformationChecker$1.invoke(BaseApplicationEngine.kt)
+	at io.ktor.server.engine.BaseApplicationEngineKt$installDefaultTransformationChecker$1.invoke(BaseApplicationEngine.kt)
+	at io.ktor.util.pipeline.DebugPipelineContext.proceedLoop(DebugPipelineContext.kt:79)
+	at io.ktor.util.pipeline.DebugPipelineContext.proceed(DebugPipelineContext.kt:57)
+	at io.ktor.util.pipeline.DebugPipelineContext.execute$ktor_utils(DebugPipelineContext.kt:63)
+	at io.ktor.util.pipeline.Pipeline.execute(Pipeline.kt:92)
+	at io.ktor.server.engine.DefaultEnginePipelineKt$defaultEnginePipeline$1$invokeSuspend$$inlined$execute$1.invokeSuspend(Pipeline.kt:510)
+	at io.ktor.server.engine.DefaultEnginePipelineKt$defaultEnginePipeline$1$invokeSuspend$$inlined$execute$1.invoke(Pipeline.kt)
+	at io.ktor.server.engine.DefaultEnginePipelineKt$defaultEnginePipeline$1$invokeSuspend$$inlined$execute$1.invoke(Pipeline.kt)
+	at io.ktor.util.debug.ContextUtilsKt.initContextInDebugMode(ContextUtils.kt:19)
+	at io.ktor.server.engine.DefaultEnginePipelineKt$defaultEnginePipeline$1.invokeSuspend(DefaultEnginePipeline.kt:129)
+	at io.ktor.server.engine.DefaultEnginePipelineKt$defaultEnginePipeline$1.invoke(DefaultEnginePipeline.kt)
+	at io.ktor.server.engine.DefaultEnginePipelineKt$defaultEnginePipeline$1.invoke(DefaultEnginePipeline.kt)
+	at io.ktor.util.pipeline.DebugPipelineContext.proceedLoop(DebugPipelineContext.kt:79)
+	at io.ktor.util.pipeline.DebugPipelineContext.proceed(DebugPipelineContext.kt:57)
+	at io.ktor.server.engine.BaseApplicationResponse$Companion$setupFallbackResponse$1.invokeSuspend(BaseApplicationResponse.kt:349)
+	at io.ktor.server.engine.BaseApplicationResponse$Companion$setupFallbackResponse$1.invoke(BaseApplicationResponse.kt)
+	at io.ktor.server.engine.BaseApplicationResponse$Companion$setupFallbackResponse$1.invoke(BaseApplicationResponse.kt)
+	at io.ktor.util.pipeline.DebugPipelineContext.proceedLoop(DebugPipelineContext.kt:79)
+	at io.ktor.util.pipeline.DebugPipelineContext.proceed(DebugPipelineContext.kt:57)
+	at io.ktor.util.pipeline.DebugPipelineContext.execute$ktor_utils(DebugPipelineContext.kt:63)
+	at io.ktor.util.pipeline.Pipeline.execute(Pipeline.kt:92)
+	at io.ktor.server.netty.NettyApplicationCallHandler$handleRequest$1$invokeSuspend$$inlined$execute$1.invokeSuspend(Pipeline.kt:510)
+	at io.ktor.server.netty.NettyApplicationCallHandler$handleRequest$1$invokeSuspend$$inlined$execute$1.invoke(Pipeline.kt)
+	at io.ktor.server.netty.NettyApplicationCallHandler$handleRequest$1$invokeSuspend$$inlined$execute$1.invoke(Pipeline.kt)
+	at io.ktor.util.debug.ContextUtilsKt.initContextInDebugMode(ContextUtils.kt:19)
+	at io.ktor.server.netty.NettyApplicationCallHandler$handleRequest$1.invokeSuspend(NettyApplicationCallHandler.kt:140)
+	at io.ktor.server.netty.NettyApplicationCallHandler$handleRequest$1.invoke(NettyApplicationCallHandler.kt)
+	at io.ktor.server.netty.NettyApplicationCallHandler$handleRequest$1.invoke(NettyApplicationCallHandler.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startCoroutineUndispatched(Undispatched.kt:20)
+	at kotlinx.coroutines.CoroutineStart.invoke(CoroutineStart.kt:360)
+	at kotlinx.coroutines.AbstractCoroutine.start(AbstractCoroutine.kt:134)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.launch(Builders.common.kt:53)
+	at kotlinx.coroutines.BuildersKt.launch(Unknown Source)
+	at io.ktor.server.netty.NettyApplicationCallHandler.handleRequest(NettyApplicationCallHandler.kt:41)
+	at io.ktor.server.netty.NettyApplicationCallHandler.channelRead(NettyApplicationCallHandler.kt:33)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.access$600(AbstractChannelHandlerContext.java:61)
+	at io.netty.channel.AbstractChannelHandlerContext$7.run(AbstractChannelHandlerContext.java:425)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-05-09 10:18:15,596]-[eventLoopGroupProxy-4-1] INFO  Application - [31m500 Internal Server Error[m: [36mPOST[m - /api/parseBEER in 237ms
+[2025-05-09 10:25:37,590]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-09 10:25:37,775]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-05-09 10:25:38,114]-[main] INFO  Application - Application started in 1.047 seconds.
+[2025-05-09 10:25:38,261]-[main] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-05-09 10:25:42,066]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/parseBEER in 276ms
+[2025-05-09 10:34:12,230]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/parseBEER in 10ms
+[2025-05-09 10:47:20,359]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/parseBEER in 13ms
+[2025-05-09 10:55:10,879]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-09 10:55:11,039]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-05-09 10:55:11,381]-[main] INFO  Application - Application started in 1.06 seconds.
+[2025-05-09 10:55:11,555]-[main] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-05-09 10:55:15,582]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/convertSchemaToBEER in 205ms
+[2025-05-09 10:55:22,163]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/parseBEER in 37ms
+[2025-05-09 10:55:57,578]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/parseBEER in 5ms
+[2025-05-09 11:01:33,514]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-09 11:01:33,761]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-05-09 11:01:34,153]-[main] INFO  Application - Application started in 1.256 seconds.
+[2025-05-09 11:01:34,321]-[main] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-05-09 11:07:21,302]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 336ms
+[2025-05-09 11:07:26,310]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 47ms
+[2025-05-09 11:07:30,789]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager4 in 27ms
+[2025-05-09 11:07:47,655]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager8 in 5ms
+[2025-05-09 11:10:57,664]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 104ms
+[2025-05-09 11:10:57,807]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager4 in 15ms
+[2025-05-09 11:11:04,624]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager4 in 16ms
+[2025-05-09 11:11:46,994]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager8 in 4ms
+[2025-05-09 11:12:16,039]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/parseBEER in 15ms
+[2025-05-09 11:18:59,675]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 88ms
+[2025-05-09 11:19:05,967]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 20ms
+[2025-05-09 11:19:08,876]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager4 in 16ms
+[2025-05-09 11:19:47,573]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/parseBEER in 31ms
+[2025-05-09 11:21:26,535]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-09 11:21:26,736]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-05-09 11:21:27,042]-[main] INFO  Application - Application started in 1.04 seconds.
+[2025-05-09 11:21:27,189]-[main] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-05-09 11:21:30,954]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/parseBEER in 204ms
+[2025-05-09 11:22:22,583]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager8 in 92ms
+[2025-05-09 11:23:55,230]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager3 in 108ms
+[2025-05-09 11:24:08,778]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager7 in 14ms
+[2025-05-09 11:24:35,740]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager7 in 3ms
+[2025-05-09 11:24:39,597]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager7 in 4ms
+[2025-05-09 12:00:45,988]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-09 12:00:46,155]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-05-09 12:00:46,474]-[main] INFO  Application - Application started in 0.988 seconds.
+[2025-05-09 12:00:46,626]-[main] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-05-09 12:07:06,128]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 280ms
+[2025-05-09 12:07:11,066]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 43ms
+[2025-05-09 12:07:14,810]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager3 in 24ms
+[2025-05-09 12:07:33,052]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager8 in 48ms
+[2025-05-09 12:07:37,286]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 39ms
+[2025-05-09 12:07:37,392]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager3 in 13ms
+[2025-05-09 12:08:18,215]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager7 in 5ms
+[2025-05-09 12:08:35,996]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 69ms
+[2025-05-09 12:08:36,005]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager4 in 87ms
+[2025-05-09 12:09:05,744]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 14ms
+[2025-05-09 12:09:05,899]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager12 in 50ms
+[2025-05-09 12:09:07,172]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 14ms
+[2025-05-09 12:09:13,957]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager3 in 12ms
+[2025-05-09 12:09:15,670]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager4 in 16ms
+[2025-05-09 12:09:33,492]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager10 in 26ms
+[2025-05-09 12:09:37,279]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 24ms
+[2025-05-09 12:09:37,380]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager4 in 12ms
+[2025-05-09 12:09:46,271]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager4 in 13ms
+[2025-05-09 12:09:50,480]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager4 in 12ms
+[2025-05-09 12:09:51,410]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager4 in 12ms
+[2025-05-09 12:09:52,323]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager4 in 12ms
+[2025-05-09 12:09:52,679]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager4 in 11ms
+[2025-05-09 12:09:53,138]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager4 in 12ms
+[2025-05-09 12:09:53,838]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager4 in 17ms
+[2025-05-09 12:09:55,654]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager4 in 18ms
+[2025-05-09 12:09:57,065]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager4 in 12ms
+[2025-05-09 12:09:57,739]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager4 in 12ms
+[2025-05-09 12:09:58,404]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager4 in 12ms
+[2025-05-09 12:09:59,025]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager4 in 11ms
+[2025-05-09 12:09:59,568]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager4 in 11ms
+[2025-05-09 12:10:00,320]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager4 in 12ms
+[2025-05-09 12:10:00,956]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager4 in 12ms
+[2025-05-09 12:10:01,390]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager4 in 10ms
+[2025-05-09 12:10:06,274]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager4 in 15ms
+[2025-05-09 12:10:08,118]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager4 in 30ms
+[2025-05-09 12:10:08,453]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager4 in 11ms
+[2025-05-09 12:10:10,887]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager14 in 80ms
+[2025-05-09 12:10:15,312]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 11ms
+[2025-05-09 12:10:15,473]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager14 in 36ms
+[2025-05-09 12:10:18,404]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager3 in 12ms
+[2025-05-09 12:10:18,542]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager14 in 13ms
+[2025-05-09 12:10:20,844]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager4 in 13ms
+[2025-05-09 12:10:20,935]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager14 in 7ms
+[2025-05-09 12:10:23,039]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 12ms
+[2025-05-09 12:10:23,148]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager14 in 17ms
+[2025-05-09 12:10:25,732]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 12ms
+[2025-05-09 12:10:25,815]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager12 in 3ms
+[2025-05-09 12:10:25,906]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager14 in 10ms
+[2025-05-09 12:10:27,164]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 11ms
+[2025-05-09 12:10:27,248]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager14 in 11ms
+[2025-05-09 12:10:28,467]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 12ms
+[2025-05-09 12:10:28,549]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager12 in 3ms
+[2025-05-09 12:10:28,640]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager14 in 7ms
+[2025-05-09 12:10:29,541]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 11ms
+[2025-05-09 12:10:29,631]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager14 in 11ms
+[2025-05-09 12:10:30,739]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 12ms
+[2025-05-09 12:10:30,827]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager12 in 3ms
+[2025-05-09 12:10:30,916]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager14 in 7ms
+[2025-05-09 12:10:32,698]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 10ms
+[2025-05-09 12:10:32,799]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager14 in 12ms
+[2025-05-09 12:10:35,340]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager14 in 4ms

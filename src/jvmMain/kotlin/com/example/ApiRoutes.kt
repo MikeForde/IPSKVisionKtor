@@ -95,6 +95,12 @@ fun Application.apiRoutes() {
       call.respond(ips)
     }
 
+    post("/api/parseBEER") {
+      val raw = call.receive<String>()
+      val ips = parseBeer(raw)
+      call.respond(ips)
+    }
+
     // Conversion endpoints - FROM schema
     post("/api/convertSchemaToUnified") {
       val model = call.receive<IPSModel>()

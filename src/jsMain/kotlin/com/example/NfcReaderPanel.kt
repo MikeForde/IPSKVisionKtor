@@ -208,15 +208,26 @@ object NfcReaderPanel : SimplePanel() {
 
   private suspend fun importPayload() {
     val trimmed = rawPayload.trim()
-    if (!trimmed.startsWith("{") ||
-        !trimmed.contains("resourceType") ||
-        !trimmed.contains("Bundle")) {
-      Toast.danger("Only JSON FHIR Bundles can be currently imported via this method.")
+    val isJsonBundle =
+        trimmed.startsWith("{") && trimmed.contains("resourceType") && trimmed.contains("Bundle")
+    val isHl7Message = trimmed.startsWith("MSH|")
+    val isBEERMessage = trimmed.startsWith("H9")
+
+    if (!isJsonBundle && !isHl7Message && !isBEERMessage) {
+      Toast.danger(
+          "Only JSON FHIR Bundles, HL7 v2.3 or BEER messages can be imported via this method.")
       return
     }
 
     try {
-      val rawJson = Model.addBundleToDatabase(trimmed)
+      val rawJson =
+          if (isJsonBundle) {
+            Model.addBundleToDatabase(trimmed)
+          } else if (isHl7Message) {
+            Model.addHL7ToDatabase(trimmed)
+          } else {
+            Model.addBEERToDatabase(trimmed)
+          }
       val prettyJson = fnPrettyJson(rawJson)
       payloadArea.value = prettyJson
       Toast.success("Conversion successful")
@@ -232,9 +243,11 @@ object NfcReaderPanel : SimplePanel() {
     val isJsonBundle =
         trimmed.startsWith("{") && trimmed.contains("resourceType") && trimmed.contains("Bundle")
     val isHl7Message = trimmed.startsWith("MSH|")
+    val isBEERMessage = trimmed.startsWith("H9")
 
-    if (!isJsonBundle && !isHl7Message) {
-      Toast.danger("Only JSON FHIR Bundles or HL7 v2.3 messages can be converted via this method.")
+    if (!isJsonBundle && !isHl7Message && !isBEERMessage) {
+      Toast.danger(
+          "Only JSON FHIR Bundles, HL7 v2.3 or BEER messages can be converted via this method.")
       return
     }
 
@@ -242,8 +255,10 @@ object NfcReaderPanel : SimplePanel() {
       val rawJson =
           if (isJsonBundle) {
             Model.convertBundleToSchema(trimmed)
-          } else {
+          } else if (isHl7Message) {
             Model.convertHL7ToSchema(trimmed)
+          } else {
+            Model.convertBEERToSchema(trimmed)
           }
       val prettyJson = fnPrettyJson(rawJson)
       payloadArea.value = prettyJson

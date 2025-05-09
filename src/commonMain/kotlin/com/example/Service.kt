@@ -29,6 +29,12 @@ interface IIPSService {
 
   suspend fun convertHL7ToSchema(bundleHL7: String): String
 
+  suspend fun addHL7ToDatabase(bundleHL7: String): String
+
+  suspend fun convertBEERToSchema(bundleBEER: String): String
+
+  suspend fun addBEERToDatabase(bundleBEER: String): String
+
   // Encrypt and decrypt services
   suspend fun encryptText(data: String, useBase64: Boolean): EncryptedPayloadDTO
 

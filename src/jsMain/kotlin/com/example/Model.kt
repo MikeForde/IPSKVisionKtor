@@ -79,6 +79,18 @@ object Model {
     return ipsService.convertHL7ToSchema(bundleHL7)
   }
 
+  suspend fun addHL7ToDatabase(bundleHL7: String): String {
+    return ipsService.addHL7ToDatabase(bundleHL7)
+  }
+
+  suspend fun convertBEERToSchema(bundleBEER: String): String {
+    return ipsService.convertBEERToSchema(bundleBEER)
+  }
+
+  suspend fun addBEERToDatabase(bundleBEER: String): String {
+    return ipsService.addBEERToDatabase(bundleBEER)
+  }
+
   suspend fun encryptText(data: String, useBase64: Boolean = false): EncryptedPayloadDTO {
     return ipsService.encryptText(data, useBase64)
   }

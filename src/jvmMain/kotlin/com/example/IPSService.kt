@@ -178,6 +178,27 @@ class IPSServiceRpc(private val call: ApplicationCall) : IIPSService {
     return Json.encodeToString(model)
   }
 
+  // Extend the above to convert HL7 to model then add to the database
+  override suspend fun addHL7ToDatabase(bundleHL7: String): String {
+    val model = parseHL72_xToIpsModel(bundleHL7)
+    val addedModel = addIPSRecord(model)
+    return addedModel.id.toString()
+  }
+
+  // BEER to schema
+  // Note this fixes multiple old same medication 'M' parsing - need to do same fix in IPS MERN/SERN
+  override suspend fun convertBEERToSchema(bundleBEER: String): String {
+    val model = parseBeer(bundleBEER)
+    return Json.encodeToString(model)
+  }
+
+  // Extend the above to convert BEER to model then add to the database
+  override suspend fun addBEERToDatabase(bundleBEER: String): String {
+    val model = parseBeer(bundleBEER)
+    val addedModel = addIPSRecord(model)
+    return addedModel.id.toString()
+  }
+
   override suspend fun encryptText(data: String, useBase64: Boolean): EncryptedPayloadDTO {
     val payload = CryptoHelper.encrypt(data, useBase64)
     return EncryptedPayloadDTO(payload.encryptedData, payload.iv, payload.mac, payload.key)
