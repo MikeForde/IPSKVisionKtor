@@ -2838,3 +2838,133 @@ java.time.format.DateTimeParseException: Text '2024-05-01T00:00:00Z, 2024-05-01T
 [2025-05-09 12:10:32,698]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 10ms
 [2025-05-09 12:10:32,799]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager14 in 12ms
 [2025-05-09 12:10:35,340]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager14 in 4ms
+[2025-05-09 14:10:32,505]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-09 14:10:32,668]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-05-09 14:10:32,947]-[main] INFO  Application - Application started in 0.913 seconds.
+[2025-05-09 14:10:33,072]-[main] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-05-09 14:27:43,667]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 533ms
+[2025-05-09 14:27:45,806]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 39ms
+[2025-05-09 14:27:50,103]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager3 in 22ms
+[2025-05-09 14:29:38,528]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager3 in 44ms
+[2025-05-09 14:29:39,531]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager3 in 13ms
+[2025-05-09 14:29:41,019]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager3 in 13ms
+[2025-05-09 14:29:41,742]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager3 in 12ms
+[2025-05-09 14:29:42,220]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager3 in 12ms
+[2025-05-09 14:29:43,176]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager3 in 18ms
+[2025-05-09 14:32:58,928]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-09 14:32:59,182]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-05-09 14:32:59,551]-[main] INFO  Application - Application started in 1.115 seconds.
+[2025-05-09 14:32:59,688]-[main] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-05-09 14:33:11,411]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 491ms
+[2025-05-09 14:33:13,192]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 29ms
+[2025-05-09 14:33:17,967]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager3 in 20ms
+[2025-05-09 14:33:36,695]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-09 14:33:36,868]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-05-09 14:33:37,183]-[main] INFO  Application - Application started in 1.007 seconds.
+[2025-05-09 14:33:37,345]-[main] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-05-09 14:33:43,467]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 311ms
+[2025-05-09 14:33:44,550]-[eventLoopGroupProxy-4-2] ERROR dev.kilua.rpc.RpcServiceManager - Unsupported field: YearOfEra
+java.time.temporal.UnsupportedTemporalTypeException: Unsupported field: YearOfEra
+	at java.base/java.time.Instant.getLong(Instant.java:603)
+	at java.base/java.time.format.DateTimePrintContext.getValue(DateTimePrintContext.java:308)
+	at java.base/java.time.format.DateTimeFormatterBuilder$NumberPrinterParser.format(DateTimeFormatterBuilder.java:2914)
+	at java.base/java.time.format.DateTimeFormatterBuilder$CompositePrinterParser.format(DateTimeFormatterBuilder.java:2529)
+	at java.base/java.time.format.DateTimeFormatter.formatTo(DateTimeFormatter.java:1905)
+	at java.base/java.time.format.DateTimeFormatter.format(DateTimeFormatter.java:1879)
+	at com.example.serviceHelpers.GenerateHL72_3Kt.generateIpsModelToHl72_3(GenerateHL72_3.kt:32)
+	at com.example.IPSServiceRpc.generateHL7(IPSService.kt:131)
+	at com.example.IPSServiceRpc$generateHL7$1.invokeSuspend(IPSService.kt)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-05-09 14:33:44,553]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager3 in 20ms
+[2025-05-09 14:33:50,097]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 260ms
+[2025-05-09 14:33:52,818]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 21ms
+[2025-05-09 14:33:54,911]-[eventLoopGroupProxy-4-5] ERROR dev.kilua.rpc.RpcServiceManager - Unsupported field: YearOfEra
+java.time.temporal.UnsupportedTemporalTypeException: Unsupported field: YearOfEra
+	at java.base/java.time.Instant.getLong(Instant.java:603)
+	at java.base/java.time.format.DateTimePrintContext.getValue(DateTimePrintContext.java:308)
+	at java.base/java.time.format.DateTimeFormatterBuilder$NumberPrinterParser.format(DateTimeFormatterBuilder.java:2914)
+	at java.base/java.time.format.DateTimeFormatterBuilder$CompositePrinterParser.format(DateTimeFormatterBuilder.java:2529)
+	at java.base/java.time.format.DateTimeFormatter.formatTo(DateTimeFormatter.java:1905)
+	at java.base/java.time.format.DateTimeFormatter.format(DateTimeFormatter.java:1879)
+	at com.example.serviceHelpers.GenerateHL72_3Kt.generateIpsModelToHl72_3(GenerateHL72_3.kt:32)
+	at com.example.IPSServiceRpc.generateHL7(IPSService.kt:131)
+	at com.example.IPSServiceRpc$generateHL7$1.invokeSuspend(IPSService.kt)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-05-09 14:33:54,912]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager3 in 14ms
+[2025-05-09 14:34:00,250]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager4 in 27ms
+[2025-05-09 14:34:02,442]-[eventLoopGroupProxy-4-7] ERROR dev.kilua.rpc.RpcServiceManager - Unsupported field: YearOfEra
+java.time.temporal.UnsupportedTemporalTypeException: Unsupported field: YearOfEra
+	at java.base/java.time.Instant.getLong(Instant.java:603)
+	at java.base/java.time.format.DateTimePrintContext.getValue(DateTimePrintContext.java:308)
+	at java.base/java.time.format.DateTimeFormatterBuilder$NumberPrinterParser.format(DateTimeFormatterBuilder.java:2914)
+	at java.base/java.time.format.DateTimeFormatterBuilder$CompositePrinterParser.format(DateTimeFormatterBuilder.java:2529)
+	at java.base/java.time.format.DateTimeFormatter.formatTo(DateTimeFormatter.java:1905)
+	at java.base/java.time.format.DateTimeFormatter.format(DateTimeFormatter.java:1879)
+	at com.example.serviceHelpers.GenerateHL72_3Kt.generateIpsModelToHl72_3(GenerateHL72_3.kt:32)
+	at com.example.IPSServiceRpc.generateHL7(IPSService.kt:131)
+	at com.example.IPSServiceRpc$generateHL7$1.invokeSuspend(IPSService.kt)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-05-09 14:34:02,443]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager3 in 12ms
+[2025-05-09 14:36:26,086]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-09 14:36:26,252]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-05-09 14:36:26,579]-[main] INFO  Application - Application started in 1.024 seconds.
+[2025-05-09 14:36:26,742]-[main] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-05-09 14:36:34,319]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 537ms
+[2025-05-09 14:36:35,086]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 40ms
+[2025-05-09 14:36:37,845]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager3 in 20ms
+[2025-05-09 14:38:44,010]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-09 14:38:44,182]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-05-09 14:38:44,506]-[main] INFO  Application - Application started in 1.006 seconds.
+[2025-05-09 14:38:44,748]-[main] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-05-09 14:38:50,629]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 536ms
+[2025-05-09 14:38:51,341]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 33ms
+[2025-05-09 14:38:53,341]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager3 in 31ms
+[2025-05-09 14:39:58,898]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 278ms
+[2025-05-09 14:40:00,973]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 14ms
+[2025-05-09 14:40:04,170]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager3 in 14ms
+[2025-05-09 14:40:15,820]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-09 14:40:15,992]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-05-09 14:40:16,337]-[main] INFO  Application - Application started in 1.144 seconds.
+[2025-05-09 14:40:16,530]-[main] INFO  Application - Responding at http://0.0.0.0:8080
+[2025-05-09 14:40:30,624]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 601ms
+[2025-05-09 14:40:31,273]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 53ms
+[2025-05-09 14:40:33,630]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager3 in 24ms
+[2025-05-09 14:41:13,339]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /api/parseHL7 in 19ms
+[2025-05-09 14:41:51,470]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 255ms
+[2025-05-09 14:41:56,565]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 18ms
+[2025-05-09 14:41:59,085]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager3 in 24ms
+[2025-05-09 14:42:21,946]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager7 in 4ms
+[2025-05-09 14:42:31,891]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager8 in 77ms
+[2025-05-09 14:42:47,690]-[eventLoopGroupProxy-4-2] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager1 in 39ms
+[2025-05-09 14:42:47,826]-[eventLoopGroupProxy-4-3] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager3 in 14ms
+[2025-05-09 14:42:54,343]-[eventLoopGroupProxy-4-4] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager3 in 14ms
+[2025-05-09 14:42:56,312]-[eventLoopGroupProxy-4-5] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager3 in 12ms
+[2025-05-09 14:43:15,222]-[eventLoopGroupProxy-4-6] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 14ms
+[2025-05-09 14:43:59,282]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager4 in 65ms

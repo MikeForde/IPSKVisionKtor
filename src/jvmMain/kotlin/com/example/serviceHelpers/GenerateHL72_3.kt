@@ -9,7 +9,7 @@ import java.time.format.DateTimeFormatter
 fun generateIpsModelToHl72_3(model: IPSModel): String {
   // formatters
   val dtFmt = DateTimeFormatter.ofPattern("yyyyMMddHHmmss").withZone(ZoneOffset.UTC)
-  val dFmt = DateTimeFormatter.ofPattern("yyyyMMdd")
+  val dFmt = DateTimeFormatter.ofPattern("yyyyMMdd").withZone(ZoneOffset.UTC)
 
   val sb = StringBuilder()
 
@@ -29,7 +29,7 @@ fun generateIpsModelToHl72_3(model: IPSModel): String {
       .append("^")
       .append(model.patientGiven)
       .append("||")
-      .append(model.patientDob.replace("-", "")) // "yyyy-MM-dd" -> "yyyyMMdd"
+      .append(Instant.parse(model.patientDob).let { dFmt.format(it) }) // "yyyy-MM-dd" -> "yyyyMMdd"
       .append("|")
       .append(genderCode)
       .append("|||^^^")
@@ -67,13 +67,13 @@ fun generateIpsModelToHl72_3(model: IPSModel): String {
   val critMap = mapOf("high" to "SV", "moderate" to "MO", "mild" to "MI", "unknown" to "U")
   model.allergies.orEmpty().forEachIndexed { idx, alg ->
     val sev = critMap[alg.criticality.orEmpty().lowercase()] ?: "U"
-    val date = alg.date?.replace("-", "") ?: ""
+    val date = Instant.parse(alg.date).let { dFmt.format(it) }
     sb.append("AL1|${idx+1}|DA|${alg.code}^${alg.name}^${alg.system}|$sev||$date\n")
   }
 
   // ---- DG1 Segments (conditions) ----
   model.conditions.orEmpty().forEachIndexed { idx, cond ->
-    val date = cond.date?.replace("-", "") ?: ""
+    val date = Instant.parse(cond.date).let { dFmt.format(it) }
     sb.append("DG1|${idx+1}||${cond.code}^${cond.name}^${cond.system}||$date\n")
   }
 
