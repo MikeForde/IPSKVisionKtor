@@ -17,11 +17,15 @@ object AboutAppPanel : SimplePanel() {
       div(className = "row") {
         div(className = "col") {
           h3("About This Web Application")
-          p(
-              """
-                        Built using the SK3 Stack. SK3 stands for SQL, Kotlin, KVision, and Ktor.
-                    """
-                  .trimIndent())
+          p {
+            +"Built using the SK3 Stack. SK3 stands for SQL, "
+            link("Kotlin", "https://kotlinlang.org", className = "card-link", target = "_blank")
+            +", "
+            link("KVision", "https://kvision.io", target = "_blank")
+            +" and "
+            link("Ktor", "https://ktor.io", className = "card-link", target = "_blank")
+            +"."
+          }
         }
       }
 

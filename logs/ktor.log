@@ -3152,3 +3152,7 @@ java.time.temporal.UnsupportedTemporalTypeException: Unsupported field: YearOfEr
 [2025-05-09 16:15:35,747]-[eventLoopGroupProxy-4-7] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager2 in 10ms
 [2025-05-09 16:15:35,860]-[eventLoopGroupProxy-4-8] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager14 in 18ms
 [2025-05-09 16:15:41,016]-[eventLoopGroupProxy-4-1] INFO  Application - [32m200 OK[m: [36mPOST[m - /rpc/routeIPSServiceManager14 in 5ms
+[2025-05-09 16:54:29,605]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-05-09 16:54:29,756]-[main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-05-09 16:54:30,010]-[main] INFO  Application - Application started in 0.835 seconds.
+[2025-05-09 16:54:30,169]-[main] INFO  Application - Responding at http://0.0.0.0:8080
