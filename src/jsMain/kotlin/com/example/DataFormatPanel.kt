@@ -41,8 +41,10 @@ object DataFormatPanel : SimplePanel() {
                   listOf(
                       "ipsunified" to "IPS Unified JSON Bundle",
                       "ipshl72_3" to "IPS HL7 v2.3",
+                      "ipsbeer" to "IPS BEER",
+                      "ipsbeerwithdelim" to "IPS BEER Pipe Delimiter"
                       // TODO: add more format options when generators are available
-                  ),
+                      ),
               value = "ipsunified")
           .apply { disabled = true }
 
@@ -73,7 +75,7 @@ object DataFormatPanel : SimplePanel() {
                 when {
                   compressionCheck.value -> "json" to "application/json"
                   mode == "ipsxml" -> "xml" to "application/xml"
-                  mode in listOf("ipsbasic", "ipsbeer", "ipsbeerwithdelim", "ipshl72x") ->
+                  mode in listOf("ipsbasic", "ipsbeer", "ipsbeerwithdelim", "ipshl72_3") ->
                       "txt" to "text/plain"
                   else -> "json" to "application/json"
                 }
@@ -224,6 +226,10 @@ object DataFormatPanel : SimplePanel() {
           if (mode == "ipshl72_3") {
             // call your new HL7 generator
             Model.generateHL7(selectedId)
+          } else if (mode == "ipsbeer") {
+            Model.generateBEER(selectedId, "newline")
+          } else if (mode == "ipsbeerwithdelim") {
+            Model.generateBEER(selectedId, "pipe")
           } else {
             // existing JSON bundle logic
             Model.generateUnifiedBundle(selectedId)

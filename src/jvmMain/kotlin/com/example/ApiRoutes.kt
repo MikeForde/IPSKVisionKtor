@@ -106,6 +106,12 @@ fun Application.apiRoutes() {
       val hl7 = generateIpsModelToHl72_3(model)
       call.respondText(hl7)
     }
+    post("/api/convertSchemaToBEER") {
+      val delim = call.request.queryParameters["delim"] ?: "newline"
+      val model = call.receive<IPSModel>()
+      val beer = generateIpsBeer(model, delim)
+      call.respondText(beer)
+    }
 
     // Encryption endpoints
     post("/api/encryptText") {

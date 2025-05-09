@@ -63,6 +63,10 @@ object Model {
     return ipsService.generateHL7(id)
   }
 
+  suspend fun generateBEER(id: Int?, delimiter: String?): String {
+    return ipsService.generateBEER(id, delimiter)
+  }
+
   suspend fun convertBundleToSchema(bundleJson: String): String {
     return ipsService.convertBundleToSchema(bundleJson)
   }

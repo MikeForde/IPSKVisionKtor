@@ -21,6 +21,8 @@ interface IIPSService {
 
   suspend fun generateHL7(id: Int?): String
 
+  suspend fun generateBEER(id: Int?, delimiter: String?): String
+
   suspend fun convertBundleToSchema(bundleJson: String): String
 
   suspend fun addBundleToDatabase(bundleJson: String): String

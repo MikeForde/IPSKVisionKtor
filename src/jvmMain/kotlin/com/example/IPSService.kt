@@ -135,6 +135,25 @@ class IPSServiceRpc(private val call: ApplicationCall) : IIPSService {
     }
   }
 
+  // gemerate BEER
+  override suspend fun generateBEER(id: Int?, delimiter: String?): String {
+    if (id == null) {
+      return """{ "error": "No ID provided" }"""
+    }
+
+    val model =
+        Db.dbQuery {
+          IPSModelDao.select { IPSModelDao.id eq id }.singleOrNull()?.let { toFullIpsModel(it) }
+        }
+
+    return if (model != null) {
+      val beertext = generateIpsBeer(model, delimiter)
+      beertext // return text
+    } else {
+      """{ "error": "Record not found" }"""
+    }
+  }
+
   // Conversions From other formats to Schema
   // Any of kwown project IPS FHiR formats (unified, legacy or expanded) to schema
   override suspend fun convertBundleToSchema(bundleJson: String): String {

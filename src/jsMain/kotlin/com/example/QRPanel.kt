@@ -33,6 +33,7 @@ object QRPanel : SimplePanel() {
                   "ipsurl" to "IPS URL",
                   "ipsunified" to "IPS Unified JSON Bundle",
                   "ipshl72_3" to "IPS HL7 v2.3",
+                  "ipsbeer" to "IPS BEER",
               ),
           value = "ipsurl")
   private val patientSelect =
@@ -154,6 +155,17 @@ object QRPanel : SimplePanel() {
                 json.encodeToString(EncryptedPayloadDTO.serializer(), encrypted)
               } else {
                 rawHL7
+              }
+            }
+            "ipsbeer" -> {
+              // BEER payload
+              var rawBEER = Model.generateBEER(selectedId!!, "newline")
+              if (compressionCheck.value) {
+                val encrypted = Model.encryptTextGzip(rawBEER)
+                val json = kotlinx.serialization.json.Json { prettyPrint = false }
+                json.encodeToString(EncryptedPayloadDTO.serializer(), encrypted)
+              } else {
+                rawBEER
               }
             }
             else -> {
