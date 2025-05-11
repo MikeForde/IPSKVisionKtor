@@ -50,7 +50,8 @@ object AboutPanel : SimplePanel() {
               link(
                   "IPS Implementation Guide",
                   "https://www.hl7.org/fhir/uv/ips/",
-                  className = "card-link")
+                  className = "card-link",
+                  target = "_blank")
             }
           }
           // Card 2
@@ -67,7 +68,8 @@ object AboutPanel : SimplePanel() {
               link(
                   "IPS Website",
                   "https://international-patient-summary.net",
-                  className = "card-link")
+                  className = "card-link",
+                  target = "_blank")
             }
           }
         }

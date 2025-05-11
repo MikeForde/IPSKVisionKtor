@@ -96,7 +96,7 @@ class App : Application() {
               }
             }
             nav {
-              navLink("0_6", className = "app_version")
+              navLink("0_7", className = "app_version")
 
               navLink("API", icon = "fas fa-file") {
                 onEvent {

@@ -84,6 +84,20 @@ object ChangeLogPanel : SimplePanel() {
                     "Downloaded QR filenames include timestamp, patient info, UUID suffix, and mode.")
               }
             }
+            li(className = "list-unstyled") {
+              h5("Version 0_7 - 11th May 2025")
+              ul {
+                li { strong("Unified Data Import") }
+                li("Backend upsertIPSData determines matches incoming data by packageUUID")
+                li("If packageUUID not found then new record created.")
+                li(
+                    "If found then new data merged with old. This avoids duplicates and allows partial updates.")
+                li(
+                    "Medication, Allergies etc - are considered updates to existing items if matched on name+datetime ")
+                li(
+                    "The system sending does not need to know if the record [+/- data] it is sending is new or not.")
+              }
+            }
           }
         }
       }

@@ -166,7 +166,7 @@ class IPSServiceRpc(private val call: ApplicationCall) : IIPSService {
   override suspend fun addBundleToDatabase(bundleJson: String): String {
     val jsonObj = Json.parseToJsonElement(bundleJson).jsonObject
     val model = convertIPSBundleToSchema(jsonObj)
-    val addedModel = addIPSRecord(model)
+    val addedModel = upsertIPSRecord(model)
     return addedModel.id.toString()
   }
 
@@ -181,7 +181,7 @@ class IPSServiceRpc(private val call: ApplicationCall) : IIPSService {
   // Extend the above to convert HL7 to model then add to the database
   override suspend fun addHL7ToDatabase(bundleHL7: String): String {
     val model = parseHL72_xToIpsModel(bundleHL7)
-    val addedModel = addIPSRecord(model)
+    val addedModel = upsertIPSRecord(model)
     return addedModel.id.toString()
   }
 
@@ -195,7 +195,7 @@ class IPSServiceRpc(private val call: ApplicationCall) : IIPSService {
   // Extend the above to convert BEER to model then add to the database
   override suspend fun addBEERToDatabase(bundleBEER: String): String {
     val model = parseBeer(bundleBEER)
-    val addedModel = addIPSRecord(model)
+    val addedModel = upsertIPSRecord(model)
     return addedModel.id.toString()
   }
 

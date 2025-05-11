@@ -92,6 +92,7 @@ fun toFullIpsModel(row: ResultRow): IPSModel {
       patientPractitioner = row[IPSModelDao.patientPractitioner],
       patientOrganization = row[IPSModelDao.patientOrganization],
       patientIdentifier = row[IPSModelDao.patientIdentifier],
+      patientIdentifier2 = row[IPSModelDao.patientIdentifier2],
       medications = meds,
       allergies = allgs,
       conditions = conds,
