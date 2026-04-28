@@ -73,6 +73,11 @@ export FRONTEND_SCHEME=http
 ./gradlew jvmRun
 ```
 
+or use the .env file with
+```bash
+set -a && source .env && set +a && ./gradlew jvmRun
+```
+
 Terminal 2, frontend dev server on `http://localhost:3000`:
 
 ```bash

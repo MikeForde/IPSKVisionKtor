@@ -24,9 +24,15 @@ object Db {
 
   private fun hikari(config: ApplicationConfig): HikariDataSource {
     val hikariConfig = HikariConfig()
+    val configuredJdbcUrl = config.propertyOrNull("db.jdbcUrl")?.getString()
+    val jdbcUrl = configuredJdbcUrl ?: "jdbc:h2:mem:test"
+    hikariConfig.jdbcUrl = jdbcUrl
     hikariConfig.driverClassName =
-        config.propertyOrNull("db.driver")?.getString() ?: "org.h2.Driver"
-    hikariConfig.jdbcUrl = config.propertyOrNull("db.jdbcUrl")?.getString() ?: "jdbc:h2:mem:test"
+        if (configuredJdbcUrl == null) {
+          "org.h2.Driver"
+        } else {
+          config.propertyOrNull("db.driver")?.getString() ?: "org.h2.Driver"
+        }
     hikariConfig.username = config.propertyOrNull("db.username")?.getString()
     hikariConfig.password = config.propertyOrNull("db.password")?.getString()
     hikariConfig.maximumPoolSize = 3
