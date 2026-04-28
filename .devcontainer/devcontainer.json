@@ -1,7 +1,10 @@
 {
   "name": "Java",
   // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-  "image": "mcr.microsoft.com/devcontainers/java:1-21-bullseye",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": "."
+  },
   "features": {
     // Java, SDKMAN!, Gradle pre-installed
     "ghcr.io/devcontainers/features/java:1": {
@@ -19,6 +22,9 @@
     }
   },
   "remoteUser": "vscode",
+  "remoteEnv": {
+    "PATH": "/home/vscode/.opencode/bin:${containerEnv:PATH}"
+  },
   "containerUser": "vscode",
   "updateRemoteUserUID": true,
   "postCreateCommand": [

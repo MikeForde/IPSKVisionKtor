@@ -10,6 +10,14 @@ sdk install kotlin
 # Enable Corepack shims for Yarn/pnpm
 corepack enable
 
+# Install OpenCode into the vscode user's home directory
+if [ ! -x "$HOME/.opencode/bin/opencode" ]; then
+  curl -fsSL https://opencode.ai/install | bash
+fi
+
+# Verify OpenCode
+"$HOME/.opencode/bin/opencode" --version || true
+
 # Correct kotlin permissions
  sudo chown -R vscode:vscode /workspaces/IPSKVisionKtor
 
