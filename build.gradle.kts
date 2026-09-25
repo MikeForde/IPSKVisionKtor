@@ -73,12 +73,13 @@ kotlin {
     }
     val jvmMain by getting {
       dependencies {
+        implementation(platform("io.netty:netty-bom:4.1.137.Final"))
+
         implementation(kotlin("reflect"))
         implementation("io.ktor:ktor-server-netty:$ktorVersion")
         implementation("io.ktor:ktor-server-auth:$ktorVersion")
         implementation("io.ktor:ktor-server-compression:$ktorVersion")
         implementation("io.ktor:ktor-server-default-headers:$ktorVersion")
-        implementation("io.ktor:ktor-server-compression:$ktorVersion")
         implementation("io.ktor:ktor-server-call-logging:$ktorVersion")
         implementation("ch.qos.logback:logback-classic:$logbackVersion")
         implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
